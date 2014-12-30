@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_dtKx8IqUEeSf6YVZN2Xsyw" name="BUILD">
+  <ownedComment xmi:id="_aYoeEIqfEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _XOTQEIqfEeSf6YVZN2Xsyw">
+    <body>usr: efxbuild</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Node" xmi:id="_P6X20IqcEeSf6YVZN2Xsyw" name="lnx-efxbuild.ants.ad.anplc.co.uk">
+    <ownedComment xmi:id="_5TD2QIqcEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _ryRx0IqcEeSf6YVZN2Xsyw">
+      <body>eFX-Snapshot-Repository</body>
+    </ownedComment>
+    <ownedComment xmi:id="__-YewIqcEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _-CVo0IqcEeSf6YVZN2Xsyw">
+      <body>eFX-Repository</body>
+    </ownedComment>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_ryRx0IqcEeSf6YVZN2Xsyw" name="http://lnx-efxbuild.ants.ad.anplc.co.uk:8081/artifactory/libs-snapshot-local/"/>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_-CVo0IqcEeSf6YVZN2Xsyw" name="http://lnx-efxbuild.ants.ad.anplc.co.uk:8081/artifactory/libs-release-local/"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_XOTQEIqfEeSf6YVZN2Xsyw" name="lnx-efxbuild">
+    <ownedComment xmi:id="_3tFY4ItKEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _egBKMIqfEeSf6YVZN2Xsyw">
+      <body>Parent´s POM</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_egBKMIqfEeSf6YVZN2Xsyw" name="/home/efxbuild/eFX-Scripts/x.y.z/parent/pom.xml"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_RVoJgIrAEeSf6YVZN2Xsyw" name="/home/efxbuild">
+    <ownedComment xmi:id="_wElBUItIEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _Q6fj4ItIEeSf6YVZN2Xsyw">
+      <body>Folder 4 uploading RPms</body>
+    </ownedComment>
+    <ownedComment xmi:id="_3MoMoItJEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _M4tkMIq-EeSf6YVZN2Xsyw">
+      <body>Folder where the Release is located</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_p7PSQItNEeSf6YVZN2Xsyw" name="release.properties" aggregation="composite"/>
+    <ownedAttribute xmi:id="_0LLvsItbEeSf6YVZN2Xsyw" name="update-cerebro-version.sh" aggregation="composite"/>
+    <ownedAttribute xmi:id="_k4MncItTEeSf6YVZN2Xsyw" name="release.sh" aggregation="composite"/>
+    <ownedConnector xmi:id="_AoMNgItdEeSf6YVZN2Xsyw" name="release.sh_update-cerebro-version.sh_connector">
+      <end xmi:id="_AoMNgYtdEeSf6YVZN2Xsyw" role="_k4MncItTEeSf6YVZN2Xsyw"/>
+      <end xmi:id="_AoMNgotdEeSf6YVZN2Xsyw" role="_0LLvsItbEeSf6YVZN2Xsyw"/>
+    </ownedConnector>
+    <ownedConnector xmi:id="_JAkYQIteEeSf6YVZN2Xsyw" name="release.sh_release.properties_connector">
+      <end xmi:id="_JAuJQIteEeSf6YVZN2Xsyw" role="_k4MncItTEeSf6YVZN2Xsyw"/>
+      <end xmi:id="_JAuJQYteEeSf6YVZN2Xsyw" role="_p7PSQItNEeSf6YVZN2Xsyw"/>
+    </ownedConnector>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_ioDEoIqhEeSf6YVZN2Xsyw" name="./eFX_installer">
+      <ownedComment xmi:id="_Q2XWQIqiEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _HObLoIqiEeSf6YVZN2Xsyw">
+        <body>buildRPM_3.2_Final.sh</body>
+      </ownedComment>
+      <ownedComment xmi:id="_2WCJ0IqvEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _K6HaQIqiEeSf6YVZN2Xsyw">
+        <body>buildRPM_3.2_Linux.sh</body>
+      </ownedComment>
+      <ownedComment xmi:id="_9Muo8Iq8EeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _HObLoIqiEeSf6YVZN2Xsyw">
+        <body>Script to Build RPMs 4 Cerebro Modules</body>
+      </ownedComment>
+      <ownedComment xmi:id="_JCpuEIq9EeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _K6HaQIqiEeSf6YVZN2Xsyw">
+        <body>Script to Build RPMs</body>
+      </ownedComment>
+      <ownedComment xmi:id="_SXeUsItHEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw __dVSQIq_EeSf6YVZN2Xsyw">
+        <body>#SPEC file for eFX RPM package</body>
+      </ownedComment>
+      <ownedComment xmi:id="_VGhU4ItHEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _gaLP4ItGEeSf6YVZN2Xsyw">
+        <body>#SPEC file for eFX RPM package</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_HObLoIqiEeSf6YVZN2Xsyw" name="buildRPM_3.2_Final.sh" aggregation="composite"/>
+      <ownedAttribute xmi:id="_K6HaQIqiEeSf6YVZN2Xsyw" name="buildRPM_3.2_Linux.sh" aggregation="composite"/>
+      <ownedAttribute xmi:id="_7L1dUIq-EeSf6YVZN2Xsyw" name="all-3.0.partes.lst" aggregation="composite"/>
+      <ownedAttribute xmi:id="__dVSQIq_EeSf6YVZN2Xsyw" name="eFX_3_0-all-partes.spec" aggregation="composite"/>
+      <ownedAttribute xmi:id="_gaLP4ItGEeSf6YVZN2Xsyw" name="eFX_3_0-all-partes-SB7-common.spec" aggregation="composite"/>
+      <ownedConnector xmi:id="_5cLIMItbEeSf6YVZN2Xsyw" name="buildRPM_3.2_Final.sh_all-3.0.partes.lst_connector">
+        <end xmi:id="_5cLIMYtbEeSf6YVZN2Xsyw" role="_HObLoIqiEeSf6YVZN2Xsyw"/>
+        <end xmi:id="_5cLIMotbEeSf6YVZN2Xsyw" role="_7L1dUIq-EeSf6YVZN2Xsyw"/>
+      </ownedConnector>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_Y3gNEIqgEeSf6YVZN2Xsyw" name="./eFX_install"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_7iVNYIqgEeSf6YVZN2Xsyw" name="./BUILD"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_D-F4wIqhEeSf6YVZN2Xsyw" name="./RPMS"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_HWnTwIqhEeSf6YVZN2Xsyw" name="./SOURCES"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_KoCoQIqhEeSf6YVZN2Xsyw" name="./SPECS"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_Pl-h4IqhEeSf6YVZN2Xsyw" name="./SRPMS"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_1V6LwIq-EeSf6YVZN2Xsyw" name="./filelists"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_Q6fj4ItIEeSf6YVZN2Xsyw" name="./upload_area_sit"/>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_S18i8ItTEeSf6YVZN2Xsyw" name="./eFX-Scripts">
+      <ownedComment xmi:id="_F3mRoItdEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _0LLvsItbEeSf6YVZN2Xsyw">
+        <body>Script 4 updating Cerebro version</body>
+      </ownedComment>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_M4tkMIq-EeSf6YVZN2Xsyw" name="./x.y.z/">
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_QKRUMIrBEeSf6YVZN2Xsyw" name="./SB7"/>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_CdKY0ItiEeSf6YVZN2Xsyw" name="fx-logs"/>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_J-UdIItiEeSf6YVZN2Xsyw" name="tx-temp"/>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_Qyrs4ItiEeSf6YVZN2Xsyw" name="java"/>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_VUo1IItiEeSf6YVZN2Xsyw" name="Linux"/>
+      </nestedClassifier>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_1ANi8ItKEeSf6YVZN2Xsyw" name="lnx-efxd37.ants.ad.anplc.co.uk">
+    <ownedComment xmi:id="_1L8cYItLEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _zNfLoItLEeSf6YVZN2Xsyw">
+      <body>SVN Repository</body>
+    </ownedComment>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_zNfLoItLEeSf6YVZN2Xsyw" name="https://lnx-efxd37.ants.ad.anplc.co.uk:12345/svn/eFX-Development/"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_QIneMItMEeSf6YVZN2Xsyw" name="gblonxa080.ants.ad.anplc.co.uk">
+    <ownedComment xmi:id="_l2cckItMEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _0gvt0ItMEeSf6YVZN2Xsyw">
+      <body>SVN Repository</body>
+    </ownedComment>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_0gvt0ItMEeSf6YVZN2Xsyw" name="https://gblonxa080.ants.ad.anplc.co.uk/svn/eFX-Development/"/>
+  </packagedElement>
+</uml:Model>

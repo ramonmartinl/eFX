@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wIk18IqXEeSf6YVZN2Xsyw" name="eFX-LP-Citi">
+  <ownedComment xmi:id="_AsmkwIqfEeSf6YVZN2Xsyw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw">
+    <body>CEREBRO</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Component" xmi:id="_uDr38IqVEeSf6YVZN2Xsyw" name="eFX-AdaFIX"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_BEFKQIqXEeSf6YVZN2Xsyw" name="eFX-Adartenon"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_FfgzwIqXEeSf6YVZN2Xsyw" name="eFX-Adaxter"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_Jm440IqXEeSf6YVZN2Xsyw" name="eFX-Aggregation"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_L6rgYIqXEeSf6YVZN2Xsyw" name="eFX-AutoCM"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_dYlhsIqXEeSf6YVZN2Xsyw" name="eFX-Cleansing"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_grdnsIqXEeSf6YVZN2Xsyw" name="eFX-CustomerPricing"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_kfJ7wIqXEeSf6YVZN2Xsyw" name="eFX-DashboardBridge"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_lysnQIqXEeSf6YVZN2Xsyw" name="eFX-ForwardPricing"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_c0siwIqdEeSf6YVZN2Xsyw" name="eFX-LP-Citi"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_hBbB4IqdEeSf6YVZN2Xsyw" name="eFX-LP-D3"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_jiU4YIqdEeSf6YVZN2Xsyw" name="eFX-LP-DB"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_lmyDcIqdEeSf6YVZN2Xsyw" name="eFX-LP-FIX"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_m_SHcIqdEeSf6YVZN2Xsyw" name="eFX-LP-GS"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_rWTLAIqdEeSf6YVZN2Xsyw" name="eFX-LP-MF"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tH_LEIqdEeSf6YVZN2Xsyw" name="eFX-LP-MTI"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_vN9ZEIqdEeSf6YVZN2Xsyw" name="eFX-LP-UBS"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_zqxioIqdEeSf6YVZN2Xsyw" name="eFX-Modules"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_7a2MsIqdEeSf6YVZN2Xsyw" name="eFX-NewTickStore"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_-V7dwIqdEeSf6YVZN2Xsyw" name="eFX-Pricetenon"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_B-ff4IqeEeSf6YVZN2Xsyw" name="eFX-Pricing"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_D1W64IqeEeSf6YVZN2Xsyw" name="eFX-SB7-Common"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_M3TcgIqeEeSf6YVZN2Xsyw" name="eFX-SB7-Parent"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_RYZCEIqeEeSf6YVZN2Xsyw" name="eFX-SB7-Tools"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_aTZOMIqeEeSf6YVZN2Xsyw" name="eFX-TenorService"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_kQP44IqeEeSf6YVZN2Xsyw" name="eFX-TickStore"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_nUoP4IqeEeSf6YVZN2Xsyw" name="eFX-TradeReports"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_rfhjAIqeEeSf6YVZN2Xsyw" name="eFX-Trading"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_uLjrcIqeEeSf6YVZN2Xsyw" name="eFX-Volatility"/>
+</uml:Model>

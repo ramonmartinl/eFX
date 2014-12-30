@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YM51IIdkEeSyEoF3RcEPsg" name="BAXTER">
+  <packagedElement xmi:type="uml:Component" xmi:id="_9XLzIIajEeSh4Ym1HZTfzQ" name="baxter-config-server">
+    <ownedComment xmi:id="_Q0hTkIa6EeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_9XLzIIajEeSh4Ym1HZTfzQ"/>
+      <body>./start-configuration-server --daemon &amp;</body>
+    </ownedComment>
+    <ownedComment xmi:id="_KLCLMIbHEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_9XLzIIajEeSh4Ym1HZTfzQ"/>
+      <body>Baxter Configuration Server&#xD;
+/opt/baxter/bin</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_QJu_QIa8EeSh4Ym1HZTfzQ" name="start-configuration-server" aggregation="composite"/>
+    <ownedAttribute xmi:id="_hKKfkIaqEeSh4Ym1HZTfzQ" name="/opt/baxter/config-server/jetty/contexts/config-server.xml" aggregation="composite"/>
+    <ownedAttribute xmi:id="_RoJGsIarEeSh4Ym1HZTfzQ" name="/opt/baxter/config-server/processors/" aggregation="composite"/>
+    <ownedAttribute xmi:id="_ag_9wIarEeSh4Ym1HZTfzQ" name="baxter-config-processor-price-engine.jar -> /opt/baxter/lib/baxter-config-processor-price-engine-1.3.4.jar" aggregation="composite"/>
+    <ownedAttribute xmi:id="_mrUlkIarEeSh4Ym1HZTfzQ" name=" baxter-config-processor-statistics.jar -> /opt/baxter/lib/baxter-config-processor-statistics-1.3.jar" aggregation="composite"/>
+    <ownedAttribute xmi:id="_sWA3gIarEeSh4Ym1HZTfzQ" name="statistics-config-processor.jar -> /opt/baxter/lib/statistics-config-processor-1.3.1.jar" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Qg9U0IauEeSh4Ym1HZTfzQ" name="/opt/baxter/config-server/jetty/config-server-web.xml" aggregation="composite"/>
+    <ownedAttribute xmi:id="_czrqsIauEeSh4Ym1HZTfzQ" name="/opt/baxter/etc/configuration-server-log.xml" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Klu3EIavEeSh4Ym1HZTfzQ" name="/opt/baxter/etc/configuration-server-log.xml" aggregation="composite"/>
+    <ownedAttribute xmi:id="_duIFQIakEeSh4Ym1HZTfzQ" name="/opt/baxter/config-server/jetty/jetty.conf" aggregation="composite"/>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_UAMYoIaqEeSh4Ym1HZTfzQ" name="/opt/baxter/lib/baxter-config-server-1.4.0.4.war"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_pd19QIa7EeSh4Ym1HZTfzQ" name="price-engine-dbserver">
+    <ownedComment xmi:id="_udQckIbGEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_pd19QIa7EeSh4Ym1HZTfzQ"/>
+      <body>Price Engine DBServer&#xD;
+/opt/baxter/bin</body>
+    </ownedComment>
+    <ownedComment xmi:id="_0Kh3gIa9EeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_pd19QIa7EeSh4Ym1HZTfzQ"/>
+      <body>./dbserver  [start/stop]&#xD;
+(Actualizar la BD) ./dbserver setup update </body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_wmnhUIa8EeSh4Ym1HZTfzQ" name="dbserver -> /opt/baxter/bin/price-engine-dbserver.sh" aggregation="composite"/>
+    <ownedAttribute xmi:id="_7kOeYIa8EeSh4Ym1HZTfzQ" name="/opt/baxter/bin/price-engine-server-util.sh" aggregation="composite"/>
+    <ownedConnector xmi:id="_T0NJEIbAEeSh4Ym1HZTfzQ" name="dbserver -> /opt/baxter/bin/price-engine-dbserver.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">
+      <end xmi:id="_T0NJEYbAEeSh4Ym1HZTfzQ" role="_wmnhUIa8EeSh4Ym1HZTfzQ"/>
+      <end xmi:id="_T0NJEobAEeSh4Ym1HZTfzQ" role="_7kOeYIa8EeSh4Ym1HZTfzQ"/>
+    </ownedConnector>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_0K0dUIa7EeSh4Ym1HZTfzQ" name="/opt/baxter/lib/price-engine-dbserver/price-engine-dbserver-2.74.jar"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_OQSfcIa-EeSh4Ym1HZTfzQ" name="price-engine-blotterserver">
+    <ownedComment xmi:id="_5oUm0IbGEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_OQSfcIa-EeSh4Ym1HZTfzQ"/>
+      <body>Blotter Server&#xD;
+/opt/baxter/bin</body>
+    </ownedComment>
+    <ownedComment xmi:id="_-7kGQIa_EeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_OQSfcIa-EeSh4Ym1HZTfzQ"/>
+      <body>./blotterserver  [start/stop]</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_5xa8oIa_EeSh4Ym1HZTfzQ" name=" blotterserver -> /opt/baxter/bin/price-engine-blotterserver.sh" aggregation="composite"/>
+    <ownedConnector xmi:id="_UYzq8IbAEeSh4Ym1HZTfzQ" name=" blotterserver -> /opt/baxter/bin/price-engine-blotterserver.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">
+      <end xmi:id="_UYzq8YbAEeSh4Ym1HZTfzQ" role="_5xa8oIa_EeSh4Ym1HZTfzQ"/>
+      <end xmi:id="_UYzq8obAEeSh4Ym1HZTfzQ" role="_7kOeYIa8EeSh4Ym1HZTfzQ"/>
+    </ownedConnector>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_gB51AIbAEeSh4Ym1HZTfzQ" name="/opt/baxter/lib/price-engine-blotterserver/price-engine-blotterserver-2.74.jar"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_eXWQUIbDEeSh4Ym1HZTfzQ" name="price-engine-broadcast">
+    <ownedComment xmi:id="_UyZA4IbGEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_eXWQUIbDEeSh4Ym1HZTfzQ"/>
+      <body>Price Engine Broadcast&#xD;
+/opt/baxter/bin</body>
+    </ownedComment>
+    <ownedComment xmi:id="_I793YIbEEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_eXWQUIbDEeSh4Ym1HZTfzQ"/>
+      <body>./broadcast [start/stop]</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_gx7cYIbDEeSh4Ym1HZTfzQ" name=" broadcast -> /opt/baxter/bin/price-engine-broadcast.sh" aggregation="composite"/>
+    <ownedConnector xmi:id="_zvt8EIbDEeSh4Ym1HZTfzQ" name=" broadcast -> /opt/baxter/bin/price-engine-broadcast.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">
+      <end xmi:id="_zvt8EYbDEeSh4Ym1HZTfzQ" role="_gx7cYIbDEeSh4Ym1HZTfzQ"/>
+      <end xmi:id="_zvt8EobDEeSh4Ym1HZTfzQ" role="_7kOeYIa8EeSh4Ym1HZTfzQ"/>
+    </ownedConnector>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_u6tU8IbDEeSh4Ym1HZTfzQ" name="/opt/baxter/lib/price-engine-broadcast/price-engine-broadcast-2.74.jar"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_vSH58IbEEeSh4Ym1HZTfzQ" name="price-engine-servlet (dashboard)">
+    <ownedComment xmi:id="_fH1nMIbFEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_vSH58IbEEeSh4Ym1HZTfzQ"/>
+      <body>Price Engine Dashboard Web Application&#xD;
+/opt/baxter/bin</body>
+    </ownedComment>
+    <ownedComment xmi:id="_kdO-kIbFEeSh4Ym1HZTfzQ">
+      <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+      <annotatedElement xmi:type="uml:Component" href="#_vSH58IbEEeSh4Ym1HZTfzQ"/>
+      <body>./dashboard [start/stop]</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_3R1igIbEEeSh4Ym1HZTfzQ" name="dashboard -> /opt/baxter/bin/price-engine-servlet.sh" aggregation="composite"/>
+    <ownedConnector xmi:id="_I1pXgIbFEeSh4Ym1HZTfzQ" name="dashboard -> /opt/baxter/bin/price-engine-servlet.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">
+      <end xmi:id="_I1pXgYbFEeSh4Ym1HZTfzQ" role="_3R1igIbEEeSh4Ym1HZTfzQ"/>
+      <end xmi:id="_I1pXgobFEeSh4Ym1HZTfzQ" role="_7kOeYIa8EeSh4Ym1HZTfzQ"/>
+    </ownedConnector>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_1V1v4IbEEeSh4Ym1HZTfzQ" name="/opt/baxter/lib/price-engine-servlet/price-engine-servlet-2.74.jar"/>
+  </packagedElement>
+</uml:Model>

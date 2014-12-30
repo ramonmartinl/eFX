@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_o2qe4InkEeSf6YVZN2Xsyw" name="LP">
+  <ownedComment xmi:id="_Kx-iEInKEeSf6YVZN2Xsyw">
+    <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+    <body>usr: strmbase&#xD;
+su - strmbase</body>
+  </ownedComment>
+  <ownedComment xmi:id="_UPiiUInCEeSf6YVZN2Xsyw">
+    <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
+    <body>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts>&#xD;
+DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts>&#xD;
+DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts>&#xD;
+SIT1: /local/home/strmbase/EFX-lp/Linux/scripts> (EFX-lp -> EFX-lp-SIT)&#xD;
+SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts> (EFX-lp2 -> EFX-lp-SIT2)</body>
+  </ownedComment>
+  <ownedComment xmi:id="_gq_MAInmEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _OKkk0InmEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./UBSCombined start </body>
+  </ownedComment>
+  <ownedComment xmi:id="_ahRmUInnEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw __xMrgInlEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./DBCombined start</body>
+  </ownedComment>
+  <ownedComment xmi:id="_g-rHkInnEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _EejLcInmEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./GSCombined start</body>
+  </ownedComment>
+  <ownedComment xmi:id="_mnhmcInnEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _KCBbEInmEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./CitiCombined start</body>
+  </ownedComment>
+  <ownedComment xmi:id="_kA9-cInoEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _GuGzQInmEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./MFHandler.sh start</body>
+  </ownedComment>
+  <ownedComment xmi:id="_m32sAInoEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _Rzw5EInmEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./TIHandler.sh start</body>
+  </ownedComment>
+  <ownedComment xmi:id="_rS_akInoEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _U9iGYInmEeSf6YVZN2Xsyw">
+    <body>. env_xxx.sh&#xD;
+./SFWDHandler.sh start</body>
+  </ownedComment>
+  <ownedComment xmi:id="_KcBhIIqDEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw">
+    <body>LP (Liquidity Providers)</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Component" xmi:id="_-PpOoInkEeSf6YVZN2Xsyw" name="UBS Execution Handler">
+    <ownedAttribute xmi:id="_OKkk0InmEeSf6YVZN2Xsyw" name="UBSCombined" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_-rLUEInkEeSf6YVZN2Xsyw" name="DB Combined Handler">
+    <ownedAttribute xmi:id="__xMrgInlEeSf6YVZN2Xsyw" name="DBCombined" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_-9zVIInkEeSf6YVZN2Xsyw" name="GS Execution Handler">
+    <ownedAttribute xmi:id="_EejLcInmEeSf6YVZN2Xsyw" name="GSCombined" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_AaumIInlEeSf6YVZN2Xsyw" name="MF Execution Handler">
+    <ownedAttribute xmi:id="_GuGzQInmEeSf6YVZN2Xsyw" name=": MFHandler.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_EA6CoInlEeSf6YVZN2Xsyw" name="Citi Execution Handler">
+    <ownedAttribute xmi:id="_KCBbEInmEeSf6YVZN2Xsyw" name="CitiCombined" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_mHOAoInlEeSf6YVZN2Xsyw" name="TI Execution Handler">
+    <ownedAttribute xmi:id="_Rzw5EInmEeSf6YVZN2Xsyw" name="TIHandler.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_uB1GwInlEeSf6YVZN2Xsyw" name="D3 Execution Handler">
+    <ownedAttribute xmi:id="_U9iGYInmEeSf6YVZN2Xsyw" name="SFWDHandler.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_dPl70InpEeSf6YVZN2Xsyw" name="DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts>">
+    <ownedAttribute xmi:id="_uhRfAInpEeSf6YVZN2Xsyw" name="env_dev1.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_IJ0mgInqEeSf6YVZN2Xsyw" name="DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts>">
+    <ownedAttribute xmi:id="_LA6vcInqEeSf6YVZN2Xsyw" name="env_dev3.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_SWJ3oInqEeSf6YVZN2Xsyw" name="DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts>">
+    <ownedAttribute xmi:id="_WvczIInqEeSf6YVZN2Xsyw" name="env_dev4.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_aML_wInqEeSf6YVZN2Xsyw" name="SIT1: /local/home/strmbase/EFX-lp/Linux/scripts>">
+    <ownedAttribute xmi:id="_oaZK4InqEeSf6YVZN2Xsyw" name="env_?.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_jCTr4InqEeSf6YVZN2Xsyw" name="SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts>">
+    <ownedAttribute xmi:id="_nlOdcInqEeSf6YVZN2Xsyw" name="env_?.sh" aggregation="composite"/>
+  </packagedElement>
+</uml:Model>
