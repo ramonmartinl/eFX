@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_VjezYIXFEeSV7sNMKNrJjg" name="ENVIRONMENTS">
-  <ownedComment xmi:id="_T9JzIIXjEeSh4Ym1HZTfzQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _yw_OkIX1EeSh4Ym1HZTfzQ">
+  <ownedComment xmi:id="_T9JzIIXjEeSh4Ym1HZTfzQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
     <body>estructurales.sh</body>
   </ownedComment>
-  <ownedComment xmi:id="_8S1RQJAGEeSU45eRB5GOkA" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _xBe8YIaQEeSh4Ym1HZTfzQ">
+  <ownedComment xmi:id="_EMGwEJAGEeSU45eRB5GOkA" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
+    <body>DEV3 Streambase 3.6</body>
+  </ownedComment>
+  <ownedComment xmi:id="_hFqCwIaZEeSh4Ym1HZTfzQ">
+    <body> /local/home/strmbase/3.6/Linux/scripts (EFX-dev3)</body>
+  </ownedComment>
+  <ownedComment xmi:id="_De2XkI_9EeSU45eRB5GOkA">
+    <body>local/home/strmbase/EFX-dev3/fx-logs/</body>
+  </ownedComment>
+  <ownedComment xmi:id="_3QqsYIaZEeSh4Ym1HZTfzQ">
+    <body>EFX 44</body>
+  </ownedComment>
+  <ownedComment xmi:id="_-E-RwIaZEeSh4Ym1HZTfzQ">
+    <body>EFX 43</body>
+  </ownedComment>
+  <ownedComment xmi:id="_KS_t0IaaEeSh4Ym1HZTfzQ">
+    <body>EFX 46</body>
+  </ownedComment>
+  <ownedComment xmi:id="_RCu8QIaaEeSh4Ym1HZTfzQ">
+    <body>EFX 45</body>
+  </ownedComment>
+  <ownedComment xmi:id="_hx95sIaaEeSh4Ym1HZTfzQ">
+    <body>EFX 48</body>
+  </ownedComment>
+  <ownedComment xmi:id="_iYypIIaaEeSh4Ym1HZTfzQ">
+    <body>EFX 43</body>
+  </ownedComment>
+  <ownedComment xmi:id="_QguKcIaREeSh4Ym1HZTfzQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _xBe8YIaQEeSh4Ym1HZTfzQ">
     <body>EFX 41</body>
   </ownedComment>
-  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_154XUIXjEeSh4Ym1HZTfzQ" name="TenorService : 9100">
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_JZI8cIXQEeSV7sNMKNrJjg" name="TenorService_x.y.z"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_m4GjIJAIEeSU45eRB5GOkA" name="primary-tenorService.sh"/>
-  </packagedElement>
   <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_y0WhsI9jEeSU45eRB5GOkA" name="Adafix : ">
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_UKow8I9kEeSU45eRB5GOkA" name="Adafix_x.y.z"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_IXqDIJAJEeSU45eRB5GOkA" name="adafix.sh"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_Cv5QYIX4EeSh4Ym1HZTfzQ" name="VolHandler : 8700">
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hZ_-UIXZEeSh4Ym1HZTfzQ" name="VolHandler_x.y.z"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_33QWcJAJEeSU45eRB5GOkA" name="VOLHandler.sh"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_v0JqAIX1EeSh4Ym1HZTfzQ" name="TradeReports : 8800">
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_OK7IEIXeEeSh4Ym1HZTfzQ" name="TradeReports_x.y.z"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_LFIgkJAKEeSU45eRB5GOkA" name="primary-tradeReports.sh"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_ws4BwIX1EeSh4Ym1HZTfzQ" name="PrimaryCustomerPricing : 8500">
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_nN9HsIXeEeSh4Ym1HZTfzQ" name="CustomerPricing_x.y.z"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_SLe4MJAKEeSU45eRB5GOkA" name="primary-customerPricing.sh"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_xaGUIIX1EeSh4Ym1HZTfzQ" name="AutoConfigurationManager : 9200">
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Y9lj8IXfEeSh4Ym1HZTfzQ" name="AutoConfigurationManager_x.y.x"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ZXRJcJAKEeSU45eRB5GOkA" name="autoCMService.sh"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_yEf8AIX1EeSh4Ym1HZTfzQ" name="MTIHandler : 8098">
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_t7G_YIXiEeSh4Ym1HZTfzQ" name="MTIHandler_x.y.z"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ea2_IJAKEeSU45eRB5GOkA" name="TIHandler.sh"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_yw_OkIX1EeSh4Ym1HZTfzQ" name="Estructurales : 13100">
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_BszBMIXjEeSh4Ym1HZTfzQ" name="Estructurales_x.y.z"/>
@@ -41,36 +44,6 @@
   <packagedElement xmi:type="uml:Node" xmi:id="_5p9SUIXFEeSV7sNMKNrJjg" name="DEV1">
     <ownedComment xmi:id="_nGgf4IqUEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
       <body>DEV1 Streambase 3.5</body>
-    </ownedComment>
-    <ownedComment xmi:id="_D4m3oIXGEeSV7sNMKNrJjg">
-      <body> /local/home/strmbase/3.5/Linux/scripts (EFX-dev1)</body>
-    </ownedComment>
-    <ownedComment xmi:id="_TiYBcI9AEeSU45eRB5GOkA" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-      <body>local/home/strmbase/EFX-dev1/fx-logs/</body>
-    </ownedComment>
-    <ownedComment xmi:id="_0tlNAIXHEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _QX3wsIXyEeSh4Ym1HZTfzQ">
-      <body>EFX 3</body>
-    </ownedComment>
-    <ownedComment xmi:id="_p1Jq4IXHEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _rRCLgIXyEeSh4Ym1HZTfzQ">
-      <body>EFX 20</body>
-    </ownedComment>
-    <ownedComment xmi:id="_Iu2YYIXHEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _8q6L8IXzEeSh4Ym1HZTfzQ">
-      <body>EFX 21</body>
-    </ownedComment>
-    <ownedComment xmi:id="_Frd8YIXGEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _8oGecIXFEeSV7sNMKNrJjg">
-      <body>EFX 22</body>
-    </ownedComment>
-    <ownedComment xmi:id="_j8qC8IXGEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _DP_YcIXGEeSV7sNMKNrJjg">
-      <body>EFX 37</body>
-    </ownedComment>
-    <ownedComment xmi:id="_bHgKsIXHEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _c-ADYIX1EeSh4Ym1HZTfzQ">
-      <body>EFX 38</body>
-    </ownedComment>
-    <ownedComment xmi:id="_vstwoIXGEeSV7sNMKNrJjg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _NVX7kIp9EeSf6YVZN2Xsyw">
-      <body>EFX 39</body>
-    </ownedComment>
-    <ownedComment xmi:id="_0Rp0oI_8EeSU45eRB5GOkA">
-      <body>DEV3 Streambase 3.6</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_QX3wsIXyEeSh4Ym1HZTfzQ" name="lnx-efxd3.ants.ad.anplc.co.uk"/>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_rRCLgIXyEeSh4Ym1HZTfzQ" name="lnx-efxd20.ants.ad.anplc.co.uk"/>
@@ -81,35 +54,8 @@
     <nestedClassifier xmi:type="uml:Device" xmi:id="_NVX7kIp9EeSf6YVZN2Xsyw" name="lnx-efxd39.ants.ad.anplc.co.uk"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_JJpLAIaYEeSh4Ym1HZTfzQ" name="DEV3">
-    <ownedComment xmi:id="_EMGwEJAGEeSU45eRB5GOkA" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
+    <ownedComment xmi:id="_0Rp0oI_8EeSU45eRB5GOkA">
       <body>DEV3 Streambase 3.6</body>
-    </ownedComment>
-    <ownedComment xmi:id="_hFqCwIaZEeSh4Ym1HZTfzQ">
-      <body> /local/home/strmbase/3.6/Linux/scripts (EFX-dev3)</body>
-    </ownedComment>
-    <ownedComment xmi:id="_De2XkI_9EeSU45eRB5GOkA">
-      <body>local/home/strmbase/EFX-dev3/fx-logs/</body>
-    </ownedComment>
-    <ownedComment xmi:id="_3QqsYIaZEeSh4Ym1HZTfzQ">
-      <body>EFX 44</body>
-    </ownedComment>
-    <ownedComment xmi:id="_-E-RwIaZEeSh4Ym1HZTfzQ">
-      <body>EFX 43</body>
-    </ownedComment>
-    <ownedComment xmi:id="_KS_t0IaaEeSh4Ym1HZTfzQ">
-      <body>EFX 46</body>
-    </ownedComment>
-    <ownedComment xmi:id="_RCu8QIaaEeSh4Ym1HZTfzQ">
-      <body>EFX 45</body>
-    </ownedComment>
-    <ownedComment xmi:id="_hx95sIaaEeSh4Ym1HZTfzQ">
-      <body>EFX 48</body>
-    </ownedComment>
-    <ownedComment xmi:id="_iYypIIaaEeSh4Ym1HZTfzQ">
-      <body>EFX 43</body>
-    </ownedComment>
-    <ownedComment xmi:id="_QguKcIaREeSh4Ym1HZTfzQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _xBe8YIaQEeSh4Ym1HZTfzQ">
-      <body>EFX 41</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_xBe8YIaQEeSh4Ym1HZTfzQ" name="lnx-efxd41.ants.ad.anplc.co.uk">
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_OPNOQIamEeSh4Ym1HZTfzQ" name="Jetty6 Web Server">
@@ -136,6 +82,10 @@
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_bAjuAIXvEeSh4Ym1HZTfzQ" name="Pricetenon : 10100">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eJW8sIXIEeSV7sNMKNrJjg" name="Pricetenon_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_a1POMJAIEeSU45eRB5GOkA" name="pricetenon.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_Cv5QYIX4EeSh4Ym1HZTfzQ" name="VolHandler : 8700">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hZ_-UIXZEeSh4Ym1HZTfzQ" name="VolHandler_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_33QWcJAJEeSU45eRB5GOkA" name="VOLHandler.sh"/>
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_1flT0IaaEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk">
@@ -172,8 +122,31 @@
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Af1V0JAKEeSU45eRB5GOkA" name="primary-fwdPricing.sh"/>
       </nestedClassifier>
     </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_Bt0yUIabEeSh4Ym1HZTfzQ" name="lnx-efxd48.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_Bt0yUIabEeSh4Ym1HZTfzQ" name="lnx-efxd48.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_xaGUIIX1EeSh4Ym1HZTfzQ" name="AutoConfigurationManager : 9200">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Y9lj8IXfEeSh4Ym1HZTfzQ" name="AutoConfigurationManager_x.y.x"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ZXRJcJAKEeSU45eRB5GOkA" name="autoCMService.sh"/>
+      </nestedClassifier>
+    </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_CocAcIabEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk"/>
+    <nestedNode xmi:type="uml:Device" xmi:id="_EUSBUJDaEeSYmNwSPAkvcA" name="lnx-efxd42.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_154XUIXjEeSh4Ym1HZTfzQ" name="TenorService : 9100">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_JZI8cIXQEeSV7sNMKNrJjg" name="TenorService_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_m4GjIJAIEeSU45eRB5GOkA" name="primary-tenorService.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_v0JqAIX1EeSh4Ym1HZTfzQ" name="TradeReports : 8800">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_OK7IEIXeEeSh4Ym1HZTfzQ" name="TradeReports_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_LFIgkJAKEeSU45eRB5GOkA" name="primary-tradeReports.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_ws4BwIX1EeSh4Ym1HZTfzQ" name="PrimaryCustomerPricing : 8500">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_nN9HsIXeEeSh4Ym1HZTfzQ" name="CustomerPricing_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_SLe4MJAKEeSU45eRB5GOkA" name="primary-customerPricing.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_yEf8AIX1EeSh4Ym1HZTfzQ" name="MTIHandler : 8098">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_t7G_YIXiEeSh4Ym1HZTfzQ" name="MTIHandler_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ea2_IJAKEeSU45eRB5GOkA" name="TIHandler.sh"/>
+      </nestedClassifier>
+    </nestedNode>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_0cz6EIdcEeSyEoF3RcEPsg" name="DEV4 (Streambase 3.4)">
     <ownedComment xmi:id="_uGKiwI_8EeSU45eRB5GOkA">
