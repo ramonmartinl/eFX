@@ -53,102 +53,20 @@
     <ownedComment xmi:id="_0Rp0oI_8EeSU45eRB5GOkA">
       <body>DEV3 Streambase 3.6</body>
     </ownedComment>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_xBe8YIaQEeSh4Ym1HZTfzQ" name="lnx-efxd41.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_OPNOQIamEeSh4Ym1HZTfzQ" name="Jetty6 Web Server">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_lc630IXyEeSh4Ym1HZTfzQ" name="baxter-config-server-1.4.0.4.war"/>
-      </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_xBe8YIaQEeSh4Ym1HZTfzQ" name="lnx-efxd41.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_vMDgQIaaEeSh4Ym1HZTfzQ" name="lnx-efxd44.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_1flT0IaaEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_8MepoIaaEeSh4Ym1HZTfzQ" name="lnx-efxd46.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_AdyGwIabEeSh4Ym1HZTfzQ" name="lnx-efxd45.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_Bt0yUIabEeSh4Ym1HZTfzQ" name="lnx-efxd48.ants.ad.anplc.co.uk"/>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_V-1pUJJgEeSJuYd2_2c_hA" name="lnx-efxd1.ants.ad.anplc.co.uk">
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_heMokJJgEeSJuYd2_2c_hA" name="Oracle">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ogqlwJJgEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd1:1521:efxtld03&#xD;&#xA;&#xD;&#xA;"/>
+      </nestedNode>
     </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_vMDgQIaaEeSh4Ym1HZTfzQ" name="lnx-efxd44.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_B6InsIXlEeSh4Ym1HZTfzQ" name="Aggregation : 8200">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_h6z1EIXIEeSV7sNMKNrJjg" name="Aggregation_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_4t8_0JAHEeSU45eRB5GOkA" name="agg.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_6-42YIXwEeSh4Ym1HZTfzQ" name="PrimaryDashboardBridge : 9250">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_BXEuAIXREeSV7sNMKNrJjg" name="PrimaryDashboardBridge_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_0PL5AJAIEeSU45eRB5GOkA" name="primary-DashboardBridge.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_PrwHAIXxEeSh4Ym1HZTfzQ" name="TickWriter : 8400">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_SZS44IXREeSV7sNMKNrJjg" name="TickWriter_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9csKYJAIEeSU45eRB5GOkA" name="tickWriter.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_gr25YIXuEeSh4Ym1HZTfzQ" name="Adartenon : 8750">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_VC5SAIXJEeSV7sNMKNrJjg" name="Adartenon_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_UzIh0JAIEeSU45eRB5GOkA" name="adartenon.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_bAjuAIXvEeSh4Ym1HZTfzQ" name="Pricetenon : 10100">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eJW8sIXIEeSV7sNMKNrJjg" name="Pricetenon_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_a1POMJAIEeSU45eRB5GOkA" name="pricetenon.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_Cv5QYIX4EeSh4Ym1HZTfzQ" name="VolHandler : 8700">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hZ_-UIXZEeSh4Ym1HZTfzQ" name="VolHandler_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_33QWcJAJEeSU45eRB5GOkA" name="VOLHandler.sh"/>
-      </nestedClassifier>
-    </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_1flT0IaaEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_09ukMIX7EeSh4Ym1HZTfzQ" name="Cleansing : 8100">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_3Pt08IX7EeSh4Ym1HZTfzQ" name="Cleansing_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ioA8EJAKEeSU45eRB5GOkA" name="cleansing.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_63RA4IXvEeSh4Ym1HZTfzQ" name="PrimaryTrading : 8600 ">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_zk9ecIXPEeSV7sNMKNrJjg" name="PrimaryTrading_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_tELq4JAIEeSU45eRB5GOkA" name="primary-trading.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_1U01kIX7EeSh4Ym1HZTfzQ" name="D3Handler : 8097 ">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_4DVqQIX7EeSh4Ym1HZTfzQ" name="D3Handler_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_lZp9QJAKEeSU45eRB5GOkA" name="SFWDHandler.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y0WhsI9jEeSU45eRB5GOkA" name="Adafix : ">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_UKow8I9kEeSU45eRB5GOkA" name="Adafix_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_IXqDIJAJEeSU45eRB5GOkA" name="adafix.sh"/>
-      </nestedClassifier>
-    </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_8MepoIaaEeSh4Ym1HZTfzQ" name="lnx-efxd46.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_CQDSsIX4EeSh4Ym1HZTfzQ" name="PrimaryAdaxter : 8900">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_cu4-QIXSEeSV7sNMKNrJjg" name="PrimaryAdaxter_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_z_kTMJAJEeSU45eRB5GOkA" name="primary-adaxter.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_xSPK4IXwEeSh4Ym1HZTfzQ" name="RFQAdaxter : 8950">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eOUbkIXQEeSV7sNMKNrJjg" name="RFQAdaxter_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_B0R1sJAJEeSU45eRB5GOkA" name="primary-RFQadaxter.sh"/>
-      </nestedClassifier>
-    </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_AdyGwIabEeSh4Ym1HZTfzQ" name="lnx-efxd45.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_DMAkoIX4EeSh4Ym1HZTfzQ" name="CorePricing : 8300">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Qzrk8IXcEeSh4Ym1HZTfzQ" name="CorePricing_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_8uOscJAJEeSU45eRB5GOkA" name="corepricing.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_ESyfIIX7EeSh4Ym1HZTfzQ" name="FwdPricing : 8630">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_y719EIXcEeSh4Ym1HZTfzQ" name="FwdPricing_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Af1V0JAKEeSU45eRB5GOkA" name="primary-fwdPricing.sh"/>
-      </nestedClassifier>
-    </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_Bt0yUIabEeSh4Ym1HZTfzQ" name="lnx-efxd48.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_xaGUIIX1EeSh4Ym1HZTfzQ" name="AutoConfigurationManager : 9200">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Y9lj8IXfEeSh4Ym1HZTfzQ" name="AutoConfigurationManager_x.y.x"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ZXRJcJAKEeSU45eRB5GOkA" name="autoCMService.sh"/>
-      </nestedClassifier>
-    </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_CocAcIabEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk"/>
-    <nestedNode xmi:type="uml:Device" xmi:id="_EUSBUJDaEeSYmNwSPAkvcA" name="lnx-efxd42.ants.ad.anplc.co.uk">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_154XUIXjEeSh4Ym1HZTfzQ" name="TenorService : 9100">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_JZI8cIXQEeSV7sNMKNrJjg" name="TenorService_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_m4GjIJAIEeSU45eRB5GOkA" name="primary-tenorService.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_v0JqAIX1EeSh4Ym1HZTfzQ" name="TradeReports : 8800">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_OK7IEIXeEeSh4Ym1HZTfzQ" name="TradeReports_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_LFIgkJAKEeSU45eRB5GOkA" name="primary-tradeReports.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_ws4BwIX1EeSh4Ym1HZTfzQ" name="PrimaryCustomerPricing : 8500">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_nN9HsIXeEeSh4Ym1HZTfzQ" name="CustomerPricing_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_SLe4MJAKEeSU45eRB5GOkA" name="primary-customerPricing.sh"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_yEf8AIX1EeSh4Ym1HZTfzQ" name="MTIHandler : 8098">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_t7G_YIXiEeSh4Ym1HZTfzQ" name="MTIHandler_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ea2_IJAKEeSU45eRB5GOkA" name="TIHandler.sh"/>
-      </nestedClassifier>
-    </nestedNode>
+    <nestedNode xmi:type="uml:Device" xmi:id="_EUSBUJDaEeSYmNwSPAkvcA" name="lnx-efxd42.ants.ad.anplc.co.uk"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Node" xmi:id="_0cz6EIdcEeSyEoF3RcEPsg" name="DEV4 (Streambase 3.4)">
+  <packagedElement xmi:type="uml:Node" xmi:id="_0cz6EIdcEeSyEoF3RcEPsg" name="DEV4">
     <ownedComment xmi:id="_uGKiwI_8EeSU45eRB5GOkA">
       <body>DEV4 Streambase 3.4</body>
     </ownedComment>
@@ -179,12 +97,105 @@
     <ownedComment xmi:id="_MkdaEIdeEeSyEoF3RcEPsg">
       <body>EFX 49</body>
     </ownedComment>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_3iKsAIddEeSyEoF3RcEPsg" name="lnx-efxd53.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_5oZ_wIddEeSyEoF3RcEPsg" name="lnx-efxd50.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_7i2TMIddEeSyEoF3RcEPsg" name="lnx-efxd49.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="__OgsoIddEeSyEoF3RcEPsg" name="lnx-efxd50.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_B6piwIdeEeSyEoF3RcEPsg" name="lnx-efxd51.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_EPAyEIdeEeSyEoF3RcEPsg" name="lnx-efxd48.ants.ad.anplc.co.uk"/>
+    <ownedComment xmi:id="_7XARQJJuEeSwccxQTTKlxg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
+      <body>DEV4 Streambase 3.4</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_3iKsAIddEeSyEoF3RcEPsg" name="lnx-efxd53.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_OPNOQIamEeSh4Ym1HZTfzQ" name="Jetty6 Web Server">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_lc630IXyEeSh4Ym1HZTfzQ" name="baxter-config-server-1.4.0.4.war"/>
+      </nestedClassifier>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_5oZ_wIddEeSyEoF3RcEPsg" name="lnx-efxd50.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_B6InsIXlEeSh4Ym1HZTfzQ" name="Aggregation : 8200">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_h6z1EIXIEeSV7sNMKNrJjg" name="Aggregation_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_4t8_0JAHEeSU45eRB5GOkA" name="agg.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_6-42YIXwEeSh4Ym1HZTfzQ" name="PrimaryDashboardBridge : 9250">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_BXEuAIXREeSV7sNMKNrJjg" name="PrimaryDashboardBridge_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_0PL5AJAIEeSU45eRB5GOkA" name="primary-DashboardBridge.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_PrwHAIXxEeSh4Ym1HZTfzQ" name="TickWriter : 8400">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_SZS44IXREeSV7sNMKNrJjg" name="TickWriter_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9csKYJAIEeSU45eRB5GOkA" name="tickWriter.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_gr25YIXuEeSh4Ym1HZTfzQ" name="Adartenon : 8750">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_VC5SAIXJEeSV7sNMKNrJjg" name="Adartenon_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_UzIh0JAIEeSU45eRB5GOkA" name="adartenon.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_bAjuAIXvEeSh4Ym1HZTfzQ" name="Pricetenon : 10100">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eJW8sIXIEeSV7sNMKNrJjg" name="Pricetenon_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_a1POMJAIEeSU45eRB5GOkA" name="pricetenon.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_Cv5QYIX4EeSh4Ym1HZTfzQ" name="VolHandler : 8700">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hZ_-UIXZEeSh4Ym1HZTfzQ" name="VolHandler_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_33QWcJAJEeSU45eRB5GOkA" name="VOLHandler.sh"/>
+      </nestedClassifier>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_7i2TMIddEeSyEoF3RcEPsg" name="lnx-efxd49.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_09ukMIX7EeSh4Ym1HZTfzQ" name="Cleansing : 8100">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_3Pt08IX7EeSh4Ym1HZTfzQ" name="Cleansing_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ioA8EJAKEeSU45eRB5GOkA" name="cleansing.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_63RA4IXvEeSh4Ym1HZTfzQ" name="PrimaryTrading : 8600 ">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_zk9ecIXPEeSV7sNMKNrJjg" name="PrimaryTrading_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_tELq4JAIEeSU45eRB5GOkA" name="primary-trading.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_1U01kIX7EeSh4Ym1HZTfzQ" name="D3Handler : 8097 ">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_4DVqQIX7EeSh4Ym1HZTfzQ" name="D3Handler_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_lZp9QJAKEeSU45eRB5GOkA" name="SFWDHandler.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y0WhsI9jEeSU45eRB5GOkA" name="Adafix : ">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_UKow8I9kEeSU45eRB5GOkA" name="Adafix_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_IXqDIJAJEeSU45eRB5GOkA" name="adafix.sh"/>
+      </nestedClassifier>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_B6piwIdeEeSyEoF3RcEPsg" name="lnx-efxd51.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_DMAkoIX4EeSh4Ym1HZTfzQ" name="CorePricing : 8300">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Qzrk8IXcEeSh4Ym1HZTfzQ" name="CorePricing_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_8uOscJAJEeSU45eRB5GOkA" name="corepricing.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_ESyfIIX7EeSh4Ym1HZTfzQ" name="FwdPricing : 8630">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_y719EIXcEeSh4Ym1HZTfzQ" name="FwdPricing_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Af1V0JAKEeSU45eRB5GOkA" name="primary-fwdPricing.sh"/>
+      </nestedClassifier>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_EPAyEIdeEeSyEoF3RcEPsg" name="lnx-efxd48.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_154XUIXjEeSh4Ym1HZTfzQ" name="TenorService : 9100">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_JZI8cIXQEeSV7sNMKNrJjg" name="TenorService_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_m4GjIJAIEeSU45eRB5GOkA" name="primary-tenorService.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_v0JqAIX1EeSh4Ym1HZTfzQ" name="TradeReports : 8800">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_OK7IEIXeEeSh4Ym1HZTfzQ" name="TradeReports_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_LFIgkJAKEeSU45eRB5GOkA" name="primary-tradeReports.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_ws4BwIX1EeSh4Ym1HZTfzQ" name="PrimaryCustomerPricing : 8500">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_nN9HsIXeEeSh4Ym1HZTfzQ" name="CustomerPricing_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_SLe4MJAKEeSU45eRB5GOkA" name="primary-customerPricing.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_yEf8AIX1EeSh4Ym1HZTfzQ" name="MTIHandler : 8098">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_t7G_YIXiEeSh4Ym1HZTfzQ" name="MTIHandler_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ea2_IJAKEeSU45eRB5GOkA" name="TIHandler.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_xaGUIIX1EeSh4Ym1HZTfzQ" name="AutoConfigurationManager : 9200">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Y9lj8IXfEeSh4Ym1HZTfzQ" name="AutoConfigurationManager_x.y.x"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ZXRJcJAKEeSU45eRB5GOkA" name="autoCMService.sh"/>
+      </nestedClassifier>
+    </nestedClassifier>
+    <nestedNode xmi:type="uml:Device" xmi:id="_2teeMJJqEeSJuYd2_2c_hA" name="lnx-efxd52.ants.ad.anplc.co.uk">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_CQDSsIX4EeSh4Ym1HZTfzQ" name="PrimaryAdaxter : 8900">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_cu4-QIXSEeSV7sNMKNrJjg" name="PrimaryAdaxter_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_z_kTMJAJEeSU45eRB5GOkA" name="primary-adaxter.sh"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_xSPK4IXwEeSh4Ym1HZTfzQ" name="RFQAdaxter : 8950">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eOUbkIXQEeSV7sNMKNrJjg" name="RFQAdaxter_x.y.z"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_B0R1sJAJEeSU45eRB5GOkA" name="primary-RFQadaxter.sh"/>
+      </nestedClassifier>
+    </nestedNode>
+    <nestedNode xmi:type="uml:Device" xmi:id="_XoYuIJJtEeSJuYd2_2c_hA" name="lnx-efxd63.ants.ad.anplc.co.uk">
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_dz4nEJJtEeSJuYd2_2c_hA" name="Oracle ">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_jtk-UJJtEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd63:1521:efxtld05"/>
+      </nestedNode>
+    </nestedNode>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_IlwIAIeOEeSAq4L1ThvvIQ" name="SIT1 (PROD Mirror)">
     <ownedComment xmi:id="_ah22UIeQEeSAq4L1ThvvIQ">
@@ -286,9 +297,4 @@
     </nestedNode>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_ZJhQkInkEeSf6YVZN2Xsyw" name="Component1"/>
-  <packagedElement xmi:type="uml:Device" xmi:id="_V-1pUJJgEeSJuYd2_2c_hA" name="lnx-efxd1.ants.ad.anplc.co.uk">
-    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_heMokJJgEeSJuYd2_2c_hA" name="Oracle">
-      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ogqlwJJgEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd1:1521:efxtld03&#xD;&#xA;&#xD;&#xA;"/>
-    </nestedNode>
-  </packagedElement>
 </uml:Model>
