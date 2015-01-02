@@ -1,111 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_VjezYIXFEeSV7sNMKNrJjg" name="ENVIRONMENTS">
-  <ownedComment xmi:id="_T9JzIIXjEeSh4Ym1HZTfzQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-    <body>estructurales.sh</body>
-  </ownedComment>
-  <ownedComment xmi:id="_EMGwEJAGEeSU45eRB5GOkA" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-    <body>DEV3 Streambase 3.6</body>
-  </ownedComment>
-  <ownedComment xmi:id="_hFqCwIaZEeSh4Ym1HZTfzQ">
-    <body> /local/home/strmbase/3.6/Linux/scripts (EFX-dev3)</body>
-  </ownedComment>
-  <ownedComment xmi:id="_De2XkI_9EeSU45eRB5GOkA">
-    <body>local/home/strmbase/EFX-dev3/fx-logs/</body>
-  </ownedComment>
-  <ownedComment xmi:id="_3QqsYIaZEeSh4Ym1HZTfzQ">
-    <body>EFX 44</body>
-  </ownedComment>
-  <ownedComment xmi:id="_-E-RwIaZEeSh4Ym1HZTfzQ">
-    <body>EFX 43</body>
-  </ownedComment>
-  <ownedComment xmi:id="_KS_t0IaaEeSh4Ym1HZTfzQ">
-    <body>EFX 46</body>
-  </ownedComment>
-  <ownedComment xmi:id="_RCu8QIaaEeSh4Ym1HZTfzQ">
-    <body>EFX 45</body>
-  </ownedComment>
-  <ownedComment xmi:id="_hx95sIaaEeSh4Ym1HZTfzQ">
-    <body>EFX 48</body>
-  </ownedComment>
-  <ownedComment xmi:id="_iYypIIaaEeSh4Ym1HZTfzQ">
-    <body>EFX 43</body>
-  </ownedComment>
-  <ownedComment xmi:id="_QguKcIaREeSh4Ym1HZTfzQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _xBe8YIaQEeSh4Ym1HZTfzQ">
-    <body>EFX 41</body>
-  </ownedComment>
   <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_yw_OkIX1EeSh4Ym1HZTfzQ" name="Estructurales : 13100">
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_BszBMIXjEeSh4Ym1HZTfzQ" name="Estructurales_x.y.z"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_MNx3MIXkEeSh4Ym1HZTfzQ" name="Red Hat Linux 6"/>
   <packagedElement xmi:type="uml:Node" xmi:id="_5p9SUIXFEeSV7sNMKNrJjg" name="DEV1">
-    <ownedComment xmi:id="_nGgf4IqUEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-      <body>DEV1 Streambase 3.5</body>
+    <ownedComment xmi:id="_thzSoJKHEeS3NMAOWd0DuQ" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
+      <body>DEV1 (StreamBase 3.5)</body>
     </ownedComment>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_QX3wsIXyEeSh4Ym1HZTfzQ" name="lnx-efxd3.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_rRCLgIXyEeSh4Ym1HZTfzQ" name="lnx-efxd20.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_8q6L8IXzEeSh4Ym1HZTfzQ" name="lnx-efxd21.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_8oGecIXFEeSV7sNMKNrJjg" name="lnx-efxd22.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_DP_YcIXGEeSV7sNMKNrJjg" name="lnx-efxd37.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_c-ADYIX1EeSh4Ym1HZTfzQ" name="lnx-efxd38.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_NVX7kIp9EeSf6YVZN2Xsyw" name="lnx-efxd39.ants.ad.anplc.co.uk"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Node" xmi:id="_JJpLAIaYEeSh4Ym1HZTfzQ" name="DEV3">
-    <ownedComment xmi:id="_0Rp0oI_8EeSU45eRB5GOkA">
-      <body>DEV3 Streambase 3.6</body>
+    <ownedComment xmi:id="_dOLoQJKJEeSye-zQiG4uDg">
+      <body>/local/home/strmbase/EFX-dev1/fx-logs/</body>
     </ownedComment>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_xBe8YIaQEeSh4Ym1HZTfzQ" name="lnx-efxd41.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_vMDgQIaaEeSh4Ym1HZTfzQ" name="lnx-efxd44.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_1flT0IaaEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_8MepoIaaEeSh4Ym1HZTfzQ" name="lnx-efxd46.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_AdyGwIabEeSh4Ym1HZTfzQ" name="lnx-efxd45.ants.ad.anplc.co.uk"/>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_Bt0yUIabEeSh4Ym1HZTfzQ" name="lnx-efxd48.ants.ad.anplc.co.uk"/>
+    <ownedComment xmi:id="_xMwPgJKJEeSye-zQiG4uDg">
+      <body> /local/home/strmbase/3.5/Linux/scripts (EFX-dev1)</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_QX3wsIXyEeSh4Ym1HZTfzQ" name="lnx-efxd3.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_GfIA8JKKEeSye-zQiG4uDg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _QX3wsIXyEeSh4Ym1HZTfzQ">
+        <body>EFX 3</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_rRCLgIXyEeSh4Ym1HZTfzQ" name="lnx-efxd20.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_OEEZEJKKEeSye-zQiG4uDg" annotatedElement="_rRCLgIXyEeSh4Ym1HZTfzQ">
+        <body>EFX 20</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_8q6L8IXzEeSh4Ym1HZTfzQ" name="lnx-efxd21.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_Xnq2QJKKEeSye-zQiG4uDg" annotatedElement="_8q6L8IXzEeSh4Ym1HZTfzQ">
+        <body>EFX 21</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_8oGecIXFEeSV7sNMKNrJjg" name="lnx-efxd22.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_jtexgJKKEeSye-zQiG4uDg" annotatedElement="_8oGecIXFEeSV7sNMKNrJjg">
+        <body>EFX 22</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_DP_YcIXGEeSV7sNMKNrJjg" name="lnx-efxd37.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_qJSXUJKKEeSye-zQiG4uDg" annotatedElement="_DP_YcIXGEeSV7sNMKNrJjg">
+        <body>EFX 37</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_c-ADYIX1EeSh4Ym1HZTfzQ" name="lnx-efxd38.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_uAaZ4JKKEeSye-zQiG4uDg" annotatedElement="_c-ADYIX1EeSh4Ym1HZTfzQ">
+        <body>EFX 38</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_NVX7kIp9EeSf6YVZN2Xsyw" name="lnx-efxd39.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_yDnJkJKKEeSye-zQiG4uDg" annotatedElement="_NVX7kIp9EeSf6YVZN2Xsyw">
+        <body>EFX 39</body>
+      </ownedComment>
+    </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_V-1pUJJgEeSJuYd2_2c_hA" name="lnx-efxd1.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_5NQFwJKKEeSye-zQiG4uDg" annotatedElement="_V-1pUJJgEeSJuYd2_2c_hA">
+        <body>EFX 1</body>
+      </ownedComment>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_heMokJJgEeSJuYd2_2c_hA" name="Oracle">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ogqlwJJgEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd1:1521:efxtld03&#xD;&#xA;&#xD;&#xA;"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ogqlwJJgEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd1:1521:efxtld03&#xD;&#xA;&#xD;&#xA;">
+          <ownedComment xmi:id="_6g73AJKREeSNhsayUcp4Cw" annotatedElement="_ogqlwJJgEeSJuYd2_2c_hA">
+            <body>(DEV1) DataBase Strmbase User: sbapps Password: sbapps &#xD;
+(DEV1) DataBase Baxter User: baxter Password: baxter </body>
+          </ownedComment>
+          <ownedComment xmi:id="_iDRY0JKSEeSNhsayUcp4Cw" annotatedElement="_ogqlwJJgEeSJuYd2_2c_hA">
+            <body>(DEV3) DataBase Strmbase User: sbapps_sit Password: sbapps_sit&#xD;
+(DEV3) DataBase Baxter User: baxter_sit Password: baxter_sit</body>
+          </ownedComment>
+        </nestedClassifier>
       </nestedNode>
     </nestedClassifier>
-    <nestedNode xmi:type="uml:Device" xmi:id="_EUSBUJDaEeSYmNwSPAkvcA" name="lnx-efxd42.ants.ad.anplc.co.uk"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_JJpLAIaYEeSh4Ym1HZTfzQ" name="DEV3">
+    <ownedComment xmi:id="_DUXYUJKOEeSNhsayUcp4Cw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
+      <body>DEV3 (StreamBase 3.6)</body>
+    </ownedComment>
+    <ownedComment xmi:id="_QcDAQJKOEeSNhsayUcp4Cw">
+      <body>/local/home/strmbase/EFX-dev3/fx-logs/</body>
+    </ownedComment>
+    <ownedComment xmi:id="_8JWGoJKOEeSNhsayUcp4Cw">
+      <body> /local/home/strmbase/3.6/Linux/scripts (EFX-dev3)</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_xBe8YIaQEeSh4Ym1HZTfzQ" name="lnx-efxd41.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_0SIdUJKPEeSNhsayUcp4Cw" annotatedElement="_xBe8YIaQEeSh4Ym1HZTfzQ">
+        <body>EFX 41</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_vMDgQIaaEeSh4Ym1HZTfzQ" name="lnx-efxd44.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_Kk7J8JKQEeSNhsayUcp4Cw" annotatedElement="_vMDgQIaaEeSh4Ym1HZTfzQ">
+        <body>EFX 44</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_1flT0IaaEeSh4Ym1HZTfzQ" name="lnx-efxd43.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_-t1AIJKPEeSNhsayUcp4Cw" annotatedElement="_1flT0IaaEeSh4Ym1HZTfzQ">
+        <body>EFX 43</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_8MepoIaaEeSh4Ym1HZTfzQ" name="lnx-efxd46.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_QX0VoJKQEeSNhsayUcp4Cw" annotatedElement="_8MepoIaaEeSh4Ym1HZTfzQ">
+        <body>EFX 46</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_AdyGwIabEeSh4Ym1HZTfzQ" name="lnx-efxd45.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_Mw6gYJKQEeSNhsayUcp4Cw" annotatedElement="_AdyGwIabEeSh4Ym1HZTfzQ">
+        <body>EFX 45</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_Bt0yUIabEeSh4Ym1HZTfzQ" name="lnx-efxd48.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_TpcecJKQEeSNhsayUcp4Cw" annotatedElement="_Bt0yUIabEeSh4Ym1HZTfzQ">
+        <body>EFX 48</body>
+      </ownedComment>
+    </nestedClassifier>
+    <nestedNode xmi:type="uml:Device" xmi:id="_EUSBUJDaEeSYmNwSPAkvcA" name="lnx-efxd42.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_7RVrIJKPEeSNhsayUcp4Cw" annotatedElement="_EUSBUJDaEeSYmNwSPAkvcA">
+        <body>EFX 42</body>
+      </ownedComment>
+    </nestedNode>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_0cz6EIdcEeSyEoF3RcEPsg" name="DEV4">
-    <ownedComment xmi:id="_uGKiwI_8EeSU45eRB5GOkA">
-      <body>DEV4 Streambase 3.4</body>
+    <ownedComment xmi:id="_ZyJFkJKREeSNhsayUcp4Cw" annotatedElement="_0cz6EIdcEeSyEoF3RcEPsg">
+      <body>DEV4 (StreamBase 3.4)</body>
     </ownedComment>
-    <ownedComment xmi:id="_IWF8MIdeEeSyEoF3RcEPsg">
+    <ownedComment xmi:id="_PRrsoJKTEeSNhsayUcp4Cw">
       <body> /local/home/strmbase/3.4/Linux/scripts (EFX-dev4)</body>
     </ownedComment>
-    <ownedComment xmi:id="_ESFyYI_9EeSU45eRB5GOkA">
-      <body>local/home/strmbase/EFX-dev4/fx-logs/</body>
-    </ownedComment>
-    <ownedComment xmi:id="_I5NQUIdeEeSyEoF3RcEPsg">
-      <body>EFX 53</body>
-    </ownedComment>
-    <ownedComment xmi:id="_JY418IdeEeSyEoF3RcEPsg">
-      <body>EFX 50</body>
-    </ownedComment>
-    <ownedComment xmi:id="_KBXLMIdeEeSyEoF3RcEPsg">
-      <body>EFX 49</body>
-    </ownedComment>
-    <ownedComment xmi:id="_KvL6gIdeEeSyEoF3RcEPsg">
-      <body>EFX 52</body>
-    </ownedComment>
-    <ownedComment xmi:id="_LYlc0IdeEeSyEoF3RcEPsg">
-      <body>EFX 51</body>
-    </ownedComment>
-    <ownedComment xmi:id="_L96-gIdeEeSyEoF3RcEPsg">
-      <body>EFX 48</body>
-    </ownedComment>
-    <ownedComment xmi:id="_MkdaEIdeEeSyEoF3RcEPsg">
-      <body>EFX 49</body>
-    </ownedComment>
-    <ownedComment xmi:id="_7XARQJJuEeSwccxQTTKlxg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-      <body>DEV4 Streambase 3.4</body>
+    <ownedComment xmi:id="_XAZEwJKTEeSNhsayUcp4Cw">
+      <body>/local/home/strmbase/EFX-dev4/fx-logs/</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_3iKsAIddEeSyEoF3RcEPsg" name="lnx-efxd53.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_uEX9wJKTEeSNhsayUcp4Cw" annotatedElement="_3iKsAIddEeSyEoF3RcEPsg">
+        <body>EFX 53</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_OPNOQIamEeSh4Ym1HZTfzQ" name="Jetty6 Web Server">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_lc630IXyEeSh4Ym1HZTfzQ" name="baxter-config-server-1.4.0.4.war"/>
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_5oZ_wIddEeSyEoF3RcEPsg" name="lnx-efxd50.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_8XA88JKTEeSNhsayUcp4Cw" annotatedElement="_5oZ_wIddEeSyEoF3RcEPsg">
+        <body>EFX 50</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_B6InsIXlEeSh4Ym1HZTfzQ" name="Aggregation : 8200">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_h6z1EIXIEeSV7sNMKNrJjg" name="Aggregation_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_4t8_0JAHEeSU45eRB5GOkA" name="agg.sh"/>
@@ -132,6 +161,9 @@
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_7i2TMIddEeSyEoF3RcEPsg" name="lnx-efxd49.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_6RQKUJKTEeSNhsayUcp4Cw" annotatedElement="_7i2TMIddEeSyEoF3RcEPsg">
+        <body>EFX 49</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_09ukMIX7EeSh4Ym1HZTfzQ" name="Cleansing : 8100">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_3Pt08IX7EeSh4Ym1HZTfzQ" name="Cleansing_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ioA8EJAKEeSU45eRB5GOkA" name="cleansing.sh"/>
@@ -150,6 +182,9 @@
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_B6piwIdeEeSyEoF3RcEPsg" name="lnx-efxd51.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_-2EZUJKTEeSNhsayUcp4Cw" annotatedElement="_B6piwIdeEeSyEoF3RcEPsg">
+        <body>EFX 51</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_DMAkoIX4EeSh4Ym1HZTfzQ" name="CorePricing : 8300">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Qzrk8IXcEeSh4Ym1HZTfzQ" name="CorePricing_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_8uOscJAJEeSU45eRB5GOkA" name="corepricing.sh"/>
@@ -160,6 +195,9 @@
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_EPAyEIdeEeSyEoF3RcEPsg" name="lnx-efxd48.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_18UKYJKTEeSNhsayUcp4Cw" annotatedElement="_EPAyEIdeEeSyEoF3RcEPsg">
+        <body>EFX 48</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_154XUIXjEeSh4Ym1HZTfzQ" name="TenorService : 9100">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_JZI8cIXQEeSV7sNMKNrJjg" name="TenorService_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_m4GjIJAIEeSU45eRB5GOkA" name="primary-tenorService.sh"/>
@@ -182,6 +220,9 @@
       </nestedClassifier>
     </nestedClassifier>
     <nestedNode xmi:type="uml:Device" xmi:id="_2teeMJJqEeSJuYd2_2c_hA" name="lnx-efxd52.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_BPnqoJKUEeSNhsayUcp4Cw" annotatedElement="_2teeMJJqEeSJuYd2_2c_hA">
+        <body>EFX 52</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_CQDSsIX4EeSh4Ym1HZTfzQ" name="PrimaryAdaxter : 8900">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_cu4-QIXSEeSV7sNMKNrJjg" name="PrimaryAdaxter_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_z_kTMJAJEeSU45eRB5GOkA" name="primary-adaxter.sh"/>
@@ -192,60 +233,24 @@
       </nestedClassifier>
     </nestedNode>
     <nestedNode xmi:type="uml:Device" xmi:id="_XoYuIJJtEeSJuYd2_2c_hA" name="lnx-efxd63.ants.ad.anplc.co.uk">
+      <ownedComment xmi:id="_cvijcJKUEeSNhsayUcp4Cw" annotatedElement="_XoYuIJJtEeSJuYd2_2c_hA">
+        <body>EFX 63</body>
+      </ownedComment>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_dz4nEJJtEeSJuYd2_2c_hA" name="Oracle ">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_jtk-UJJtEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd63:1521:efxtld05"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_jtk-UJJtEeSJuYd2_2c_hA" name="jdbc:oracle:thin:@lnx-efxd63:1521:efxtld05">
+          <ownedComment xmi:id="_3WxgwJKUEeSNhsayUcp4Cw" annotatedElement="_jtk-UJJtEeSJuYd2_2c_hA">
+            <body>(DEV4) DataBase Strmbase User: sbapps Password: sbapps &#xD;
+(DEV4) DataBase Baxter User: baxter Password: baxter </body>
+          </ownedComment>
+        </nestedClassifier>
       </nestedNode>
     </nestedNode>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_IlwIAIeOEeSAq4L1ThvvIQ" name="SIT1 (PROD Mirror)">
-    <ownedComment xmi:id="_ah22UIeQEeSAq4L1ThvvIQ">
-      <body> /local/home/strmbase/EFX-all-SIT (EFX-all)&#xD;
- /local/home/strmbase/EFX-lp-SIT (EFX-lp)</body>
-    </ownedComment>
-    <ownedComment xmi:id="_XqoDIIeTEeSAq4L1ThvvIQ">
-      <body>EFX 2</body>
-    </ownedComment>
-    <ownedComment xmi:id="_andnsIeTEeSAq4L1ThvvIQ">
-      <body>EFX 62</body>
-    </ownedComment>
-    <ownedComment xmi:id="_eIGc4IeTEeSAq4L1ThvvIQ">
-      <body>EFX 65</body>
-    </ownedComment>
-    <ownedComment xmi:id="_kiHS8IeTEeSAq4L1ThvvIQ">
-      <body>EFX 66</body>
-    </ownedComment>
-    <ownedComment xmi:id="_mrI08IeTEeSAq4L1ThvvIQ">
-      <body>EFX 67</body>
-    </ownedComment>
-    <ownedComment xmi:id="_pyK3UIeTEeSAq4L1ThvvIQ">
-      <body>EFX 68</body>
-    </ownedComment>
     <nestedNode xmi:type="uml:Device" xmi:id="_v4vM8IeTEeSAq4L1ThvvIQ" name="lnx-efxd2.ants.ad.anplc.co.uk"/>
     <nestedNode xmi:type="uml:Device" xmi:id="_yMeKIIeTEeSAq4L1ThvvIQ" name="lnx-efxd62.ants.ad.anplc.co.uk"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_PLIgkIeOEeSAq4L1ThvvIQ" name="SIT2 (UAT)">
-    <ownedComment xmi:id="_AQZfQIeREeSAq4L1ThvvIQ">
-      <body> /local/home/strmbase/EFX-all-SIT2 (EFX-all2)&#xD;
- /local/home/strmbase/EFX-lp-SIT2 (EFX-lp2)</body>
-    </ownedComment>
-    <ownedComment xmi:id="_xUNIkIeXEeSAq4L1ThvvIQ">
-      <body>EFX 54</body>
-    </ownedComment>
-    <ownedComment xmi:id="_7_UncIeXEeSAq4L1ThvvIQ">
-      <body>EFX 55</body>
-    </ownedComment>
-    <ownedComment xmi:id="_931BMIeXEeSAq4L1ThvvIQ">
-      <body>EFX 56</body>
-    </ownedComment>
-    <ownedComment xmi:id="__5aecIeXEeSAq4L1ThvvIQ">
-      <body>EFX 57</body>
-    </ownedComment>
-    <ownedComment xmi:id="_B6tAwIeYEeSAq4L1ThvvIQ">
-      <body>EFX 58</body>
-    </ownedComment>
-    <ownedComment xmi:id="_ENBBoIeYEeSAq4L1ThvvIQ">
-      <body>EFX 59</body>
-    </ownedComment>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_ZgXHoIeREeSAq4L1ThvvIQ" name="lnx-efxd54.ants.ad.anplc.co.uk"/>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_bAePgIeREeSAq4L1ThvvIQ" name="lnx-efxd55.ants.ad.anplc.co.uk"/>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_dL6MUIeREeSAq4L1ThvvIQ" name="lnx-efxd56.ants.ad.anplc.co.uk"/>
@@ -254,33 +259,6 @@
     <nestedClassifier xmi:type="uml:Device" xmi:id="_hCus4IeREeSAq4L1ThvvIQ" name="lnx-efxd59.ants.ad.anplc.co.uk"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_OjTgAIeYEeSAq4L1ThvvIQ" name="DEVX (LP)">
-    <ownedComment xmi:id="_Wc22MIeYEeSAq4L1ThvvIQ" annotatedElement="_1WpYYIeZEeSAq4L1ThvvIQ">
-      <body>EFX 60</body>
-    </ownedComment>
-    <ownedComment xmi:id="_x7WWMIeZEeSAq4L1ThvvIQ" annotatedElement="_2DIq8IeZEeSAq4L1ThvvIQ">
-      <body>EFX 61</body>
-    </ownedComment>
-    <ownedComment xmi:id="_xD96gInDEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _8YsoAInMEeSf6YVZN2Xsyw _HQ5goInNEeSf6YVZN2Xsyw _K1UpoInNEeSf6YVZN2Xsyw _nPjOkInNEeSf6YVZN2Xsyw _qMT6oInNEeSf6YVZN2Xsyw">
-      <body>DB Combined Handler: DBCombined</body>
-    </ownedComment>
-    <ownedComment xmi:id="_9SjXQInDEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _8YsoAInMEeSf6YVZN2Xsyw _HQ5goInNEeSf6YVZN2Xsyw _NVZZsInNEeSf6YVZN2Xsyw _QjyBQInNEeSf6YVZN2Xsyw _K1UpoInNEeSf6YVZN2Xsyw">
-      <body>UBS Execution Handler: UBSCombined</body>
-    </ownedComment>
-    <ownedComment xmi:id="_L2PqMInEEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _8YsoAInMEeSf6YVZN2Xsyw _HQ5goInNEeSf6YVZN2Xsyw _K1UpoInNEeSf6YVZN2Xsyw _qMT6oInNEeSf6YVZN2Xsyw _nPjOkInNEeSf6YVZN2Xsyw">
-      <body>GS Execution Handler: GSCombined</body>
-    </ownedComment>
-    <ownedComment xmi:id="_UyvEEInEEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _ddT4cInNEeSf6YVZN2Xsyw _hW9DgInNEeSf6YVZN2Xsyw _kaCaAInNEeSf6YVZN2Xsyw _nPjOkInNEeSf6YVZN2Xsyw _qMT6oInNEeSf6YVZN2Xsyw">
-      <body>Citi Execution Handler: CitiCombined</body>
-    </ownedComment>
-    <ownedComment xmi:id="_rtS7UInEEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _8YsoAInMEeSf6YVZN2Xsyw _HQ5goInNEeSf6YVZN2Xsyw _K1UpoInNEeSf6YVZN2Xsyw _qMT6oInNEeSf6YVZN2Xsyw _nPjOkInNEeSf6YVZN2Xsyw">
-      <body>MF Execution Handler: MFHandler.sh</body>
-    </ownedComment>
-    <ownedComment xmi:id="_s69oUInEEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-      <body>TI Execution Handler: TIHandler.sh</body>
-    </ownedComment>
-    <ownedComment xmi:id="_v1-A4InEEeSf6YVZN2Xsyw" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg">
-      <body>D3 Execution Handler: SFWDHandler.sh</body>
-    </ownedComment>
     <nestedNode xmi:type="uml:Device" xmi:id="_1WpYYIeZEeSAq4L1ThvvIQ" name="lnx-efxd60.ants.ad.anplc.co.uk">
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_8YsoAInMEeSf6YVZN2Xsyw" name="lnx.efxd60 - DEV1"/>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_HQ5goInNEeSf6YVZN2Xsyw" name="lnx.efxd60 - DEV3"/>
@@ -296,5 +274,4 @@
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qMT6oInNEeSf6YVZN2Xsyw" name="lnx.efxd61 - SIT2"/>
     </nestedNode>
   </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_ZJhQkInkEeSf6YVZN2Xsyw" name="Component1"/>
 </uml:Model>
