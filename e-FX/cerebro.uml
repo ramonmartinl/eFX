@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wIk18IqXEeSf6YVZN2Xsyw" name="eFX-LP-Citi">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wIk18IqXEeSf6YVZN2Xsyw" name="CEREBRO">
   <ownedComment xmi:id="_AsmkwIqfEeSf6YVZN2Xsyw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw">
     <body>CEREBRO</body>
+  </ownedComment>
+  <ownedComment xmi:id="_Af8WUJZnEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _66wQoJaAEeSaLMhtV6zFhw">
+    <body># STEP 1: [efxbuild@lnx-efxbuild]&#xD;
+$ mkdir /home/efxbuild/eFX-Scripts/x.y.z&#xD;
+&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_EvGfkJaBEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _66wQoJaAEeSaLMhtV6zFhw">
+    <body># STEP 4: [efxbuild@lnx-efxbuild]&#xD;
+$ find - name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find - name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./SB7- name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./Linux - name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+</body>
   </ownedComment>
   <packagedElement xmi:type="uml:Component" xmi:id="_uDr38IqVEeSf6YVZN2Xsyw" name="eFX-AdaFIX"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_BEFKQIqXEeSf6YVZN2Xsyw" name="eFX-Adartenon"/>
@@ -32,4 +46,83 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_nUoP4IqeEeSf6YVZN2Xsyw" name="eFX-TradeReports"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_rfhjAIqeEeSf6YVZN2Xsyw" name="eFX-Trading"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_uLjrcIqeEeSf6YVZN2Xsyw" name="eFX-Volatility"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_GWhCwJZUEeSaLMhtV6zFhw" name="SIT1">
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_lhaRIJZXEeSaLMhtV6zFhw" name="lnx-efxd37.ants.ad.anplc.co.uk"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_pmWGMJZXEeSaLMhtV6zFhw" name="SIT2">
+    <nestedNode xmi:type="uml:Device" xmi:id="_cVb0UJZYEeSaLMhtV6zFhw" name="lnx-efxd44.ants.ad.anplc.co.uk"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_HgEvAJZYEeSaLMhtV6zFhw" name="CAP">
+    <nestedNode xmi:type="uml:Device" xmi:id="_hJcV4JZYEeSaLMhtV6zFhw" name="lnx-efxd70.ants.ad.anplc.co.uk"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_yjqxEJZYEeSaLMhtV6zFhw" name="/local/home/strmbase">
+    <ownedComment xmi:id="_Y6-DIJZZEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
+      <body># STEP 6 [strmbase@HOST]&#xD;
+$ unlink EFX-all&#xD;
+$ unlink EFX-lp</body>
+    </ownedComment>
+    <ownedComment xmi:id="_YVpTEJZaEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
+      <body># STEP 7 [strmbase@HOST]&#xD;
+$ mv EFX-all-SITX EFX-all-SIT[X].bak&#xD;
+$ mv EFX-lp-SITX EFX-lp-SIT[X].bak</body>
+    </ownedComment>
+    <ownedComment xmi:id="_C2iQsJZbEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
+      <body># STEP 8 [strmbase@HOST]&#xD;
+$ ln -s /dev/shm/EFX-all-SIT[X] EFX-all&#xD;
+$ ln -s /dev/shm/EFX-lp-SIT[X] EFX-lp</body>
+    </ownedComment>
+    <ownedComment xmi:id="_8ECvkJZiEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
+      <body># STEP 10 [strmbase@HOST]&#xD;
+$ cp -r /dev/shm/EFX-all-SIT[X] EFX-all-SIT[X] &#xD;
+$ cp -r /dev/shm/EFX-lp-SIT[X] EFX-lp-SIT[X] &#xD;
+</body>
+    </ownedComment>
+    <ownedComment xmi:id="_bb7jAJZkEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
+      <body># STEP 11 [strmbase@HOST]&#xD;
+$ ln -s EFX-all-SIT[X] EFX-all&#xD;
+$ ln -s EFX-lp-SIT[X] EFX-lp</body>
+    </ownedComment>
+    <nestedNode xmi:id="_Es_t8JZZEeSaLMhtV6zFhw" name="EFX-all -> EFX-all-SIT"/>
+    <nestedNode xmi:id="_O9XxkJZZEeSaLMhtV6zFhw" name="EFX-lp -> EFX-lp-SIT"/>
+    <nestedNode xmi:id="_S89zoJZZEeSaLMhtV6zFhw" name="EFX-all -> EFX-all-SIT2"/>
+    <nestedNode xmi:id="_V34soJZZEeSaLMhtV6zFhw" name="EFX-lp -> EFX-lp-SIT2"/>
+    <nestedNode xmi:id="_JGVa0JZbEeSaLMhtV6zFhw" name="EFX-all -> /dev/shm/EFX-all-SIT"/>
+    <nestedNode xmi:id="_UOtdcJZbEeSaLMhtV6zFhw" name="EFX-lp -> /dev/shm/EFX-lp-SIT"/>
+    <nestedNode xmi:id="_hgSoQJZbEeSaLMhtV6zFhw" name="EFX-all -> /dev/shm/EFX-all-SIT2"/>
+    <nestedNode xmi:id="_iSeTIJZbEeSaLMhtV6zFhw" name="EFX-lp -> /dev/shm/EFX-lp-SIT2"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_tlv9MJZmEeSaLMhtV6zFhw" name="lnx-efxbuild.ants.ad.anplc.co.uk">
+    <nestedNode xmi:id="_rOD3oJZnEeSaLMhtV6zFhw" name="/home/efxbuild/eFX-Scripts">
+      <ownedComment xmi:id="_NUrXoJZoEeSaLMhtV6zFhw" annotatedElement="_yRqn0JZoEeSaLMhtV6zFhw">
+        <body># STEP 2: [efxbuild@lnx-efxbuild]&#xD;
+$ vi release.properties&#xD;
+</body>
+      </ownedComment>
+      <ownedComment xmi:id="_6z8K4JZoEeSaLMhtV6zFhw" annotatedElement="_2UGigJZoEeSaLMhtV6zFhw">
+        <body># STEP 3: [efxbuild@lnx-efxbuild]&#xD;
+$ ./release.sh</body>
+      </ownedComment>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_yRqn0JZoEeSaLMhtV6zFhw" name="release.properties"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2UGigJZoEeSaLMhtV6zFhw" name="release.sh"/>
+      <nestedNode xmi:id="_66wQoJaAEeSaLMhtV6zFhw" name="x.y.z"/>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_T0Tj8JZcEeSaLMhtV6zFhw" name="/home/efxbuild/upload_area_sit">
+    <ownedComment xmi:id="_RktGkJZhEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _T0Tj8JZcEeSaLMhtV6zFhw">
+      <body># STEP 9 [user@host]&#xD;
+$ rpm -qa | grep sgbm-efx&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum-update PACKAGE.rpm</body>
+    </ownedComment>
+    <nestedNode xmi:id="_CyQl8JZhEeSaLMhtV6zFhw" name="Cerebro.x.y.z"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_URR3MJaFEeSaLMhtV6zFhw" name="/home/efxbuild/eFX_installer">
+    <ownedComment xmi:id="_yeZ9IJaFEeSaLMhtV6zFhw" annotatedElement="_URR3MJaFEeSaLMhtV6zFhw">
+      <body># STEP 5: [efxbuild@lnx-efxbuild]&#xD;
+$ buildRPM_3.2_Final.sh $1 $2 $3 $4&#xD;
+$ buildRPM_3.2_Linux.sh $1 $2 $3 $4&#xD;
+</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9GkOoJaFEeSaLMhtV6zFhw" name="buildRPM_3.2_Final.sh"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_C4JywJaGEeSaLMhtV6zFhw" name="buildRPM_3.2_Linux.sh"/>
+  </packagedElement>
 </uml:Model>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YM51IIdkEeSyEoF3RcEPsg" name="BAXTER">
+  <ownedComment xmi:id="_N64LEJZfEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg">
+    <body>$ ps -ef|grep baxter|grep -v grep&#xD;
+$ killall -9 java</body>
+  </ownedComment>
   <packagedElement xmi:type="uml:Component" xmi:id="_9XLzIIajEeSh4Ym1HZTfzQ" name="baxter-config-server">
     <ownedComment xmi:id="_Q0hTkIa6EeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>

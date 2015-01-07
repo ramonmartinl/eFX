@@ -39,10 +39,10 @@
     </ownedConnector>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_ioDEoIqhEeSf6YVZN2Xsyw" name="./eFX_installer">
       <ownedComment xmi:id="_Q2XWQIqiEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _HObLoIqiEeSf6YVZN2Xsyw">
-        <body>buildRPM_3.2_Final.sh</body>
+        <body>$ buildRPM_3.2_Final.sh</body>
       </ownedComment>
       <ownedComment xmi:id="_2WCJ0IqvEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _K6HaQIqiEeSf6YVZN2Xsyw">
-        <body>buildRPM_3.2_Linux.sh</body>
+        <body>$ buildRPM_3.2_Linux.sh</body>
       </ownedComment>
       <ownedComment xmi:id="_9Muo8Iq8EeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _HObLoIqiEeSf6YVZN2Xsyw">
         <body>Script to Build RPMs 4 Cerebro Modules</body>
