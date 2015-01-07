@@ -35,7 +35,7 @@
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
       <annotatedElement xmi:type="uml:Component" href="#_pd19QIa7EeSh4Ym1HZTfzQ"/>
       <body>./dbserver  [start/stop]&#xD;
-(Actualizar la BD) ./dbserver setup update </body>
+(Actualizar la BD) ./price-engine-dbserver.sh setup update </body>
     </ownedComment>
     <ownedAttribute xmi:id="_wmnhUIa8EeSh4Ym1HZTfzQ" name="dbserver -> /opt/baxter/bin/price-engine-dbserver.sh" aggregation="composite"/>
     <ownedAttribute xmi:id="_7kOeYIa8EeSh4Ym1HZTfzQ" name="/opt/baxter/bin/price-engine-server-util.sh" aggregation="composite"/>
@@ -101,5 +101,80 @@
       <end xmi:id="_I1pXgobFEeSh4Ym1HZTfzQ" role="_7kOeYIa8EeSh4Ym1HZTfzQ"/>
     </ownedConnector>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_1V1v4IbEEeSh4Ym1HZTfzQ" name="/opt/baxter/lib/price-engine-servlet/price-engine-servlet-2.74.jar"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_1OuucJS-EeSaLMhtV6zFhw" name="/home/efxbuild/upload_area_sit/Baxter.x.y.z">
+    <ownedComment xmi:id="_4AG0cJS_EeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _1OuucJS-EeSaLMhtV6zFhw">
+      <body>$/opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
+$rpm -qa |grep -i baxter</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_W4IRgJTAEeSaLMhtV6zFhw" name="baxter-moob-dashboard-2.72.7.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_XP7tgJTAEeSaLMhtV6zFhw" name="baxterpe-server-license-2.72.8-1.noarch.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Xjrv8JTAEeSaLMhtV6zFhw" name="baxterpe-server-license-HA-2.72.8-1.noarch.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Xy87AJTAEeSaLMhtV6zFhw" name="baxter-price-engine-blotterserver-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_YA_-EJTAEeSaLMhtV6zFhw" name="baxter-price-engine-broadcast-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_YRZKgJTAEeSaLMhtV6zFhw" name="baxter-price-engine-dbserver-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hCGLIJTAEeSaLMhtV6zFhw" name="baxter-price-engine-om-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eNBmAJTBEeSaLMhtV6zFhw" name="baxter-price-engine-server-util-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_gCNmAJTBEeSaLMhtV6zFhw" name="baxter-price-engine-servlet-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1a-TUJTBEeSaLMhtV6zFhw" name="baxter-rate-engine-2.72.8.rpm"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_4McOAJTEEeSaLMhtV6zFhw" name="constants.licence"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Mt0nYJTFEeSaLMhtV6zFhw" name="constants.licence_nonHA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_rspCQJTAEeSaLMhtV6zFhw" name="/opt/baxter/webpages/dashboard">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ykHQYJTAEeSaLMhtV6zFhw" name="config.cfg"/>
+    <nestedNode xmi:id="_k3OBkJTLEeSaLMhtV6zFhw" name="/locale">
+      <nestedNode xmi:id="_o2AyYJTLEeSaLMhtV6zFhw" name="/en_US">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_x76m8JTLEeSaLMhtV6zFhw" name="*.properties"/>
+      </nestedNode>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_GwuToJTBEeSaLMhtV6zFhw" name="/opt/baxter/bak">
+    <ownedComment xmi:id="_lNLPAJTBEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _GwuToJTBEeSaLMhtV6zFhw">
+      <body>$cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
+$cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_NDxmEJTBEeSaLMhtV6zFhw" name="Backup" client="_rspCQJTAEeSaLMhtV6zFhw" supplier="_GwuToJTBEeSaLMhtV6zFhw"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_EKls8JTDEeSaLMhtV6zFhw" name="/opt/baxter/config-server/repository/com/baxter/pe">
+    <ownedComment xmi:id="_8jvCwJTiEeSaLMhtV6zFhw" annotatedElement="_EKls8JTDEeSaLMhtV6zFhw">
+      <body>$move constants.licence constants.licence.x.y.z&#xD;
+$cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA /opt/baxter/config-server/repository/com/baxter/pe/constants.licence&#xD;
+$ md5sum file</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_59ApMJTDEeSaLMhtV6zFhw" name="constants.licence"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9CsnwJTDEeSaLMhtV6zFhw" name="constants.licence.x.y.z"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_91unMJTDEeSaLMhtV6zFhw" name="Backup File" client="_59ApMJTDEeSaLMhtV6zFhw" supplier="_9CsnwJTDEeSaLMhtV6zFhw"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_-AepMJTEEeSaLMhtV6zFhw" name="Copy after Backup" client="_Mt0nYJTFEeSaLMhtV6zFhw" supplier="_59ApMJTDEeSaLMhtV6zFhw"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_K1lZwJTNEeSaLMhtV6zFhw" name="/opt/baxter">
+    <ownedComment xmi:id="_dz1McJTNEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _K1lZwJTNEeSaLMhtV6zFhw">
+      <body>$unlink log&#xD;
+$ ln -sf file link</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_RduLYJTNEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/sit1"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_aGQHcJTNEeSaLMhtV6zFhw" name="log -> /local/home/strmbase/BaxterLogs/sit1"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_yoQWQJTQEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/caplin"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9kWQYJTQEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/dev4"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ETpZ8JTREeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/dev3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_1HwFQJTVEeSaLMhtV6zFhw" name="/opt/baxter/bin">
+    <ownedComment xmi:id="_B_nKsJTlEeSaLMhtV6zFhw" annotatedElement="_1HwFQJTVEeSaLMhtV6zFhw">
+      <body>$./start-configuration-server --daemon &amp;&#xD;
+$./price-engine-dbserver.sh setup update &#xD;
+$./dbserver start&#xD;
+$./blotterserver start&#xD;
+$./broadcast start&#xD;
+$./dashboard start&#xD;
+</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_jB_KAJTmEeSaLMhtV6zFhw" name="/opt/baxter/lib">
+    <ownedComment xmi:id="_b5RlcJTnEeSaLMhtV6zFhw" annotatedElement="_jB_KAJTmEeSaLMhtV6zFhw">
+      <body>$ ln -sf file link</body>
+    </ownedComment>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_02RrAJTmEeSaLMhtV6zFhw" name="price-engine-api.jar ->price-engine-api-x.y.z.jar"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1LGrgJTmEeSaLMhtV6zFhw" name="price-engine-dimodel.jar -> price-engine-dimodel-x.y.z..jar"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1i_AAJTmEeSaLMhtV6zFhw" name="price-engine-util.jar -> price-engine-util-x.y.z.jar"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2SNdgJTmEeSaLMhtV6zFhw" name="price-engine-om.jar -> price-engine-om-x.y.z.jar"/>
   </packagedElement>
 </uml:Model>
