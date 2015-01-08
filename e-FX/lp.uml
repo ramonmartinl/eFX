@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_o2qe4InkEeSf6YVZN2Xsyw" name="LP">
-  <ownedComment xmi:id="_Kx-iEInKEeSf6YVZN2Xsyw">
-    <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
-    <body>usr: strmbase&#xD;
-su - strmbase</body>
-  </ownedComment>
   <ownedComment xmi:id="_UPiiUInCEeSf6YVZN2Xsyw">
     <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
     <body>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts>&#xD;
