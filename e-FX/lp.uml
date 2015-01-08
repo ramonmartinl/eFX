@@ -14,32 +14,39 @@ SIT1: /local/home/strmbase/EFX-lp/Linux/scripts> (EFX-lp -> EFX-lp-SIT)&#xD;
 SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts> (EFX-lp2 -> EFX-lp-SIT2)</body>
   </ownedComment>
   <ownedComment xmi:id="_gq_MAInmEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _OKkk0InmEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./UBSCombined start </body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./UBSCombined start </body>
   </ownedComment>
   <ownedComment xmi:id="_ahRmUInnEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw __xMrgInlEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./DBCombined start</body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./DBCombined start</body>
   </ownedComment>
   <ownedComment xmi:id="_g-rHkInnEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _EejLcInmEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./GSCombined start</body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./GSCombined start</body>
   </ownedComment>
   <ownedComment xmi:id="_mnhmcInnEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _KCBbEInmEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./CitiCombined start</body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./CitiCombined start</body>
   </ownedComment>
   <ownedComment xmi:id="_kA9-cInoEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _GuGzQInmEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./MFHandler.sh start</body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./MFHandler.sh start</body>
   </ownedComment>
   <ownedComment xmi:id="_m32sAInoEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _Rzw5EInmEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./TIHandler.sh start</body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./TIHandler.sh start</body>
   </ownedComment>
   <ownedComment xmi:id="_rS_akInoEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _U9iGYInmEeSf6YVZN2Xsyw">
-    <body>. env_xxx.sh&#xD;
-./SFWDHandler.sh start</body>
+    <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
+$ . env_xxx.sh&#xD;
+$ ./SFWDHandler.sh start</body>
   </ownedComment>
   <ownedComment xmi:id="_KcBhIIqDEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw">
     <body>LP (Liquidity Providers)</body>
@@ -75,9 +82,40 @@ SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts> (EFX-lp2 -> EFX-lp-SIT2)</body
     <ownedAttribute xmi:id="_WvczIInqEeSf6YVZN2Xsyw" name="env_dev4.sh" aggregation="composite"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_aML_wInqEeSf6YVZN2Xsyw" name="SIT1: /local/home/strmbase/EFX-lp/Linux/scripts>">
-    <ownedAttribute xmi:id="_oaZK4InqEeSf6YVZN2Xsyw" name="env_?.sh" aggregation="composite"/>
+    <ownedAttribute xmi:id="_oaZK4InqEeSf6YVZN2Xsyw" name="env_sit_lp.sh" aggregation="composite"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_jCTr4InqEeSf6YVZN2Xsyw" name="SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts>">
-    <ownedAttribute xmi:id="_nlOdcInqEeSf6YVZN2Xsyw" name="env_?.sh" aggregation="composite"/>
+    <ownedAttribute xmi:id="_nlOdcInqEeSf6YVZN2Xsyw" name="env_sit_lp.sh" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_qemuYJccEeSaLMhtV6zFhw" name="LP Simulation" node="_vP9kkJccEeSaLMhtV6zFhw _vueskJccEeSaLMhtV6zFhw _coRbQJcdEeSaLMhtV6zFhw _kdJQUJceEeSaLMhtV6zFhw __eG8QJceEeSaLMhtV6zFhw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Z-q7wJcdEeSaLMhtV6zFhw" name="InitialNode1_To_GENERATE PRICES FILE WITH NEW DATES" target="_vueskJccEeSaLMhtV6zFhw" source="_vP9kkJccEeSaLMhtV6zFhw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Z-ri0JcdEeSaLMhtV6zFhw" name="InitialNode1_To_GENERATE PRICES FILE WITH NEW DATES_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Z-sJ4JcdEeSaLMhtV6zFhw" name="InitialNode1_To_GENERATE PRICES FILE WITH NEW DATES_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_vP9kkJccEeSaLMhtV6zFhw" name="InitialNode1" outgoing="_Z-q7wJcdEeSaLMhtV6zFhw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_vueskJccEeSaLMhtV6zFhw" name="GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES" incoming="_Z-q7wJcdEeSaLMhtV6zFhw">
+      <body>[strmbase@lnx-efxd38]&#xD;
+$ /local/home/strmbase/d3data/capture/demo/pruebas/GeneratedDateFixing.pl &#xD;
+&#xD;
+&#xD;
+&#xD;
+</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_coRbQJcdEeSaLMhtV6zFhw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;">
+      <body>$ cp /local/home/strmbase/d3data/capture/demo/pruebas/dataNDFnew /local/home/strmbase/d3data/capture/demo/newDataNDF&#xD;
+&#xD;
+&#xD;
+</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_kdJQUJceEeSaLMhtV6zFhw" name="START THE SERVVER">
+      <body>$ /local/home/strmbase/d3data/capture/demo/startServer.sh.NDF &#xD;
+&#xD;
+</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="__eG8QJceEeSaLMhtV6zFhw" name="SET THE UPDATE RATE">
+      <body>Enter: ur &amp; enter 20 (seconds)&#xD;
+&#xD;
+</body>
+    </node>
   </packagedElement>
 </uml:Model>

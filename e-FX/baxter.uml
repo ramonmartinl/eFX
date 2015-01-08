@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YM51IIdkEeSyEoF3RcEPsg" name="BAXTER">
   <ownedComment xmi:id="_N64LEJZfEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg">
-    <body>$ ps -ef|grep baxter|grep -v grep&#xD;
+    <body>[baxter@HOST]&#xD;
+$ ps -ef|grep baxter|grep -v grep&#xD;
 $ killall -9 java</body>
   </ownedComment>
   <packagedElement xmi:type="uml:Component" xmi:id="_9XLzIIajEeSh4Ym1HZTfzQ" name="baxter-config-server">
     <ownedComment xmi:id="_Q0hTkIa6EeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
       <annotatedElement xmi:type="uml:Component" href="#_9XLzIIajEeSh4Ym1HZTfzQ"/>
-      <body>./start-configuration-server --daemon &amp;</body>
+      <body>[baxter@HOST]&#xD;
+$ ./start-configuration-server --daemon &amp;</body>
     </ownedComment>
     <ownedComment xmi:id="_KLCLMIbHEeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
@@ -38,7 +40,8 @@ $ killall -9 java</body>
     <ownedComment xmi:id="_0Kh3gIa9EeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
       <annotatedElement xmi:type="uml:Component" href="#_pd19QIa7EeSh4Ym1HZTfzQ"/>
-      <body>./dbserver  [start/stop]&#xD;
+      <body>[baxter@HOST]&#xD;
+$ ./dbserver  [start/stop]&#xD;
 (Actualizar la BD) ./price-engine-dbserver.sh setup update </body>
     </ownedComment>
     <ownedAttribute xmi:id="_wmnhUIa8EeSh4Ym1HZTfzQ" name="dbserver -> /opt/baxter/bin/price-engine-dbserver.sh" aggregation="composite"/>
@@ -59,7 +62,8 @@ $ killall -9 java</body>
     <ownedComment xmi:id="_-7kGQIa_EeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
       <annotatedElement xmi:type="uml:Component" href="#_OQSfcIa-EeSh4Ym1HZTfzQ"/>
-      <body>./blotterserver  [start/stop]</body>
+      <body>[baxter@HOST]&#xD;
+$ ./blotterserver  [start/stop]</body>
     </ownedComment>
     <ownedAttribute xmi:id="_5xa8oIa_EeSh4Ym1HZTfzQ" name=" blotterserver -> /opt/baxter/bin/price-engine-blotterserver.sh" aggregation="composite"/>
     <ownedConnector xmi:id="_UYzq8IbAEeSh4Ym1HZTfzQ" name=" blotterserver -> /opt/baxter/bin/price-engine-blotterserver.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">
@@ -78,7 +82,8 @@ $ killall -9 java</body>
     <ownedComment xmi:id="_I793YIbEEeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
       <annotatedElement xmi:type="uml:Component" href="#_eXWQUIbDEeSh4Ym1HZTfzQ"/>
-      <body>./broadcast [start/stop]</body>
+      <body>[baxter@HOST]&#xD;
+$ ./broadcast [start/stop]</body>
     </ownedComment>
     <ownedAttribute xmi:id="_gx7cYIbDEeSh4Ym1HZTfzQ" name=" broadcast -> /opt/baxter/bin/price-engine-broadcast.sh" aggregation="composite"/>
     <ownedConnector xmi:id="_zvt8EIbDEeSh4Ym1HZTfzQ" name=" broadcast -> /opt/baxter/bin/price-engine-broadcast.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">
@@ -97,7 +102,8 @@ $ killall -9 java</body>
     <ownedComment xmi:id="_kdO-kIbFEeSh4Ym1HZTfzQ">
       <annotatedElement xmi:type="uml:Model" href="environments.uml#_VjezYIXFEeSV7sNMKNrJjg"/>
       <annotatedElement xmi:type="uml:Component" href="#_vSH58IbEEeSh4Ym1HZTfzQ"/>
-      <body>./dashboard [start/stop]</body>
+      <body>[baxter@HOST]&#xD;
+$ ./dashboard [start/stop]</body>
     </ownedComment>
     <ownedAttribute xmi:id="_3R1igIbEEeSh4Ym1HZTfzQ" name="dashboard -> /opt/baxter/bin/price-engine-servlet.sh" aggregation="composite"/>
     <ownedConnector xmi:id="_I1pXgIbFEeSh4Ym1HZTfzQ" name="dashboard -> /opt/baxter/bin/price-engine-servlet.sh_/opt/baxter/bin/price-engine-server-util.sh_connector">

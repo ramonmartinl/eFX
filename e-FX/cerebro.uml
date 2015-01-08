@@ -125,4 +125,7 @@ $ buildRPM_3.2_Linux.sh $1 $2 $3 $4&#xD;
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9GkOoJaFEeSaLMhtV6zFhw" name="buildRPM_3.2_Final.sh"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_C4JywJaGEeSaLMhtV6zFhw" name="buildRPM_3.2_Linux.sh"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_Wt9eIJcLEeSaLMhtV6zFhw" name="CEREBRO Deployment" node="_iph4QJcLEeSaLMhtV6zFhw">
+    <node xmi:type="uml:InitialNode" xmi:id="_iph4QJcLEeSaLMhtV6zFhw" name="InitialNode1"/>
+  </packagedElement>
 </uml:Model>
