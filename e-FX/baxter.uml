@@ -114,8 +114,9 @@ $ ./dashboard [start/stop]</body>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_1OuucJS-EeSaLMhtV6zFhw" name="/home/efxbuild/upload_area_sit/Baxter.x.y.z">
     <ownedComment xmi:id="_4AG0cJS_EeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _1OuucJS-EeSaLMhtV6zFhw">
-      <body>$/opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
-$rpm -qa |grep -i baxter</body>
+      <body>[baxter@HOST]&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
+$ rpm -qa |grep -i baxter</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_W4IRgJTAEeSaLMhtV6zFhw" name="baxter-moob-dashboard-2.72.7.rpm"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_XP7tgJTAEeSaLMhtV6zFhw" name="baxterpe-server-license-2.72.8-1.noarch.rpm"/>
@@ -140,15 +141,17 @@ $rpm -qa |grep -i baxter</body>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_GwuToJTBEeSaLMhtV6zFhw" name="/opt/baxter/bak">
     <ownedComment xmi:id="_lNLPAJTBEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _GwuToJTBEeSaLMhtV6zFhw">
-      <body>$cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
+      <body>[baxter@HOST]&#xD;
+$cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
 $cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
     </ownedComment>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_NDxmEJTBEeSaLMhtV6zFhw" name="Backup" client="_rspCQJTAEeSaLMhtV6zFhw" supplier="_GwuToJTBEeSaLMhtV6zFhw"/>
   <packagedElement xmi:type="uml:Node" xmi:id="_EKls8JTDEeSaLMhtV6zFhw" name="/opt/baxter/config-server/repository/com/baxter/pe">
     <ownedComment xmi:id="_8jvCwJTiEeSaLMhtV6zFhw" annotatedElement="_EKls8JTDEeSaLMhtV6zFhw">
-      <body>$move constants.licence constants.licence.x.y.z&#xD;
-$cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA /opt/baxter/config-server/repository/com/baxter/pe/constants.licence&#xD;
+      <body>[baxter@HOST]&#xD;
+$ move constants.licence constants.licence.x.y.z&#xD;
+$ cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA /opt/baxter/config-server/repository/com/baxter/pe/constants.licence&#xD;
 $ md5sum file</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_59ApMJTDEeSaLMhtV6zFhw" name="constants.licence"/>
@@ -158,7 +161,8 @@ $ md5sum file</body>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_-AepMJTEEeSaLMhtV6zFhw" name="Copy after Backup" client="_Mt0nYJTFEeSaLMhtV6zFhw" supplier="_59ApMJTDEeSaLMhtV6zFhw"/>
   <packagedElement xmi:type="uml:Node" xmi:id="_K1lZwJTNEeSaLMhtV6zFhw" name="/opt/baxter">
     <ownedComment xmi:id="_dz1McJTNEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _K1lZwJTNEeSaLMhtV6zFhw">
-      <body>$unlink log&#xD;
+      <body>[baxter@HOST]&#xD;
+$ unlink log&#xD;
 $ ln -sf file link</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_RduLYJTNEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/sit1"/>
@@ -169,10 +173,11 @@ $ ln -sf file link</body>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_1HwFQJTVEeSaLMhtV6zFhw" name="/opt/baxter/bin">
     <ownedComment xmi:id="_B_nKsJTlEeSaLMhtV6zFhw" annotatedElement="_1HwFQJTVEeSaLMhtV6zFhw">
-      <body>$./start-configuration-server --daemon &amp;&#xD;
-$./price-engine-dbserver.sh setup update &#xD;
-$./dbserver start&#xD;
-$./blotterserver start&#xD;
+      <body>[baxter@HOST]&#xD;
+$ ./start-configuration-server --daemon &amp;&#xD;
+$ ./price-engine-dbserver.sh setup update &#xD;
+$ ./dbserver start&#xD;
+$ ./blotterserver start&#xD;
 $./broadcast start&#xD;
 $./dashboard start&#xD;
 </body>
@@ -180,11 +185,68 @@ $./dashboard start&#xD;
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_jB_KAJTmEeSaLMhtV6zFhw" name="/opt/baxter/lib">
     <ownedComment xmi:id="_b5RlcJTnEeSaLMhtV6zFhw" annotatedElement="_jB_KAJTmEeSaLMhtV6zFhw">
-      <body>$ ln -sf file link</body>
+      <body>[baxter@HOST]&#xD;
+$ ln -sf file link</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_02RrAJTmEeSaLMhtV6zFhw" name="price-engine-api.jar ->price-engine-api-x.y.z.jar"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1LGrgJTmEeSaLMhtV6zFhw" name="price-engine-dimodel.jar -> price-engine-dimodel-x.y.z..jar"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1i_AAJTmEeSaLMhtV6zFhw" name="price-engine-util.jar -> price-engine-util-x.y.z.jar"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2SNdgJTmEeSaLMhtV6zFhw" name="price-engine-om.jar -> price-engine-om-x.y.z.jar"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_oLkXIJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" target="_Yji5YJdQEeSF0pCT-mgLtQ" source="_Drg6kJdQEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_oMGioJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_oMpVMJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ozjkMJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER" target="_jRm-kJdQEeSF0pCT-mgLtQ" source="_Yji5YJdQEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_ozkLQJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_ozkyUJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ageDoJdREeSF0pCT-mgLtQ" name="STOP BAXTER_To_BACKUP FILES &amp; FOLDERS" target="_so1zsJdQEeSF0pCT-mgLtQ" source="_jRm-kJdQEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_ageqsJdREeSF0pCT-mgLtQ" name="STOP BAXTER_To_BACKUP FILES &amp; FOLDERS_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_agfRwJdREeSF0pCT-mgLtQ" name="STOP BAXTER_To_BACKUP FILES &amp; FOLDERS_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_RyLoYJdSEeSF0pCT-mgLtQ" name="BACKUP CONFIGURATION FILES &amp; FOLDERS_To_REMOVE SYMLINKS" target="_Fw3yoJdSEeSF0pCT-mgLtQ" source="_so1zsJdQEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_RyMPcJdSEeSF0pCT-mgLtQ" name="BACKUP CONFIGURATION FILES &amp; FOLDERS_To_REMOVE SYMLINKS_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_RyM2gJdSEeSF0pCT-mgLtQ" name="BACKUP CONFIGURATION FILES &amp; FOLDERS_To_REMOVE SYMLINKS_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pKdg8JdTEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS_To_INSTALL RPM PACKAGES (in Orange &amp; Magenta)" target="_hGXHoJdTEeSF0pCT-mgLtQ" source="_Fw3yoJdSEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_pKeIAJdTEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS_To_INSTALL RPM PACKAGES (in Orange &amp; Magenta)_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_pKevEJdTEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS_To_INSTALL RPM PACKAGES (in Orange &amp; Magenta)_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_dNpUMJdUEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_REPLACE constants.licence FILE" target="_CkedMJdUEeSF0pCT-mgLtQ" source="_hGXHoJdTEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_dNp7QJdUEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_REPLACE constants.licence FILE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_dNqiUJdUEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_REPLACE constants.licence FILE_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_Drg6kJdQEeSF0pCT-mgLtQ" name="InitialNode1" outgoing="_oLkXIJdQEeSF0pCT-mgLtQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="STOP BAXTER" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_so1zsJdQEeSF0pCT-mgLtQ" name="BACKUP CONFIGURATION FILES &amp; FOLDERS" incoming="_ageDoJdREeSF0pCT-mgLtQ" outgoing="_RyLoYJdSEeSF0pCT-mgLtQ">
+      <body>[baxter@HOST]&#xD;
+$cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
+$cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Fw3yoJdSEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS" incoming="_RyLoYJdSEeSF0pCT-mgLtQ" outgoing="_pKdg8JdTEeSF0pCT-mgLtQ">
+      <body>[baxter@HOST]&#xD;
+$ unlink log&#xD;
+$ ln -sf file link</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hGXHoJdTEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)" incoming="_pKdg8JdTEeSF0pCT-mgLtQ" outgoing="_dNpUMJdUEeSF0pCT-mgLtQ">
+      <body>[baxter@HOST]&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
+$ rpm -qa |grep -i baxter</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_CkedMJdUEeSF0pCT-mgLtQ" name="REPLACE constants.licence FILE" incoming="_dNpUMJdUEeSF0pCT-mgLtQ">
+      <body>[baxter@HOST]&#xD;
+$ move constants.licence constants.licence.x.y.z&#xD;
+$ cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA /opt/baxter/config-server/repository/com/baxter/pe/constants.licence&#xD;
+$ md5sum file</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_oqmfsJdUEeSF0pCT-mgLtQ" name="INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING">
+      <body>// TODO body of OpaqueAction7</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_IDZukJdVEeSF0pCT-mgLtQ" name="RESTORE FILES &amp; FOLDERS">
+      <body>// TODO body of OpaqueAction8</body>
+    </node>
   </packagedElement>
 </uml:Model>
