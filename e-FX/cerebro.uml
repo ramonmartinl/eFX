@@ -131,4 +131,14 @@ $ buildRPM_3.2_Linux.sh $1 $2 $3 $4&#xD;
       <body>// TODO body of OpaqueAction1</body>
     </node>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_9lb80JpzEeSErr_g8YjIHw" name="CEREBRO" node="_GtVVcJp0EeSErr_g8YjIHw _HQu9cJp0EeSErr_g8YjIHw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_PH6VEJp0EeSErr_g8YjIHw" name="InitialNode1_To_OpaqueAction1" target="_HQu9cJp0EeSErr_g8YjIHw" source="_GtVVcJp0EeSErr_g8YjIHw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_PIfj4Jp0EeSErr_g8YjIHw" name="InitialNode1_To_OpaqueAction1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_PJCWcJp0EeSErr_g8YjIHw" name="InitialNode1_To_OpaqueAction1_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_GtVVcJp0EeSErr_g8YjIHw" name="InitialNode1" outgoing="_PH6VEJp0EeSErr_g8YjIHw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_HQu9cJp0EeSErr_g8YjIHw" name="OpaqueAction1" incoming="_PH6VEJp0EeSErr_g8YjIHw">
+      <body>// TODO body of OpaqueAction1</body>
+    </node>
+  </packagedElement>
 </uml:Model>
