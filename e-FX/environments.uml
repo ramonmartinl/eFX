@@ -247,9 +247,6 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_bAePgIeREeSAq4L1ThvvIQ" name="lnx-efxd55.ants.ad.anplc.co.uk">
-      <ownedComment xmi:id="_pFUv8JgcEeSwz-PEMRIxug" annotatedElement="_bAePgIeREeSAq4L1ThvvIQ">
-        <body>EFX 55</body>
-      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_154XUIXjEeSh4Ym1HZTfzQ" name="TenorService : 9100">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_JZI8cIXQEeSV7sNMKNrJjg" name="TenorService_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_m4GjIJAIEeSU45eRB5GOkA" name="primary-tenorService.sh"/>
@@ -272,9 +269,6 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_dL6MUIeREeSAq4L1ThvvIQ" name="lnx-efxd56.ants.ad.anplc.co.uk">
-      <ownedComment xmi:id="_TTA0oJpVEeSAC9XGqt_Y6A" annotatedElement="_dL6MUIeREeSAq4L1ThvvIQ">
-        <body>EFX 56</body>
-      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_09ukMIX7EeSh4Ym1HZTfzQ" name="Cleansing : 8100">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_3Pt08IX7EeSh4Ym1HZTfzQ" name="Cleansing_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ioA8EJAKEeSU45eRB5GOkA" name="cleansing.sh"/>
@@ -293,9 +287,6 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_eoKH4IeREeSAq4L1ThvvIQ" name="lnx-efxd57.ants.ad.anplc.co.uk">
-      <ownedComment xmi:id="_dZpP8JphEeSAC9XGqt_Y6A" annotatedElement="_eoKH4IeREeSAq4L1ThvvIQ">
-        <body>EFX 57</body>
-      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_bAjuAIXvEeSh4Ym1HZTfzQ" name="Pricetenon : 10100">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_eJW8sIXIEeSV7sNMKNrJjg" name="Pricetenon_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_a1POMJAIEeSU45eRB5GOkA" name="pricetenon.sh"/>
@@ -322,9 +313,6 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_gOhBsIeREeSAq4L1ThvvIQ" name="lnx-efxd58.ants.ad.anplc.co.uk">
-      <ownedComment xmi:id="_Ta7uoJpiEeSAC9XGqt_Y6A" annotatedElement="_gOhBsIeREeSAq4L1ThvvIQ">
-        <body>EfX 58</body>
-      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_DMAkoIX4EeSh4Ym1HZTfzQ" name="CorePricing : 8300">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Qzrk8IXcEeSh4Ym1HZTfzQ" name="CorePricing_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_8uOscJAJEeSU45eRB5GOkA" name="corepricing.sh"/>
@@ -335,9 +323,6 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       </nestedClassifier>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Device" xmi:id="_hCus4IeREeSAq4L1ThvvIQ" name="lnx-efxd59.ants.ad.anplc.co.uk">
-      <ownedComment xmi:id="_kzNzoJpjEeSAC9XGqt_Y6A" annotatedElement="_hCus4IeREeSAq4L1ThvvIQ">
-        <body>EFX</body>
-      </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_CQDSsIX4EeSh4Ym1HZTfzQ" name="PrimaryAdaxter : 8900">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_cu4-QIXSEeSV7sNMKNrJjg" name="PrimaryAdaxter_x.y.z"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_z_kTMJAJEeSU45eRB5GOkA" name="primary-adaxter.sh"/>
