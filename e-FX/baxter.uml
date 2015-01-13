@@ -114,8 +114,8 @@ $ ./dashboard [start/stop]</body>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_1OuucJS-EeSaLMhtV6zFhw" name="/home/efxbuild/upload_area_sit/Baxter.x.y.z">
     <ownedComment xmi:id="_4AG0cJS_EeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _1OuucJS-EeSaLMhtV6zFhw">
-      <body>[baxter@HOST]&#xD;
-$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
+      <body>[USER@HOST]&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE1.X.Y.Z.rpm PACKAGEN.X.Y.Z.rpm&#xD;
 $ rpm -qa |grep -i baxter</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_W4IRgJTAEeSaLMhtV6zFhw" name="baxter-moob-dashboard-2.72.7.rpm"/>
@@ -142,7 +142,7 @@ $ rpm -qa |grep -i baxter</body>
   <packagedElement xmi:type="uml:Node" xmi:id="_GwuToJTBEeSaLMhtV6zFhw" name="/opt/baxter/bak">
     <ownedComment xmi:id="_lNLPAJTBEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _GwuToJTBEeSaLMhtV6zFhw">
       <body>[baxter@HOST]&#xD;
-$cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
+$cp /opt/baxter/webpages/dashboard/config.cfg /opt/baxter/bak&#xD;
 $cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
     </ownedComment>
   </packagedElement>
@@ -150,7 +150,7 @@ $cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
   <packagedElement xmi:type="uml:Node" xmi:id="_EKls8JTDEeSaLMhtV6zFhw" name="/opt/baxter/config-server/repository/com/baxter/pe">
     <ownedComment xmi:id="_8jvCwJTiEeSaLMhtV6zFhw" annotatedElement="_EKls8JTDEeSaLMhtV6zFhw">
       <body>[baxter@HOST]&#xD;
-$ move constants.licence constants.licence.x.y.z&#xD;
+$ mv constants.license constants.license.x.y.z&#xD;
 $ cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA /opt/baxter/config-server/repository/com/baxter/pe/constants.licence&#xD;
 $ md5sum file</body>
     </ownedComment>
@@ -162,7 +162,7 @@ $ md5sum file</body>
   <packagedElement xmi:type="uml:Node" xmi:id="_K1lZwJTNEeSaLMhtV6zFhw" name="/opt/baxter">
     <ownedComment xmi:id="_dz1McJTNEeSaLMhtV6zFhw" annotatedElement="_YM51IIdkEeSyEoF3RcEPsg _K1lZwJTNEeSaLMhtV6zFhw">
       <body>[baxter@HOST]&#xD;
-$ unlink log&#xD;
+$ unlink /opt/baxter/log&#xD;
 $ ln -sf file link</body>
     </ownedComment>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_RduLYJTNEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/sit1"/>
@@ -170,6 +170,23 @@ $ ln -sf file link</body>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_yoQWQJTQEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/caplin"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9kWQYJTQEeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/dev4"/>
     <nestedClassifier xmi:type="uml:Artifact" xmi:id="_ETpZ8JTREeSaLMhtV6zFhw" name="log -> /logs/strmbase/BaxterLogs/dev3"/>
+    <nestedClassifier xmi:type="uml:Node" xmi:id="_jB_KAJTmEeSaLMhtV6zFhw" name="/opt/baxter/lib">
+      <ownedComment xmi:id="_b5RlcJTnEeSaLMhtV6zFhw" annotatedElement="_jB_KAJTmEeSaLMhtV6zFhw">
+        <body>[baxter@HOST]&#xD;
+$ unlink link&#xD;
+$ ln -sf new_file link</body>
+      </ownedComment>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_02RrAJTmEeSaLMhtV6zFhw" name="price-engine-api.jar ->price-engine-api-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1LGrgJTmEeSaLMhtV6zFhw" name="price-engine-dimodel.jar -> price-engine-dimodel-x.y.z..jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1i_AAJTmEeSaLMhtV6zFhw" name="price-engine-util.jar -> price-engine-util-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2SNdgJTmEeSaLMhtV6zFhw" name="price-engine-om.jar -> price-engine-om-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_APERcJs4EeSQW-O3MV76cQ" name="baxter-config-client.jar -> /opt/baxter/lib/baxter-config-client-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_VDb4QJs4EeSQW-O3MV76cQ" name="baxter-log-connector.jar -> /opt/baxter/lib/baxter-log4j-connector-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_fPFM4Js4EeSQW-O3MV76cQ" name="baxter-price.jar -> baxter-price-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_l8VIAJs4EeSQW-O3MV76cQ" name=" config-client.jar -> baxter-config-client-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_00XTQJs4EeSQW-O3MV76cQ" name="config-om.jar -> baxter-config-om-x.y.z.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hjx98Js5EeSQW-O3MV76cQ" name=" baxter-jms-connector.jar -> /opt/baxter/lib/baxter-tibco-connector-x.y.z.jar"/>
+    </nestedClassifier>
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_1HwFQJTVEeSaLMhtV6zFhw" name="/opt/baxter/bin">
     <ownedComment xmi:id="_B_nKsJTlEeSaLMhtV6zFhw" annotatedElement="_1HwFQJTVEeSaLMhtV6zFhw">
@@ -183,17 +200,7 @@ $./dashboard start&#xD;
 </body>
     </ownedComment>
   </packagedElement>
-  <packagedElement xmi:type="uml:Node" xmi:id="_jB_KAJTmEeSaLMhtV6zFhw" name="/opt/baxter/lib">
-    <ownedComment xmi:id="_b5RlcJTnEeSaLMhtV6zFhw" annotatedElement="_jB_KAJTmEeSaLMhtV6zFhw">
-      <body>[baxter@HOST]&#xD;
-$ ln -sf file link</body>
-    </ownedComment>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_02RrAJTmEeSaLMhtV6zFhw" name="price-engine-api.jar ->price-engine-api-x.y.z.jar"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1LGrgJTmEeSaLMhtV6zFhw" name="price-engine-dimodel.jar -> price-engine-dimodel-x.y.z..jar"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_1i_AAJTmEeSaLMhtV6zFhw" name="price-engine-util.jar -> price-engine-util-x.y.z.jar"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2SNdgJTmEeSaLMhtV6zFhw" name="price-engine-om.jar -> price-engine-om-x.y.z.jar"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ _qcH64Jp5EeSErr_g8YjIHw _W42oMJp8EeSErr_g8YjIHw _l8K2YJp8EeSErr_g8YjIHw _wi_EEJp8EeSErr_g8YjIHw _6zmYQJp8EeSErr_g8YjIHw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ _qcH64Jp5EeSErr_g8YjIHw _W42oMJp8EeSErr_g8YjIHw _l8K2YJp8EeSErr_g8YjIHw _wi_EEJp8EeSErr_g8YjIHw _6zmYQJp8EeSErr_g8YjIHw _JSFVoJsuEeSQW-O3MV76cQ _8VvJEJsvEeSQW-O3MV76cQ">
     <edge xmi:type="uml:ControlFlow" xmi:id="_oLkXIJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" target="_Yji5YJdQEeSF0pCT-mgLtQ" source="_Drg6kJdQEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_oMGioJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_oMpVMJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_weight"/>
@@ -214,10 +221,6 @@ $ ln -sf file link</body>
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_pKeIAJdTEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS_To_INSTALL RPM PACKAGES (in Orange &amp; Magenta)_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_pKevEJdTEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS_To_INSTALL RPM PACKAGES (in Orange &amp; Magenta)_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_dNpUMJdUEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_REPLACE constants.licence FILE" target="_CkedMJdUEeSF0pCT-mgLtQ" source="_hGXHoJdTEeSF0pCT-mgLtQ">
-      <guard xmi:type="uml:LiteralBoolean" xmi:id="_dNp7QJdUEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_REPLACE constants.licence FILE_guard" value="true"/>
-      <weight xmi:type="uml:LiteralInteger" xmi:id="_dNqiUJdUEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_REPLACE constants.licence FILE_weight"/>
-    </edge>
     <edge xmi:type="uml:ControlFlow" xmi:id="_7LFLgJp5EeSErr_g8YjIHw" name="REPLACE constants.licence FILE_To_RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/" target="_IDZukJdVEeSF0pCT-mgLtQ" source="_CkedMJdUEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_7LvS0Jp5EeSErr_g8YjIHw" name="REPLACE constants.licence FILE_To_RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_7MYMAJp5EeSErr_g8YjIHw" name="REPLACE constants.licence FILE_To_RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/_weight"/>
@@ -225,10 +228,6 @@ $ ln -sf file link</body>
     <edge xmi:type="uml:ControlFlow" xmi:id="_7pNR8Jp5EeSErr_g8YjIHw" name="RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/_To_RESTORE SYMLINKS" target="_qcH64Jp5EeSErr_g8YjIHw" source="_IDZukJdVEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_7pN5AJp5EeSErr_g8YjIHw" name="RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/_To_RESTORE SYMLINKS_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_7pOgEJp5EeSErr_g8YjIHw" name="RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/_To_RESTORE SYMLINKS_weight"/>
-    </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_M3DMEJp8EeSErr_g8YjIHw" name="RESTORE SYMLINKS_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING" target="_oqmfsJdUEeSF0pCT-mgLtQ" source="_qcH64Jp5EeSErr_g8YjIHw">
-      <guard xmi:type="uml:LiteralBoolean" xmi:id="_M3DzIJp8EeSErr_g8YjIHw" name="RESTORE SYMLINKS_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_guard" value="true"/>
-      <weight xmi:type="uml:LiteralInteger" xmi:id="_M3EaMJp8EeSErr_g8YjIHw" name="RESTORE SYMLINKS_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_weight"/>
     </edge>
     <edge xmi:type="uml:ControlFlow" xmi:id="_jQvK4Jp8EeSErr_g8YjIHw" name="INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_To_UPDATE LINKS WHERE Adaxter, RFQAdaxter, Trading are running" target="_W42oMJp8EeSErr_g8YjIHw" source="_oqmfsJdUEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_jQvx8Jp8EeSErr_g8YjIHw" name="INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_To_UPDATE LINKS WHERE Adaxter, RFQAdaxter, Trading are running_guard" value="true"/>
@@ -246,49 +245,72 @@ $ ln -sf file link</body>
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_AASfkJp9EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK_To_ActivityFinal1_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_AA1SIJp9EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK_To_ActivityFinal1_weight"/>
     </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_M7GqwJsuEeSQW-O3MV76cQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_OpaqueAction13" target="_JSFVoJsuEeSQW-O3MV76cQ" source="_hGXHoJdTEeSF0pCT-mgLtQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_M7wyEJsuEeSQW-O3MV76cQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_OpaqueAction13_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_M8WA4JsuEeSQW-O3MV76cQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)_To_OpaqueAction13_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_NrZfQJsuEeSQW-O3MV76cQ" name="OpaqueAction13_To_REPLACE constants.licence FILE" target="_CkedMJdUEeSF0pCT-mgLtQ" source="_JSFVoJsuEeSQW-O3MV76cQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_NraGUJsuEeSQW-O3MV76cQ" name="OpaqueAction13_To_REPLACE constants.licence FILE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_NratYJsuEeSQW-O3MV76cQ" name="OpaqueAction13_To_REPLACE constants.licence FILE_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_EN8bcJswEeSQW-O3MV76cQ" name="RESTORE SYMLINKS_To_RESTART BAXTER" target="_8VvJEJsvEeSQW-O3MV76cQ" source="_qcH64Jp5EeSErr_g8YjIHw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_EN9CgJswEeSQW-O3MV76cQ" name="RESTORE SYMLINKS_To_RESTART BAXTER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_EN9pkJswEeSQW-O3MV76cQ" name="RESTORE SYMLINKS_To_RESTART BAXTER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Esc8YJswEeSQW-O3MV76cQ" name="RESTART BAXTER_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING" target="_oqmfsJdUEeSF0pCT-mgLtQ" source="_8VvJEJsvEeSQW-O3MV76cQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_EseKgJswEeSQW-O3MV76cQ" name="RESTART BAXTER_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_EseKgZswEeSQW-O3MV76cQ" name="RESTART BAXTER_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_weight"/>
+    </edge>
     <node xmi:type="uml:InitialNode" xmi:id="_Drg6kJdQEeSF0pCT-mgLtQ" name="InitialNode1" outgoing="_oLkXIJdQEeSF0pCT-mgLtQ"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="STOP BAXTER" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_so1zsJdQEeSF0pCT-mgLtQ" name="BACKUP CONFIGURATION FILES &amp; FOLDERS" incoming="_ageDoJdREeSF0pCT-mgLtQ" outgoing="_RyLoYJdSEeSF0pCT-mgLtQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="#0 PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="#1 STOP BAXTER" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_so1zsJdQEeSF0pCT-mgLtQ" name="#2 BACKUP CONFIGURATION FILES &amp; FOLDERS" incoming="_ageDoJdREeSF0pCT-mgLtQ" outgoing="_RyLoYJdSEeSF0pCT-mgLtQ">
       <body>[baxter@HOST]&#xD;
 $cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
 $cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Fw3yoJdSEeSF0pCT-mgLtQ" name="REMOVE SYMLINKS" incoming="_RyLoYJdSEeSF0pCT-mgLtQ" outgoing="_pKdg8JdTEeSF0pCT-mgLtQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Fw3yoJdSEeSF0pCT-mgLtQ" name="#3 REMOVE 'log' SYMLINK" incoming="_RyLoYJdSEeSF0pCT-mgLtQ" outgoing="_pKdg8JdTEeSF0pCT-mgLtQ">
       <body>[baxter@HOST]&#xD;
 $ unlink log</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_hGXHoJdTEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)" incoming="_pKdg8JdTEeSF0pCT-mgLtQ" outgoing="_dNpUMJdUEeSF0pCT-mgLtQ">
-      <body>[baxter@HOST]&#xD;
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hGXHoJdTEeSF0pCT-mgLtQ" name="#4 INSTALL RPM PACKAGES (in Orange &amp; Magenta)" incoming="_pKdg8JdTEeSF0pCT-mgLtQ" outgoing="_M7GqwJsuEeSQW-O3MV76cQ">
+      <body>[USER@HOST]&#xD;
 $ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
 $ rpm -qa |grep -i baxter</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_CkedMJdUEeSF0pCT-mgLtQ" name="REPLACE constants.licence FILE" incoming="_dNpUMJdUEeSF0pCT-mgLtQ" outgoing="_7LFLgJp5EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_CkedMJdUEeSF0pCT-mgLtQ" name="#6 REPLACE constants.licence FILE" incoming="_NrZfQJsuEeSQW-O3MV76cQ" outgoing="_7LFLgJp5EeSErr_g8YjIHw">
       <body>[baxter@HOST]&#xD;
 $ move constants.licence constants.licence.x.y.z&#xD;
 $ cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA /opt/baxter/config-server/repository/com/baxter/pe/constants.licence&#xD;
 $ md5sum file</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_oqmfsJdUEeSF0pCT-mgLtQ" name="INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING" incoming="_M3DMEJp8EeSErr_g8YjIHw" outgoing="_jQvK4Jp8EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_oqmfsJdUEeSF0pCT-mgLtQ" name="#10 INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING" incoming="_Esc8YJswEeSQW-O3MV76cQ" outgoing="_jQvK4Jp8EeSErr_g8YjIHw">
       <body>[baxter@HOST]&#xD;
 $cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
 $cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_IDZukJdVEeSF0pCT-mgLtQ" name="RESTORE FILES &amp; FOLDERS&#xD;&#xA;&#xD;&#xA;$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;&#xA;$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/" incoming="_7LFLgJp5EeSErr_g8YjIHw" outgoing="_7pNR8Jp5EeSErr_g8YjIHw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_qcH64Jp5EeSErr_g8YjIHw" name="RESTORE SYMLINKS" incoming="_7pNR8Jp5EeSErr_g8YjIHw" outgoing="_M3DMEJp8EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_IDZukJdVEeSF0pCT-mgLtQ" name="#7 RESTORE CONFIGURATION FILE &amp; FOLDERS" incoming="_7LFLgJp5EeSErr_g8YjIHw" outgoing="_7pNR8Jp5EeSErr_g8YjIHw">
+      <body>[baxter@HOST]&#xD;
+$cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;
+$cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qcH64Jp5EeSErr_g8YjIHw" name="#8 RESTORE 'log' SYMLINK" incoming="_7pNR8Jp5EeSErr_g8YjIHw" outgoing="_EN8bcJswEeSQW-O3MV76cQ">
       <body>[baxter@HOST]&#xD;
 $ ln -sf file link</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_W42oMJp8EeSErr_g8YjIHw" name="UPDATE LINKS WHERE Adaxter, RFQAdaxter, Trading are running" incoming="_jQvK4Jp8EeSErr_g8YjIHw" outgoing="_m9aQ8Jp8EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_W42oMJp8EeSErr_g8YjIHw" name="#11 CHANGE BROKEN LIBRARY SYMLINKS WHERE Adaxter, RFQAdaxter, Trading are running" incoming="_jQvK4Jp8EeSErr_g8YjIHw" outgoing="_m9aQ8Jp8EeSErr_g8YjIHw">
       <body>[baxter@HOST]&#xD;
-$ ln -sf file link</body>
+$ unlink link&#xD;
+$ ln -sf new_file link</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_l8K2YJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS" incoming="_m9aQ8Jp8EeSErr_g8YjIHw" outgoing="_yCl1oJp8EeSErr_g8YjIHw">
-      <body>// TODO body of OpaqueAction11</body>
-    </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_wi_EEJp8EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK" incoming="_yCl1oJp8EeSErr_g8YjIHw" outgoing="___tQwJp8EeSErr_g8YjIHw">
-      <body>// TODO body of OpaqueAction12</body>
-    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_l8K2YJp8EeSErr_g8YjIHw" name="#12 RESTART Adaxter, RFQAdaxter, TRADING PROCESS" incoming="_m9aQ8Jp8EeSErr_g8YjIHw" outgoing="_yCl1oJp8EeSErr_g8YjIHw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wi_EEJp8EeSErr_g8YjIHw" name="#13 SHARE THE CLIENT (ZIP) TO THE NETWORK" incoming="_yCl1oJp8EeSErr_g8YjIHw" outgoing="___tQwJp8EeSErr_g8YjIHw" body=""/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_6zmYQJp8EeSErr_g8YjIHw" name="ActivityFinal1" incoming="___tQwJp8EeSErr_g8YjIHw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_JSFVoJsuEeSQW-O3MV76cQ" name="#5 CHANGE BROKEN LIBRARY SYMLINKS" incoming="_M7GqwJsuEeSQW-O3MV76cQ" outgoing="_NrZfQJsuEeSQW-O3MV76cQ">
+      <body>[baxter@HOST]&#xD;
+$ unlink link&#xD;
+$ ln -sf new_file link</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_8VvJEJsvEeSQW-O3MV76cQ" name="#9 RESTART BAXTER" incoming="_EN8bcJswEeSQW-O3MV76cQ" outgoing="_Esc8YJswEeSQW-O3MV76cQ" body=""/>
   </packagedElement>
 </uml:Model>
