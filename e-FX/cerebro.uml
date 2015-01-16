@@ -4,17 +4,16 @@
     <body>CEREBRO</body>
   </ownedComment>
   <ownedComment xmi:id="_Af8WUJZnEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _66wQoJaAEeSaLMhtV6zFhw">
-    <body># STEP 1: [efxbuild@lnx-efxbuild]&#xD;
-$ mkdir /home/efxbuild/eFX-Scripts/x.y.z&#xD;
+    <body># STEP 1: [efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ mkdir x.y.z&#xD;
 &#xD;
 </body>
   </ownedComment>
   <ownedComment xmi:id="_EvGfkJaBEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _66wQoJaAEeSaLMhtV6zFhw">
-    <body># STEP 4: [efxbuild@lnx-efxbuild]&#xD;
-$ find - name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
-$ find - name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
-$ find ./SB7- name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
-$ find ./Linux - name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+    <body># STEP 4: [efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts/x.y.z]&#xD;
+$ find . -name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./SB7 -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./Linux -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
 </body>
   </ownedComment>
   <packagedElement xmi:type="uml:Component" xmi:id="_uDr38IqVEeSf6YVZN2Xsyw" name="eFX-AdaFIX"/>
@@ -57,28 +56,28 @@ $ find ./Linux - name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#
   </packagedElement>
   <packagedElement xmi:type="uml:Node" xmi:id="_yjqxEJZYEeSaLMhtV6zFhw" name="/local/home/strmbase">
     <ownedComment xmi:id="_Y6-DIJZZEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
-      <body># STEP 6 [strmbase@HOST]&#xD;
+      <body># STEP 6 [strmbase@HOST /local/home/strmbase]&#xD;
 $ unlink EFX-all&#xD;
 $ unlink EFX-lp</body>
     </ownedComment>
     <ownedComment xmi:id="_YVpTEJZaEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
-      <body># STEP 7 [strmbase@HOST]&#xD;
-$ mv EFX-all-SITX EFX-all-SIT[X].bak&#xD;
-$ mv EFX-lp-SITX EFX-lp-SIT[X].bak</body>
+      <body># STEP 7 [strmbase@HOST /local/home/strmbase]&#xD;
+$ mv EFX-all-SIT[X]  EFX-all-SIT[X].bak&#xD;
+$ mv  EFX-lp-SIT[X]  EFX-lp-SIT[X].bak</body>
     </ownedComment>
     <ownedComment xmi:id="_C2iQsJZbEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
-      <body># STEP 8 [strmbase@HOST]&#xD;
+      <body># STEP 8 [strmbase@HOST /local/home/strmbase]&#xD;
 $ ln -s /dev/shm/EFX-all-SIT[X] EFX-all&#xD;
 $ ln -s /dev/shm/EFX-lp-SIT[X] EFX-lp</body>
     </ownedComment>
     <ownedComment xmi:id="_8ECvkJZiEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
-      <body># STEP 10 [strmbase@HOST]&#xD;
+      <body># STEP 10 [strmbase@HOST /local/home/strmbase]&#xD;
 $ cp -r /dev/shm/EFX-all-SIT[X] EFX-all-SIT[X] &#xD;
 $ cp -r /dev/shm/EFX-lp-SIT[X] EFX-lp-SIT[X] &#xD;
 </body>
     </ownedComment>
     <ownedComment xmi:id="_bb7jAJZkEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _yjqxEJZYEeSaLMhtV6zFhw">
-      <body># STEP 11 [strmbase@HOST]&#xD;
+      <body># STEP 11 [strmbase@HOST /local/home/strmbase]&#xD;
 $ ln -s EFX-all-SIT[X] EFX-all&#xD;
 $ ln -s EFX-lp-SIT[X] EFX-lp</body>
     </ownedComment>
@@ -92,38 +91,38 @@ $ ln -s EFX-lp-SIT[X] EFX-lp</body>
     <nestedNode xmi:id="_iSeTIJZbEeSaLMhtV6zFhw" name="EFX-lp -> /dev/shm/EFX-lp-SIT2"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Device" xmi:id="_tlv9MJZmEeSaLMhtV6zFhw" name="lnx-efxbuild.ants.ad.anplc.co.uk">
+    <nestedClassifier xmi:type="uml:Node" xmi:id="_URR3MJaFEeSaLMhtV6zFhw" name="/home/efxbuild/eFX_installer">
+      <ownedComment xmi:id="_yeZ9IJaFEeSaLMhtV6zFhw" annotatedElement="_URR3MJaFEeSaLMhtV6zFhw">
+        <body># STEP 5: [efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]&#xD;
+$ ./buildRPM_3.2_Final.sh $1 $2 $3 $4 (efx001)&#xD;
+$ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
+      </ownedComment>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9GkOoJaFEeSaLMhtV6zFhw" name="buildRPM_3.2_Final.sh"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_C4JywJaGEeSaLMhtV6zFhw" name="buildRPM_3.2_Linux.sh"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Node" xmi:id="_T0Tj8JZcEeSaLMhtV6zFhw" name="/home/efxbuild/upload_area_sit">
+      <ownedComment xmi:id="_RktGkJZhEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _T0Tj8JZcEeSaLMhtV6zFhw">
+        <body># STEP 9 [user@HOST /home/efxbuild/upload_area_sit/Cerebro.x.y.z]&#xD;
+$ rpm -qa | grep sgbm-efx&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum-update PACKAGE.rpm</body>
+      </ownedComment>
+      <nestedNode xmi:id="_CyQl8JZhEeSaLMhtV6zFhw" name="Cerebro.x.y.z"/>
+    </nestedClassifier>
     <nestedNode xmi:id="_rOD3oJZnEeSaLMhtV6zFhw" name="/home/efxbuild/eFX-Scripts">
       <ownedComment xmi:id="_NUrXoJZoEeSaLMhtV6zFhw" annotatedElement="_yRqn0JZoEeSaLMhtV6zFhw">
-        <body># STEP 2: [efxbuild@lnx-efxbuild]&#xD;
+        <body># STEP 2: [efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ vi release.properties&#xD;
 </body>
       </ownedComment>
       <ownedComment xmi:id="_6z8K4JZoEeSaLMhtV6zFhw" annotatedElement="_2UGigJZoEeSaLMhtV6zFhw">
-        <body># STEP 3: [efxbuild@lnx-efxbuild]&#xD;
+        <body># STEP 3: [efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ ./release.sh</body>
       </ownedComment>
       <nestedClassifier xmi:type="uml:Artifact" xmi:id="_yRqn0JZoEeSaLMhtV6zFhw" name="release.properties"/>
       <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2UGigJZoEeSaLMhtV6zFhw" name="release.sh"/>
       <nestedNode xmi:id="_66wQoJaAEeSaLMhtV6zFhw" name="x.y.z"/>
     </nestedNode>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Node" xmi:id="_T0Tj8JZcEeSaLMhtV6zFhw" name="/home/efxbuild/upload_area_sit">
-    <ownedComment xmi:id="_RktGkJZhEeSaLMhtV6zFhw" annotatedElement="_wIk18IqXEeSf6YVZN2Xsyw _T0Tj8JZcEeSaLMhtV6zFhw">
-      <body># STEP 9 [user@host]&#xD;
-$ rpm -qa | grep sgbm-efx&#xD;
-$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum-update PACKAGE.rpm</body>
-    </ownedComment>
-    <nestedNode xmi:id="_CyQl8JZhEeSaLMhtV6zFhw" name="Cerebro.x.y.z"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Node" xmi:id="_URR3MJaFEeSaLMhtV6zFhw" name="/home/efxbuild/eFX_installer">
-    <ownedComment xmi:id="_yeZ9IJaFEeSaLMhtV6zFhw" annotatedElement="_URR3MJaFEeSaLMhtV6zFhw">
-      <body># STEP 5: [efxbuild@lnx-efxbuild]&#xD;
-$ buildRPM_3.2_Final.sh $1 $2 $3 $4&#xD;
-$ buildRPM_3.2_Linux.sh $1 $2 $3 $4&#xD;
-</body>
-    </ownedComment>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9GkOoJaFEeSaLMhtV6zFhw" name="buildRPM_3.2_Final.sh"/>
-    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_C4JywJaGEeSaLMhtV6zFhw" name="buildRPM_3.2_Linux.sh"/>
+    <nestedNode xmi:id="_E8siAJ1YEeSXVLcG_ujGyQ" name="/home /efxbuild/upload_area_sit"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_Wt9eIJcLEeSaLMhtV6zFhw" name="CEREBRO Deployment" node="_iph4QJcLEeSaLMhtV6zFhw _vM0BwJdPEeSF0pCT-mgLtQ">
     <node xmi:type="uml:InitialNode" xmi:id="_iph4QJcLEeSaLMhtV6zFhw" name="InitialNode1"/>
@@ -141,4 +140,110 @@ $ buildRPM_3.2_Linux.sh $1 $2 $3 $4&#xD;
       <body>// TODO body of OpaqueAction1</body>
     </node>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_KWrTQJs7EeSQW-O3MV76cQ" name="CEREBRO" node="_lhH9AJvYEeS1x_Ye4TA6Uw _mDV5QJvYEeS1x_Ye4TA6Uw _mlQ6kJvYEeS1x_Ye4TA6Uw _KQUBwJvZEeS1x_Ye4TA6Uw _nJaUAJvZEeS1x_Ye4TA6Uw _bHM_AJvcEeS1x_Ye4TA6Uw _zSbz8JvcEeS1x_Ye4TA6Uw _MeCgwJvdEeS1x_Ye4TA6Uw _3ebL4JvfEeS1x_Ye4TA6Uw _XFcc8JvgEeS1x_Ye4TA6Uw _am8_YJvhEeS1x_Ye4TA6Uw _RpYyAJviEeS1x_Ye4TA6Uw _gCW4EJylEeSXVLcG_ujGyQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ur-jAJvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER" target="_mDV5QJvYEeS1x_Ye4TA6Uw" source="_lhH9AJvYEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_usk_8JvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_utK10JvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_F7J_YJvZEeS1x_Ye4TA6Uw" name="#1: CREATE NEW RELEASE FOLDER_To_EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE" target="_mlQ6kJvYEeS1x_Ye4TA6Uw" source="_mDV5QJvYEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_F7J_YZvZEeS1x_Ye4TA6Uw" name="#1: CREATE NEW RELEASE FOLDER_To_EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_F7J_YpvZEeS1x_Ye4TA6Uw" name="#1: CREATE NEW RELEASE FOLDER_To_EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_LWiC8JvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3" target="_KQUBwJvZEeS1x_Ye4TA6Uw" source="_mlQ6kJvYEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_LWiC8ZvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_LWiC8pvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_oHdQoJvZEeS1x_Ye4TA6Uw" name="#3 EXECUTE release.sh SCRIPT_To_OpaqueAction4" target="_nJaUAJvZEeS1x_Ye4TA6Uw" source="_KQUBwJvZEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_oHdQoZvZEeS1x_Ye4TA6Uw" name="#3 EXECUTE release.sh SCRIPT_To_OpaqueAction4_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_oHdQopvZEeS1x_Ye4TA6Uw" name="#3 EXECUTE release.sh SCRIPT_To_OpaqueAction4_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_cG4TUJvcEeS1x_Ye4TA6Uw" name="# 4 CLEAN . &amp; .svn FILES_To_OpaqueAction5" target="_bHM_AJvcEeS1x_Ye4TA6Uw" source="_nJaUAJvZEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_cG4TUZvcEeS1x_Ye4TA6Uw" name="# 4 CLEAN . &amp; .svn FILES_To_OpaqueAction5_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_cG4TUpvcEeS1x_Ye4TA6Uw" name="# 4 CLEAN . &amp; .svn FILES_To_OpaqueAction5_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0iBzkJvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6" target="_zSbz8JvcEeS1x_Ye4TA6Uw" source="_bHM_AJvcEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_0iBzkZvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_0iBzkpvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OHX2EJvdEeS1x_Ye4TA6Uw" name="# 6 REMOVE LINKS TO /local/home/strmbase_To_OpaqueAction7" target="_MeCgwJvdEeS1x_Ye4TA6Uw" source="_zSbz8JvcEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_OHX2EZvdEeS1x_Ye4TA6Uw" name="# 6 REMOVE LINKS TO /local/home/strmbase_To_OpaqueAction7_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_OHX2EpvdEeS1x_Ye4TA6Uw" name="# 6 REMOVE LINKS TO /local/home/strmbase_To_OpaqueAction7_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_8hZWgJvfEeS1x_Ye4TA6Uw" name="#7 BACKUP PREVIOUS RELEASE INSTALLATION FOLDERS_To_# 8 CREATE NEW LINKS TO /dev/shm FOLDER" target="_3ebL4JvfEeS1x_Ye4TA6Uw" source="_MeCgwJvdEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_8hZWgZvfEeS1x_Ye4TA6Uw" name="#7 BACKUP PREVIOUS RELEASE INSTALLATION FOLDERS_To_# 8 CREATE NEW LINKS TO /dev/shm FOLDER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_8hZWgpvfEeS1x_Ye4TA6Uw" name="#7 BACKUP PREVIOUS RELEASE INSTALLATION FOLDERS_To_# 8 CREATE NEW LINKS TO /dev/shm FOLDER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_YA9C8JvgEeS1x_Ye4TA6Uw" name="#8 CREATE NEW LINKS TO /dev/shm FOLDER_To_OpaqueAction9" target="_XFcc8JvgEeS1x_Ye4TA6Uw" source="_3ebL4JvfEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_YA9C8ZvgEeS1x_Ye4TA6Uw" name="#8 CREATE NEW LINKS TO /dev/shm FOLDER_To_OpaqueAction9_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_YA9C8pvgEeS1x_Ye4TA6Uw" name="#8 CREATE NEW LINKS TO /dev/shm FOLDER_To_OpaqueAction9_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_zxcR4JvhEeS1x_Ye4TA6Uw" name="#9 UPDATE/INSTALL NEW PACKAGES_To_#10 COPY NEW CONTENT TO INSTALLATION FOLDERS" target="_am8_YJvhEeS1x_Ye4TA6Uw" source="_XFcc8JvgEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_zxcR4ZvhEeS1x_Ye4TA6Uw" name="#9 UPDATE/INSTALL NEW PACKAGES_To_#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_zxcR4pvhEeS1x_Ye4TA6Uw" name="#9 UPDATE/INSTALL NEW PACKAGES_To_#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Z6KVYJviEeS1x_Ye4TA6Uw" name="#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_To_OpaqueAction11" target="_RpYyAJviEeS1x_Ye4TA6Uw" source="_am8_YJvhEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Z6KVYZviEeS1x_Ye4TA6Uw" name="#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_To_OpaqueAction11_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Z6KVYpviEeS1x_Ye4TA6Uw" name="#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_To_OpaqueAction11_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_g5Z00JylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1" target="_gCW4EJylEeSXVLcG_ujGyQ" source="_RpYyAJviEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_g6ARwJylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_g6mHoJylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="_ur-jAJvYEeS1x_Ye4TA6Uw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_mDV5QJvYEeS1x_Ye4TA6Uw" name="#1  CREATE NEW RELEASE FOLDER" incoming="_ur-jAJvYEeS1x_Ye4TA6Uw" outgoing="_F7J_YJvZEeS1x_Ye4TA6Uw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ mkdir x.y.z</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_mlQ6kJvYEeS1x_Ye4TA6Uw" name="#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE" incoming="_F7J_YJvZEeS1x_Ye4TA6Uw" outgoing="_LWiC8JvZEeS1x_Ye4TA6Uw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ vi release.properties</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_KQUBwJvZEeS1x_Ye4TA6Uw" name="#3 EXECUTE release.sh SCRIPT" incoming="_LWiC8JvZEeS1x_Ye4TA6Uw" outgoing="_oHdQoJvZEeS1x_Ye4TA6Uw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ ./release.sh</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_nJaUAJvZEeS1x_Ye4TA6Uw" name="#4 CLEAN . &amp; .svn FILES" incoming="_oHdQoJvZEeS1x_Ye4TA6Uw" outgoing="_cG4TUJvcEeS1x_Ye4TA6Uw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts/x.y.z]&#xD;
+$ find . -name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./SB7 -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./Linux -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bHM_AJvcEeS1x_Ye4TA6Uw" name="#5 BUILD RPM PACKAGES" incoming="_cG4TUJvcEeS1x_Ye4TA6Uw" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
+$ ./buildRPM_3.2_Final.sh $1 $2 $3 $4 (efx001)&#xD;
+$ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_zSbz8JvcEeS1x_Ye4TA6Uw" name="#6 REMOVE LINKS TO /local/home/strmbase" incoming="_0iBzkJvcEeS1x_Ye4TA6Uw" outgoing="_OHX2EJvdEeS1x_Ye4TA6Uw">
+      <body>[strmbase@HOST /local/home/strmbase]&#xD;
+$ unlink EFX-all&#xD;
+$ unlink EFX-lp</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_MeCgwJvdEeS1x_Ye4TA6Uw" name="#7 BACKUP PREVIOUS RELEASE INSTALLATION FOLDERS" incoming="_OHX2EJvdEeS1x_Ye4TA6Uw" outgoing="_8hZWgJvfEeS1x_Ye4TA6Uw">
+      <body>[strmbase@HOST /local/home/strmbase]&#xD;
+$ mv EFX-all-SIT[X]  EFX-all-SIT[X].bak&#xD;
+$ mv  EFX-lp-SIT[X]  EFX-lp-SIT[X].bak</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3ebL4JvfEeS1x_Ye4TA6Uw" name="#8 CREATE NEW LINKS TO /dev/shm FOLDER" incoming="_8hZWgJvfEeS1x_Ye4TA6Uw" outgoing="_YA9C8JvgEeS1x_Ye4TA6Uw">
+      <body>[strmbase@HOST /local/home/strmbase]&#xD;
+$ ln -s /dev/shm/EFX-all-SIT[X] EFX-all&#xD;
+$ ln -s /dev/shm/EFX-lp-SIT[X] EFX-lp</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XFcc8JvgEeS1x_Ye4TA6Uw" name="#9 UPDATE/INSTALL NEW PACKAGES" incoming="_YA9C8JvgEeS1x_Ye4TA6Uw" outgoing="_zxcR4JvhEeS1x_Ye4TA6Uw">
+      <body>[user@HOST /home/efxbuild/upload_area_sit/Cerebro.x.y.z]&#xD;
+$ rpm -qa | grep sgbm-efx&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum-update PACKAGE.rpm</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_am8_YJvhEeS1x_Ye4TA6Uw" name="#10 COPY NEW CONTENT TO INSTALLATION FOLDERS" incoming="_zxcR4JvhEeS1x_Ye4TA6Uw" outgoing="_Z6KVYJviEeS1x_Ye4TA6Uw">
+      <body>[strmbase@HOST /local/home/strmbase]&#xD;
+$ cp -r /dev/shm/EFX-all-SIT[X] EFX-all-SIT[X] &#xD;
+$ cp -r /dev/shm/EFX-lp-SIT[X] EFX-lp-SIT[X]</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_RpYyAJviEeS1x_Ye4TA6Uw" name="#11 RESTORE LINKS TO /local/home/strmbase" incoming="_Z6KVYJviEeS1x_Ye4TA6Uw" outgoing="_g5Z00JylEeSXVLcG_ujGyQ">
+      <body> [strmbase@HOST /local/home/strmbase]&#xD;
+$ ln -s EFX-all-SIT[X] EFX-all&#xD;
+$ ln -s EFX-lp-SIT[X] EFX-lp</body>
+    </node>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_g5Z00JylEeSXVLcG_ujGyQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_bZZYkJ1YEeSXVLcG_ujGyQ" name="Deploy" client="_URR3MJaFEeSaLMhtV6zFhw" supplier="_E8siAJ1YEeSXVLcG_ujGyQ"/>
 </uml:Model>
