@@ -30,18 +30,6 @@ function upload2Satellite {
 
 	#List EFX SATELLITE CHANNELS
 	$EFX_INSTALLER_HOME/canalefx.sh > $SATELLITE_EFX_CHANNELS_TMP
-	SATELLITE_EFX_CHANNELS[0]='clone-sgbm-efx-03-11-2014'
-	SATELLITE_EFX_CHANNELS[1]='clone-sgbm-efx-01-01-2015'
-	SATELLITE_EFX_CHANNELS[2]='clone-sgbm-efx-01-10-2014'
-	SATELLITE_EFX_CHANNELS[3]='clone-sgbm-efx-01-12-2014'
-	SATELLITE_EFX_CHANNELS[4]='clone-sgbm-efx-03-12-2014'
-	SATELLITE_EFX_CHANNELS[5]='clone-sgbm-efx-rhel6-01-01-2015'
-	SATELLITE_EFX_CHANNELS[6]='clone-sgbm-efx-rhel6-01-10-2014'
-	SATELLITE_EFX_CHANNELS[7]='clone-sgbm-efx-rhel6-01-12-2014'
-	SATELLITE_EFX_CHANNELS[8]='clone-sgbm-efx-rhel6-03-11-2014'
-	SATELLITE_EFX_CHANNELS[9]='clone-sgbm-efx-rhel6-03-12-2014'
-	SATELLITE_EFX_CHANNELS[10]='sgbm-efx'
-	SATELLITE_EFX_CHANNELS[11]='sgbm-efx-rhel6'
 	
 	#List CAPLIN SATELLITE CHANNELS
 	$EFX_INSTALLER_HOME/canalcaplin.sh > $SATELLITE_CAPLIN_CHANNELS_TMP
@@ -57,7 +45,7 @@ function upload2Satellite {
 	while read CHANNEL
 	do
 		let count++
-		echo "Uploading to Channel: $CHANNEL [$count] "
+		echo "Uploading to Channel: $CHANNEL [$count]"
 		rhnpush -l --channel=$CHANNEL -d $RELEASE_FOLDER --newest --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD
 	done < $SATELLITE_EFX_CHANNELS_TMP
 	
