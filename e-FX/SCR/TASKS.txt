@@ -1,0 +1,8 @@
+Instalarse el Plugion SVN en eclipse Luna
+Revisar el ./dbserver
+	añadir el proceso Adafix en el Deployment diagram de los entornos
+Añadir diagrama de actividades al Proceso de despliegue de Baxter.
+Añadir El builrpm de linux (condicional) en el diagrama de actividades de Cerebro
+revisar el paso 8 de Cerebro Deployemnt Diagram
+Añadir el diagrama de Subidas a Satellite
+#Añadir el Entorno CAPLIN

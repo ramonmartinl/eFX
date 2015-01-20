@@ -82,35 +82,48 @@ $ ./SFWDHandler.sh start</body>
   <packagedElement xmi:type="uml:Component" xmi:id="_jCTr4InqEeSf6YVZN2Xsyw" name="SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts>">
     <ownedAttribute xmi:id="_nlOdcInqEeSf6YVZN2Xsyw" name="env_sit_lp.sh" aggregation="composite"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_qemuYJccEeSaLMhtV6zFhw" name="LP Simulation" node="_vP9kkJccEeSaLMhtV6zFhw _vueskJccEeSaLMhtV6zFhw _coRbQJcdEeSaLMhtV6zFhw _kdJQUJceEeSaLMhtV6zFhw __eG8QJceEeSaLMhtV6zFhw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_qemuYJccEeSaLMhtV6zFhw" name="LP Simulation" node="_vP9kkJccEeSaLMhtV6zFhw _vueskJccEeSaLMhtV6zFhw _coRbQJcdEeSaLMhtV6zFhw _kdJQUJceEeSaLMhtV6zFhw __eG8QJceEeSaLMhtV6zFhw _iIVI8KB9EeSvLZlLl1KRPw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_Z-q7wJcdEeSaLMhtV6zFhw" name="InitialNode1_To_GENERATE PRICES FILE WITH NEW DATES" target="_vueskJccEeSaLMhtV6zFhw" source="_vP9kkJccEeSaLMhtV6zFhw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_Z-ri0JcdEeSaLMhtV6zFhw" name="InitialNode1_To_GENERATE PRICES FILE WITH NEW DATES_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_Z-sJ4JcdEeSaLMhtV6zFhw" name="InitialNode1_To_GENERATE PRICES FILE WITH NEW DATES_weight"/>
     </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_eYTM4KB9EeSvLZlLl1KRPw" name="GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES_To_START THE SERVVER" target="_kdJQUJceEeSaLMhtV6zFhw" source="_vueskJccEeSaLMhtV6zFhw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_eYTz8KB9EeSvLZlLl1KRPw" name="GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES_To_START THE SERVVER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_eYUbAKB9EeSvLZlLl1KRPw" name="GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES_To_START THE SERVVER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_f16aYKB9EeSvLZlLl1KRPw" name="START THE SERVVER_To_SET THE UPDATE RATE" target="__eG8QJceEeSaLMhtV6zFhw" source="_kdJQUJceEeSaLMhtV6zFhw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_f17ogKB9EeSvLZlLl1KRPw" name="START THE SERVVER_To_SET THE UPDATE RATE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_f17ogaB9EeSvLZlLl1KRPw" name="START THE SERVVER_To_SET THE UPDATE RATE_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hTr_8KB9EeSvLZlLl1KRPw" name="SET THE UPDATE RATE_To_RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;" target="_coRbQJcdEeSaLMhtV6zFhw" source="__eG8QJceEeSaLMhtV6zFhw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_hTsnAKB9EeSvLZlLl1KRPw" name="SET THE UPDATE RATE_To_RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_hTtOEKB9EeSvLZlLl1KRPw" name="SET THE UPDATE RATE_To_RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_i8RuYKB9EeSvLZlLl1KRPw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;_To_ActivityFinal1" target="_iIVI8KB9EeSvLZlLl1KRPw" source="_coRbQJcdEeSaLMhtV6zFhw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_i8SVcKB9EeSvLZlLl1KRPw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_i8S8gKB9EeSvLZlLl1KRPw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;_To_ActivityFinal1_weight"/>
+    </edge>
     <node xmi:type="uml:InitialNode" xmi:id="_vP9kkJccEeSaLMhtV6zFhw" name="InitialNode1" outgoing="_Z-q7wJcdEeSaLMhtV6zFhw"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_vueskJccEeSaLMhtV6zFhw" name="GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES" incoming="_Z-q7wJcdEeSaLMhtV6zFhw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_vueskJccEeSaLMhtV6zFhw" name="GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES" incoming="_Z-q7wJcdEeSaLMhtV6zFhw" outgoing="_eYTM4KB9EeSvLZlLl1KRPw">
       <body>[strmbase@lnx-efxd38]&#xD;
-$ /local/home/strmbase/d3data/capture/demo/pruebas/GeneratedDateFixing.pl &#xD;
-&#xD;
+$ /dev/shm/d3data/capture/demo/pruebas/GeneratedDateFixing.pl </body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_coRbQJcdEeSaLMhtV6zFhw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;$" incoming="_hTr_8KB9EeSvLZlLl1KRPw" outgoing="_i8RuYKB9EeSvLZlLl1KRPw">
+      <body>&#xD;
+$ cp /local/home/strmbase/d3data/capture/demo/pruebas/dataNDFnew /local/home/strmbase/d3data/capture/demo/newDataNDF&#xD;
 &#xD;
 &#xD;
 </body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_coRbQJcdEeSaLMhtV6zFhw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;">
-      <body>$ cp /local/home/strmbase/d3data/capture/demo/pruebas/dataNDFnew /local/home/strmbase/d3data/capture/demo/newDataNDF&#xD;
-&#xD;
-&#xD;
-</body>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_kdJQUJceEeSaLMhtV6zFhw" name="START THE SERVVER" incoming="_eYTM4KB9EeSvLZlLl1KRPw" outgoing="_f16aYKB9EeSvLZlLl1KRPw">
+      <body>[strmbase@lnx-efxd38 /dev/shm/d3data]&#xD;
+$ ./startServer.sh.NDF</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_kdJQUJceEeSaLMhtV6zFhw" name="START THE SERVVER">
-      <body>$ /local/home/strmbase/d3data/capture/demo/startServer.sh.NDF &#xD;
-&#xD;
-</body>
-    </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="__eG8QJceEeSaLMhtV6zFhw" name="SET THE UPDATE RATE">
+    <node xmi:type="uml:OpaqueAction" xmi:id="__eG8QJceEeSaLMhtV6zFhw" name="SET THE UPDATE RATE" incoming="_f16aYKB9EeSvLZlLl1KRPw" outgoing="_hTr_8KB9EeSvLZlLl1KRPw">
       <body>Enter: ur &amp; enter 20 (seconds)&#xD;
 &#xD;
 </body>
     </node>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_iIVI8KB9EeSvLZlLl1KRPw" name="ActivityFinal1" incoming="_i8RuYKB9EeSvLZlLl1KRPw"/>
   </packagedElement>
 </uml:Model>

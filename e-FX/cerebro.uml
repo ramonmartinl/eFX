@@ -130,17 +130,27 @@ $ ./release.sh</body>
       <body>// TODO body of OpaqueAction1</body>
     </node>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_9lb80JpzEeSErr_g8YjIHw" name="CEREBRO" node="_GtVVcJp0EeSErr_g8YjIHw _HQu9cJp0EeSErr_g8YjIHw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_9lb80JpzEeSErr_g8YjIHw" name="CEREBRO" node="_GtVVcJp0EeSErr_g8YjIHw _HQu9cJp0EeSErr_g8YjIHw _ywD3oJ-2EeSvLZlLl1KRPw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_PH6VEJp0EeSErr_g8YjIHw" name="InitialNode1_To_OpaqueAction1" target="_HQu9cJp0EeSErr_g8YjIHw" source="_GtVVcJp0EeSErr_g8YjIHw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_PIfj4Jp0EeSErr_g8YjIHw" name="InitialNode1_To_OpaqueAction1_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_PJCWcJp0EeSErr_g8YjIHw" name="InitialNode1_To_OpaqueAction1_weight"/>
     </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_zbD8cJ-2EeSvLZlLl1KRPw" name="UPLOAD TO CHANNEL_To_ActivityFinal1" target="_ywD3oJ-2EeSvLZlLl1KRPw" source="_HQu9cJp0EeSErr_g8YjIHw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_zbzjUJ-2EeSvLZlLl1KRPw" name="UPLOAD TO CHANNEL_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_zcZZMJ-2EeSvLZlLl1KRPw" name="UPLOAD TO CHANNEL_To_ActivityFinal1_weight"/>
+    </edge>
     <node xmi:type="uml:InitialNode" xmi:id="_GtVVcJp0EeSErr_g8YjIHw" name="InitialNode1" outgoing="_PH6VEJp0EeSErr_g8YjIHw"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_HQu9cJp0EeSErr_g8YjIHw" name="OpaqueAction1" incoming="_PH6VEJp0EeSErr_g8YjIHw">
-      <body>// TODO body of OpaqueAction1</body>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_HQu9cJp0EeSErr_g8YjIHw" name="UPLOAD TO CHANNEL" incoming="_PH6VEJp0EeSErr_g8YjIHw" outgoing="_zbD8cJ-2EeSvLZlLl1KRPw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/upload_area/[SW]x.y.z]&#xD;
+$ rhnpush --channel=${CHANNEL} -d ${DIRECTORY} --newest --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u efxbuild -p RedHat01&#xD;
+&#xD;
+List of Channels are in :&#xD;
+http://wiki.ants.ad.anplc.co.uk/foswiki/UnixTeam/ListEfxChannels&#xD;
+</body>
     </node>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_ywD3oJ-2EeSvLZlLl1KRPw" name="ActivityFinal1" incoming="_zbD8cJ-2EeSvLZlLl1KRPw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_KWrTQJs7EeSQW-O3MV76cQ" name="CEREBRO" node="_lhH9AJvYEeS1x_Ye4TA6Uw _mDV5QJvYEeS1x_Ye4TA6Uw _mlQ6kJvYEeS1x_Ye4TA6Uw _KQUBwJvZEeS1x_Ye4TA6Uw _nJaUAJvZEeS1x_Ye4TA6Uw _bHM_AJvcEeS1x_Ye4TA6Uw _zSbz8JvcEeS1x_Ye4TA6Uw _MeCgwJvdEeS1x_Ye4TA6Uw _3ebL4JvfEeS1x_Ye4TA6Uw _XFcc8JvgEeS1x_Ye4TA6Uw _am8_YJvhEeS1x_Ye4TA6Uw _RpYyAJviEeS1x_Ye4TA6Uw _gCW4EJylEeSXVLcG_ujGyQ">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_KWrTQJs7EeSQW-O3MV76cQ" name="CEREBRO" node="_lhH9AJvYEeS1x_Ye4TA6Uw _mDV5QJvYEeS1x_Ye4TA6Uw _mlQ6kJvYEeS1x_Ye4TA6Uw _KQUBwJvZEeS1x_Ye4TA6Uw _nJaUAJvZEeS1x_Ye4TA6Uw _bHM_AJvcEeS1x_Ye4TA6Uw _zSbz8JvcEeS1x_Ye4TA6Uw _MeCgwJvdEeS1x_Ye4TA6Uw _3ebL4JvfEeS1x_Ye4TA6Uw _XFcc8JvgEeS1x_Ye4TA6Uw _am8_YJvhEeS1x_Ye4TA6Uw _RpYyAJviEeS1x_Ye4TA6Uw _gCW4EJylEeSXVLcG_ujGyQ _wQp6gJ_5EeSvLZlLl1KRPw _G2xy0J_6EeSvLZlLl1KRPw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_ur-jAJvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER" target="_mDV5QJvYEeS1x_Ye4TA6Uw" source="_lhH9AJvYEeS1x_Ye4TA6Uw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_usk_8JvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_utK10JvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER_weight"/>
@@ -161,7 +171,7 @@ $ ./release.sh</body>
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_cG4TUZvcEeS1x_Ye4TA6Uw" name="# 4 CLEAN . &amp; .svn FILES_To_OpaqueAction5_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_cG4TUpvcEeS1x_Ye4TA6Uw" name="# 4 CLEAN . &amp; .svn FILES_To_OpaqueAction5_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_0iBzkJvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6" target="_zSbz8JvcEeS1x_Ye4TA6Uw" source="_bHM_AJvcEeS1x_Ye4TA6Uw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0iBzkJvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6" target="_zSbz8JvcEeS1x_Ye4TA6Uw" source="_G2xy0J_6EeSvLZlLl1KRPw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_0iBzkZvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_0iBzkpvcEeS1x_Ye4TA6Uw" name="# 5: BUILD RPM PACKAGES_To_OpaqueAction6_weight"/>
     </edge>
@@ -185,9 +195,17 @@ $ ./release.sh</body>
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_Z6KVYZviEeS1x_Ye4TA6Uw" name="#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_To_OpaqueAction11_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_Z6KVYpviEeS1x_Ye4TA6Uw" name="#10 COPY NEW CONTENT TO INSTALLATION FOLDERS_To_OpaqueAction11_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_g5Z00JylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1" target="_gCW4EJylEeSXVLcG_ujGyQ" source="_RpYyAJviEeS1x_Ye4TA6Uw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_g5Z00JylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1" target="_wQp6gJ_5EeSvLZlLl1KRPw" source="_RpYyAJviEeS1x_Ye4TA6Uw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_g6ARwJylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_g6mHoJylEeSXVLcG_ujGyQ" name="#11 RESTORE LINKS TO /local/home/strmbase_To_ActivityFinal1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_z7gboJ_5EeSvLZlLl1KRPw" name="OpaqueAction12_To_ActivityFinal1" target="_gCW4EJylEeSXVLcG_ujGyQ" source="_wQp6gJ_5EeSvLZlLl1KRPw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_z7hCsJ_5EeSvLZlLl1KRPw" name="OpaqueAction12_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_z7hCsZ_5EeSvLZlLl1KRPw" name="OpaqueAction12_To_ActivityFinal1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Kss7gJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES" target="_G2xy0J_6EeSvLZlLl1KRPw" source="_bHM_AJvcEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Ktb7UJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_KuCYQJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES_weight"/>
     </edge>
     <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="_ur-jAJvYEeS1x_Ye4TA6Uw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_mDV5QJvYEeS1x_Ye4TA6Uw" name="#1  CREATE NEW RELEASE FOLDER" incoming="_ur-jAJvYEeS1x_Ye4TA6Uw" outgoing="_F7J_YJvZEeS1x_Ye4TA6Uw">
@@ -208,7 +226,7 @@ $ find . -name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
 $ find ./SB7 -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
 $ find ./Linux -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_bHM_AJvcEeS1x_Ye4TA6Uw" name="#5 BUILD RPM PACKAGES" incoming="_cG4TUJvcEeS1x_Ye4TA6Uw" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bHM_AJvcEeS1x_Ye4TA6Uw" name="#5 BUILD RPM PACKAGES" incoming="_cG4TUJvcEeS1x_Ye4TA6Uw" outgoing="_Kss7gJ_6EeSvLZlLl1KRPw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
 $ ./buildRPM_3.2_Final.sh $1 $2 $3 $4 (efx001)&#xD;
 $ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
@@ -243,7 +261,9 @@ $ cp -r /dev/shm/EFX-lp-SIT[X] EFX-lp-SIT[X]</body>
 $ ln -s EFX-all-SIT[X] EFX-all&#xD;
 $ ln -s EFX-lp-SIT[X] EFX-lp</body>
     </node>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_g5Z00JylEeSXVLcG_ujGyQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_z7gboJ_5EeSvLZlLl1KRPw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wQp6gJ_5EeSvLZlLl1KRPw" name="START CEREBRO PROCESSES" incoming="_g5Z00JylEeSXVLcG_ujGyQ" outgoing="_z7gboJ_5EeSvLZlLl1KRPw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_Kss7gJ_6EeSvLZlLl1KRPw" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_bZZYkJ1YEeSXVLcG_ujGyQ" name="Deploy" client="_URR3MJaFEeSaLMhtV6zFhw" supplier="_E8siAJ1YEeSXVLcG_ujGyQ"/>
 </uml:Model>

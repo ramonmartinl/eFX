@@ -200,12 +200,12 @@ $./dashboard start&#xD;
 </body>
     </ownedComment>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ _qcH64Jp5EeSErr_g8YjIHw _W42oMJp8EeSErr_g8YjIHw _l8K2YJp8EeSErr_g8YjIHw _wi_EEJp8EeSErr_g8YjIHw _6zmYQJp8EeSErr_g8YjIHw _JSFVoJsuEeSQW-O3MV76cQ _8VvJEJsvEeSQW-O3MV76cQ">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ _qcH64Jp5EeSErr_g8YjIHw _W42oMJp8EeSErr_g8YjIHw _l8K2YJp8EeSErr_g8YjIHw _wi_EEJp8EeSErr_g8YjIHw _6zmYQJp8EeSErr_g8YjIHw _JSFVoJsuEeSQW-O3MV76cQ _8VvJEJsvEeSQW-O3MV76cQ _XDLTgJ_7EeSvLZlLl1KRPw _QUdjUJ_8EeSvLZlLl1KRPw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_oLkXIJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" target="_Yji5YJdQEeSF0pCT-mgLtQ" source="_Drg6kJdQEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_oMGioJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_oMpVMJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_ozjkMJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER" target="_jRm-kJdQEeSF0pCT-mgLtQ" source="_Yji5YJdQEeSF0pCT-mgLtQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ozjkMJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER" target="_XDLTgJ_7EeSvLZlLl1KRPw" source="_Yji5YJdQEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_ozkLQJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_ozkyUJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_To_STOP BAXTER_weight"/>
     </edge>
@@ -237,7 +237,7 @@ $./dashboard start&#xD;
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_m9a4AJp8EeSErr_g8YjIHw" name="UPDATE LINKS WHERE Adaxter, RFQAdaxter, Trading are running_To_OpaqueAction11_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_m9bfEJp8EeSErr_g8YjIHw" name="UPDATE LINKS WHERE Adaxter, RFQAdaxter, Trading are running_To_OpaqueAction11_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_yCl1oJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS_To_OpaqueAction12" target="_wi_EEJp8EeSErr_g8YjIHw" source="_l8K2YJp8EeSErr_g8YjIHw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yCl1oJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS_To_OpaqueAction12" target="_QUdjUJ_8EeSvLZlLl1KRPw" source="_l8K2YJp8EeSErr_g8YjIHw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_yCmcsJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS_To_OpaqueAction12_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_yCnDwJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS_To_OpaqueAction12_weight"/>
     </edge>
@@ -261,9 +261,21 @@ $./dashboard start&#xD;
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_EseKgJswEeSQW-O3MV76cQ" name="RESTART BAXTER_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_EseKgZswEeSQW-O3MV76cQ" name="RESTART BAXTER_To_INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING_weight"/>
     </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_nEAS0J_7EeSvLZlLl1KRPw" name="# SIGN RPMS_To_#1 STOP BAXTER" target="_jRm-kJdQEeSF0pCT-mgLtQ" source="_XDLTgJ_7EeSvLZlLl1KRPw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_nEA54J_7EeSvLZlLl1KRPw" name="# SIGN RPMS_To_#1 STOP BAXTER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_nEBg8J_7EeSvLZlLl1KRPw" name="# SIGN RPMS_To_#1 STOP BAXTER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_lNMFsJ_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP_To_#13 SHARE THE CLIENT (ZIP) TO THE NETWORK" target="_wi_EEJp8EeSErr_g8YjIHw" source="_QUdjUJ_8EeSvLZlLl1KRPw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_lNMswJ_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP_To_#13 SHARE THE CLIENT (ZIP) TO THE NETWORK_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_lNNT0J_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP_To_#13 SHARE THE CLIENT (ZIP) TO THE NETWORK_weight"/>
+    </edge>
     <node xmi:type="uml:InitialNode" xmi:id="_Drg6kJdQEeSF0pCT-mgLtQ" name="InitialNode1" outgoing="_oLkXIJdQEeSF0pCT-mgLtQ"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="#0 PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="#1 STOP BAXTER" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="#0 PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ">
+      <body>* Download files from the URL´s received By Mail&#xD;
+* Copy them to /home/efxbuild/upload_area_sit/Baxter.x.y.z&#xD;
+</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="#1 STOP BAXTER" incoming="_nEAS0J_7EeSvLZlLl1KRPw" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_so1zsJdQEeSF0pCT-mgLtQ" name="#2 BACKUP CONFIGURATION FILES &amp; FOLDERS" incoming="_ageDoJdREeSF0pCT-mgLtQ" outgoing="_RyLoYJdSEeSF0pCT-mgLtQ">
       <body>[baxter@HOST /opt/baxter/webpages/dashboard]&#xD;
 $cp config.cfg /opt/baxter/bak&#xD;
@@ -304,15 +316,22 @@ $ unlink link&#xD;
 $ ln -sf new_file link</body>
     </node>
     <node xmi:type="uml:OpaqueAction" xmi:id="_l8K2YJp8EeSErr_g8YjIHw" name="#12 RESTART Adaxter, RFQAdaxter, TRADING PROCESS" incoming="_m9aQ8Jp8EeSErr_g8YjIHw" outgoing="_yCl1oJp8EeSErr_g8YjIHw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_wi_EEJp8EeSErr_g8YjIHw" name="#13 SHARE THE CLIENT (ZIP) TO THE NETWORK" incoming="_yCl1oJp8EeSErr_g8YjIHw" outgoing="___tQwJp8EeSErr_g8YjIHw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wi_EEJp8EeSErr_g8YjIHw" name="#13 SHARE THE CLIENT (ZIP) TO THE NETWORK" incoming="_lNMFsJ_8EeSvLZlLl1KRPw" outgoing="___tQwJp8EeSErr_g8YjIHw" body=""/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_6zmYQJp8EeSErr_g8YjIHw" name="ActivityFinal1" incoming="___tQwJp8EeSErr_g8YjIHw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_JSFVoJsuEeSQW-O3MV76cQ" name="#5 CHANGE BROKEN LIBRARY SYMLINKS" incoming="_M7GqwJsuEeSQW-O3MV76cQ" outgoing="_NrZfQJsuEeSQW-O3MV76cQ">
       <body>[baxter@HOST /opt/baxter/lib]&#xD;
 $ unlink link&#xD;
 $ ln -sf new_file link</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_8VvJEJsvEeSQW-O3MV76cQ" name="#9 RESTART BAXTER" incoming="_EN8bcJswEeSQW-O3MV76cQ" outgoing="_Esc8YJswEeSQW-O3MV76cQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_8VvJEJsvEeSQW-O3MV76cQ" name="#9 START BAXTER" incoming="_EN8bcJswEeSQW-O3MV76cQ" outgoing="_Esc8YJswEeSQW-O3MV76cQ">
       <body>[baxter@HOST /opt/baxter/bin]</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XDLTgJ_7EeSvLZlLl1KRPw" name="# SIGN RPMS" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_nEAS0J_7EeSvLZlLl1KRPw">
+      <body>[baxter@HOST/home/efxbuild/upload_area_sit/Baxter.x.y.z]&#xD;
+$ rpm -addsign package1 package2.. packageN efx001</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_QUdjUJ_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP" incoming="_yCl1oJp8EeSErr_g8YjIHw" outgoing="_lNMFsJ_8EeSvLZlLl1KRPw">
+      <body>tradingLeaderShip promote 1</body>
     </node>
   </packagedElement>
 </uml:Model>
