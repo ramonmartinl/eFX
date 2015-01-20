@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_P3TcQKC3EeSvLZlLl1KRPw" name="DASHBOARD">
+  <packagedElement xmi:type="uml:Device" xmi:id="_27F2UKC2EeSvLZlLl1KRPw" name="PC">
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_-aqmQKC2EeSvLZlLl1KRPw" name="Windows">
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_EjoIkKC3EeSvLZlLl1KRPw" name="Dashboard x.y.z"/>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_nDnf8KC5EeSvLZlLl1KRPw" name="Dashboard x.y.z">
+    <ownedAttribute xmi:id="_LRu38KC6EeSvLZlLl1KRPw" name="Dashboard.exe.config" aggregation="composite"/>
+    <ownedAttribute xmi:id="_fwgpQKC6EeSvLZlLl1KRPw" name="Dashboard.exe.config.Caplin" aggregation="composite"/>
+    <ownedAttribute xmi:id="_tfcecKC6EeSvLZlLl1KRPw" name="Dashboard.exe.config.DEV1" aggregation="composite"/>
+    <ownedAttribute xmi:id="_yhol8KC6EeSvLZlLl1KRPw" name="Dashboard.exe.config.DEV3" aggregation="composite"/>
+    <ownedAttribute xmi:id="_4yangKC6EeSvLZlLl1KRPw" name="Dashboard.exe.config.DEV4" aggregation="composite"/>
+    <ownedAttribute xmi:id="_AILUIKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config.SIT" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EVSNwKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config.SIT2" aggregation="composite"/>
+    <ownedConnector xmi:id="_KrrIEKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config_Dashboard.exe.config.Caplin_connector">
+      <end xmi:id="_KrrIEaC7EeSvLZlLl1KRPw" role="_LRu38KC6EeSvLZlLl1KRPw"/>
+      <end xmi:id="_KrrIEqC7EeSvLZlLl1KRPw" role="_fwgpQKC6EeSvLZlLl1KRPw"/>
+    </ownedConnector>
+    <ownedConnector xmi:id="_MBfEcKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config_Dashboard.exe.config.DEV1_connector">
+      <end xmi:id="_MBfEcaC7EeSvLZlLl1KRPw" role="_LRu38KC6EeSvLZlLl1KRPw"/>
+      <end xmi:id="_MBfEcqC7EeSvLZlLl1KRPw" role="_tfcecKC6EeSvLZlLl1KRPw"/>
+    </ownedConnector>
+    <ownedConnector xmi:id="_MkcAgKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config_Dashboard.exe.config.DEV3_connector">
+      <end xmi:id="_MkcAgaC7EeSvLZlLl1KRPw" role="_LRu38KC6EeSvLZlLl1KRPw"/>
+      <end xmi:id="_MkcAgqC7EeSvLZlLl1KRPw" role="_yhol8KC6EeSvLZlLl1KRPw"/>
+    </ownedConnector>
+    <ownedConnector xmi:id="_NB9C8KC7EeSvLZlLl1KRPw" name="Dashboard.exe.config_Dashboard.exe.config.DEV4_connector">
+      <end xmi:id="_NB9qAKC7EeSvLZlLl1KRPw" role="_LRu38KC6EeSvLZlLl1KRPw"/>
+      <end xmi:id="_NB9qAaC7EeSvLZlLl1KRPw" role="_4yangKC6EeSvLZlLl1KRPw"/>
+    </ownedConnector>
+    <ownedConnector xmi:id="_NYJ8cKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config_Dashboard.exe.config.SIT_connector">
+      <end xmi:id="_NYKjgKC7EeSvLZlLl1KRPw" role="_LRu38KC6EeSvLZlLl1KRPw"/>
+      <end xmi:id="_NYKjgaC7EeSvLZlLl1KRPw" role="_AILUIKC7EeSvLZlLl1KRPw"/>
+    </ownedConnector>
+    <ownedConnector xmi:id="_NtDOYKC7EeSvLZlLl1KRPw" name="Dashboard.exe.config_Dashboard.exe.config.SIT2_connector">
+      <end xmi:id="_NtDOYaC7EeSvLZlLl1KRPw" role="_LRu38KC6EeSvLZlLl1KRPw"/>
+      <end xmi:id="_NtDOYqC7EeSvLZlLl1KRPw" role="_EVSNwKC7EeSvLZlLl1KRPw"/>
+    </ownedConnector>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_GlWBUKC6EeSvLZlLl1KRPw" name="Dashboard.bat">
+      <ownedComment xmi:id="_VqVOAKC7EeSvLZlLl1KRPw" annotatedElement="_GlWBUKC6EeSvLZlLl1KRPw">
+        <body>SET PATH=C:\Users\xI316214\Documents\SW\e-FX\tibrv\8.2\bin;%PATH%&#xD;
+Dashboard.exe</body>
+      </ownedComment>
+      <generalization xmi:id="_9POUkKC7EeSvLZlLl1KRPw" general="_wU82gKC7EeSvLZlLl1KRPw"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_UiLvoKC6EeSvLZlLl1KRPw" name="Config Files"/>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_wU82gKC7EeSvLZlLl1KRPw" name="TIBCO Rendezvous 8.2.2"/>
+  </packagedElement>
+</uml:Model>

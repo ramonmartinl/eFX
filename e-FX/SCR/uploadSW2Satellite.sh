@@ -13,8 +13,6 @@
 #
 ###############################################################################
 
-source  $EFX_INSTALLER_HOME/canal.sh
-
 # Uploads a SW Release To Satellite Channels
 function upload2Satellite { 
 
@@ -45,12 +43,15 @@ function upload2Satellite {
 	while read CHANNEL
 	do
 		let count++
+		echo -e "\n"
 		echo "Uploading to Channel: $CHANNEL [$count]"
 		rhnpush -l --channel=$CHANNEL -d $RELEASE_FOLDER --newest --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD
 	done < $SATELLITE_EFX_CHANNELS_TMP
 	
 	#remove temporary files
 	rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
+	
+	echo -e "\n"
 	echo "Uploaded to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD from $RELEASE_FOLDER"
 }
 

@@ -6,3 +6,4 @@ Añadir El builrpm de linux (condicional) en el diagrama de actividades de Cerebr
 revisar el paso 8 de Cerebro Deployemnt Diagram
 Añadir el diagrama de Subidas a Satellite
 #Añadir el Entorno CAPLIN
+#Añadir el Entorno del Dot Dashboard (Dashboard.bat y Dashboard.exe.config)

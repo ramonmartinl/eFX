@@ -10,6 +10,7 @@
 # Last Modified: 20/01/2015 (ramn.martn)
 #
 ###############################################################################
+
 spacecmd -s lnx-satellitep1 -u efxbuild -p RedHat01 <<EOF
 softwarechannel_list
 EOF
