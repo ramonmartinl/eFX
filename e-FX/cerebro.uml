@@ -150,16 +150,8 @@ http://wiki.ants.ad.anplc.co.uk/foswiki/UnixTeam/ListEfxChannels&#xD;
     </node>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_ywD3oJ-2EeSvLZlLl1KRPw" name="ActivityFinal1" incoming="_zbD8cJ-2EeSvLZlLl1KRPw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_KWrTQJs7EeSQW-O3MV76cQ" name="CEREBRO" node="_lhH9AJvYEeS1x_Ye4TA6Uw _mDV5QJvYEeS1x_Ye4TA6Uw _mlQ6kJvYEeS1x_Ye4TA6Uw _KQUBwJvZEeS1x_Ye4TA6Uw _nJaUAJvZEeS1x_Ye4TA6Uw _bHM_AJvcEeS1x_Ye4TA6Uw _zSbz8JvcEeS1x_Ye4TA6Uw _MeCgwJvdEeS1x_Ye4TA6Uw _3ebL4JvfEeS1x_Ye4TA6Uw _XFcc8JvgEeS1x_Ye4TA6Uw _am8_YJvhEeS1x_Ye4TA6Uw _RpYyAJviEeS1x_Ye4TA6Uw _gCW4EJylEeSXVLcG_ujGyQ _wQp6gJ_5EeSvLZlLl1KRPw _G2xy0J_6EeSvLZlLl1KRPw">
-    <edge xmi:type="uml:ControlFlow" xmi:id="_ur-jAJvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER" target="_mDV5QJvYEeS1x_Ye4TA6Uw" source="_lhH9AJvYEeS1x_Ye4TA6Uw">
-      <guard xmi:type="uml:LiteralBoolean" xmi:id="_usk_8JvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER_guard" value="true"/>
-      <weight xmi:type="uml:LiteralInteger" xmi:id="_utK10JvYEeS1x_Ye4TA6Uw" name="InitialNode1_To_#1: CREATE NEW RELEASE FOLDER_weight"/>
-    </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_F7J_YJvZEeS1x_Ye4TA6Uw" name="#1: CREATE NEW RELEASE FOLDER_To_EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE" target="_mlQ6kJvYEeS1x_Ye4TA6Uw" source="_mDV5QJvYEeS1x_Ye4TA6Uw">
-      <guard xmi:type="uml:LiteralBoolean" xmi:id="_F7J_YZvZEeS1x_Ye4TA6Uw" name="#1: CREATE NEW RELEASE FOLDER_To_EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_guard" value="true"/>
-      <weight xmi:type="uml:LiteralInteger" xmi:id="_F7J_YpvZEeS1x_Ye4TA6Uw" name="#1: CREATE NEW RELEASE FOLDER_To_EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_weight"/>
-    </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_LWiC8JvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3" target="_KQUBwJvZEeS1x_Ye4TA6Uw" source="_mlQ6kJvYEeS1x_Ye4TA6Uw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_KWrTQJs7EeSQW-O3MV76cQ" name="CEREBRO" node="_lhH9AJvYEeS1x_Ye4TA6Uw _mDV5QJvYEeS1x_Ye4TA6Uw _mlQ6kJvYEeS1x_Ye4TA6Uw _KQUBwJvZEeS1x_Ye4TA6Uw _nJaUAJvZEeS1x_Ye4TA6Uw _bHM_AJvcEeS1x_Ye4TA6Uw _zSbz8JvcEeS1x_Ye4TA6Uw _MeCgwJvdEeS1x_Ye4TA6Uw _3ebL4JvfEeS1x_Ye4TA6Uw _XFcc8JvgEeS1x_Ye4TA6Uw _am8_YJvhEeS1x_Ye4TA6Uw _RpYyAJviEeS1x_Ye4TA6Uw _gCW4EJylEeSXVLcG_ujGyQ _wQp6gJ_5EeSvLZlLl1KRPw _G2xy0J_6EeSvLZlLl1KRPw _fTHPcKFmEeSLNr2IRGEC_A _gLw-oKF6EeSLNr2IRGEC_A __KeSgKF6EeSLNr2IRGEC_A">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_LWiC8JvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3" target="_KQUBwJvZEeS1x_Ye4TA6Uw" source="_mDV5QJvYEeS1x_Ye4TA6Uw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_LWiC8ZvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_LWiC8pvZEeS1x_Ye4TA6Uw" name="EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_OpaqueAction3_weight"/>
     </edge>
@@ -203,33 +195,61 @@ http://wiki.ants.ad.anplc.co.uk/foswiki/UnixTeam/ListEfxChannels&#xD;
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_z7hCsJ_5EeSvLZlLl1KRPw" name="OpaqueAction12_To_ActivityFinal1_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_z7hCsZ_5EeSvLZlLl1KRPw" name="OpaqueAction12_To_ActivityFinal1_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_Kss7gJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES" target="_G2xy0J_6EeSvLZlLl1KRPw" source="_bHM_AJvcEeS1x_Ye4TA6Uw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Kss7gJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES" target="_fTHPcKFmEeSLNr2IRGEC_A" source="_gLw-oKF6EeSLNr2IRGEC_A">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_Ktb7UJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_KuCYQJ_6EeSvLZlLl1KRPw" name="#5 BUILD RPM PACKAGES_To_STOP CEREBRO PROCESSES_weight"/>
     </edge>
-    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="_ur-jAJvYEeS1x_Ye4TA6Uw"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_mDV5QJvYEeS1x_Ye4TA6Uw" name="#1  CREATE NEW RELEASE FOLDER" incoming="_ur-jAJvYEeS1x_Ye4TA6Uw" outgoing="_F7J_YJvZEeS1x_Ye4TA6Uw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_qEnqMKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE_To_STOP CEREBRO PROCESSES" target="_G2xy0J_6EeSvLZlLl1KRPw" source="_fTHPcKFmEeSLNr2IRGEC_A">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_qEoRQKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE_To_STOP CEREBRO PROCESSES_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_qEo4UKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE_To_STOP CEREBRO PROCESSES_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_-rTfsKF5EeSLNr2IRGEC_A" name="#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_#1  CREATE NEW RELEASE FOLDER" target="_mDV5QJvYEeS1x_Ye4TA6Uw" source="_mlQ6kJvYEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_-rUt0KF5EeSLNr2IRGEC_A" name="#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_#1  CREATE NEW RELEASE FOLDER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_-rUt0aF5EeSLNr2IRGEC_A" name="#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_To_#1  CREATE NEW RELEASE FOLDER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__Zn-QKF5EeSLNr2IRGEC_A" name="InitialNode1_To_#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE" target="_mlQ6kJvYEeS1x_Ye4TA6Uw" source="_lhH9AJvYEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="__aObMKF5EeSLNr2IRGEC_A" name="InitialNode1_To_#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="__ax00KF5EeSLNr2IRGEC_A" name="InitialNode1_To_#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_BpRQMKF7EeSLNr2IRGEC_A" name="DecisionNode1_To_#6 BUILD SHELL SCRIPTS" target="_gLw-oKF6EeSLNr2IRGEC_A" source="__KeSgKF6EeSLNr2IRGEC_A">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_QwK94KF7EeSLNr2IRGEC_A" name="DecisionNode1_To_#6 BUILD SHELL SCRIPTS_guard">
+        <body>Yes</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_BqmF4KF7EeSLNr2IRGEC_A" name="DecisionNode1_To_#6 BUILD SHELL SCRIPTS_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_CxmKMKF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_DecisionNode1" target="__KeSgKF6EeSLNr2IRGEC_A" source="_bHM_AJvcEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_CyaCgKF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_DecisionNode1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Cy9cIKF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_DecisionNode1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_EQz6MKF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_UPLOAD RMP PACKAGES TO SATELLITE" target="_fTHPcKFmEeSLNr2IRGEC_A" source="__KeSgKF6EeSLNr2IRGEC_A">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_aWv2kKF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_UPLOAD RMP PACKAGES TO SATELLITE_guard">
+        <body>No</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_EQ0hQaF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_UPLOAD RMP PACKAGES TO SATELLITE_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="__Zn-QKF5EeSLNr2IRGEC_A"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_mDV5QJvYEeS1x_Ye4TA6Uw" name="#2  CREATE NEW RELEASE FOLDER" incoming="_-rTfsKF5EeSLNr2IRGEC_A" outgoing="_LWiC8JvZEeS1x_Ye4TA6Uw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ mkdir x.y.z</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_mlQ6kJvYEeS1x_Ye4TA6Uw" name="#2 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE" incoming="_F7J_YJvZEeS1x_Ye4TA6Uw" outgoing="_LWiC8JvZEeS1x_Ye4TA6Uw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_mlQ6kJvYEeS1x_Ye4TA6Uw" name="#1 EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE" incoming="__Zn-QKF5EeSLNr2IRGEC_A" outgoing="_-rTfsKF5EeSLNr2IRGEC_A">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ vi release.properties</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_KQUBwJvZEeS1x_Ye4TA6Uw" name="#3 EXECUTE release.sh SCRIPT" incoming="_LWiC8JvZEeS1x_Ye4TA6Uw" outgoing="_oHdQoJvZEeS1x_Ye4TA6Uw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_KQUBwJvZEeS1x_Ye4TA6Uw" name="#3 BUILD APPLICATION CODE" incoming="_LWiC8JvZEeS1x_Ye4TA6Uw" outgoing="_oHdQoJvZEeS1x_Ye4TA6Uw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ ./release.sh</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_nJaUAJvZEeS1x_Ye4TA6Uw" name="#4 CLEAN . &amp; .svn FILES" incoming="_oHdQoJvZEeS1x_Ye4TA6Uw" outgoing="_cG4TUJvcEeS1x_Ye4TA6Uw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_nJaUAJvZEeS1x_Ye4TA6Uw" name="#4 CLEAN . &amp; .svn FILES FROM RELEASE FOLDER" incoming="_oHdQoJvZEeS1x_Ye4TA6Uw" outgoing="_cG4TUJvcEeS1x_Ye4TA6Uw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts/x.y.z]&#xD;
 $ find . -name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
 $ find ./SB7 -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
 $ find ./Linux -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_bHM_AJvcEeS1x_Ye4TA6Uw" name="#5 BUILD RPM PACKAGES" incoming="_cG4TUJvcEeS1x_Ye4TA6Uw" outgoing="_Kss7gJ_6EeSvLZlLl1KRPw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bHM_AJvcEeS1x_Ye4TA6Uw" name="#5 BUILD RPM PACKAGES" incoming="_cG4TUJvcEeS1x_Ye4TA6Uw" outgoing="_CxmKMKF7EeSLNr2IRGEC_A">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
 $ ./buildRPM_3.2_Final.sh $1 $2 $3 $4 (efx001)&#xD;
-$ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
+</body>
     </node>
     <node xmi:type="uml:OpaqueAction" xmi:id="_zSbz8JvcEeS1x_Ye4TA6Uw" name="#6 REMOVE LINKS TO /local/home/strmbase" incoming="_0iBzkJvcEeS1x_Ye4TA6Uw" outgoing="_OHX2EJvdEeS1x_Ye4TA6Uw">
       <body>[strmbase@HOST /local/home/strmbase]&#xD;
@@ -263,7 +283,17 @@ $ ln -s EFX-lp-SIT[X] EFX-lp</body>
     </node>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_z7gboJ_5EeSvLZlLl1KRPw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_wQp6gJ_5EeSvLZlLl1KRPw" name="START CEREBRO PROCESSES" incoming="_g5Z00JylEeSXVLcG_ujGyQ" outgoing="_z7gboJ_5EeSvLZlLl1KRPw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_Kss7gJ_6EeSvLZlLl1KRPw" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_qEnqMKFmEeSLNr2IRGEC_A" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fTHPcKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE" incoming="_Kss7gJ_6EeSvLZlLl1KRPw _EQz6MKF7EeSLNr2IRGEC_A" outgoing="_qEnqMKFmEeSLNr2IRGEC_A" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gLw-oKF6EeSLNr2IRGEC_A" name="#6 BUILD SHELL SCRIPTS" incoming="_BpRQMKF7EeSLNr2IRGEC_A" outgoing="_Kss7gJ_6EeSvLZlLl1KRPw">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
+$ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
+    </node>
+    <node xmi:type="uml:DecisionNode" xmi:id="__KeSgKF6EeSLNr2IRGEC_A" name="DecisionNode1" incoming="_CxmKMKF7EeSLNr2IRGEC_A" outgoing="_BpRQMKF7EeSLNr2IRGEC_A _EQz6MKF7EeSLNr2IRGEC_A">
+      <ownedComment xmi:id="_LAjvsKF7EeSLNr2IRGEC_A" annotatedElement="__KeSgKF6EeSLNr2IRGEC_A">
+        <body>Build Shell Scripts</body>
+      </ownedComment>
+    </node>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_bZZYkJ1YEeSXVLcG_ujGyQ" name="Deploy" client="_URR3MJaFEeSaLMhtV6zFhw" supplier="_E8siAJ1YEeSXVLcG_ujGyQ"/>
 </uml:Model>
