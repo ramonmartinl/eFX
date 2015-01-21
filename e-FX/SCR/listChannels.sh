@@ -3,7 +3,7 @@
 #
 # Script for listing Satellite Channels
 #
-# Usage: canal.sh
+# Usage: listChannels.sh
 #
 # Author: Eduardo Turiel Martinez [eduardo.turiel@servexternos.isban.es]
 # Since: 19/01/2015 

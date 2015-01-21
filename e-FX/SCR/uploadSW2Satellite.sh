@@ -16,10 +16,13 @@
 # Uploads a SW Release To Satellite Channels
 function upload2Satellite { 
 
+	echo -n "Please introduce release number, Ej.: 3.4.29 > "
+	read RELEASE_NUMBER
+	
 	UPLOAD_AREA="/home/efxbuild/upload_area/"
 	#APPLICATION=$(echo "$1" | tr '[:lower:]' '[:upper:]')
 	APPLICATION=$1
-	SW_RELEASE_FOLDER=$APPLICATION.$2
+	SW_RELEASE_FOLDER=$APPLICATION.$RELEASE_NUMBER
 	RELEASE_FOLDER=${UPLOAD_AREA}${SW_RELEASE_FOLDER}
 	SATELLITE_USER="efxbuild"
 	SATELLITE_PASSWD="RedHat01"
@@ -27,10 +30,10 @@ function upload2Satellite {
 	SATELLITE_CAPLIN_CHANNELS_TMP=SATELLITE_CAPLIN_CHANNELS.out
 
 	#List EFX SATELLITE CHANNELS
-	$EFX_INSTALLER_HOME/canalefx.sh > $SATELLITE_EFX_CHANNELS_TMP
+	$EFX_INSTALLER_HOME/efxChannels.sh > $SATELLITE_EFX_CHANNELS_TMP
 	
 	#List CAPLIN SATELLITE CHANNELS
-	$EFX_INSTALLER_HOME/canalcaplin.sh > $SATELLITE_CAPLIN_CHANNELS_TMP
+	$EFX_INSTALLER_HOME/caplinChannels.sh > $SATELLITE_CAPLIN_CHANNELS_TMP
 	
 	# Check 4 Release Folder
 	if [ ! -d "$RELEASE_FOLDER" ]; then
@@ -39,6 +42,7 @@ function upload2Satellite {
 	fi
 	
 	# Upload to every Channel
+	echo "Uploading to Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD for $1 $RELEASE_NUMBER..."
 	count=0	
 	while read CHANNEL
 	do
@@ -52,22 +56,7 @@ function upload2Satellite {
 	rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
 	
 	echo -e "\n"
-	echo "Uploaded to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD from $RELEASE_FOLDER"
+	echo "Uploaded to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD for $1 $RELEASE_NUMBER"
 }
 
-#Lists Active Satellite EFX Channels
-function listSatelliteEFXChannels {
-	listSatelliteChannels 2>/dev/null | grep efx
-}
-
-#Lists Active Satellite Caplin Channels
-function listSatelliteCaplinChannels {
-	listSatelliteChannels 2>/dev/null | grep caplin
-}
-
-#Lists Active Satellite Channels
-function listSatelliteChannels {
-	spacecmd -s lnx-satellitep1 -u efxbuild -p RedHat01 <<EOF
-	softwarechannel_list
-	EOF
-}
+#upload2Satellite

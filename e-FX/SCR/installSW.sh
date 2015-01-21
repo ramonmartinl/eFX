@@ -19,23 +19,29 @@ export $EFX_INSTALLER_HOME
 source  $EFX_INSTALLER_HOME/uploadSW2Satellite.sh
 
 function showMenu {
-	echo -e "#####################################"
+	echo -e "##########################################"
 	echo "# Welcome to the EFX Installation Program"
-	echo -e "#####################################"
+	echo -e "##########################################"
 	PS3='Please enter your choice: '
-	options=("Install Baxter" "Install Cerebro" "Install Caplin" "Quit")
+	options=("Install Baxter" "Install Baxter Air" "Install Cerebro" "Install Caplin" "Quit")
 	select opt in "${options[@]}"
 	do
 	    case $opt in
 	        "Install Baxter")
 	            echo "you chose to Install new Baxter release"
+	            upload2Satellite Baxter
 	            ;;
+	        "Install Baxter Air")
+	            echo "you chose to Install new Baxter release"
+	            upload2Satellite Baxter_Air
+	            ;;    
 	        "Install Cerebro")
 	            echo "you chose to Install new Cerebro release"
-				upload2Satellite $1 $2
+				upload2Satellite Cerebro
 	            ;;
 	        "Install Caplin")
 	            echo "you chose to Install new Caplin release"
+	            upload2Satellite Caplin
 	            ;;
 	        "Quit")
 	            break
