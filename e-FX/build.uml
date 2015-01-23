@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_dtKx8IqUEeSf6YVZN2Xsyw" name="BUILD">
-  <ownedComment xmi:id="_aYoeEIqfEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _XOTQEIqfEeSf6YVZN2Xsyw">
-    <body>usr: efxbuild</body>
-  </ownedComment>
   <packagedElement xmi:type="uml:Node" xmi:id="_P6X20IqcEeSf6YVZN2Xsyw" name="lnx-efxbuild.ants.ad.anplc.co.uk">
     <ownedComment xmi:id="_5TD2QIqcEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _ryRx0IqcEeSf6YVZN2Xsyw">
       <body>eFX-Snapshot-Repository</body>
@@ -37,7 +34,7 @@
       <end xmi:id="_JAuJQIteEeSf6YVZN2Xsyw" role="_k4MncItTEeSf6YVZN2Xsyw"/>
       <end xmi:id="_JAuJQYteEeSf6YVZN2Xsyw" role="_p7PSQItNEeSf6YVZN2Xsyw"/>
     </ownedConnector>
-    <nestedClassifier xmi:type="uml:Component" xmi:id="_ioDEoIqhEeSf6YVZN2Xsyw" name="./eFX_installer">
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_ioDEoIqhEeSf6YVZN2Xsyw" name="/eFX_installer">
       <ownedComment xmi:id="_Q2XWQIqiEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _HObLoIqiEeSf6YVZN2Xsyw">
         <body>$ buildRPM_3.2_Final.sh</body>
       </ownedComment>
@@ -65,21 +62,21 @@
         <end xmi:id="_5cLIMYtbEeSf6YVZN2Xsyw" role="_HObLoIqiEeSf6YVZN2Xsyw"/>
         <end xmi:id="_5cLIMotbEeSf6YVZN2Xsyw" role="_7L1dUIq-EeSf6YVZN2Xsyw"/>
       </ownedConnector>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_Y3gNEIqgEeSf6YVZN2Xsyw" name="./eFX_install"/>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_7iVNYIqgEeSf6YVZN2Xsyw" name="./BUILD"/>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_D-F4wIqhEeSf6YVZN2Xsyw" name="./RPMS"/>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_HWnTwIqhEeSf6YVZN2Xsyw" name="./SOURCES"/>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_KoCoQIqhEeSf6YVZN2Xsyw" name="./SPECS"/>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_Pl-h4IqhEeSf6YVZN2Xsyw" name="./SRPMS"/>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_1V6LwIq-EeSf6YVZN2Xsyw" name="./filelists"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_Y3gNEIqgEeSf6YVZN2Xsyw" name="/eFX_install"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_7iVNYIqgEeSf6YVZN2Xsyw" name="/BUILD"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_D-F4wIqhEeSf6YVZN2Xsyw" name="/RPMS"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_HWnTwIqhEeSf6YVZN2Xsyw" name="/SOURCES"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_KoCoQIqhEeSf6YVZN2Xsyw" name="/SPECS"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_Pl-h4IqhEeSf6YVZN2Xsyw" name="/SRPMS"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_1V6LwIq-EeSf6YVZN2Xsyw" name="/filelists"/>
     </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Component" xmi:id="_Q6fj4ItIEeSf6YVZN2Xsyw" name="./upload_area_sit"/>
-    <nestedClassifier xmi:type="uml:Component" xmi:id="_S18i8ItTEeSf6YVZN2Xsyw" name="./eFX-Scripts">
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_Q6fj4ItIEeSf6YVZN2Xsyw" name="/upload_area_sit"/>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_S18i8ItTEeSf6YVZN2Xsyw" name="/eFX-Scripts">
       <ownedComment xmi:id="_F3mRoItdEeSf6YVZN2Xsyw" annotatedElement="_dtKx8IqUEeSf6YVZN2Xsyw _0LLvsItbEeSf6YVZN2Xsyw">
         <body>Script 4 updating Cerebro version</body>
       </ownedComment>
-      <nestedClassifier xmi:type="uml:Component" xmi:id="_M4tkMIq-EeSf6YVZN2Xsyw" name="./x.y.z/">
-        <nestedClassifier xmi:type="uml:Component" xmi:id="_QKRUMIrBEeSf6YVZN2Xsyw" name="./SB7"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_M4tkMIq-EeSf6YVZN2Xsyw" name="/x.y.z/">
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_QKRUMIrBEeSf6YVZN2Xsyw" name="/SB7"/>
         <nestedClassifier xmi:type="uml:Component" xmi:id="_CdKY0ItiEeSf6YVZN2Xsyw" name="fx-logs"/>
         <nestedClassifier xmi:type="uml:Component" xmi:id="_J-UdIItiEeSf6YVZN2Xsyw" name="tx-temp"/>
         <nestedClassifier xmi:type="uml:Component" xmi:id="_Qyrs4ItiEeSf6YVZN2Xsyw" name="java"/>

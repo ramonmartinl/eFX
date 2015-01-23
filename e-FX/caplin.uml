@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_fJu0oKJQEeSLNr2IRGEC_A" name="CAPLIN">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_3hlJQKJQEeSLNr2IRGEC_A" name="CAPLIN" node="_7rhaIKJQEeSLNr2IRGEC_A _SlvdsKJSEeSLNr2IRGEC_A _Jui-EKJTEeSLNr2IRGEC_A _rN3NgKJTEeSLNr2IRGEC_A _tJ0ucKJUEeSLNr2IRGEC_A _zmIDgKJUEeSLNr2IRGEC_A _4VU9kKJUEeSLNr2IRGEC_A">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4yZUEKJUEeSLNr2IRGEC_A" name="DecisionNode1_To_DecisionNode2" target="_4VU9kKJUEeSLNr2IRGEC_A" source="_zmIDgKJUEeSLNr2IRGEC_A">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_4y8tsKJUEeSLNr2IRGEC_A" name="DecisionNode1_To_DecisionNode2_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_4zjxsKJUEeSLNr2IRGEC_A" name="DecisionNode1_To_DecisionNode2_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_8A2-sKJVEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_DecisionNode1" target="_zmIDgKJUEeSLNr2IRGEC_A" source="_Jui-EKJTEeSLNr2IRGEC_A">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_8Bf34KJVEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_DecisionNode1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_8CD4kKJVEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_DecisionNode1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_BNSAQKJWEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_# INSTALL RPM PACKAGES" target="_rN3NgKJTEeSLNr2IRGEC_A" source="_zmIDgKJUEeSLNr2IRGEC_A">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_BOBAEKJWEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_# INSTALL RPM PACKAGES_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_BOoEEKJWEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_# INSTALL RPM PACKAGES_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_B8ugMKJWEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_# DEPLOY WEB APPLICATION" target="_tJ0ucKJUEeSLNr2IRGEC_A" source="_4VU9kKJUEeSLNr2IRGEC_A">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_B8vHQKJWEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_# DEPLOY WEB APPLICATION_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_B8vuUKJWEeSLNr2IRGEC_A" name="# STOP CAPLIN_To_# DEPLOY WEB APPLICATION_weight"/>
+    </edge>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_7rhaIKJQEeSLNr2IRGEC_A" name="# DOWNLOAD RELEASE">
+      <body>[USER@lnx-efxbuild /home/efxbuild/upload_area]&#xD;
+$  wget [URL]</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_SlvdsKJSEeSLNr2IRGEC_A" name="# CREATE NEW RELEASE FOLDER">
+      <body>[USER@lnx-efxbuild /home/efxbuild/upload_area]&#xD;
+$ mkdir Caplin.x.y.z</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Jui-EKJTEeSLNr2IRGEC_A" name="# STOP CAPLIN" outgoing="_8A2-sKJVEeSLNr2IRGEC_A">
+      <body>[caplin@lnx-sbankd5|lnx-sbankd6 /opt/caplin]&#xD;
+$ dfw stop</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_rN3NgKJTEeSLNr2IRGEC_A" name="# INSTALL RPM PACKAGES" incoming="_BNSAQKJWEeSLNr2IRGEC_A">
+      <body>[USER@lnx-sbankd5|lnx-sbankd6 /home/efxbuild/upload_area/Caplin.x.y.z]&#xD;
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum update PACKAGE&#xD;
+</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_tJ0ucKJUEeSLNr2IRGEC_A" name="# DEPLOY WEB APPLICATION" incoming="_B8ugMKJWEeSLNr2IRGEC_A">
+      <body>// TODO body of OpaqueAction5</body>
+    </node>
+    <node xmi:type="uml:DecisionNode" xmi:id="_zmIDgKJUEeSLNr2IRGEC_A" name="DecisionNode1" incoming="_8A2-sKJVEeSLNr2IRGEC_A" outgoing="_4yZUEKJUEeSLNr2IRGEC_A _BNSAQKJWEeSLNr2IRGEC_A">
+      <ownedComment xmi:id="_xo_L8KJVEeSLNr2IRGEC_A" annotatedElement="_zmIDgKJUEeSLNr2IRGEC_A">
+        <body>Install RPM packages</body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:DecisionNode" xmi:id="_4VU9kKJUEeSLNr2IRGEC_A" name="DecisionNode2" incoming="_4yZUEKJUEeSLNr2IRGEC_A" outgoing="_B8ugMKJWEeSLNr2IRGEC_A">
+      <ownedComment xmi:id="_2x0uAKJVEeSLNr2IRGEC_A" annotatedElement="_4VU9kKJUEeSLNr2IRGEC_A">
+        <body>Deploy Web App</body>
+      </ownedComment>
+    </node>
+  </packagedElement>
+</uml:Model>

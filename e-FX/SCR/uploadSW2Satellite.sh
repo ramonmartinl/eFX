@@ -3,29 +3,40 @@
 #
 # Script for uploading New Software Releases To RedHat Satellite Channels
 #
-# Usage: uploadSW2Satellite.sh $1 $2
-# $1: APPLICATION SW (Ej: CEREBRO)
-# $2: SW RELEASE NUMBER (After /home/efxbuild/upload_area Ej.: x.y.z) #
+# Usage: uploadSW2Satellite.sh $1
+# $1: APPLICATION SW (Ej: Cerebro)
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 19/01/2015 
-# Last Modified: 21/01/2015 (ramn.martn)
+# Last Modified: 23/01/2015 (ramn.martn)
 #
 ###############################################################################
 
-# Uploads a SW Release To Satellite Channels
+APPLICATION=$1
+RELEASE_NUMBER=""
+
+# UPLOAD SW TO SATELLITE CHANNELS
 function upload2Satellite() { 
 
 	UPLOAD_AREA_FOLDER="/home/efxbuild/upload_area/"
+	
+	# Read Application name from user input
+	if [ "$1" = "" ]; then
+		echo -n "Please introduce Application name, Options: Cerebro, Caplin, Baxter, etc.. > "
+		read application
+		APPLICATION="$application"
+	else 	
+		#APPLICATION=$(echo "$1" | tr '[:lower:]' '[:upper:]')
+		APPLICATION="$1"
+	fi
 
 	# Read Release Number from user input
-	echo -e "Choose a release from one of the following in $UPLOAD_AREA_FOLDER	\n"
-	find /home/efxbuild/upload_area -type d | grep $1
-	echo -n "Please introduce release number, Ej.: 3.4.29 > "
-	read RELEASE_NUMBER
+	echo -e "\nChoose a Release from one of the following in $UPLOAD_AREA_FOLDER	\n"
+	find $UPLOAD_AREA_FOLDER -type d | grep $APPLICATION
+	echo -n "Please introduce Release number, Ej.: 3.4.29 > "
+	read releaseNumber 
+	RELEASE_NUMBER="$releaseNumber"
 	
-	#APPLICATION=$(echo "$1" | tr '[:lower:]' '[:upper:]')
-	APPLICATION=$1
 	SW_RELEASE_FOLDER=$APPLICATION.$RELEASE_NUMBER
 	RELEASE_FOLDER=${UPLOAD_AREA_FOLDER}${SW_RELEASE_FOLDER}
 	SATELLITE_USER="efxbuild"
@@ -41,7 +52,7 @@ function upload2Satellite() {
 	
 	# Check 4 existence of Release Folder in the FS
 	if [ ! -d "$RELEASE_FOLDER" ]; then
-	  echo "Sorry You must create Directory $RELEASE_FOLDER first" | tee --append $EFX_INSTALLER_ERROR_FILE
+	  echo "$(date): Sorry You must create Directory $RELEASE_FOLDER first" | tee --append $EFX_INSTALLER_ERROR_FILE
 	  exit 1
 	fi
 	
@@ -53,12 +64,12 @@ function upload2Satellite() {
 	fi
 	
 	# Upload to every Channel
-	echo "Uploading $SW_RELEASE_FOLDER to Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD..." | tee --append $EFX_INSTALLER_LOG_FILE
+	echo "$(date): Uploading $SW_RELEASE_FOLDER to Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD..." | tee --append $EFX_INSTALLER_LOG_FILE
 	count=0	
 	while read CHANNEL
 	do
 		let count++
-		echo -e "\nUploading to Channel: $CHANNEL [$count]..." | tee --append $EFX_INSTALLER_LOG_FILE
+		echo -e "\n$(date): Uploading to Channel: $CHANNEL [$count]..." | tee --append $EFX_INSTALLER_LOG_FILE
 		rhnpush --channel=$CHANNEL -d $RELEASE_FOLDER --newest --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD >>$EFX_INSTALLER_LOG_FILE
 		rhnpush -l --channel=$CHANNEL -d $RELEASE_FOLDER --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD | grep $RELEASE_NUMBER >>$EFX_INSTALLER_LOG_FILE
 	done < $selectedSatelliteChannels
@@ -66,7 +77,7 @@ function upload2Satellite() {
 	#remove temporary files
 	rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
 	
-	echo -e "\n#########################################################################################"
-	echo -e "### Uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD" | tee --append $EFX_INSTALLER_LOG_FILE
-	echo -e "#########################################################################################"
+	echo -e "\n###################################################################################################################################"
+	echo -e "### $(date): Uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD" | tee --append $EFX_INSTALLER_LOG_FILE
+	echo -e "###################################################################################################################################"
 }
