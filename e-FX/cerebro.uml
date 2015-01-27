@@ -122,7 +122,7 @@ $ ./release.sh</body>
       <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2UGigJZoEeSaLMhtV6zFhw" name="release.sh"/>
       <nestedNode xmi:id="_66wQoJaAEeSaLMhtV6zFhw" name="x.y.z"/>
     </nestedNode>
-    <nestedNode xmi:id="_E8siAJ1YEeSXVLcG_ujGyQ" name="/home /efxbuild/upload_area_sit"/>
+    <nestedNode xmi:id="_E8siAJ1YEeSXVLcG_ujGyQ" name="/home /efxbuild/upload_area/Cerebro.x.y.z"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_Wt9eIJcLEeSaLMhtV6zFhw" name="CEREBRO Deployment" node="_iph4QJcLEeSaLMhtV6zFhw _vM0BwJdPEeSF0pCT-mgLtQ">
     <node xmi:type="uml:InitialNode" xmi:id="_iph4QJcLEeSaLMhtV6zFhw" name="InitialNode1"/>

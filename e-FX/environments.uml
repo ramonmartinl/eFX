@@ -96,7 +96,11 @@ http://lnx-efxd3.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       </ownedComment>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_63RA4IXvEeSh4Ym1HZTfzQ" name="PrimaryTrading : 8600 ">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_zk9ecIXPEeSV7sNMKNrJjg" name="PrimaryTrading_x.y.z"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_tELq4JAIEeSU45eRB5GOkA" name="primary-trading.sh"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_tELq4JAIEeSU45eRB5GOkA" name="primary-trading.sh">
+          <ownedComment xmi:id="_3AUHcKU-EeSBbqQJKRNU-Q" annotatedElement="_tELq4JAIEeSU45eRB5GOkA">
+            <body>tradingLeadership.sh promote 1</body>
+          </ownedComment>
+        </nestedClassifier>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y0WhsI9jEeSU45eRB5GOkA" name="Adafix : ">
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_UKow8I9kEeSU45eRB5GOkA" name="Adafix_x.y.z"/>
@@ -622,6 +626,7 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       <ownedComment xmi:id="_WJdS4Js9EeSQW-O3MV76cQ" annotatedElement="_n_fVwJs8EeSQW-O3MV76cQ">
         <body>EFX 70 (CM Caplin &amp; Baxter Clients)</body>
       </ownedComment>
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_bWd78KVREeSBbqQJKRNU-Q" name="lnx-sdbank7"/>
     </nestedNode>
     <nestedNode xmi:type="uml:Device" xmi:id="_odKwQJs8EeSQW-O3MV76cQ" name="lnx-efxd69.ants.ad.anplc.co.uk  ">
       <ownedComment xmi:id="_M2MXwJs9EeSQW-O3MV76cQ" annotatedElement="_odKwQJs8EeSQW-O3MV76cQ">

@@ -11,11 +11,6 @@
 #
 ###############################################################################
 
-source $EFX_INSTALLER_HOME/builCerebro.sh
-source $EFX_INSTALLER_HOME/uploadSW2Satellite.sh
-source $EFX_INSTALLER_HOME/installCaplin.sh
-source $EFX_INSTALLER_HOME/maintenanceTasks.sh
-
 #Format menu
 FMT_NORMAL=`echo "\033[m"`; export $FMT_NORMAL
 FMT_MENU=`echo "\033[36m"` #Blue; export $FMT_MENU
@@ -25,7 +20,7 @@ FMT_RED_TEXT=`echo "\033[31m"`; export $FMT_RED_TEXT
 FMT_ENTER_LINE=`echo "\033[33m"`; export $FMT_ENTER_LINE
 
 #Show option picked
-function option_picked() {
+function option_picked(){
     COLOR='\033[01;31m' # bold red
     RESET='\033[00;00m' # normal white
     MESSAGE=${@:-"${RESET}Error: No message passed"}
@@ -60,18 +55,8 @@ function listenMainMenu(){
 	        case $opt_main in
 	        1) clear
 	        # BUILD CEREBRO
-	        	#option_picked "you chose to Build Cerebro Packages"
-	        	#switchUser_efxbuild
-	            ask4CerebroReleaseDetails 2>>$EFX_INSTALLER_ERROR_FILE
-	            #editReleaseProperties 2>>$EFX_INSTALLER_ERROR_FILE
-	            #createNewReleaseFolder 2>>$EFX_INSTALLER_ERROR_FILE
-	            #buildApplication 2>>$EFX_INSTALLER_ERROR_FILE
-	            #cleanNewReleaseFolder 2>>$EFX_INSTALLER_ERROR_FILE
-	            buildRPMPackages 2>>$EFX_INSTALLER_ERROR_FILE
-	        	echo $?
-	            #buildShellScripts 2>>$EFX_INSTALLER_ERROR_FILE
-	        	#upload2Satellite Cerebro 2>$EFX_INSTALLER_ERROR_FILE
-	        	sleep 2
+	        	option_picked "you chose to Build Cerebro Packages"
+	        	buildCerebro.builCerebro 2>>$EFX_INSTALLER_ERROR_FILE
 	        	showMainMenu
 	        	;;
 	        
@@ -176,46 +161,52 @@ showBuildEFXModulesMenu(){
 }
 
 # Read option from Build EFX Modules Menu
-function listenBuildEFXModulesMenu() {
+function listenBuildEFXModulesMenu(){
 	while [ opt_efx_modules != '' ]
 	    do
-	    if [[ $opt_efx_modules = "" ]]; then 
-	            # Show Main Menu
-				showMainMenu
-				listenMainMenu
-	    else
-	        case $opt_efx_modules in
+	    	case $opt_efx_modules in
+	        "") clear
+	        # EXIT Build EFX Modules Menu
+	        	break
+	        	;;
+	        	
 	        1) clear
-	        # BUILD CEREBRO
-	        	#option_picked "you chose to Build Start LP Points Simulation"
-	        	#switchUser_efxbuild
+	        # BUILD ALL MODULES
+	        	option_picked "you chose to Build All eFX Modules"
+	        	builCerebro.buildAllEFXModules
 	        	sleep 2
-	        	showMaintenanceTasksMenu
+	        	break
 	        	;;
 	        
-	        6) clear
-	        # UPLOAD SW TO SATELLITE
-	            option_picked "you chose to Upload Software to Satellite"
-	            #switchUser_efxbuild
-	            upload2Satellite 2>$EFX_INSTALLER_ERROR_FILE
-	        	sleep 2
-	            showMaintenanceTasksMenu
+	        2) clear
+	        # BUILD eFX-AdaFIX MODULE
+	            option_picked "you chose to Build eFX-AdaFIX Module"
+	            builCerebro.buildEFXModule eFX-AdaFIX
+	            sleep 2
+	            showBuildEFXModulesMenu
 	            ;;
-	            
-	        x) clear
-	        	exit 0
-	        	;;
-	
-	        \n) clear
-	        	exit 0
-	        	;;
+	          	        
+	        3) clear
+	        # BUILD eFX-Adartenon MODULE
+	            option_picked "you chose to Build eFX-Adartenon Module"
+	            builCerebro.buildEFXModule eFX-Adartenon
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	              	        
+	        23) clear
+	        # BUILD eFX-SB7-Common MODULE
+	            option_picked "you chose to Build eFX-SB7-Common Module"
+	        	builCerebro.buildEFXSB7CommonModules
+	        	sleep 2
+	        	showBuildEFXModulesMenu
+	            ;;
 	
 	        *) clear
 	        	option_picked "Pick an option from the menu";
-	        	showMainMenu
+	        	showBuildEFXModulesMenu
 	        	;;
 	    	esac
-		fi
 	done
 }
 
@@ -233,7 +224,7 @@ showMaintenanceTasksMenu(){
 }
 
 # Read option from Maintenance Menu
-function listenMaintenanceTasksMenu() {
+function listenMaintenanceTasksMenu(){
 	while [ opt_maintenance_tasks != '' ]
 	    do
 	    if [[ $opt_maintenance_tasks = "" ]]; then 
@@ -243,7 +234,7 @@ function listenMaintenanceTasksMenu() {
 	    else
 	        case $opt_maintenance_tasks in
 	        1) clear
-	        # BUILD CEREBRO
+	        # START LP POINTS SIMULATION
 	        	#option_picked "you chose to Build Start LP Points Simulation"
 	        	#switchUser_efxbuild
 	        	sleep 2
@@ -275,6 +266,3 @@ function listenMaintenanceTasksMenu() {
 		fi
 	done
 }
-
-
-

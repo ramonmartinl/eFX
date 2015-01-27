@@ -3,7 +3,7 @@
 #
 # Script for installing SW Releases
 #
-# Usage: installSW.sh
+# Usage: installEFX.sh
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 19/01/2015 
@@ -20,6 +20,11 @@ export EFX_INSTALLER_LOG_FILE
 export EFX_INSTALLER_ERROR_FILE
 
 source $EFX_INSTALLER_HOME/menus.sh
+source $EFX_INSTALLER_HOME/builCerebro.sh
+source $EFX_INSTALLER_HOME/uploadSW2Satellite.sh
+source $EFX_INSTALLER_HOME/installCaplin.sh
+source $EFX_INSTALLER_HOME/maintenanceTasks.sh
+source $EFX_INSTALLER_HOME/utils.sh
 
 # Switch to 'strmbase' User
 function switchUser_strmbase(){

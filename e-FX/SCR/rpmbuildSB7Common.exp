@@ -1,0 +1,17 @@
+#!/usr/bin/expect
+
+## Pass arguments
+set releaseNumber [lindex $argv 0] 
+set nInstall [lindex $argv 1]
+## Access CLI
+set password "efx001"
+## Expect Parameters
+set timeout -1
+
+spawn ./buildRPM_3.2_Final.sh $releaseNumber $nInstall /local/home/strmbase eFX-SB7-Common
+##expect "yes/no" {send "yes\r"}
+expect "Enter pass phrase:" 
+send "$password\r"
+expect "Enter pass phrase:" 
+send "$password\r"
+interact
