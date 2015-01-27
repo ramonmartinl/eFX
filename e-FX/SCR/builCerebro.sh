@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 19/01/2015 
-# Last Modified: 22/01/2015 (ramn.martn)
+# Last Modified: 27/01/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -66,7 +66,7 @@ function buildApplication() {
 
 # CLEAN . & .svn FILES FROM RELEASE FOLDER
 function cleanNewReleaseFolder() {
-	echo -e "\nCleaning . & .svn Files succesfully from $RELEASE_FOLDER..."
+	echo -e "\nCleaning . & .svn Files from $RELEASE_FOLDER..."
 	find $RELEASE_FOLDER -name ".svn" | awk '{print "rm -rf "$0}' | sh
 	find $RELEASE_FOLDER/SB7 -name "." | awk '{print "rm -rf "$0}' | sh
 	find $RELEASE_FOLDER/Linux -name "." | awk '{print "rm -rf "$0}' | sh
@@ -155,11 +155,11 @@ function builCerebro.buildEFXSB7CommonModules(){
 function buildCerebro.builCerebro(){
 	#switchUser_efxbuild
 	ask4CerebroReleaseDetails 
-	#editReleaseProperties 
-	#createNewReleaseFolder 
-	#buildApplication 
-	#cleanNewReleaseFolder 
+	editReleaseProperties 
+	createNewReleaseFolder 
+	buildApplication 
+	cleanNewReleaseFolder 
 	buildRPMPackages 
 	#buildShellScripts 
-	#upload2Satellite Cerebro
+	uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
 }	

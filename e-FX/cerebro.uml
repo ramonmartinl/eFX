@@ -227,7 +227,15 @@ http://wiki.ants.ad.anplc.co.uk/foswiki/UnixTeam/ListEfxChannels&#xD;
       </guard>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_EQ0hQaF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_UPLOAD RMP PACKAGES TO SATELLITE_weight"/>
     </edge>
-    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="__Zn-QKF5EeSLNr2IRGEC_A"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_vzRCUKY4EeSBbqQJKRNU-Q" name="UPLOAD RMP PACKAGES TO SATELLITE_To_ActivityFinal1" target="_gCW4EJylEeSXVLcG_ujGyQ" source="_fTHPcKFmEeSLNr2IRGEC_A">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_v0ApMKY4EeSBbqQJKRNU-Q" name="UPLOAD RMP PACKAGES TO SATELLITE_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_v0lQ8KY4EeSBbqQJKRNU-Q" name="UPLOAD RMP PACKAGES TO SATELLITE_To_ActivityFinal1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7yyvYKY4EeSBbqQJKRNU-Q" name="InitialNode1_To_STOP CEREBRO PROCESSES" target="_G2xy0J_6EeSvLZlLl1KRPw" source="_lhH9AJvYEeS1x_Ye4TA6Uw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_7zZMUKY4EeSBbqQJKRNU-Q" name="InitialNode1_To_STOP CEREBRO PROCESSES_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_7z9NAKY4EeSBbqQJKRNU-Q" name="InitialNode1_To_STOP CEREBRO PROCESSES_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="__Zn-QKF5EeSLNr2IRGEC_A _7yyvYKY4EeSBbqQJKRNU-Q"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_mDV5QJvYEeS1x_Ye4TA6Uw" name="#2  CREATE NEW RELEASE FOLDER" incoming="_-rTfsKF5EeSLNr2IRGEC_A" outgoing="_LWiC8JvZEeS1x_Ye4TA6Uw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ mkdir x.y.z</body>
@@ -281,10 +289,10 @@ $ cp -r /dev/shm/EFX-lp-SIT[X] EFX-lp-SIT[X]</body>
 $ ln -s EFX-all-SIT[X] EFX-all&#xD;
 $ ln -s EFX-lp-SIT[X] EFX-lp</body>
     </node>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_z7gboJ_5EeSvLZlLl1KRPw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_z7gboJ_5EeSvLZlLl1KRPw _vzRCUKY4EeSBbqQJKRNU-Q"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_wQp6gJ_5EeSvLZlLl1KRPw" name="START CEREBRO PROCESSES" incoming="_g5Z00JylEeSXVLcG_ujGyQ" outgoing="_z7gboJ_5EeSvLZlLl1KRPw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_qEnqMKFmEeSLNr2IRGEC_A" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_fTHPcKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE" incoming="_Kss7gJ_6EeSvLZlLl1KRPw _EQz6MKF7EeSLNr2IRGEC_A" outgoing="_qEnqMKFmEeSLNr2IRGEC_A" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_qEnqMKFmEeSLNr2IRGEC_A _7yyvYKY4EeSBbqQJKRNU-Q" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fTHPcKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE" incoming="_Kss7gJ_6EeSvLZlLl1KRPw _EQz6MKF7EeSLNr2IRGEC_A" outgoing="_qEnqMKFmEeSLNr2IRGEC_A _vzRCUKY4EeSBbqQJKRNU-Q" body=""/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_gLw-oKF6EeSLNr2IRGEC_A" name="#6 BUILD SHELL SCRIPTS" incoming="_BpRQMKF7EeSLNr2IRGEC_A" outgoing="_Kss7gJ_6EeSvLZlLl1KRPw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
 $ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>

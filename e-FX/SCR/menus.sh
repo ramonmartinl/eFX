@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 22/01/2015 
-# Last Modified: 23/01/2015 (ramn.martn)
+# Last Modified: 27/01/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -217,7 +217,7 @@ showMaintenanceTasksMenu(){
     echo -e "${FMT_MENU}* Maintenance Tasks --> Other Maintenance Tasks ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Start LP Points Simulation ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 6)${FMT_MENU} Upload Software to Satellite ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Upload Software to Satellite ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_maintenance_tasks
@@ -241,11 +241,11 @@ function listenMaintenanceTasksMenu(){
 	        	showMaintenanceTasksMenu
 	        	;;
 	        
-	        6) clear
+	        2) clear
 	        # UPLOAD SW TO SATELLITE
 	            option_picked "you chose to Upload Software to Satellite"
 	            #switchUser_efxbuild
-	            upload2Satellite 2>$EFX_INSTALLER_ERROR_FILE
+	            uploadSW2Satellite.upload2Satellite 2>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;

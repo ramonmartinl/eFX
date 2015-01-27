@@ -8,3 +8,4 @@ Añadir el diagrama de Subidas a Satellite
 #Añadir el Entorno CAPLIN
 #Añadir el Diagrama de Actividades de Deployment de Caplin
 #Añadir el Entorno del Dot Dashboard (Dashboard.bat y Dashboard.exe.config)
+Añadir la fecha al archivo de log
