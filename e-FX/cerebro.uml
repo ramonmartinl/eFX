@@ -122,7 +122,7 @@ $ ./release.sh</body>
       <nestedClassifier xmi:type="uml:Artifact" xmi:id="_2UGigJZoEeSaLMhtV6zFhw" name="release.sh"/>
       <nestedNode xmi:id="_66wQoJaAEeSaLMhtV6zFhw" name="x.y.z"/>
     </nestedNode>
-    <nestedNode xmi:id="_E8siAJ1YEeSXVLcG_ujGyQ" name="/home /efxbuild/upload_area/Cerebro.x.y.z"/>
+    <nestedNode xmi:id="_E8siAJ1YEeSXVLcG_ujGyQ" name="/home /efxbuild/upload_area_sit"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_Wt9eIJcLEeSaLMhtV6zFhw" name="CEREBRO Deployment" node="_iph4QJcLEeSaLMhtV6zFhw _vM0BwJdPEeSF0pCT-mgLtQ">
     <node xmi:type="uml:InitialNode" xmi:id="_iph4QJcLEeSaLMhtV6zFhw" name="InitialNode1"/>
@@ -227,15 +227,7 @@ http://wiki.ants.ad.anplc.co.uk/foswiki/UnixTeam/ListEfxChannels&#xD;
       </guard>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_EQ0hQaF7EeSLNr2IRGEC_A" name="#5 BUILD RPM PACKAGES_To_UPLOAD RMP PACKAGES TO SATELLITE_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_vzRCUKY4EeSBbqQJKRNU-Q" name="UPLOAD RMP PACKAGES TO SATELLITE_To_ActivityFinal1" target="_gCW4EJylEeSXVLcG_ujGyQ" source="_fTHPcKFmEeSLNr2IRGEC_A">
-      <guard xmi:type="uml:LiteralBoolean" xmi:id="_v0ApMKY4EeSBbqQJKRNU-Q" name="UPLOAD RMP PACKAGES TO SATELLITE_To_ActivityFinal1_guard" value="true"/>
-      <weight xmi:type="uml:LiteralInteger" xmi:id="_v0lQ8KY4EeSBbqQJKRNU-Q" name="UPLOAD RMP PACKAGES TO SATELLITE_To_ActivityFinal1_weight"/>
-    </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_7yyvYKY4EeSBbqQJKRNU-Q" name="InitialNode1_To_STOP CEREBRO PROCESSES" target="_G2xy0J_6EeSvLZlLl1KRPw" source="_lhH9AJvYEeS1x_Ye4TA6Uw">
-      <guard xmi:type="uml:LiteralBoolean" xmi:id="_7zZMUKY4EeSBbqQJKRNU-Q" name="InitialNode1_To_STOP CEREBRO PROCESSES_guard" value="true"/>
-      <weight xmi:type="uml:LiteralInteger" xmi:id="_7z9NAKY4EeSBbqQJKRNU-Q" name="InitialNode1_To_STOP CEREBRO PROCESSES_weight"/>
-    </edge>
-    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="__Zn-QKF5EeSLNr2IRGEC_A _7yyvYKY4EeSBbqQJKRNU-Q"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_lhH9AJvYEeS1x_Ye4TA6Uw" name="InitialNode1" outgoing="__Zn-QKF5EeSLNr2IRGEC_A"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_mDV5QJvYEeS1x_Ye4TA6Uw" name="#2  CREATE NEW RELEASE FOLDER" incoming="_-rTfsKF5EeSLNr2IRGEC_A" outgoing="_LWiC8JvZEeS1x_Ye4TA6Uw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
 $ mkdir x.y.z</body>
@@ -289,10 +281,10 @@ $ cp -r /dev/shm/EFX-lp-SIT[X] EFX-lp-SIT[X]</body>
 $ ln -s EFX-all-SIT[X] EFX-all&#xD;
 $ ln -s EFX-lp-SIT[X] EFX-lp</body>
     </node>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_z7gboJ_5EeSvLZlLl1KRPw _vzRCUKY4EeSBbqQJKRNU-Q"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_gCW4EJylEeSXVLcG_ujGyQ" name="ActivityFinal1" incoming="_z7gboJ_5EeSvLZlLl1KRPw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_wQp6gJ_5EeSvLZlLl1KRPw" name="START CEREBRO PROCESSES" incoming="_g5Z00JylEeSXVLcG_ujGyQ" outgoing="_z7gboJ_5EeSvLZlLl1KRPw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_qEnqMKFmEeSLNr2IRGEC_A _7yyvYKY4EeSBbqQJKRNU-Q" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_fTHPcKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE" incoming="_Kss7gJ_6EeSvLZlLl1KRPw _EQz6MKF7EeSLNr2IRGEC_A" outgoing="_qEnqMKFmEeSLNr2IRGEC_A _vzRCUKY4EeSBbqQJKRNU-Q" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_G2xy0J_6EeSvLZlLl1KRPw" name="STOP CEREBRO PROCESSES" incoming="_qEnqMKFmEeSLNr2IRGEC_A" outgoing="_0iBzkJvcEeS1x_Ye4TA6Uw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fTHPcKFmEeSLNr2IRGEC_A" name="UPLOAD RMP PACKAGES TO SATELLITE" incoming="_Kss7gJ_6EeSvLZlLl1KRPw _EQz6MKF7EeSLNr2IRGEC_A" outgoing="_qEnqMKFmEeSLNr2IRGEC_A" body=""/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_gLw-oKF6EeSLNr2IRGEC_A" name="#6 BUILD SHELL SCRIPTS" incoming="_BpRQMKF7EeSLNr2IRGEC_A" outgoing="_Kss7gJ_6EeSvLZlLl1KRPw">
       <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
 $ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
@@ -304,4 +296,95 @@ $ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
     </node>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_bZZYkJ1YEeSXVLcG_ujGyQ" name="Deploy" client="_URR3MJaFEeSaLMhtV6zFhw" supplier="_E8siAJ1YEeSXVLcG_ujGyQ"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_bLLuQKecEeSN_YV_897WIg" name="CEREBRO" node="_daea4KedEeSN_YV_897WIg _XgodMKeeEeSN_YV_897WIg _uwsDUKeeEeSN_YV_897WIg _KX1lgKefEeSN_YV_897WIg _SKiFwKefEeSN_YV_897WIg _hxudEKefEeSN_YV_897WIg _d5XkEKeiEeSN_YV_897WIg _n4rF0KeiEeSN_YV_897WIg _FwoNAKejEeSN_YV_897WIg _WeyMYKejEeSN_YV_897WIg _k3Qt0KejEeSN_YV_897WIg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_uTYcQKeeEeSN_YV_897WIg" name="InitialNode1_To_CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )" target="_XgodMKeeEeSN_YV_897WIg" source="_daea4KedEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_uUIDIKeeEeSN_YV_897WIg" name="InitialNode1_To_CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_uUt5AKeeEeSN_YV_897WIg" name="InitialNode1_To_CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_I7JlEKefEeSN_YV_897WIg" name="CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )_To_EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE" target="_uwsDUKeeEeSN_YV_897WIg" source="_XgodMKeeEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_I7wCAKefEeSN_YV_897WIg" name="CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )_To_EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_I8V34KefEeSN_YV_897WIg" name="CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )_To_EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_RvAnYKefEeSN_YV_897WIg" name="EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE_To_CREATE NEW RELEASE FOLDER" target="_KX1lgKefEeSN_YV_897WIg" source="_uwsDUKeeEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_RvAnYaefEeSN_YV_897WIg" name="EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE_To_CREATE NEW RELEASE FOLDER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_RvAnYqefEeSN_YV_897WIg" name="EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE_To_CREATE NEW RELEASE FOLDER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aBsPQKefEeSN_YV_897WIg" name="CREATE NEW RELEASE FOLDER_To_BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH" target="_SKiFwKefEeSN_YV_897WIg" source="_KX1lgKefEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_aBsPQaefEeSN_YV_897WIg" name="CREATE NEW RELEASE FOLDER_To_BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_aBsPQqefEeSN_YV_897WIg" name="CREATE NEW RELEASE FOLDER_To_BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_s4mD0KefEeSN_YV_897WIg" name="BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH_To_CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER" target="_hxudEKefEeSN_YV_897WIg" source="_SKiFwKefEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_s4mD0aefEeSN_YV_897WIg" name="BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH_To_CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_s4mD0qefEeSN_YV_897WIg" name="BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH_To_CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_-uRkkKeiEeSN_YV_897WIg" name="CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER_To_BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]" target="_d5XkEKeiEeSN_YV_897WIg" source="_hxudEKefEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_-uRkkaeiEeSN_YV_897WIg" name="CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER_To_BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_-uRkkqeiEeSN_YV_897WIg" name="CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER_To_BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__ykTIKeiEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]" target="_d5XkEKeiEeSN_YV_897WIg" source="_d5XkEKeiEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="__ykTIaeiEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="__ykTIqeiEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_GuOdsKejEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_DecisionNode1" target="_FwoNAKejEeSN_YV_897WIg" source="_d5XkEKeiEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Gu-EkKejEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_DecisionNode1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_GvkhgKejEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_DecisionNode1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_HTRrgKejEeSN_YV_897WIg" name="DecisionNode1_To_BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|" target="_n4rF0KeiEeSN_YV_897WIg" source="_FwoNAKejEeSN_YV_897WIg">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_q6FL4KejEeSN_YV_897WIg" name="DecisionNode1_To_BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_guard">
+        <body>Yes</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_HUdXQKejEeSN_YV_897WIg" name="DecisionNode1_To_BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_I98dkKejEeSN_YV_897WIg" name="BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_To_BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|" target="_n4rF0KeiEeSN_YV_897WIg" source="_n4rF0KeiEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_I98dkaejEeSN_YV_897WIg" name="BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_To_BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_I98dkqejEeSN_YV_897WIg" name="BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_To_BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_cjPpMKejEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_UPLOAD RMP PACKAGES TO SATELLITE" target="_WeyMYKejEeSN_YV_897WIg" source="_FwoNAKejEeSN_YV_897WIg">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_rpZI8KejEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_UPLOAD RMP PACKAGES TO SATELLITE_guard">
+        <body>No</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_cjPpMqejEeSN_YV_897WIg" name="BUILD RPM PACKAGES [all|eFX-Module|eFX-SB/-Common]_To_UPLOAD RMP PACKAGES TO SATELLITE_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_g5TqgKejEeSN_YV_897WIg" name="BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_To_UPLOAD RMP PACKAGES TO SATELLITE" target="_WeyMYKejEeSN_YV_897WIg" source="_n4rF0KeiEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_g5TqgaejEeSN_YV_897WIg" name="BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_To_UPLOAD RMP PACKAGES TO SATELLITE_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_g5TqgqejEeSN_YV_897WIg" name="BUILD SHELL SCRIPTS [all|trading|pricing|tickstore|lp|lp-dev|_To_UPLOAD RMP PACKAGES TO SATELLITE_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_daea4KedEeSN_YV_897WIg" name="InitialNode1" outgoing="_uTYcQKeeEeSN_YV_897WIg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XgodMKeeEeSN_YV_897WIg" name="CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )" incoming="_uTYcQKeeEeSN_YV_897WIg" outgoing="_I7JlEKefEeSN_YV_897WIg">
+      <body>http://gbmikas015.ants.ad.anplc.co.uk:8088/secure/Dashboard.jspa</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_uwsDUKeeEeSN_YV_897WIg" name="EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE" incoming="_I7JlEKefEeSN_YV_897WIg" outgoing="_RvAnYKefEeSN_YV_897WIg">
+      <body>[efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ vi release.properties</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_KX1lgKefEeSN_YV_897WIg" name="CREATE NEW RELEASE FOLDER" incoming="_RvAnYKefEeSN_YV_897WIg" outgoing="_aBsPQKefEeSN_YV_897WIg">
+      <body>[efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ mkdir x.y.z</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_SKiFwKefEeSN_YV_897WIg" name="BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH" incoming="_aBsPQKefEeSN_YV_897WIg" outgoing="_s4mD0KefEeSN_YV_897WIg">
+      <body>[efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]&#xD;
+$ ./release.sh</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hxudEKefEeSN_YV_897WIg" name="CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER" incoming="_s4mD0KefEeSN_YV_897WIg" outgoing="_-uRkkKeiEeSN_YV_897WIg">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts/x.y.z]&#xD;
+$ find . -name &quot;.svn&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./SB7 -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh&#xD;
+$ find ./Linux -name &quot;.&quot; | awk '{print &quot;rm -rf &quot;$0}' | sh</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_d5XkEKeiEeSN_YV_897WIg" name="BUILD EACH AFFECTED EFX MODULE RPM PACKAGE [all|eFX-Module|eFX-SB/-Common]" incoming="_-uRkkKeiEeSN_YV_897WIg __ykTIKeiEeSN_YV_897WIg" outgoing="__ykTIKeiEeSN_YV_897WIg _GuOdsKejEeSN_YV_897WIg">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
+$ ./buildRPM_3.2_Final.sh $1 $2 $3 $4 (efx001)</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_n4rF0KeiEeSN_YV_897WIg" name="BUILD EACH AFFECTED LINUX MODULE RPM PACKAGE [all|trading|pricing|tickstore|lp|lp-dev|" incoming="_HTRrgKejEeSN_YV_897WIg _I98dkKejEeSN_YV_897WIg" outgoing="_I98dkKejEeSN_YV_897WIg _g5TqgKejEeSN_YV_897WIg">
+      <body>[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]&#xD;
+$ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)</body>
+    </node>
+    <node xmi:type="uml:DecisionNode" xmi:id="_FwoNAKejEeSN_YV_897WIg" name="DecisionNode1" incoming="_GuOdsKejEeSN_YV_897WIg" outgoing="_HTRrgKejEeSN_YV_897WIg _cjPpMKejEeSN_YV_897WIg">
+      <ownedComment xmi:id="_sg4xoKejEeSN_YV_897WIg" annotatedElement="_FwoNAKejEeSN_YV_897WIg">
+        <body>Build Linux modules</body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_WeyMYKejEeSN_YV_897WIg" name="UPLOAD RMP PACKAGES TO SATELLITE" incoming="_cjPpMKejEeSN_YV_897WIg _g5TqgKejEeSN_YV_897WIg" body=""/>
+    <node xmi:type="uml:InitialNode" xmi:id="_k3Qt0KejEeSN_YV_897WIg" name="InitialNode2"/>
+  </packagedElement>
 </uml:Model>

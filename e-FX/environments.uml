@@ -17,7 +17,7 @@
     <ownedComment xmi:id="_xMwPgJKJEeSye-zQiG4uDg">
       <body> /local/home/strmbase/3.5/Linux/scripts (EFX-dev1)</body>
     </ownedComment>
-    <nestedClassifier xmi:type="uml:Device" xmi:id="_QX3wsIXyEeSh4Ym1HZTfzQ" name="lnx-efxd3.ants.ad.anplc.co.uk">
+    <nestedClassifier xmi:type="uml:Device" xmi:id="_QX3wsIXyEeSh4Ym1HZTfzQ" name="lnx-efxd70.ants.ad.anplc.co.uk">
       <ownedComment xmi:id="_GfIA8JKKEeSye-zQiG4uDg" annotatedElement="_VjezYIXFEeSV7sNMKNrJjg _QX3wsIXyEeSh4Ym1HZTfzQ">
         <body>EFX 3</body>
       </ownedComment>
@@ -242,7 +242,7 @@ http://lnx-efxd53.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bo
       <body>/local/home/strmbase/EFX-all/fx-logs/&#xD;
 /local/home/strmbase/EFX-lp/fx-logs/</body>
     </ownedComment>
-    <nestedNode xmi:type="uml:Device" xmi:id="_v4vM8IeTEeSAq4L1ThvvIQ" name="lnx-efxd2.ants.ad.anplc.co.uk">
+    <nestedNode xmi:type="uml:Device" xmi:id="_v4vM8IeTEeSAq4L1ThvvIQ" name="lnx-efxd69.ants.ad.anplc.co.uk">
       <ownedComment xmi:id="_5j_1kJffEeSF0pCT-mgLtQ" annotatedElement="_v4vM8IeTEeSAq4L1ThvvIQ">
         <body>EFX 2</body>
       </ownedComment>

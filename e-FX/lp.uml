@@ -108,8 +108,8 @@ $ ./SFWDHandler.sh start</body>
       <body>[strmbase@lnx-efxd38]&#xD;
 $ /dev/shm/d3data/capture/demo/pruebas/GeneratedDateFixing.pl </body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_coRbQJcdEeSaLMhtV6zFhw" name="RENAME GENERATED FILE&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;$" incoming="_hTr_8KB9EeSvLZlLl1KRPw" outgoing="_i8RuYKB9EeSvLZlLl1KRPw">
-      <body>&#xD;
+    <node xmi:type="uml:OpaqueAction" xmi:id="_coRbQJcdEeSaLMhtV6zFhw" name="RENAME GENERATED FILE" incoming="_hTr_8KB9EeSvLZlLl1KRPw" outgoing="_i8RuYKB9EeSvLZlLl1KRPw">
+      <body>[strmbase@lnx-efxd38]&#xD;
 $ cp /local/home/strmbase/d3data/capture/demo/pruebas/dataNDFnew /local/home/strmbase/d3data/capture/demo/newDataNDF&#xD;
 &#xD;
 &#xD;

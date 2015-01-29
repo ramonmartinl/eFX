@@ -200,7 +200,7 @@ $./dashboard start&#xD;
 </body>
     </ownedComment>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ _qcH64Jp5EeSErr_g8YjIHw _W42oMJp8EeSErr_g8YjIHw _l8K2YJp8EeSErr_g8YjIHw _wi_EEJp8EeSErr_g8YjIHw _6zmYQJp8EeSErr_g8YjIHw _JSFVoJsuEeSQW-O3MV76cQ _8VvJEJsvEeSQW-O3MV76cQ _XDLTgJ_7EeSvLZlLl1KRPw _QUdjUJ_8EeSvLZlLl1KRPw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_-f2G8JdPEeSF0pCT-mgLtQ" name="BAXTER" node="_Drg6kJdQEeSF0pCT-mgLtQ _Yji5YJdQEeSF0pCT-mgLtQ _jRm-kJdQEeSF0pCT-mgLtQ _so1zsJdQEeSF0pCT-mgLtQ _Fw3yoJdSEeSF0pCT-mgLtQ _hGXHoJdTEeSF0pCT-mgLtQ _CkedMJdUEeSF0pCT-mgLtQ _oqmfsJdUEeSF0pCT-mgLtQ _IDZukJdVEeSF0pCT-mgLtQ _qcH64Jp5EeSErr_g8YjIHw _W42oMJp8EeSErr_g8YjIHw _l8K2YJp8EeSErr_g8YjIHw _wi_EEJp8EeSErr_g8YjIHw _6zmYQJp8EeSErr_g8YjIHw _JSFVoJsuEeSQW-O3MV76cQ _8VvJEJsvEeSQW-O3MV76cQ _XDLTgJ_7EeSvLZlLl1KRPw _QUdjUJ_8EeSvLZlLl1KRPw _W8J2IKepEeSN_YV_897WIg">
     <edge xmi:type="uml:ControlFlow" xmi:id="_oLkXIJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" target="_Yji5YJdQEeSF0pCT-mgLtQ" source="_Drg6kJdQEeSF0pCT-mgLtQ">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_oMGioJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_oMpVMJdQEeSF0pCT-mgLtQ" name="InitialNode1_To_PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z_weight"/>
@@ -241,7 +241,7 @@ $./dashboard start&#xD;
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_yCmcsJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS_To_OpaqueAction12_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_yCnDwJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS_To_OpaqueAction12_weight"/>
     </edge>
-    <edge xmi:type="uml:ControlFlow" xmi:id="___tQwJp8EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK_To_ActivityFinal1" target="_6zmYQJp8EeSErr_g8YjIHw" source="_wi_EEJp8EeSErr_g8YjIHw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="___tQwJp8EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK_To_ActivityFinal1" target="_W8J2IKepEeSN_YV_897WIg" source="_wi_EEJp8EeSErr_g8YjIHw">
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_AASfkJp9EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK_To_ActivityFinal1_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_AA1SIJp9EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK_To_ActivityFinal1_weight"/>
     </edge>
@@ -269,69 +269,76 @@ $./dashboard start&#xD;
       <guard xmi:type="uml:LiteralBoolean" xmi:id="_lNMswJ_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP_To_#13 SHARE THE CLIENT (ZIP) TO THE NETWORK_guard" value="true"/>
       <weight xmi:type="uml:LiteralInteger" xmi:id="_lNNT0J_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP_To_#13 SHARE THE CLIENT (ZIP) TO THE NETWORK_weight"/>
     </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_e78XMKepEeSN_YV_897WIg" name="UPDATE RELEASE NUMBER IN THE WIKI_To_ActivityFinal1" target="_6zmYQJp8EeSErr_g8YjIHw" source="_W8J2IKepEeSN_YV_897WIg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_e8FhIKepEeSN_YV_897WIg" name="UPDATE RELEASE NUMBER IN THE WIKI_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_e8FhIaepEeSN_YV_897WIg" name="UPDATE RELEASE NUMBER IN THE WIKI_To_ActivityFinal1_weight"/>
+    </edge>
     <node xmi:type="uml:InitialNode" xmi:id="_Drg6kJdQEeSF0pCT-mgLtQ" name="InitialNode1" outgoing="_oLkXIJdQEeSF0pCT-mgLtQ"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="#0 PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Yji5YJdQEeSF0pCT-mgLtQ" name="PLACE NEW PACKAGES TO NFS /home/efxbuild/upload_area_sit/Baxter.x.y.z" incoming="_oLkXIJdQEeSF0pCT-mgLtQ" outgoing="_ozjkMJdQEeSF0pCT-mgLtQ">
       <body>* Download files from the URL´s received By Mail&#xD;
 * Copy them to /home/efxbuild/upload_area_sit/Baxter.x.y.z&#xD;
 </body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="#1 STOP BAXTER" incoming="_nEAS0J_7EeSvLZlLl1KRPw" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_so1zsJdQEeSF0pCT-mgLtQ" name="#2 BACKUP CONFIGURATION FILES &amp; FOLDERS" incoming="_ageDoJdREeSF0pCT-mgLtQ" outgoing="_RyLoYJdSEeSF0pCT-mgLtQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_jRm-kJdQEeSF0pCT-mgLtQ" name="STOP BAXTER" incoming="_nEAS0J_7EeSvLZlLl1KRPw" outgoing="_ageDoJdREeSF0pCT-mgLtQ" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_so1zsJdQEeSF0pCT-mgLtQ" name="BACKUP CONFIGURATION FILES &amp; FOLDERS" incoming="_ageDoJdREeSF0pCT-mgLtQ" outgoing="_RyLoYJdSEeSF0pCT-mgLtQ">
       <body>[baxter@HOST /opt/baxter/webpages/dashboard]&#xD;
 $cp config.cfg /opt/baxter/bak&#xD;
 $cp -rf /locale /opt/baxter/bak</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Fw3yoJdSEeSF0pCT-mgLtQ" name="#3 REMOVE 'log' SYMLINK" incoming="_RyLoYJdSEeSF0pCT-mgLtQ" outgoing="_pKdg8JdTEeSF0pCT-mgLtQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Fw3yoJdSEeSF0pCT-mgLtQ" name="REMOVE 'log' SYMLINK" incoming="_RyLoYJdSEeSF0pCT-mgLtQ" outgoing="_pKdg8JdTEeSF0pCT-mgLtQ">
       <body>[baxter@HOST]&#xD;
 $ unlink log</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_hGXHoJdTEeSF0pCT-mgLtQ" name="#4 INSTALL RPM PACKAGES (in Orange &amp; Magenta)" incoming="_pKdg8JdTEeSF0pCT-mgLtQ" outgoing="_M7GqwJsuEeSQW-O3MV76cQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hGXHoJdTEeSF0pCT-mgLtQ" name="INSTALL RPM PACKAGES (in Orange &amp; Magenta)" incoming="_pKdg8JdTEeSF0pCT-mgLtQ" outgoing="_M7GqwJsuEeSQW-O3MV76cQ">
       <body>[USER@HOST /home/efxbuild/upload_area_sit/Baxter.x.y.z]&#xD;
 $ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm&#xD;
 $ rpm -qa |grep -i baxter</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_CkedMJdUEeSF0pCT-mgLtQ" name="#6 REPLACE constants.licence FILE" incoming="_NrZfQJsuEeSQW-O3MV76cQ" outgoing="_7LFLgJp5EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_CkedMJdUEeSF0pCT-mgLtQ" name="REPLACE constants.licence FILE" incoming="_NrZfQJsuEeSQW-O3MV76cQ" outgoing="_7LFLgJp5EeSErr_g8YjIHw">
       <body>[baxter@HOST /opt/baxter/config-server/repository/com/baxter/pe]&#xD;
 $ mv constants.license constants.license.x.y.z&#xD;
 $ cp /home/efxbuild/upload_area_sit/Baxter.x.y.z/constants.licence_nonHA . constants.licence&#xD;
 $ md5sum file</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_oqmfsJdUEeSF0pCT-mgLtQ" name="#10 INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING" incoming="_Esc8YJswEeSQW-O3MV76cQ" outgoing="_jQvK4Jp8EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_oqmfsJdUEeSF0pCT-mgLtQ" name="INSTALL LIBRARIES IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING" incoming="_Esc8YJswEeSQW-O3MV76cQ" outgoing="_jQvK4Jp8EeSErr_g8YjIHw">
       <body>[baxter@HOST]&#xD;
 $cp /opt/baxter/webpages/dashboard/config.cf /opt/baxter/bak&#xD;
 $cp -rf /opt/baxter/webpages/dashboard/locale /opt/baxter/bak</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_IDZukJdVEeSF0pCT-mgLtQ" name="#7 RESTORE CONFIGURATION FILE &amp; FOLDERS" incoming="_7LFLgJp5EeSErr_g8YjIHw" outgoing="_7pNR8Jp5EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_IDZukJdVEeSF0pCT-mgLtQ" name="RESTORE CONFIGURATION FILE &amp; FOLDERS" incoming="_7LFLgJp5EeSErr_g8YjIHw" outgoing="_7pNR8Jp5EeSErr_g8YjIHw">
       <body>[baxter@HOST]&#xD;
 $cp /opt/baxter/bak/config.cf /opt/baxter/webpages/dashboard/&#xD;
 $cp -rf /opt/baxter/bak/locale /opt/baxter/webpages/dashboard/</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_qcH64Jp5EeSErr_g8YjIHw" name="#8 RESTORE 'log' SYMLINK" incoming="_7pNR8Jp5EeSErr_g8YjIHw" outgoing="_EN8bcJswEeSQW-O3MV76cQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qcH64Jp5EeSErr_g8YjIHw" name="RESTORE 'log' SYMLINK" incoming="_7pNR8Jp5EeSErr_g8YjIHw" outgoing="_EN8bcJswEeSQW-O3MV76cQ">
       <body>[baxter@HOST]&#xD;
 $ ln -sf file link</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_W42oMJp8EeSErr_g8YjIHw" name="#11 CHANGE BROKEN LIBRARY SYMLINKS WHERE Adaxter, RFQAdaxter, Trading are running" incoming="_jQvK4Jp8EeSErr_g8YjIHw" outgoing="_m9aQ8Jp8EeSErr_g8YjIHw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_W42oMJp8EeSErr_g8YjIHw" name="CHANGE BROKEN LIBRARY SYMLINKS WHERE Adaxter, RFQAdaxter, Trading are running" incoming="_jQvK4Jp8EeSErr_g8YjIHw" outgoing="_m9aQ8Jp8EeSErr_g8YjIHw">
       <body>[baxter@HOST /opt/baxter/lib]&#xD;
 $ unlink link&#xD;
 $ ln -sf new_file link</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_l8K2YJp8EeSErr_g8YjIHw" name="#12 RESTART Adaxter, RFQAdaxter, TRADING PROCESS" incoming="_m9aQ8Jp8EeSErr_g8YjIHw" outgoing="_yCl1oJp8EeSErr_g8YjIHw" body=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_wi_EEJp8EeSErr_g8YjIHw" name="#13 SHARE THE CLIENT (ZIP) TO THE NETWORK" incoming="_lNMFsJ_8EeSvLZlLl1KRPw" outgoing="___tQwJp8EeSErr_g8YjIHw" body=""/>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_6zmYQJp8EeSErr_g8YjIHw" name="ActivityFinal1" incoming="___tQwJp8EeSErr_g8YjIHw"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_JSFVoJsuEeSQW-O3MV76cQ" name="#5 CHANGE BROKEN LIBRARY SYMLINKS" incoming="_M7GqwJsuEeSQW-O3MV76cQ" outgoing="_NrZfQJsuEeSQW-O3MV76cQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_l8K2YJp8EeSErr_g8YjIHw" name="RESTART Adaxter, RFQAdaxter, TRADING PROCESS" incoming="_m9aQ8Jp8EeSErr_g8YjIHw" outgoing="_yCl1oJp8EeSErr_g8YjIHw" body=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wi_EEJp8EeSErr_g8YjIHw" name="SHARE THE CLIENT (ZIP) TO THE NETWORK" incoming="_lNMFsJ_8EeSvLZlLl1KRPw" outgoing="___tQwJp8EeSErr_g8YjIHw" body=""/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_6zmYQJp8EeSErr_g8YjIHw" name="ActivityFinal1" incoming="_e78XMKepEeSN_YV_897WIg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_JSFVoJsuEeSQW-O3MV76cQ" name="CHANGE BROKEN LIBRARY SYMLINKS" incoming="_M7GqwJsuEeSQW-O3MV76cQ" outgoing="_NrZfQJsuEeSQW-O3MV76cQ">
       <body>[baxter@HOST /opt/baxter/lib]&#xD;
 $ unlink link&#xD;
 $ ln -sf new_file link</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_8VvJEJsvEeSQW-O3MV76cQ" name="#9 START BAXTER" incoming="_EN8bcJswEeSQW-O3MV76cQ" outgoing="_Esc8YJswEeSQW-O3MV76cQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_8VvJEJsvEeSQW-O3MV76cQ" name="START BAXTER" incoming="_EN8bcJswEeSQW-O3MV76cQ" outgoing="_Esc8YJswEeSQW-O3MV76cQ">
       <body>[baxter@HOST /opt/baxter/bin]</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_XDLTgJ_7EeSvLZlLl1KRPw" name="# SIGN RPMS" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_nEAS0J_7EeSvLZlLl1KRPw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XDLTgJ_7EeSvLZlLl1KRPw" name="SIGN RPMS" incoming="_ozjkMJdQEeSF0pCT-mgLtQ" outgoing="_nEAS0J_7EeSvLZlLl1KRPw">
       <body>[baxter@HOST/home/efxbuild/upload_area_sit/Baxter.x.y.z]&#xD;
 $ rpm -addsign package1 package2.. packageN efx001</body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_QUdjUJ_8EeSvLZlLl1KRPw" name="# CHANGE TRADING LEADERSHIP" incoming="_yCl1oJp8EeSErr_g8YjIHw" outgoing="_lNMFsJ_8EeSvLZlLl1KRPw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_QUdjUJ_8EeSvLZlLl1KRPw" name="CHANGE TRADING LEADERSHIP" incoming="_yCl1oJp8EeSErr_g8YjIHw" outgoing="_lNMFsJ_8EeSvLZlLl1KRPw">
       <body>tradingLeaderShip promote 1</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_W8J2IKepEeSN_YV_897WIg" name="UPDATE RELEASE NUMBER IN THE WIKI" incoming="___tQwJp8EeSErr_g8YjIHw" outgoing="_e78XMKepEeSN_YV_897WIg">
+      <body>http://wiki.ants.ad.anplc.co.uk/foswiki/EfxDev/Releases</body>
     </node>
   </packagedElement>
 </uml:Model>
