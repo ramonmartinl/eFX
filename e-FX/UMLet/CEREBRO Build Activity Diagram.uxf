@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="12.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
-      <x>48</x>
-      <y>40</y>
-      <w>16</w>
-      <h>16</h>
+      <x>205</x>
+      <y>65</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>i</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>80</y>
-      <w>392</w>
-      <h>40</h>
+      <x>175</x>
+      <y>90</y>
+      <w>245</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )
 http://gbmikas015.ants.ad.anplc.co.uk:8088/secure/Dashboard.jspa
@@ -28,21 +28,21 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>32</x>
-      <y>24</y>
-      <w>40</w>
-      <h>72</h>
+      <x>195</x>
+      <y>55</y>
+      <w>24</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;56;24;24</additional_attributes>
+    <additional_attributes>15;35;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>144</y>
-      <w>416</w>
-      <h>64</h>
+      <x>175</x>
+      <y>130</y>
+      <w>260</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE
 [efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]
@@ -53,21 +53,21 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>32</x>
-      <y>96</y>
-      <w>40</w>
-      <h>64</h>
+      <x>195</x>
+      <y>100</y>
+      <w>24</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;48;24;24</additional_attributes>
+    <additional_attributes>15;30;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>232</y>
-      <w>272</w>
-      <h>56</h>
+      <x>175</x>
+      <y>185</y>
+      <w>170</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>CREATE NEW RELEASE FOLDER
 [efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]
@@ -78,21 +78,21 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>32</x>
-      <y>184</y>
-      <w>40</w>
-      <h>64</h>
+      <x>195</x>
+      <y>155</y>
+      <w>24</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;48;24;24</additional_attributes>
+    <additional_attributes>15;30;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>320</y>
-      <w>376</w>
-      <h>64</h>
+      <x>175</x>
+      <y>240</y>
+      <w>235</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH
 [efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]
@@ -103,21 +103,21 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>32</x>
-      <y>264</y>
-      <w>40</w>
-      <h>72</h>
+      <x>195</x>
+      <y>205</y>
+      <w>24</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;56;24;24</additional_attributes>
+    <additional_attributes>15;35;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>408</y>
-      <w>304</w>
-      <h>80</h>
+      <x>175</x>
+      <y>295</y>
+      <w>190</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER
 [efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts/x.y.z]
@@ -130,21 +130,21 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>32</x>
-      <y>360</y>
-      <w>40</w>
-      <h>64</h>
+      <x>195</x>
+      <y>265</y>
+      <w>24</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;48;24;24</additional_attributes>
+    <additional_attributes>15;30;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>520</y>
-      <w>320</w>
-      <h>72</h>
+      <x>175</x>
+      <y>365</y>
+      <w>200</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>BUILD EACH AFFECTED EFX MODULE RPM PACKAGE 
 [all|eFX-Module|eFX-SB/-Common]
@@ -156,21 +156,21 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>24</x>
-      <y>464</y>
-      <w>40</w>
-      <h>72</h>
+      <x>190</x>
+      <y>330</y>
+      <w>24</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;56;24;24</additional_attributes>
+    <additional_attributes>15;35;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>208</x>
-      <y>632</y>
-      <w>320</w>
-      <h>72</h>
+      <x>305</x>
+      <y>435</y>
+      <w>200</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>BUILD EACH AFFECTED LINUX MODULE RPM PACKAGE 
 [all|trading|pricing|tickstore|lp|lp-dev|
@@ -183,10 +183,10 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Decision</type>
     <coordinates>
-      <x>48</x>
-      <y>648</y>
-      <w>32</w>
-      <h>32</h>
+      <x>205</x>
+      <y>445</y>
+      <w>20</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>Build
 bg=cyan</panel_attributes>
@@ -195,45 +195,45 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>568</y>
-      <w>40</w>
-      <h>96</h>
+      <x>200</x>
+      <y>395</y>
+      <w>24</w>
+      <h>59</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;80;24;24</additional_attributes>
+    <additional_attributes>15;50;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>56</x>
-      <y>640</y>
-      <w>168</w>
-      <h>40</h>
+      <x>210</x>
+      <y>440</y>
+      <w>104</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=[Build Linux Modules]</panel_attributes>
-    <additional_attributes>152;24;24;24</additional_attributes>
+    <additional_attributes>95;15;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>656</y>
-      <w>40</w>
-      <h>120</h>
+      <x>200</x>
+      <y>450</y>
+      <w>24</w>
+      <h>74</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=[No]</panel_attributes>
-    <additional_attributes>24;104;24;24</additional_attributes>
+    <additional_attributes>15;65;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>0</x>
-      <y>800</y>
-      <w>232</w>
-      <h>32</h>
+      <x>175</x>
+      <y>540</y>
+      <w>145</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>UPLOAD RMP PACKAGES TO SATELLITE
 bg=pink
@@ -243,10 +243,10 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
-      <x>56</x>
-      <y>856</y>
-      <w>16</w>
-      <h>16</h>
+      <x>210</x>
+      <y>575</y>
+      <w>10</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>i</panel_attributes>
     <additional_attributes/>
@@ -254,43 +254,43 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>808</y>
-      <w>40</w>
+      <x>200</x>
+      <y>545</y>
+      <w>24</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>15;30;15;15</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>455</x>
+      <y>445</y>
+      <w>84</w>
       <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;48;24;24</additional_attributes>
+    <additional_attributes>15;35;15;55;75;55;75;15;50;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>448</x>
-      <y>648</y>
-      <w>136</w>
-      <h>104</h>
+      <x>330</x>
+      <y>375</y>
+      <w>84</w>
+      <h>59</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;56;24;88;120;88;120;24;80;24</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>248</x>
-      <y>536</y>
-      <w>136</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;56;24;80;120;80;120;24;72;24</additional_attributes>
+    <additional_attributes>15;35;15;50;75;50;75;15;45;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>176</x>
-      <y>0</y>
-      <w>264</w>
-      <h>24</h>
+      <x>280</x>
+      <y>45</y>
+      <w>165</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>CEREBRO NEW RELEASES BUILD PROCESS
 bg=white
@@ -300,21 +300,21 @@ fg=blue</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>56</x>
-      <y>680</y>
-      <w>304</w>
-      <h>96</h>
+      <x>210</x>
+      <y>465</y>
+      <w>189</w>
+      <h>59</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;80;24;48;288;48;288;24</additional_attributes>
+    <additional_attributes>15;50;15;30;180;30;180;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.SynchBarHorizontal</type>
     <coordinates>
-      <x>40</x>
-      <y>752</y>
-      <w>64</w>
-      <h>16</h>
+      <x>200</x>
+      <y>510</y>
+      <w>40</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -322,12 +322,12 @@ fg=blue</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>736</y>
-      <w>40</w>
-      <h>80</h>
+      <x>200</x>
+      <y>500</y>
+      <w>24</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;64;24;24</additional_attributes>
+    <additional_attributes>15;40;15;15</additional_attributes>
   </element>
 </diagram>
