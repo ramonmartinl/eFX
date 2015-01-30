@@ -5,7 +5,7 @@
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
       <x>80</x>
-      <y>50</y>
+      <y>30</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -16,7 +16,7 @@
     <type>com.umlet.element.Note</type>
     <coordinates>
       <x>280</x>
-      <y>20</y>
+      <y>0</y>
       <w>370</w>
       <h>30</h>
     </coordinates>
@@ -29,11 +29,343 @@ fg=blue</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>40</x>
-      <y>100</y>
+      <y>80</y>
+      <w>330</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>CREATE NEW RELEASE FOLDER
+[USER@lnx-efxbuild /home/efxbuild/upload_area]
+$ mkdir Caplin.x.y.z
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>20</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>170</y>
+      <w>410</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>DOWNLOAD RELEASE
+[USER@lnx-efxbuild /home/efxbuild/upload_area/Caplin.x.y.z]
+$  wget [URL]
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>110</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>280</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>STOP CAPLIN
+[caplin@lnx-sbankd5|lnx-sbankd6 /opt/caplin]
+$ ./dfw stop
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>230</x>
+      <y>370</y>
+      <w>520</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>INSTALL RPM PACKAGES
+[USER@lnx-sbankd5|lnx-sbankd6 /home/efxbuild/upload_area/Caplin.x.y.z]
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum update PACKAGE
+
+* Caplin SBP Adapters (sgbm-caplin-adapters-x.y.z-x86_64.rpm)
+* Caplin SBP Framework (sgbm-caplin-deploymentframework-x.y.z-x86_64.rpm)
+* Caplin SBP Liberator (sgbm-caplin-liberator-x.y.z-x86_64.rpm)
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>310</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;70;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>210</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;70;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>260</x>
+      <y>810</y>
+      <w>500</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>DEPLOY WEB APPLICATION
+[USER@lnx-sbankd5|lnx-sbankd6 /home/efxbuild/upload_area/Caplin.x.y.z]
+$ tar -xvf santandertrader.x.y.z.tar.gz
+[tomcat7@lnx-sbankd5|lnx-sbankd6 /local/vendor/tomcat7/tomcat/webapp]
+
+$
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Decision</type>
+    <coordinates>
+      <x>70</x>
+      <y>380</y>
+      <w>40</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Decision</type>
+    <coordinates>
+      <x>70</x>
+      <y>810</y>
+      <w>40</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>80</x>
+      <y>370</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=[Install RPMs]</panel_attributes>
+    <additional_attributes>150;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>80</x>
+      <y>800</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=[Deply Web App]</panel_attributes>
+    <additional_attributes>180;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>1040</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>state</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.FinalState</type>
+    <coordinates>
+      <x>80</x>
+      <y>1120</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>1050</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;70;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.SynchBarHorizontal</type>
+    <coordinates>
+      <x>50</x>
+      <y>770</y>
+      <w>80</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>390</y>
+      <w>50</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=[No]</panel_attributes>
+    <additional_attributes>30;390;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>750</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.SynchBarHorizontal</type>
+    <coordinates>
+      <x>60</x>
+      <y>990</y>
+      <w>80</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>820</y>
+      <w>50</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=[No]</panel_attributes>
+    <additional_attributes>30;180;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>970</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;70;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>90</x>
+      <y>870</y>
+      <w>360</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;130;30;70;340;70;340;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>180</x>
+      <y>540</y>
+      <w>570</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>CHECK santandertrader.xml FILE
+[caplin@lnx-sbankd5|lnx-sbankd6 /local/vendor/tomcat7/tomcat/conf/Catalina/localhost]
+$ ll santandertrader.xml
+* Restore backup if file is missing from /local/vendor/tomcat7/tomcat/conf/Catalina
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>440</x>
+      <y>650</y>
+      <w>310</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>CHECK NEW VERSION &amp; START CAPLIN
+[caplin@lnx-sbankd5|lnx-sbankd6 /opt]
+$ ./dfw versions
+$ ./dfw status
+$ ./dfw start
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>650</x>
+      <y>470</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;70;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>650</x>
+      <y>590</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>80</x>
+      <y>670</y>
+      <w>380</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;110;30;30;360;30</additional_attributes>
   </element>
 </diagram>
