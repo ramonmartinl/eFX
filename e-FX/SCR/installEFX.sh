@@ -11,20 +11,8 @@
 #
 ###############################################################################
 
-EFX_INSTALLER_HOME=/home/efxbuild/UploadToSatellite
-EFX_INSTALLER_LOG_FILE=$EFX_INSTALLER_HOME/installSW.log
-EFX_INSTALLER_ERROR_FILE=$EFX_INSTALLER_HOME/installSW.error
-
-export EFX_INSTALLER_HOME
-export EFX_INSTALLER_LOG_FILE
-export EFX_INSTALLER_ERROR_FILE
-
-source $EFX_INSTALLER_HOME/menus.sh
-source $EFX_INSTALLER_HOME/builCerebro.sh
-source $EFX_INSTALLER_HOME/uploadSW2Satellite.sh
-source $EFX_INSTALLER_HOME/installCaplin.sh
-source $EFX_INSTALLER_HOME/maintenanceTasks.sh
-source $EFX_INSTALLER_HOME/utils.sh
+declare -r EFX_INSTALLER_HOME=/home/efxbuild/UploadToSatellite
+source $EFX_INSTALLER_HOME/installEFX.env
 
 # Switch to 'strmbase' User
 function switchUser_strmbase(){
@@ -42,9 +30,15 @@ function switchUser_baxter(){
 }
 
 # Clear installation log & error
-rm $EFX_INSTALLER_LOG_FILE
-rm $EFX_INSTALLER_ERROR_FILE
+echo "" >$EFX_INSTALLER_LOG_FILE
+echo "" >$EFX_INSTALLER_ERROR_FILE
 
+#declare -f
 # Show Main Menu
 showMainMenu
 listenMainMenu
+#declare -r
+#declare -f
+#return 0
+#wait
+#caller 0

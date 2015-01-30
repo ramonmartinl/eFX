@@ -21,8 +21,6 @@ RELEASE_NUMBER=""
 # $2: Release Number (optional)
 function uploadSW2Satellite.upload2Satellite() { 
 
-	UPLOAD_AREA_FOLDER="/home/efxbuild/upload_area/"
-	
 	if [ "$1" = "" ] && [ "$2" = "" ]; then
 		# Read Application name & Release Number from user input
 		echo -n "Please introduce Application name, Options: Cerebro, Caplin, Baxter, etc.. > "
@@ -40,8 +38,8 @@ function uploadSW2Satellite.upload2Satellite() {
 	fi
 
 	
-	SW_RELEASE_FOLDER=$APPLICATION.$RELEASE_NUMBER
-	RELEASE_FOLDER=${UPLOAD_AREA_FOLDER}${SW_RELEASE_FOLDER}
+	SW_RELEASE_FOLDER="$APPLICATION.$RELEASE_NUMBER"
+	RELEASE_FOLDER="${UPLOAD_AREA_FOLDER}/${SW_RELEASE_FOLDER}"
 	SATELLITE_USER="efxbuild"
 	SATELLITE_PASSWD="RedHat01"
 	SATELLITE_EFX_CHANNELS_TMP=SATELLITE_EFX_CHANNELS.out
@@ -78,7 +76,9 @@ function uploadSW2Satellite.upload2Satellite() {
 	done < $selectedSatelliteChannels
 	
 	#remove temporary files
-	rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
+	#rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
 	
-	logResult "Successfuly uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD"
+	logResult "Successfully uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD"
 }
+
+#declare -f

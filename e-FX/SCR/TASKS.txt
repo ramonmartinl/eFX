@@ -9,3 +9,13 @@ Añadir el diagrama de Subidas a Satellite
 #Añadir el Diagrama de Actividades de Deployment de Caplin
 #Añadir el Entorno del Dot Dashboard (Dashboard.bat y Dashboard.exe.config)
 Añadir la fecha al archivo de log
+
+# Añadir SSH
+Start LP Points Simulation in 'lnx-efxd38' host as 'strmbase' user
+http://www.linuxproblem.org/art_9.html
+http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
+# Downloads software from URL
+function downloadSW(){
+	ls
+	#wget  [option]  [URL]
+}

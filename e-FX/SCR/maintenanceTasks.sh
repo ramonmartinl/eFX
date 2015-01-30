@@ -11,13 +11,15 @@
 #
 ###############################################################################
 
-# Start LP Points Simulation in 'lnx-efxd38' host as 'strmbase' user
-# http://www.linuxproblem.org/art_9.html
-# http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
+# Añadir SSH
+#Start LP Points Simulation in 'lnx-efxd38' host as 'strmbase' user
+#http://www.linuxproblem.org/art_9.html
+#http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
 
 # Downloads software from URL
-function downloadSW(){
-	#wget  [option]  [URL]
+function downloadEFX(){
+	#wget option URL
+	echo "hola"
 }
 
 # Start LP Points Simulation
