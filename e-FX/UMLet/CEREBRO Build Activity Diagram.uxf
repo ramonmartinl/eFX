@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.InitialState</type>
+    <coordinates>
+      <x>48</x>
+      <y>40</y>
+      <w>16</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>80</y>
+      <w>392</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>CREATE NEW JIRA TO GET NUMBER FOR 'release.properties' (CLONE )
+http://gbmikas015.ants.ad.anplc.co.uk:8088/secure/Dashboard.jspa
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>32</x>
+      <y>24</y>
+      <w>40</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;56;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>144</y>
+      <w>416</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE
+[efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]
+$ vi release.properties
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>32</x>
+      <y>96</y>
+      <w>40</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;48;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>232</y>
+      <w>272</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>CREATE NEW RELEASE FOLDER
+[efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]
+$ mkdir x.y.z
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>32</x>
+      <y>184</y>
+      <w>40</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;48;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>320</y>
+      <w>376</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH
+[efxbuild@lnxd-efxbuild /home/efxbuild/eFX-Scripts]
+$ ./release.sh
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>32</x>
+      <y>264</y>
+      <w>40</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;56;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>408</y>
+      <w>304</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER
+[efxbuild@lnx-efxbuild /home/efxbuild/eFX-Scripts/x.y.z]
+$ find . -name ".svn" | awk '{print "rm -rf "$0}' | sh
+$ find ./SB7 -name "." | awk '{print "rm -rf "$0}' | sh
+$ find ./Linux -name "." | awk '{print "rm -rf "$0}' | sh
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>32</x>
+      <y>360</y>
+      <w>40</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;48;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>520</y>
+      <w>320</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>BUILD EACH AFFECTED EFX MODULE RPM PACKAGE 
+[all|eFX-Module|eFX-SB/-Common]
+[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]
+$ ./buildRPM_3.2_Final.sh $1 $2 $3 $4 (efx001)
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>24</x>
+      <y>464</y>
+      <w>40</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;56;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>208</x>
+      <y>632</y>
+      <w>320</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>BUILD EACH AFFECTED LINUX MODULE RPM PACKAGE 
+[all|trading|pricing|tickstore|lp|lp-dev|
+[efxbuild@lnx-efxbuild /home/efxbuild/eFX_installer]]
+$ ./buildRPM_3.2_Linux.sh $1 $2 $3 $4 (efx001)
+bg=pink
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Decision</type>
+    <coordinates>
+      <x>48</x>
+      <y>648</y>
+      <w>32</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Build
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>40</x>
+      <y>568</y>
+      <w>40</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;80;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>56</x>
+      <y>640</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=[Build Linux Modules]</panel_attributes>
+    <additional_attributes>152;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>40</x>
+      <y>656</y>
+      <w>40</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=[No]</panel_attributes>
+    <additional_attributes>24;104;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>800</y>
+      <w>232</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>UPLOAD RMP PACKAGES TO SATELLITE
+bg=pink
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.FinalState</type>
+    <coordinates>
+      <x>56</x>
+      <y>856</y>
+      <w>16</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>40</x>
+      <y>808</y>
+      <w>40</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;48;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>448</x>
+      <y>648</y>
+      <w>136</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;56;24;88;120;88;120;24;80;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>248</x>
+      <y>536</y>
+      <w>136</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;56;24;80;120;80;120;24;72;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>176</x>
+      <y>0</y>
+      <w>264</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>CEREBRO NEW RELEASES BUILD PROCESS
+bg=white
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>56</x>
+      <y>680</y>
+      <w>304</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;80;24;48;288;48;288;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.SynchBarHorizontal</type>
+    <coordinates>
+      <x>40</x>
+      <y>752</y>
+      <w>64</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>40</x>
+      <y>736</y>
+      <w>40</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;64;24;24</additional_attributes>
+  </element>
+</diagram>

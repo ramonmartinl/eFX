@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.InitialState</type>
+    <coordinates>
+      <x>147</x>
+      <y>49</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.FinalState</type>
+    <coordinates>
+      <x>154</x>
+      <y>777</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>84</y>
+      <w>161</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>STOP CEREBRO PROCESSES
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>133</x>
+      <y>42</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>133</y>
+      <w>280</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>REMOVE INSTALLATION LINKS TO /local/home/strmbase
+[strmbase@HOST /local/home/strmbase]
+$ unlink EFX-all
+$ unlink EFX-lp
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>217</y>
+      <w>315</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>BACKUP EACH UPDTATED MODULE INSTALLATION FOLDER
+[strmbase@HOST /local/home/strmbase]
+$ cp -r EFX-all-SIT[X]/[module]  EFX-all-SIT[X]/[module].bak
+$ cp -r EFX-lp-SIT[X]/[module]  EFX-lp-SIT[X]/[module].bak
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>301</y>
+      <w>245</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>CREATE NEW INSTALLATION LINKS TO /dev/shm 
+[strmbase@HOST /local/home/strmbase]
+$ ln -s /dev/shm/EFX-all-SIT[X] EFX-all
+$ ln -s /dev/shm/EFX-lp-SIT[X] EFX-lp
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>392</y>
+      <w>350</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>UPDATE/INSTALL NEW PACKAGES
+[user@HOST /home/efxbuild/upload_area_sit/Cerebro.x.y.z]
+$ rpm -qa | grep sgbm-efx
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum-update PACKAGE.rpm
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>490</y>
+      <w>315</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>COPY EACH UPDATED MODULE TO INSTALLATION FOLDER
+[strmbase@HOST /local/home/strmbase]
+$ cp -r /dev/shm/EFX-all-SIT[X]/[module] EFX-all-SIT[X]/[module] 
+$ cp -r /dev/shm/EFX-lp-SIT[X]/[module] EFX-lp-SIT[X]/[module]
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>581</y>
+      <w>294</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>RESTORE INSTALLATION LINKS TO /local/home/strmbase
+[strmbase@HOST /local/home/strmbase]
+$ ln -s EFX-all-SIT[X] EFX-all
+$ ln -s EFX-lp-SIT[X] EFX-lp
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>721</y>
+      <w>266</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>UPDATE NEW RELEASE NUMBER IN THE WIKI
+http://wiki.ants.ad.anplc.co.uk/foswiki/EfxDev/Releases
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>119</x>
+      <y>665</y>
+      <w>161</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>START CEREBRO PROCESSES
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>175</x>
+      <y>91</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>168</x>
+      <y>175</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>168</x>
+      <y>259</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>161</x>
+      <y>343</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>385</x>
+      <y>224</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;56;21;77;77;77;77;21;49;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>427</x>
+      <y>406</y>
+      <w>83</w>
+      <h>83</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;56;21;70;70;70;70;21;42;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>154</x>
+      <y>441</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>147</x>
+      <y>532</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>392</x>
+      <y>497</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;56;21;77;77;77;77;21;42;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>140</x>
+      <y>735</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>140</x>
+      <y>672</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>140</x>
+      <y>616</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>196</x>
+      <y>14</y>
+      <w>273</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>CEREBRO NEW RELEASES DEPLOYMENT PROCESS
+bg=white
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>448</x>
+      <y>182</y>
+      <w>175</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Every module can also be restored 
+installing the RPM package. 
+Linux Module is a special case
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>483</x>
+      <y>490</y>
+      <w>161</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Linux Module is a special case
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

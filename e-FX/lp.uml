@@ -6,7 +6,9 @@
 DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts>&#xD;
 DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts>&#xD;
 SIT1: /local/home/strmbase/EFX-lp/Linux/scripts> (EFX-lp -> EFX-lp-SIT)&#xD;
-SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts> (EFX-lp2 -> EFX-lp-SIT2)</body>
+SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts> (EFX-lp2 -> EFX-lp-SIT2)&#xD;
+CAPLIN: /local/home/strmbase/EFX-all-Caplin/Linux/scripts> (EFX-all-Caplin -> EFX-lp-SIT2) &#xD;
+CAPLIN: /local/home/strmbase/EFX-lp-Caplin/Linux/scripts> (EFX-lp-Caplin -> EFX-lp-SIT2) </body>
   </ownedComment>
   <ownedComment xmi:id="_gq_MAInmEeSf6YVZN2Xsyw" annotatedElement="_o2qe4InkEeSf6YVZN2Xsyw _OKkk0InmEeSf6YVZN2Xsyw">
     <body>[strmbase@lnx-efxd60|lnx-efxd61]&#xD;
