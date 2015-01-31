@@ -31,7 +31,7 @@ fg=blue</panel_attributes>
       <x>40</x>
       <y>80</y>
       <w>330</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>CREATE NEW RELEASE FOLDER
 [USER@lnx-efxbuild /home/efxbuild/upload_area]
@@ -54,7 +54,7 @@ bg=pink</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>40</x>
-      <y>170</y>
+      <y>180</y>
       <w>410</w>
       <h>70</h>
     </coordinates>
@@ -68,7 +68,7 @@ bg=pink</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>60</x>
-      <y>110</y>
+      <y>120</y>
       <w>50</w>
       <h>80</h>
     </coordinates>
@@ -122,27 +122,30 @@ bg=pink</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>60</x>
-      <y>210</y>
+      <y>220</y>
       <w>50</w>
-      <h>90</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;70;30;30</additional_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>260</x>
-      <y>810</y>
-      <w>500</w>
-      <h>90</h>
+      <y>790</y>
+      <w>490</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>DEPLOY WEB APPLICATION
 [USER@lnx-sbankd5|lnx-sbankd6 /home/efxbuild/upload_area/Caplin.x.y.z]
 $ tar -xvf santandertrader.x.y.z.tar.gz
-[tomcat7@lnx-sbankd5|lnx-sbankd6 /local/vendor/tomcat7/tomcat/webapp]
+[tomcat7@lnx-sbankd5|lnx-sbankd6 /local/vendor/tomcat7/tomcat/webapps]
+$ mv santandertrader.war santandertrader.war.x.y.z
+$ mv santandertrader santandertrader.x.y.z
+$ cp /home/efxbuild/upload_area/Caplin.x.y.z/santandertrader.x.y.z .
 
-$
+* santander WAR (santandertrader.war.x.y.z)
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
@@ -196,18 +199,26 @@ m2=[Deply Web App]</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>40</x>
-      <y>1040</y>
-      <w>100</w>
-      <h>40</h>
+      <y>1120</y>
+      <w>460</w>
+      <h>120</h>
     </coordinates>
-    <panel_attributes>state</panel_attributes>
+    <panel_attributes>CHECK CORRECT OPERATION IN USER INTERFACE
+
+# http://lnx-sbankd5.ants.ad.anplc.co.uk:8080/santandertrader/login
+# http://lnx-sbankd6.ants.ad.anplc.co.uk:8080/santandertrader/login
+
+* Company: caplin
+* User: user4
+* Password: Pegaso4
+bg=cyan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
       <x>80</x>
-      <y>1120</y>
+      <y>1280</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -218,7 +229,7 @@ m2=[Deply Web App]</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>60</x>
-      <y>1050</y>
+      <y>1210</y>
       <w>50</w>
       <h>90</h>
     </coordinates>
@@ -263,7 +274,7 @@ m2=[No]</panel_attributes>
     <type>com.umlet.element.custom.SynchBarHorizontal</type>
     <coordinates>
       <x>60</x>
-      <y>990</y>
+      <y>1070</y>
       <w>80</w>
       <h>20</h>
     </coordinates>
@@ -276,17 +287,17 @@ m2=[No]</panel_attributes>
       <x>60</x>
       <y>820</y>
       <w>50</w>
-      <h>200</h>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=[No]</panel_attributes>
-    <additional_attributes>30;180;30;30</additional_attributes>
+    <additional_attributes>30;260;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>60</x>
-      <y>970</y>
+      <y>1050</y>
       <w>50</w>
       <h>90</h>
     </coordinates>
@@ -297,12 +308,12 @@ m2=[No]</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>90</x>
-      <y>870</y>
-      <w>360</w>
-      <h>150</h>
+      <y>1010</y>
+      <w>220</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;130;30;70;340;70;340;30</additional_attributes>
+    <additional_attributes>30;70;30;30;200;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
@@ -367,5 +378,31 @@ bg=green</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>30;110;30;30;360;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>290</x>
+      <y>1000</y>
+      <w>460</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>RESTART TOMCAT WEB SERVER
+[tomcat7@lnx-sbankd5|lnx-sbankd6 /local/vendor/tomcat7/tomcat/bin]
+&amp; ./shutdown.sh
+&amp; ./startup.sh
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>930</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;70;30;30</additional_attributes>
   </element>
 </diagram>
