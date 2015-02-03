@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.Node</type>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>990</w>
+      <h>1242</h>
+    </coordinates>
+    <panel_attributes>center:CAPLIN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>228</x>
+          <y>930</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-RFQadaxter.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>228</x>
+          <y>900</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+RFQAdaxter_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>210</x>
+          <y>870</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:RFQAdaxter : 8950</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>930</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-adaxter.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>900</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+PrimaryAdaxter_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>42</x>
+          <y>870</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:PrimaryAdaxter : 8900</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>828</y>
+        <w>360</w>
+        <h>144</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd13</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>408</x>
+        <y>828</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 13
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>366</x>
+        <y>828</y>
+        <w>78</w>
+        <h>42</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;30;66;18</additional_attributes>
+    </element>
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>228</x>
+          <y>756</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-fwdPricing.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>228</x>
+          <y>726</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+FwdPricing_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>210</x>
+          <y>696</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:FwdPricing : 8630</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>42</x>
+          <y>696</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:CorePricing : 8300</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>726</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+CorePricing_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>756</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+corepricing.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>660</y>
+        <w>360</w>
+        <h>144</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd12</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>414</x>
+        <y>660</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 12
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>366</x>
+        <y>660</y>
+        <w>90</w>
+        <h>42</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;30;78;18</additional_attributes>
+    </element>
+  </group>
+  <group>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>888</x>
+        <y>312</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 9
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>846</x>
+        <y>312</y>
+        <w>72</w>
+        <h>42</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;30;60;18</additional_attributes>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>312</y>
+        <w>840</w>
+        <h>162</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd9</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>696</x>
+          <y>348</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Adartenon : 8750</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>714</x>
+          <y>378</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Adartenon_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>714</x>
+          <y>408</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+adartenon.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>534</x>
+          <y>348</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Adafix : </panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>552</x>
+          <y>378</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Adafix_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>552</x>
+          <y>408</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+adafix.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>372</x>
+          <y>348</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:D3Handler : 8097</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>390</x>
+          <y>378</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+D3Handler_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>390</x>
+          <y>408</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+SFWDHandler.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>204</x>
+          <y>348</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:PrimaryTrading : 8600 </panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>222</x>
+          <y>378</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+PrimaryTrading_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>222</x>
+          <y>408</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-trading.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Note</type>
+        <coordinates>
+          <x>210</x>
+          <y>444</y>
+          <w>138</w>
+          <h>18</h>
+        </coordinates>
+        <panel_attributes>tradingLeadership.sh promote 1
+bg=yellow</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>204</x>
+          <y>420</y>
+          <w>78</w>
+          <h>36</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>18;18;66;24</additional_attributes>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>42</x>
+          <y>348</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Cleansing : 8100</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>378</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Cleansing_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>408</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+cleansing.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+  </group>
+  <group>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>726</x>
+        <y>156</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 8
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>684</x>
+        <y>156</y>
+        <w>84</w>
+        <h>54</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;42;72;18</additional_attributes>
+    </element>
+    <group>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>546</x>
+          <y>252</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+TIHandler.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>546</x>
+          <y>222</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+MTIHandler_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>528</x>
+          <y>192</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:MTIHandler : 8098</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>366</x>
+          <y>192</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:PrimaryCustomerPricing : 8500</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>384</x>
+          <y>222</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+CustomerPricing_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>384</x>
+          <y>252</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-customerPricing.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>204</x>
+          <y>192</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:TradeReports : 8800</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>222</x>
+          <y>222</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+TradeReports_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>222</x>
+          <y>252</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-tradeReports.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>42</x>
+          <y>192</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:TenorService : 9100</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>222</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+TenorService_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>252</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-tenorService.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>156</y>
+        <w>678</w>
+        <h>144</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd8</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>222</x>
+        <y>72</y>
+        <w>312</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>Baxter
+http://lnx-efxd7.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html
+bg=magenta</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>222</x>
+        <y>36</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 7
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>192</x>
+        <y>36</y>
+        <w>66</w>
+        <h>48</h>
+      </coordinates>
+      <panel_attributes>lt=-
+</panel_attributes>
+      <additional_attributes>18;36;54;18</additional_attributes>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>192</x>
+        <y>66</y>
+        <w>42</w>
+        <h>36</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;24;30;18</additional_attributes>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>36</y>
+        <w>186</w>
+        <h>108</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd7.ants.ad.anplc.co.uk
+bg=default</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>36</x>
+          <y>72</y>
+          <w>156</w>
+          <h>60</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Jetty 6 Web server
+bg=default</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>48</x>
+          <y>102</y>
+          <w>126</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+baxter-config-server-x.y.z.war
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>552</x>
+          <y>594</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+pricetenon.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>534</x>
+          <y>534</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Pricetenon : 10100</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>552</x>
+          <y>564</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Pricetenon_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>696</x>
+          <y>534</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:VolHandler : 8700</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>714</x>
+          <y>564</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+VolHandler_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>714</x>
+          <y>594</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+VolHandler.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>366</x>
+          <y>534</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:TickWriter : 8400</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>384</x>
+          <y>564</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+TickWriter_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>384</x>
+          <y>594</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+tickWriter.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>204</x>
+          <y>534</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:PrimaryDashboardBridge : 9250</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>216</x>
+          <y>564</y>
+          <w>120</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+PrimaryDashboardBridge_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>216</x>
+          <y>594</y>
+          <w>120</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+primary-DashboardBridge.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>42</x>
+          <y>534</y>
+          <w>150</w>
+          <h>90</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Aggregation : 8200</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>564</y>
+          <w>102</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Aggregation_x.y.z
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>60</x>
+          <y>594</y>
+          <w>108</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+agg.sh
+bg=pink</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>498</y>
+        <w>846</w>
+        <h>144</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd11</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>894</x>
+        <y>492</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 11
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>852</x>
+        <y>492</y>
+        <w>84</w>
+        <h>48</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;36;72;18</additional_attributes>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>30</x>
+      <y>1032</y>
+      <w>42</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>18;18;18;42;30;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>30</x>
+      <y>1038</y>
+      <w>42</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>18;18;18;60;30;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>1038</y>
+      <w>48</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>18;18;18;36;36;36</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>1038</y>
+      <w>48</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>18;18;18;66;36;66</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>582</x>
+      <y>1194</y>
+      <w>354</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/local/home/strmbase/EFX-all-Caplin/fx-logs -&gt; /logs/strmbase/CerebroLogs/CI-all
+/local/home/strmbase/EFX-lp-Caplin/fx-logs -&gt; /logs/strmbase/CerebroLogs/CI-lp
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>738</x>
+      <y>30</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/local/home/strmbase/EFX-all-Caplin -&gt; EFX-all-CI
+/local/home/strmbase/EFX-lp-Caplin -&gt; EFX-lp-CI
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <group>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>330</x>
+        <y>1032</y>
+        <w>132</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Caplin SBP Framework
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>360</x>
+        <y>1062</y>
+        <w>132</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Caplin SBP Liberator
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>360</x>
+        <y>1092</y>
+        <w>132</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Caplin SBP Adapters 
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>330</x>
+          <y>1134</y>
+          <w>150</w>
+          <h>72</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Tomcat 7 Web Server</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>342</x>
+          <y>1170</y>
+          <w>120</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+santandertrader_x.y.z.war
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>318</x>
+        <y>996</y>
+        <w>192</w>
+        <h>228</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd6</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>534</x>
+        <y>996</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 6
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>492</x>
+        <y>996</y>
+        <w>72</w>
+        <h>42</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;30;60;18</additional_attributes>
+    </element>
+  </group>
+  <group>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>228</x>
+        <y>996</y>
+        <w>66</w>
+        <h>18</h>
+      </coordinates>
+      <panel_attributes>SDBANK 5
+bg=pink</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Relation</type>
+      <coordinates>
+        <x>192</x>
+        <y>996</y>
+        <w>72</w>
+        <h>48</h>
+      </coordinates>
+      <panel_attributes>lt=-</panel_attributes>
+      <additional_attributes>18;36;60;18</additional_attributes>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Node</type>
+      <coordinates>
+        <x>24</x>
+        <y>996</y>
+        <w>186</w>
+        <h>228</h>
+      </coordinates>
+      <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd5</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>36</x>
+        <y>1032</y>
+        <w>132</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Caplin SBP Framework
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>60</x>
+        <y>1062</y>
+        <w>132</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Caplin SBP Liberator
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>60</x>
+        <y>1092</y>
+        <w>132</w>
+        <h>24</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
+Caplin SBP Adapters 
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Node</type>
+        <coordinates>
+          <x>36</x>
+          <y>1134</y>
+          <w>150</w>
+          <h>72</h>
+        </coordinates>
+        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Tomcat 7 Web Server</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>48</x>
+          <y>1170</y>
+          <w>120</w>
+          <h>24</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+santandertrader_x.y.z.war
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+  </group>
+</diagram>

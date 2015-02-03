@@ -115,8 +115,8 @@ function buildEFXRPMPackages() {
 
 # BUILD SHELL SCRIPTS with (efx001) Passwd
 function buildLinuxPMPackages() {
-	showBuildEFXModulesMenu
-	$EFX_INSTALLER_FOLDER/buildRPM_3.2_Linux.sh $RELEASE_NUMBER 1 /local/home/strmbase $4 
+	showBuildLinuxModulesMenu
+	listenBuildLinuxModulesMenu
 }
 
 # sends the result of the execution of the last command to log file
@@ -131,24 +131,38 @@ function logBuildModuleResult(){
 	fi	
 }
 
-# Build a RPM package for a Module
-# Usage: buildModuleRPM $1
+# Build RPM package for an EFX Module
+# Usage: buildEFXModuleRPM $1
 # $1: Module
-function buildModuleRPM(){
-	$EFX_INSTALLER_HOME/rpmbuild.exp $RELEASE_NUMBER 1 $1  | tee --append $EFX_INSTALLER_LOG_FILE
+function buildEFXModuleRPM(){
+	$EFX_INSTALLER_HOME/rpmbuildEFX.exp $RELEASE_NUMBER 1 $1  | tee --append $EFX_INSTALLER_LOG_FILE
 }
 
-# Build a RPM package for all Modules
-# Usage: buildAllModulesRPM
-function buildAllModulesRPM(){
-	$EFX_INSTALLER_HOME/rpmbuildAll.exp $RELEASE_NUMBER 1 all  | tee --append $EFX_INSTALLER_LOG_FILE
+# Build a RPM package for all EFX Modules
+# Usage: buildAllEFXModulesRPM
+function buildAllEFXModulesRPM(){
+	$EFX_INSTALLER_HOME/rpmbuildEFXAll.exp $RELEASE_NUMBER 1 all  | tee --append $EFX_INSTALLER_LOG_FILE
 }
 
 # Build RPM package for Module eFX-SB7-Common 
 # Usage: buildEFXSB7CommonModulesRPM
 function buildEFXSB7CommonModulesRPM(){
-	$EFX_INSTALLER_HOME/rpmbuildSB7Common.exp $RELEASE_NUMBER 1 eFX-SB7-Common  | tee --append $EFX_INSTALLER_LOG_FILE
+	$EFX_INSTALLER_HOME/rpmbuildEFXSB7Common.exp $RELEASE_NUMBER 1 eFX-SB7-Common  | tee --append $EFX_INSTALLER_LOG_FILE
 }
+
+# Build a RPM package for a Linux Module
+# Usage: buildLinuxModuleRPM $1
+# $1: Module
+function buildLinuxModuleRPM(){
+	$EFX_INSTALLER_HOME/rpmbuildLinux.exp $RELEASE_NUMBER 1 $1  | tee --append $EFX_INSTALLER_LOG_FILE
+}
+
+# Build a RPM package for all Linux Modules
+# Usage: buildAllLinuxModulesRPM
+function buildAllLinuxModulesRPM(){
+	$EFX_INSTALLER_HOME/rpmbuildLinuxAll.exp $RELEASE_NUMBER 1 all  | tee --append $EFX_INSTALLER_LOG_FILE
+}
+
 
 # Builds a EFX Module
 # Usage: builCerebro.buildEFXModule $1
@@ -156,7 +170,7 @@ function buildEFXSB7CommonModulesRPM(){
 function builCerebro.buildEFXModule(){
 	logResult "Building $1 Module for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
-	buildModuleRPM $1
+	buildEFXModuleRPM $1
 	logBuildModuleResult $1
 	popd
 }
@@ -166,7 +180,7 @@ function builCerebro.buildEFXModule(){
 function builCerebro.buildAllEFXModules(){
 	logResult "Building all EFX Modules for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
-	buildAllModulesRPM
+	buildAllEFXModulesRPM
 	logBuildModuleResult all
 	popd
 }
@@ -181,18 +195,39 @@ function builCerebro.buildEFXSB7CommonModules(){
 	popd
 }
 
+# Builds a Linux Module
+# Usage: builCerebro.buildLinuxModule $1
+# $1: Module
+function builCerebro.buildLinuxModule(){
+	logResult "Building $1 Module for Cerebro.$RELEASE_NUMBER..."
+	pushd $EFX_INSTALLER_FOLDER
+	buildLinuxModuleRPM $1
+	logBuildModuleResult $1
+	popd
+}
+
+# Builds all Linux Modules
+# Usage: builCerebro.buildAllLinuxModules
+function builCerebro.buildAllLinuxModules(){
+	logResult "Building all Linux Modules for Cerebro.$RELEASE_NUMBER..."
+	pushd $EFX_INSTALLER_FOLDER
+	buildAllLinuxModulesRPM
+	logBuildModuleResult all
+	popd
+}
+
 # Builds a EFX Cerebro new Release
 # Usage: builCerebro.builCerebro
 function buildCerebro.builCerebro(){
 	#caller 0
 	ask4CerebroReleaseDetails 
-	editReleaseProperties 
+	#editReleaseProperties 
 	#createNewReleaseFolder 
 	#buildApplication
 	wait 
 	#cleanNewReleaseFolder 
 	buildEFXRPMPackages 
-	#buildLinuxPMPackages 
+	buildLinuxPMPackages 
 	#uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
 }	
 

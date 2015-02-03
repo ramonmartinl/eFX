@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+
+## Pass arguments
+set releaseNumber [lindex $argv 0] 
+set nInstall [lindex $argv 1]
+set eFXModule [lindex $argv 2]
+## Access CLI
+set password "efx001"
+## Expect Parameters
+set timeout -1
+
+spawn ./buildRPM_3.2_Linux.sh $releaseNumber $nInstall /local/home/strmbase $eFXModule
+##expect "yes/no" {send "yes\r"}
+expect "Enter pass phrase:" 
+send "$password\r"
+interact

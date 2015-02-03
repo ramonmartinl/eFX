@@ -17,7 +17,7 @@ fg=blue</panel_attributes>
   <element>
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
-      <x>42</x>
+      <x>35</x>
       <y>21</y>
       <w>14</w>
       <h>14</h>
@@ -268,21 +268,21 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>28</x>
-      <y>7</y>
-      <w>34</w>
-      <h>69</h>
+      <x>21</x>
+      <y>14</y>
+      <w>28</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>21;56;21;21</additional_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>21</x>
       <y>91</y>
-      <w>34</w>
-      <h>62</h>
+      <w>28</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -292,8 +292,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>21</x>
       <y>168</y>
-      <w>34</w>
-      <h>62</h>
+      <w>28</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -303,8 +303,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>154</x>
       <y>210</y>
-      <w>230</w>
-      <h>34</h>
+      <w>224</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>217;21;21;21</additional_attributes>
@@ -314,8 +314,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>553</x>
       <y>252</y>
-      <w>34</w>
-      <h>62</h>
+      <w>28</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -455,8 +455,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
-      <x>483</x>
-      <y>1113</y>
+      <x>567</x>
+      <y>1218</y>
       <w>14</w>
       <h>14</h>
     </coordinates>
@@ -466,12 +466,82 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>469</x>
+      <x>553</x>
       <y>1064</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>574</x>
+      <y>385</y>
+      <w>97</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;56;21;77;84;77;84;21;42;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>574</x>
+      <y>483</y>
+      <w>97</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;56;21;77;84;77;84;21;42;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>399</x>
+      <y>1106</y>
+      <w>217</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>UPLOAD RMP PACKAGES TO SATELLITE
+bg=pink
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>553</x>
+      <y>1113</y>
       <w>34</w>
       <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>77</x>
+      <y>1162</y>
+      <w>532</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>SEND CONFIRMATION E-MAIL FOR ENVIONMENT READY TO TEST
+BUZON EFX QA &lt;bzefxqa@isban.es&gt;; Buzon Services eFX &lt;bzeFXservices@isban.es&gt;; BUZON Deployers eFX
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>553</x>
+      <y>1176</y>
+      <w>34</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;42;21;21</additional_attributes>
   </element>
 </diagram>

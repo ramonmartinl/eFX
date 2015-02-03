@@ -142,7 +142,7 @@ function listenBuildLinuxModulesMenu(){
 	        1) clear
 	        # BUILD ALL MODULES
 	        	option_picked "you chose to Build All Linux Modules"
-	        	builCerebro.buildAllEFXModules
+	        	builCerebro.buildAllLinuxModules
 	        	sleep 2
 	        	break
 	        	;;
@@ -150,7 +150,7 @@ function listenBuildLinuxModulesMenu(){
 	        2) clear
 	        # BUILD Trading MODULE
 	            option_picked "you chose to Build Trading Module"
-	            builCerebro.buildEFXModule trading
+	            builCerebro.buildLinuxModule trading
 	            sleep 2
 	            showBuildLinuxModulesMenu
 	            ;;
@@ -158,7 +158,7 @@ function listenBuildLinuxModulesMenu(){
 	        3) clear
 	        # BUILD Pricing MODULE
 	            option_picked "you chose to Build Pricing Module"
-	            builCerebro.buildEFXModule pricing
+	            builCerebro.buildLinuxModule pricing
 	            sleep 2
 	            showBuildLinuxModulesMenu
 	            ;;
@@ -166,7 +166,7 @@ function listenBuildLinuxModulesMenu(){
 	        4) clear
 	        # BUILD Tickstore MODULE
 	            option_picked "you chose to Build Tickstore Module"
-	            builCerebro.buildEFXModule tickStore
+	            builCerebro.buildLinuxModule tickStore
 	            sleep 2
 	            showBuildLinuxModulesMenu
 	            ;;
@@ -174,7 +174,7 @@ function listenBuildLinuxModulesMenu(){
 	        5) clear
 	        # BUILD LP MODULE
 	            option_picked "you chose to Build LP Module"
-	        	builCerebro.buildEFXModule lp
+	        	builCerebro.buildLinuxModule lp
 	        	sleep 2
 	        	showBuildLinuxModulesMenu
 	            ;;
@@ -182,7 +182,7 @@ function listenBuildLinuxModulesMenu(){
 	        6) clear
 	        # BUILD LP-DEV MODULE
 	            option_picked "you chose to Build LP-DEV Module"
-	        	builCerebro.buildEFXModule lp-dev
+	        	builCerebro.buildLinuxModule lp-dev
 	        	sleep 2
 	        	showBuildLinuxModulesMenu
 	            ;;

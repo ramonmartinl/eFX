@@ -632,7 +632,11 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       <ownedComment xmi:id="_M2MXwJs9EeSQW-O3MV76cQ" annotatedElement="_odKwQJs8EeSQW-O3MV76cQ">
         <body>EFX 69 (Baxter)</body>
       </ownedComment>
-      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_mdXw0Js-EeSQW-O3MV76cQ" name="lnx-sbankd5"/>
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_mdXw0Js-EeSQW-O3MV76cQ" name="lnx-sbankd5">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_aT0YoKriEeScB59hYOUtMg" name="Artifact1"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_bX5EwKriEeScB59hYOUtMg" name="Artifact2"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Nx0eYKrnEeScB59hYOUtMg" name="Artifact3"/>
+      </nestedNode>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_nkCd8Js-EeSQW-O3MV76cQ" name="lnx-sbankd6"/>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_AusY0KLwEeSLNr2IRGEC_A" name="lnx-sbankd8"/>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_BvXysKLwEeSLNr2IRGEC_A" name="lnx-sbankd9"/>
