@@ -7,14 +7,19 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 19/01/2015 
-# Last Modified: 27/01/2015 (ramn.martn)
+# Last Modified: 03/02/2015 (ramn.martn)
 #
 ###############################################################################
 
 declare -r EFX_SCRIPTS_FOLDER=/home/efxbuild/eFX-Scripts
 declare -r EFX_INSTALLER_FOLDER=/home/efxbuild/eFX_installer
 RELEASE_NUMBER=""
+BRANCH_NAME=""
+SIT_ENVIRONMENT=""
+TAG_NAME=""
+PREVIOUS_TAG=""
 JIRA_NUMBER=""
+
 RELEASE_FOLDER=""
 FIXED_VERSION=false
 
@@ -22,10 +27,28 @@ export EFX_INSTALLER_FOLDER
 
 # Read new Release Details from Console
 function ask4CerebroReleaseDetails() {
+	# Introduce Release Number
 	echo -n "Please introduce new Release number, Ej.: 3.4.29 > "
 	read releaseNumber
 	RELEASE_NUMBER=$releaseNumber
 	RELEASE_FOLDER=$EFX_SCRIPTS_FOLDER/$RELEASE_NUMBER
+	# Introduce Brach name
+	echo -n "Please introduce Branch name, Ej.: 3.4 > "
+	read branchName
+	BRANCH_NAME=$branchName
+	# Introduce SIT environment
+	echo -n "Please introduce Environment, Ej.: SIT1 > "
+	read devName
+	SIT_ENVIRONMENT=$devName
+	# Introduce Tag Name
+	echo -n "Please introduce Tag name, Ej.: 3.4.29 > "
+	read tagName
+	TAG_NAME=$tagName
+	# Introduce Previous Tag 
+	echo -n "Please introduce previous Tag, Ej.: 3.4.28 > "
+	read previousTag
+	PREVIOUS_TAG=$previousTag
+	# Introduce JIRA Number
 	echo -n "Please introduce JIRA number, Ej.: 19970 > "
 	read jiraNumber
 	JIRA_NUMBER=$jiraNumber
@@ -55,7 +78,7 @@ function ask4CerebroReleaseDetails() {
 	        	;;
 	    	esac
 	done
-	logResult "New Cerebro Release Properties introduced succesfully"
+	utils.logResult "New Cerebro Release Properties introduced succesfully"
 }
 
 # EDIT release.properties FILE WITH PARAMETERS FOR THE NEW RELEASE
@@ -77,24 +100,37 @@ function editReleaseProperties() {
 	else		
 		sed -i 's/^fixedVersion.*$/fixedVersion='"$RELEASE_NUMBER"'/' $EFX_SCRIPTS_FOLDER/release.properties
 	fi	
-	logResult "release.propeties file changed successfully"
+	utils.logResult "release.propeties file changed successfully"
+}
+# Alternative
+function editReleaseProperties_alt() {
+	echo "installDir=$EFX_SCRIPTS_FOLDER/$RELEASE_NUMBER" >$EFX_SCRIPTS_FOLDER/release.properties
+	echo "branchName=$BRANCH_NAME" >>$EFX_SCRIPTS_FOLDER/release.properties
+	echo "devName=$SIT_ENVIRONMENT" >>$EFX_SCRIPTS_FOLDER/release.properties	
+	echo "tagName=$TAG_NAME" >>$EFX_SCRIPTS_FOLDER/release.properties	
+	echo "previousTag=$PREVIOUS_TAG" >>$EFX_SCRIPTS_FOLDER/release.properties
+	echo "commitMsg=\"[GBM-$JIRA_NUMBER] Cerebro Release $RELEASE_NUMBER\"" >>$EFX_SCRIPTS_FOLDER/release.properties
+	if [ "$FIXED_VERSION" = true ]; then
+		echo "fixedVersion=$RELEASE_NUMBER" >>$EFX_SCRIPTS_FOLDER/release.properties
+	fi
+	utils.logResult "release.propeties file changed successfully"
 }
 
 # CREATE NEW RELEASE FOLDER
 function createNewReleaseFolder() {
 	if [ ! -d "$RELEASE_FOLDER" ]; then
 		mkdir $RELEASE_FOLDER
-		logResult "Created nonExistent $RELEASE_FOLDER Folder succesfully"
-	else logResult "$RELEASE_FOLDER Folder already exists"
+		utils.logResult "Created nonExistent $RELEASE_FOLDER Folder succesfully"
+	else utils.logResult "$RELEASE_FOLDER Folder already exists"
 	fi
 
 }
 
 # BUILD APPLICATION CODE
 function buildApplication() {
-	logResult "Building Cerebro.$RELEASE_NUMBER from $RELEASE_FOLDER Folder..."
+	utils.logResult "Building Cerebro.$RELEASE_NUMBER from $RELEASE_FOLDER Folder..."
 	$EFX_SCRIPTS_FOLDER/release.sh | tee --append $EFX_INSTALLER_LOG_FILE
-	logResult "Cerebro.$RELEASE_NUMBER build successfully"
+	utils.logResult "Cerebro.$RELEASE_NUMBER build successfully"
 
 }
 
@@ -104,31 +140,25 @@ function cleanNewReleaseFolder() {
 	find $RELEASE_FOLDER -name ".svn" | awk '{print "rm -rf "$0}' | sh
 	find $RELEASE_FOLDER/SB7 -name "." | awk '{print "rm -rf "$0}' | sh
 	find $RELEASE_FOLDER/Linux -name "." | awk '{print "rm -rf "$0}' | sh
-	logResult ". & .svn Files cleaned successfully from $RELEASE_FOLDER"
+	utils.logResult ". & .svn Files cleaned successfully from $RELEASE_FOLDER"
 }
 
 # BUILD RPM PACKAGES with (efx001) Passwd
 function buildEFXRPMPackages() {
+	# Clear temporal file 4 specifying modules to build
+	touch $NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out; >$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	# show Menu 4 building modules
 	showBuildEFXModulesMenu
 	listenBuildEFXModulesMenu
 }
 
 # BUILD SHELL SCRIPTS with (efx001) Passwd
 function buildLinuxPMPackages() {
+	# Clear temporal file 4 specifying modules to build
+	touch $NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out; >$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
+	# show Menu 4 building modules
 	showBuildLinuxModulesMenu
 	listenBuildLinuxModulesMenu
-}
-
-# sends the result of the execution of the last command to log file
-# Usage: logBuildModuleResult $1
-# $1: Module
-function logBuildModuleResult(){
-	if [[ $? = 0 ]]
-	then
-		logResult "$1 Module for Cerebro.$RELEASE_NUMBER build succesfully"
-	else 
-		logResult "$1 Module for Cerebro.$RELEASE_NUMBER failed to build"
-	fi	
 }
 
 # Build RPM package for an EFX Module
@@ -168,7 +198,7 @@ function buildAllLinuxModulesRPM(){
 # Usage: builCerebro.buildEFXModule $1
 # $1: Module
 function builCerebro.buildEFXModule(){
-	logResult "Building $1 Module for Cerebro.$RELEASE_NUMBER..."
+	utils.logResult "Building $1 Module for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
 	buildEFXModuleRPM $1
 	logBuildModuleResult $1
@@ -178,7 +208,7 @@ function builCerebro.buildEFXModule(){
 # Builds all EFX Modules
 # Usage: builCerebro.buildAllEFXModules
 function builCerebro.buildAllEFXModules(){
-	logResult "Building all EFX Modules for Cerebro.$RELEASE_NUMBER..."
+	utils.logResult "Building all EFX Modules for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
 	buildAllEFXModulesRPM
 	logBuildModuleResult all
@@ -188,7 +218,7 @@ function builCerebro.buildAllEFXModules(){
 # Builds EFX SB7-Common Modules
 # Usage: builCerebro.buildEFXSB7CommonModules
 function builCerebro.buildEFXSB7CommonModules(){
-	logResult "Building EFX-SB7-Common Modules for Cerebro.$RELEASE_NUMBER..."
+	utils.logResult "Building EFX-SB7-Common Modules for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
 	buildEFXSB7CommonModulesRPM
 	logBuildModuleResult EFX-SB7-Common
@@ -199,7 +229,7 @@ function builCerebro.buildEFXSB7CommonModules(){
 # Usage: builCerebro.buildLinuxModule $1
 # $1: Module
 function builCerebro.buildLinuxModule(){
-	logResult "Building $1 Module for Cerebro.$RELEASE_NUMBER..."
+	utils.logResult "Building $1 Module for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
 	buildLinuxModuleRPM $1
 	logBuildModuleResult $1
@@ -209,7 +239,7 @@ function builCerebro.buildLinuxModule(){
 # Builds all Linux Modules
 # Usage: builCerebro.buildAllLinuxModules
 function builCerebro.buildAllLinuxModules(){
-	logResult "Building all Linux Modules for Cerebro.$RELEASE_NUMBER..."
+	utils.logResult "Building all Linux Modules for Cerebro.$RELEASE_NUMBER..."
 	pushd $EFX_INSTALLER_FOLDER
 	buildAllLinuxModulesRPM
 	logBuildModuleResult all
@@ -217,11 +247,12 @@ function builCerebro.buildAllLinuxModules(){
 }
 
 # Builds a EFX Cerebro new Release
-# Usage: builCerebro.builCerebro
-function buildCerebro.builCerebro(){
+# Usage: builCerebro.build
+function buildCerebro.build(){
 	#caller 0
 	ask4CerebroReleaseDetails 
-	#editReleaseProperties 
+	#editReleaseProperties
+	#editReleaseProperties_alt 
 	#createNewReleaseFolder 
 	#buildApplication
 	wait 
@@ -230,5 +261,17 @@ function buildCerebro.builCerebro(){
 	buildLinuxPMPackages 
 	#uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
 }	
+
+# sends the result of the execution of the last command to log file
+# Usage: logBuildModuleResult $1
+# $1: Module
+function logBuildModuleResult(){
+	if [[ $? == 0 ]]
+	then
+		utils.logResult "$1 Module for Cerebro.$RELEASE_NUMBER build succesfully"
+	else 
+		utils.logResult "$1 Module for Cerebro.$RELEASE_NUMBER failed to build"
+	fi	
+}
 
 #declare -f

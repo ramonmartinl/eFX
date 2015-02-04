@@ -3,7 +3,7 @@
 #
 # Script for showing menus
 #
-# Usage: menus.sh
+# Usage: menus
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 22/01/2015 
@@ -25,63 +25,6 @@ function option_picked(){
     RESET='\033[00;00m' # normal white
     MESSAGE=${@:-"${RESET}Error: No message passed"}
     echo -e "${COLOR}${MESSAGE}${RESET}"
-}
-
-# Menu for Other Maintenance Tasks
-showMaintenanceTasksMenu(){
-    clear
-    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
-    echo -e "${FMT_MENU}* Maintenance Tasks --> Other Maintenance Tasks ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Start LP Points Simulation ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Upload Software to Satellite ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
-    echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
-    read opt_maintenance_tasks
-}
-
-# Read option from Maintenance Menu
-function listenMaintenanceTasksMenu(){
-	while [ opt_maintenance_tasks != '' ]
-	    do
-	    if [[ $opt_maintenance_tasks = "" ]]; then 
-	            # Show Main Menu
-				showMainMenu
-				listenMainMenu
-	    else
-	        case $opt_maintenance_tasks in
-	        1) clear
-	        # START LP POINTS SIMULATION
-	        	#option_picked "you chose to Build Start LP Points Simulation"
-	        	#switchUser_efxbuild
-	        	sleep 2
-	        	showMaintenanceTasksMenu
-	        	;;
-	        
-	        2) clear
-	        # UPLOAD SW TO SATELLITE
-	            option_picked "you chose to Upload Software to Satellite as User: $USER_EFXBUILD"
-	            #su -m $USER_EFXBUILD -c 'source $EFX_INSTALLER_HOME/installEFX.env; uploadSW2Satellite.upload2Satellite' 2>$EFX_INSTALLER_ERROR_FILE
-	            /opt/boksm/bin/suexec -u $USER_EFXBUILD source $EFX_INSTALLER_HOME/installEFX.env 2>>$EFX_INSTALLER_ERROR_FILE; uploadSW2Satellite.upload2Satellite 2>>$EFX_INSTALLER_ERROR_FILE
-	        	sleep 2
-	            showMaintenanceTasksMenu
-	            ;;
-	            
-	        x) clear
-	        	exit 0
-	        	;;
-	
-	        \n) clear
-	        	exit 0
-	        	;;
-	
-	        *) clear
-	        	option_picked "Pick an option from the menu";
-	        	showMainMenu
-	        	;;
-	    	esac
-		fi
-	done
 }
 
 #Main menu
@@ -113,8 +56,7 @@ function listenMainMenu(){
 	        1) clear
 	        # BUILD CEREBRO
 	        	option_picked "you chose to Build Cerebro Packages"
-	        	#switchUser_efxbuild
-	        	/opt/boksm/bin/suexec -u $USER_EFXBUILD source $EFX_INSTALLER_HOME/installEFX.env 2>>$EFX_INSTALLER_ERROR_FILE; buildCerebro.builCerebro 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.executeAsBuild buildCerebro.build 2>>$EFX_INSTALLER_ERROR_FILE
 	        	showMainMenu
 	        	;;
 	        

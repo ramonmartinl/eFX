@@ -46,9 +46,11 @@ function uploadSW2Satellite.upload2Satellite() {
 	SATELLITE_CAPLIN_CHANNELS_TMP=SATELLITE_CAPLIN_CHANNELS.out
 
 	#List EFX SATELLITE CHANNELS
+	touch $SATELLITE_EFX_CHANNELS_TMP
 	$EFX_INSTALLER_HOME/efxChannels.sh > $SATELLITE_EFX_CHANNELS_TMP
 	
 	#List CAPLIN SATELLITE CHANNELS
+	touch $SATELLITE_CAPLIN_CHANNELS_TMP
 	$EFX_INSTALLER_HOME/caplinChannels.sh > $SATELLITE_CAPLIN_CHANNELS_TMP
 	
 	# Check 4 existence of Release Folder in the FS
@@ -65,12 +67,12 @@ function uploadSW2Satellite.upload2Satellite() {
 	fi
 	
 	# Upload to every Channel
-	logResult "Uploading $SW_RELEASE_FOLDER to Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD..."
+	utils.logResult "Uploading $SW_RELEASE_FOLDER to Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD..."
 	count=0	
 	while read CHANNEL
 	do
 		let count++
-		logResult "Uploading to Channel: $CHANNEL [$count]..."
+		utils.logResult "Uploading to Channel: $CHANNEL [$count]..."
 		rhnpush --channel=$CHANNEL -d $RELEASE_FOLDER --newest --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD >>$EFX_INSTALLER_LOG_FILE
 		rhnpush -l --channel=$CHANNEL -d $RELEASE_FOLDER --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD | grep $RELEASE_NUMBER >>$EFX_INSTALLER_LOG_FILE
 	done < $selectedSatelliteChannels
@@ -78,7 +80,7 @@ function uploadSW2Satellite.upload2Satellite() {
 	#remove temporary files
 	#rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
 	
-	logResult "Successfully uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD"
+	utils.logResult "Successfully uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD"
 }
 
 #declare -f

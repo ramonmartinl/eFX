@@ -424,7 +424,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N9-iYpZfEeSaLMhtV6zFhw"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_N997UZZfEeSaLMhtV6zFhw" fontName="Segoe UI" fontHeight="8" fillColor="10265827"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N997UpZfEeSaLMhtV6zFhw" x="-175" y="-20" width="190" height="50"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N997UpZfEeSaLMhtV6zFhw" x="-175" y="-20" width="310" height="50"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_LmpcdoeFEeSyEoF3RcEPsg"/>
           <edges xmi:type="notation:Edge" xmi:id="_0QFJAIeFEeSyEoF3RcEPsg" type="4001" element="_0PfTIIeFEeSyEoF3RcEPsg" source="_Lmpcd4eFEeSyEoF3RcEPsg" target="_0PfTKoeFEeSyEoF3RcEPsg">
@@ -652,7 +652,7 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_N7To4JZfEeSaLMhtV6zFhw" name="[baxter@HOST]&#xD;&#xA;$ ps -ef|grep baxter|grep -v grep&#xD;&#xA;$ killall -9 java" width="16" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_N7To4JZfEeSaLMhtV6zFhw" name="[baxter@HOST]&#xD;&#xA;$ kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`" width="16" height="5" resizeKind="NSEW">
         <target xmi:type="uml:Comment" href="baxter.uml#_N64LEJZfEeSaLMhtV6zFhw"/>
         <semanticElements xmi:type="uml:Comment" href="baxter.uml#_N64LEJZfEeSaLMhtV6zFhw"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -25140,7 +25140,7 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_N743sJZfEeSaLMhtV6zFhw" name="[baxter@HOST]&#xD;&#xA;$ ps -ef|grep baxter|grep -v grep&#xD;&#xA;$ killall -9 java" visible="false" width="16" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_N743sJZfEeSaLMhtV6zFhw" name="[baxter@HOST]&#xD;&#xA;$ kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`" visible="false" width="16" height="5" resizeKind="NSEW">
         <target xmi:type="uml:Comment" href="baxter.uml#_N64LEJZfEeSaLMhtV6zFhw"/>
         <semanticElements xmi:type="uml:Comment" href="baxter.uml#_N64LEJZfEeSaLMhtV6zFhw"/>
         <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_kSTgEJZfEeSaLMhtV6zFhw"/>
@@ -26160,7 +26160,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rjqSAZZYEeSaLMhtV6zFhw" x="-293" y="-206" height="21"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rjqSAZZYEeSaLMhtV6zFhw" x="-189" y="-281" height="21"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_ymc_UJZYEeSaLMhtV6zFhw" type="2002" element="_yjrYIJZYEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_ymc_U5ZYEeSaLMhtV6zFhw" type="5006"/>
@@ -26284,7 +26284,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELJ6QZZbEeSaLMhtV6zFhw" x="995" y="-274"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELJ6QZZbEeSaLMhtV6zFhw" x="144" y="-281"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_hLYSwJZcEeSaLMhtV6zFhw" type="2002" element="_hHGPsJZcEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_hLY50JZcEeSaLMhtV6zFhw" type="5006"/>
@@ -26323,7 +26323,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b3LmgZZiEeSaLMhtV6zFhw" x="-262" y="286"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b3LmgZZiEeSaLMhtV6zFhw" x="810" y="-310"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_2RMnMJZiEeSaLMhtV6zFhw" type="Text" fontName="Segoe UI" description="# STEP 11: COPY NEW CONTENT TO INSTALLATION FOLDERS">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_2RMnMpZiEeSaLMhtV6zFhw" type="DiagramName">
@@ -26333,7 +26333,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2RMnMZZiEeSaLMhtV6zFhw" x="1004" y="72"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2RMnMZZiEeSaLMhtV6zFhw" x="1112" y="-310"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_8GdxcJZiEeSaLMhtV6zFhw" type="2001" element="_8EIPIJZiEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_8Gdxc5ZiEeSaLMhtV6zFhw" type="5002">
@@ -26354,7 +26354,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AzH4YZZkEeSaLMhtV6zFhw" x="1360"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AzH4YZZkEeSaLMhtV6zFhw" x="1502" y="-310"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_UBKakJZkEeSaLMhtV6zFhw" type="Text" fontName="Segoe UI" description="# STEP 8: BACKUP PREVIOUS RELEASE INSTALLATION FOLDERS">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_UBLBoJZkEeSaLMhtV6zFhw" type="DiagramName">
@@ -26364,7 +26364,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UBKakZZkEeSaLMhtV6zFhw" x="1702"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UBKakZZkEeSaLMhtV6zFhw" x="1843" y="-310"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_beVWwJZkEeSaLMhtV6zFhw" type="2001" element="_bb-mUJZkEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_beVWw5ZkEeSaLMhtV6zFhw" type="5002">
@@ -26466,7 +26466,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0ggI0ZZmEeSaLMhtV6zFhw" x="2098" y="-1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0ggI0ZZmEeSaLMhtV6zFhw" x="2239" y="-309"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_AkBlEJZnEeSaLMhtV6zFhw" type="2001" element="_Af_ZoJZnEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_AkBlE5ZnEeSaLMhtV6zFhw" type="5002">
@@ -26487,7 +26487,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C62dEZZoEeSaLMhtV6zFhw" x="2374" y="-1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C62dEZZoEeSaLMhtV6zFhw" x="2515" y="-309"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_NckIUJZoEeSaLMhtV6zFhw" type="2001" element="_NUvCAJZoEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_NckvYJZoEeSaLMhtV6zFhw" type="5002">
@@ -26519,7 +26519,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sJf4QZZ_EeSaLMhtV6zFhw" x="2864"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sJf4QZZ_EeSaLMhtV6zFhw" x="3006" y="-310"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_EyejsJaBEeSaLMhtV6zFhw" type="2001" element="_EvKJ8JaBEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_Eyejs5aBEeSaLMhtV6zFhw" type="5002">
@@ -26540,7 +26540,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2xtcZaEEeSaLMhtV6zFhw" x="3120"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2xtcZaEEeSaLMhtV6zFhw" x="3262" y="-310"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_LrOAUJaFEeSaLMhtV6zFhw" type="Text" fontName="Segoe UI" description="# STEP 5: BUILD RPM PACKAGES">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_LrOnYJaFEeSaLMhtV6zFhw" type="DiagramName">
@@ -26550,7 +26550,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LrOAUZaFEeSaLMhtV6zFhw" x="3472" y="1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LrOAUZaFEeSaLMhtV6zFhw" x="3613" y="-310"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_yhUuQJaFEeSaLMhtV6zFhw" type="2001" element="_yeeOkJaFEeSaLMhtV6zFhw">
             <children xmi:type="notation:Node" xmi:id="_yhUuQ5aFEeSaLMhtV6zFhw" type="5002">
@@ -26595,7 +26595,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mPK5YZ2GEeSXVLcG_ujGyQ" x="3704"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mPK5YZ2GEeSXVLcG_ujGyQ" x="3846" y="-310"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_0QllsJ2GEeSXVLcG_ujGyQ" type="Text" fontName="Segoe UI" description="#STEP 6 BUILD SHELL SCRIPTS">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_0Qllsp2GEeSXVLcG_ujGyQ" type="DiagramName">
@@ -26605,7 +26605,7 @@
               <element xsi:nil="true"/>
             </children>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0QllsZ2GEeSXVLcG_ujGyQ" x="3864" y="1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0QllsZ2GEeSXVLcG_ujGyQ" x="4006" y="-310"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_VFQgwqe7EeSxur0glk8ejw" type="2001" element="_VBPjdKe7EeSxur0glk8ejw">
             <children xmi:type="notation:Node" xmi:id="_VFQgxae7EeSxur0glk8ejw" type="5002">
@@ -26617,6 +26617,17 @@
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_VFQgw6e7EeSxur0glk8ejw" fontName="Segoe UI" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VFQgxKe7EeSxur0glk8ejw" x="4305" width="160" height="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_mHLMgKuTEeScB59hYOUtMg" type="2001" element="_mAEe8KuTEeScB59hYOUtMg">
+            <children xmi:type="notation:Node" xmi:id="_mHRTIKuTEeScB59hYOUtMg" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_mHRTIauTEeScB59hYOUtMg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_mHUWcKuTEeScB59hYOUtMg" type="3003" element="_mAEe8auTEeScB59hYOUtMg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_mHUWcauTEeScB59hYOUtMg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHUWcquTEeScB59hYOUtMg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_mHLMgauTEeScB59hYOUtMg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHLMgquTEeScB59hYOUtMg" x="4230" y="-310" width="160" height="50"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_CdOdApZUEeSaLMhtV6zFhw"/>
           <edges xmi:type="notation:Edge" xmi:id="_nFeaAJZZEeSaLMhtV6zFhw" type="4001" element="_nCvPEJZZEeSaLMhtV6zFhw" source="_Y90i0JZZEeSaLMhtV6zFhw" target="_ymc_UJZYEeSaLMhtV6zFhw">
@@ -26794,7 +26805,7 @@
             <styles xmi:type="notation:ArrowStyle" xmi:id="_95ENIZaGEeSaLMhtV6zFhw"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_95ENIpaGEeSaLMhtV6zFhw"/>
             <element xsi:nil="true"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_95ENI5aGEeSaLMhtV6zFhw" points="[0, 0, 364, 60]$[-364, -60, 0, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_95ENI5aGEeSaLMhtV6zFhw" points="[0, 0, 354, 60]$[-354, -60, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_95HQcJaGEeSaLMhtV6zFhw" id="(0.5,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_95HQcZaGEeSaLMhtV6zFhw" id="(0.49888641425389757,1.0)"/>
           </edges>
@@ -26802,7 +26813,7 @@
             <styles xmi:type="notation:ArrowStyle" xmi:id="_H8vaoZcNEeSaLMhtV6zFhw"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_H8vaopcNEeSaLMhtV6zFhw"/>
             <element xsi:nil="true"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_H8vao5cNEeSaLMhtV6zFhw" points="[0, 0, 269, 60]$[-269, -60, 0, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_H8vao5cNEeSaLMhtV6zFhw" points="[0, 0, 259, 60]$[-259, -60, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H8x24JcNEeSaLMhtV6zFhw" id="(0.4973821989528796,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H8yd8JcNEeSaLMhtV6zFhw" id="(0.5,1.0)"/>
           </edges>
@@ -27017,6 +27028,17 @@
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']/@style"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_6z_1QpZoEeSaLMhtV6zFhw" red="214" green="197" blue="66"/>
           <color xmi:type="viewpoint:RGBValues" xmi:id="__MuwEJZoEeSaLMhtV6zFhw" red="227" green="164" blue="156"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_mAEe8KuTEeScB59hYOUtMg" name="Build Shell Scripts" width="16" height="5" resizeKind="NSEW">
+        <target xmi:type="uml:Comment" href="cerebro.uml#_LAjvsKF7EeSLNr2IRGEC_A"/>
+        <semanticElements xmi:type="uml:Comment" href="cerebro.uml#_LAjvsKF7EeSLNr2IRGEC_A"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_mAEe8auTEeScB59hYOUtMg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mAEe8quTEeScB59hYOUtMg"/>
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mAEe86uTEeScB59hYOUtMg" red="214" green="197" blue="66"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_mAEe9KuTEeScB59hYOUtMg" red="255" green="245" blue="181"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']"/>
       </ownedDiagramElements>

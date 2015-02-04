@@ -3,7 +3,7 @@
 #
 # Script for showing menus 4 building new Cerebro Release
 #
-# Usage: buildCerebro.menus.sh
+# Usage: menus.buildCerebro
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 28/01/2015 
@@ -65,6 +65,7 @@ function listenBuildEFXModulesMenu(){
 	        1) clear
 	        # BUILD ALL MODULES
 	        	option_picked "you chose to Build All eFX Modules"
+	        	echo "All" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildAllEFXModules
 	        	sleep 2
 	        	break
@@ -73,6 +74,7 @@ function listenBuildEFXModulesMenu(){
 	        2) clear
 	        # BUILD eFX-AdaFIX MODULE
 	            option_picked "you chose to Build eFX-AdaFIX Module"
+	            echo "eFX-AdaFIX" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildEFXModule eFX-AdaFIX
 	            sleep 2
 	            showBuildEFXModulesMenu
@@ -81,6 +83,7 @@ function listenBuildEFXModulesMenu(){
 	        3) clear
 	        # BUILD eFX-Adartenon MODULE
 	            option_picked "you chose to Build eFX-Adartenon Module"
+	            echo "eFX-Adartenon" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildEFXModule eFX-Adartenon
 	            sleep 2
 	            showBuildEFXModulesMenu
@@ -89,6 +92,7 @@ function listenBuildEFXModulesMenu(){
 	        20) clear
 	        # BUILD eFX-NewTickStore MODULE
 	            option_picked "you chose to Build eFX-NewTickStore Module"
+	            echo "eFX-NewTickStore" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildEFXModule eFX-NewTickStore
 	            sleep 2
 	            showBuildEFXModulesMenu
@@ -97,6 +101,7 @@ function listenBuildEFXModulesMenu(){
 	        23) clear
 	        # BUILD eFX-SB7-Common MODULE
 	            option_picked "you chose to Build eFX-SB7-Common Module"
+	            echo "eFX-SB7-Common" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildEFXSB7CommonModules
 	        	sleep 2
 	        	showBuildEFXModulesMenu
@@ -142,6 +147,7 @@ function listenBuildLinuxModulesMenu(){
 	        1) clear
 	        # BUILD ALL MODULES
 	        	option_picked "you chose to Build All Linux Modules"
+	        	echo "All" >>$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildAllLinuxModules
 	        	sleep 2
 	        	break
@@ -150,6 +156,7 @@ function listenBuildLinuxModulesMenu(){
 	        2) clear
 	        # BUILD Trading MODULE
 	            option_picked "you chose to Build Trading Module"
+	            echo "trading" >>$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildLinuxModule trading
 	            sleep 2
 	            showBuildLinuxModulesMenu
@@ -158,6 +165,7 @@ function listenBuildLinuxModulesMenu(){
 	        3) clear
 	        # BUILD Pricing MODULE
 	            option_picked "you chose to Build Pricing Module"
+	            echo "pricing" >>$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildLinuxModule pricing
 	            sleep 2
 	            showBuildLinuxModulesMenu
@@ -166,6 +174,7 @@ function listenBuildLinuxModulesMenu(){
 	        4) clear
 	        # BUILD Tickstore MODULE
 	            option_picked "you chose to Build Tickstore Module"
+	            echo "tickStore" >>$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildLinuxModule tickStore
 	            sleep 2
 	            showBuildLinuxModulesMenu
@@ -174,6 +183,7 @@ function listenBuildLinuxModulesMenu(){
 	        5) clear
 	        # BUILD LP MODULE
 	            option_picked "you chose to Build LP Module"
+	            echo "lp" >>$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildLinuxModule lp
 	        	sleep 2
 	        	showBuildLinuxModulesMenu
@@ -182,6 +192,7 @@ function listenBuildLinuxModulesMenu(){
 	        6) clear
 	        # BUILD LP-DEV MODULE
 	            option_picked "you chose to Build LP-DEV Module"
+	            echo "lp-dev" >>$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildLinuxModule lp-dev
 	        	sleep 2
 	        	showBuildLinuxModulesMenu

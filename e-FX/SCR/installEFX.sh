@@ -30,8 +30,8 @@ function switchUser_baxter(){
 }
 
 # Clear installation log & error
-echo "" >$EFX_INSTALLER_LOG_FILE
-echo "" >$EFX_INSTALLER_ERROR_FILE
+touch $EFX_INSTALLER_LOG_FILE; >$EFX_INSTALLER_LOG_FILE
+touch $EFX_INSTALLER_ERROR_FILE; >$EFX_INSTALLER_ERROR_FILE;
 
 #declare -f
 # Show Main Menu
