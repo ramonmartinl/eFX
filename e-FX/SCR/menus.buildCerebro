@@ -64,7 +64,7 @@ function listenBuildEFXModulesMenu(){
 	        	
 	        1) clear
 	        # BUILD ALL MODULES
-	        	option_picked "you chose to Build All eFX Modules"
+	        	option_picked_identified "you chose to Build All eFX Modules"
 	        	echo "All" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildAllEFXModules
 	        	sleep 2
@@ -73,7 +73,7 @@ function listenBuildEFXModulesMenu(){
 	        
 	        2) clear
 	        # BUILD eFX-AdaFIX MODULE
-	            option_picked "you chose to Build eFX-AdaFIX Module"
+	            option_picked_identified "you chose to Build eFX-AdaFIX Module"
 	            echo "eFX-AdaFIX" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildEFXModule eFX-AdaFIX
 	            sleep 2
@@ -82,7 +82,7 @@ function listenBuildEFXModulesMenu(){
 	          	        
 	        3) clear
 	        # BUILD eFX-Adartenon MODULE
-	            option_picked "you chose to Build eFX-Adartenon Module"
+	            option_picked_identified "you chose to Build eFX-Adartenon Module"
 	            echo "eFX-Adartenon" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildEFXModule eFX-Adartenon
 	            sleep 2
@@ -91,7 +91,7 @@ function listenBuildEFXModulesMenu(){
 	        	        
 	        20) clear
 	        # BUILD eFX-NewTickStore MODULE
-	            option_picked "you chose to Build eFX-NewTickStore Module"
+	            option_picked_identified "you chose to Build eFX-NewTickStore Module"
 	            echo "eFX-NewTickStore" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	            builCerebro.buildEFXModule eFX-NewTickStore
 	            sleep 2
@@ -100,7 +100,7 @@ function listenBuildEFXModulesMenu(){
 	                  	        
 	        23) clear
 	        # BUILD eFX-SB7-Common MODULE
-	            option_picked "you chose to Build eFX-SB7-Common Module"
+	            option_picked_identified "you chose to Build eFX-SB7-Common Module"
 	            echo "eFX-SB7-Common" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
 	        	builCerebro.buildEFXSB7CommonModules
 	        	sleep 2

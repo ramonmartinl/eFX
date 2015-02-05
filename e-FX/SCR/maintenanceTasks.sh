@@ -39,56 +39,102 @@ function maintenanceTasks.stopBaxter(){
 	utils.logResult "BAXTER STOPPED SUCCESSFULLY ###"
 }
 
+# Starts Baxter Configuration Server
+# Usage: maintenanceTasks.startBaxterConfigurationServer
+function maintenanceTasks.startBaxterConfigurationServer(){
+	# Start Configuration Server
+	$BAXTER_HOME/bin/start-configuration-server --daemon &
+	utils.logResult "Configuration Server Baxter Process started succesfully\n"
+	return 0
+}
+
+# Starts Baxter Price Engine DBServer
+# Usage: maintenanceTasks.startBaxterDBServer
+function maintenanceTasks.startBaxterDBServer(){
+	# Start DB Server
+	#/bin/bash -c '$BAXTER_HOME/bin/dbserver start'
+	$BAXTER_HOME/bin/dbserver start
+	utils.logResult "DB Server Baxter Process started succesfully\n"
+	return 0
+}
+
+# Starts Baxter Blotter Server
+# Usage: maintenanceTasks.startBaxterBlotterServer
+function maintenanceTasks.startBaxterBlotterServer(){
+	# Start Blotter Server
+	#/bin/bash -c '$BAXTER_HOME/bin/blotterserver start'
+	$BAXTER_HOME/bin/blotterserver start
+	utils.logResult "Blotter Server Baxter Process started succesfully\n"
+	return 0
+}
+
+# Starts Baxter Price Engine Broadcast
+# Usage: maintenanceTasks.startBaxterBroadcast
+function maintenanceTasks.startBaxterBroadcast(){
+	# Start Broadcast Server
+	#/bin/bash -c '$BAXTER_HOME/bin/broadcast start'
+	$BAXTER_HOME/bin/broadcast start
+	utils.logResult "Broadcast Server Baxter Process started succesfully\n"
+	return 0
+}
+
+# Starts Baxter Price Engine Dashboard Web Application
+# Usage: maintenanceTasks.startBaxterDashboard
+function maintenanceTasks.startBaxterDashboard(){
+	# Start Dashboard Server
+	#/bin/bash -c '$BAXTER_HOME/bin/dashboard start'
+	$BAXTER_HOME/bin/dashboard start
+	utils.logResult "Dashboard Server Baxter Process started succesfully\n"
+	return 0
+}
+
 # Starts Baxter
 # Usage: maintenanceTasks.startBaxter
 function maintenanceTasks.startBaxter(){
+	BAXTER_START_WAIT_TIME=15
 	# Start Configuration Server
-	$BAXTER_HOME/bin/start-configuration-server --daemon &
+	maintenanceTasks.startBaxterConfigurationServer
 	# Start DB Server
 	if [[ $? == 0 ]]
 	then
-		utils.logResult "Configuration Server Baxter Process started succesfully\n"
-		#/bin/bash -c '$BAXTER_HOME/bin/dbserver start'
-		$BAXTER_HOME/bin/dbserver start
+		sleep $BAXTER_START_WAIT_TIME
+		maintenanceTasks.startBaxterDBServer
 	else 
 		utils.logResult "Configuration Server Baxter Process failed to start\n"
 	fi
 	# Start Blotter Server
 	if [[ $? == 0 ]]
 	then
-		utils.logResult "DB Server Baxter Process started succesfully\n"
-		#/bin/bash -c '$BAXTER_HOME/bin/blotterserver start'
-		$BAXTER_HOME/bin/blotterserver start
+		sleep $BAXTER_START_WAIT_TIME
+		maintenanceTasks.startBaxterBlotterServer
 	else 
 		utils.logResult "DB Server Baxter Process failed to start\n"
 	fi
 	# Start Broadcast Server
 	if [[ $? == 0 ]]
 	then
-		utils.logResult "Blotter Server Baxter Process started succesfully\n"
-		#/bin/bash -c '$BAXTER_HOME/bin/broadcast start'
-		$BAXTER_HOME/bin/broadcast start
+		sleep $BAXTER_START_WAIT_TIME
+		maintenanceTasks.startBaxterBroadcast
 	else 
 		utils.logResult "Blotter Server Baxter Process failed to start\n"
 	fi
 	# Start Dashboard Server
 	if [[ $? == 0 ]]
 	then
-		utils.logResult "Broadcast Server Baxter Process started succesfully\n"
-		#/bin/bash -c '$BAXTER_HOME/bin/dashboard start'
-		$BAXTER_HOME/bin/dashboard start
+		sleep $BAXTER_START_WAIT_TIME
+		maintenanceTasks.startBaxterDashboard
 	else 
 		utils.logResult "Broadcast Server Baxter Process failed to start\n"
 	fi
 	if [[ $? == 0 ]]
 	then
-		utils.logResult "Dashboard Server Baxter Process started succesfully\n"
+		sleep $BAXTER_START_WAIT_TIME
 		utils.logResult "BAXTER STARTED SUCCESSFULLY ###"
 	else 
 		utils.logResult "Dashboard Server Baxter Process failed to start\n"
 		utils.logResult "BAXTER FAILED TO START ###"
 	fi
-	    #wait
+	#wait
 }
 
 # Restarts Baxter

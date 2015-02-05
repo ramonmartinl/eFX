@@ -19,7 +19,7 @@ showMaintenanceTasksMenu(){
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Start LP Points Simulation ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Upload Software to Satellite ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Restart Baxter ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Check Machines ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_maintenance_tasks
@@ -37,7 +37,7 @@ function listenMaintenanceTasksMenu(){
 	        case $opt_maintenance_tasks in
 	        1) clear
 	        # START LP POINTS SIMULATION
-	        	#option_picked "you chose to Build Start LP Points Simulation"
+	        	#option_picked_identified "you chose to Build Start LP Points Simulation"
 	        	#switchUser_efxbuild
 	        	sleep 2
 	        	showMaintenanceTasksMenu
@@ -45,20 +45,20 @@ function listenMaintenanceTasksMenu(){
 	        
 	        2) clear
 	        # UPLOAD SW TO SATELLITE
-	            option_picked "you chose to Upload Software to Satellite as User: $USER"
+	            option_picked_identified "you chose to Upload Software to Satellite"
 	        	utils.executeAsBuild uploadSW2Satellite.upload2Satellite 2>>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
-	            	        
+	            		        
 	        3) clear
-	        # RESTART BAXTER
-	            option_picked "you chose to Restart Baxter as User: $USER"
-	            utils.executeAsBaxter maintenanceTasks.restartBaxter 2>>$EFX_INSTALLER_ERROR_FILE
-	            sleep 2
+	        # CHECK MACHINES
+	            option_picked_identified "you chose to Check Machines"
+	        	utils.executeAsBuild utils.getMachine 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
-	            
+	                    
 	        x) clear
 	        	exit 0
 	        	;;

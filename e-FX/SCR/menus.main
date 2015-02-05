@@ -20,11 +20,24 @@ FMT_RED_TEXT=`echo "\033[31m"`; export FMT_RED_TEXT
 FMT_ENTER_LINE=`echo "\033[33m"`; export FMT_ENTER_LINE
 
 #Show option picked
+#Usage: option_picked $1
+#$1: Message
 function option_picked(){
     COLOR='\033[01;31m' # bold red
     RESET='\033[00;00m' # normal white
     MESSAGE=${@:-"${RESET}Error: No message passed"}
     echo -e "${COLOR}${MESSAGE}${RESET}"
+}
+
+#Show option picked identifying the Host and User
+#Usage: option_picked $1
+#$1: Message
+function option_picked_identified(){
+    COLOR='\033[01;31;40m' # bold red
+    IDENTIFY='\033[01;34;47m' # bold red on green
+    RESET='\033[00;00m' # normal white
+    MESSAGE=${@:-"${RESET}Error: No message passed"}
+    echo -e "${COLOR}${MESSAGE} in Machine: ${IDENTIFY}$(hostname)${COLOR} as User: ${IDENTIFY}$USER${RESET}"
 }
 
 #Main menu
@@ -34,7 +47,7 @@ showMainMenu(){
     echo -e "${FMT_MENU}# Welcome to the EFX Installation Program${FMT_NORMAL}"
     echo -e "${FMT_MENU}#############################################${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Build Cerebro ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Install Baxter ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Baxter ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Install Baxter Air ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 4)${FMT_MENU} Install Cerebro ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 5)${FMT_MENU} Install Caplin ${FMT_NORMAL}"
@@ -55,22 +68,23 @@ function listenMainMenu(){
 	        case $opt_main in
 	        1) clear
 	        # BUILD CEREBRO
-	        	option_picked "you chose to Build Cerebro Packages"
+	        	option_picked_identified "you chose to Build Cerebro Packages"
 	        	utils.executeAsBuild buildCerebro.build 2>>$EFX_INSTALLER_ERROR_FILE
 	        	showMainMenu
 	        	;;
 	        
 	        2) clear
-	        # INSTALL BAXTER
-	        	option_picked "you chose to Install new Baxter release"
-	        	upload2Satellite Baxter 2>$EFX_INSTALLER_ERROR_FILE
+	        # BAXTER
+	        	option_picked_identified "you chose to Manage Baxter"
+	        	showBaxterTasksMenu
+	            listenBaxterTasksMenu
 	        	sleep 2
 	        	showMainMenu
 	        	;;
 	
 	        3) clear
 	        # INSTALL BAXTER AIR
-	            option_picked "you chose to Install new Baxter Air release"
+	            option_picked_identified "you chose to Install new Baxter Air release"
 	            upload2Satellite Baxter_Air 2>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	        	showMainMenu
@@ -78,7 +92,7 @@ function listenMainMenu(){
 	
 	        4) clear
 	        # INSTALL CEREBRO
-	            option_picked "you chose to Install new Cerebro release"
+	            option_picked_identified "you chose to Install new Cerebro release"
 	            upload2Satellite Cerebro 2>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMainMenu
@@ -86,7 +100,7 @@ function listenMainMenu(){
 	
 	        5) clear
 	        # INSTALL CAPLIN
-	            option_picked "you chose to Install new Caplin release"
+	            option_picked_identified "you chose to Install new Caplin release"
 	        	upload2Satellite Caplin 2>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMainMenu
@@ -94,8 +108,7 @@ function listenMainMenu(){
 	
 	        6) clear
 	        # MAINTENANCE TASKS
-	            option_picked "you chose to Execute other Maintenance Tasks"
-	            #switchUser_efxbuild
+	            option_picked_identified "you chose to Execute other Maintenance Tasks"
 	            showMaintenanceTasksMenu
 	            listenMaintenanceTasksMenu
 	        	sleep 2

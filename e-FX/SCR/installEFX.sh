@@ -14,6 +14,10 @@
 declare -r EFX_INSTALLER_HOME=/home/efxbuild/UploadToSatellite
 source $EFX_INSTALLER_HOME/installEFX.env
 
+# allow read, write, and execute permission for all (potential security risk)
+umask 000
+# alias installEFX='/home/efxbuild/UploadToSatellite/installEFX.sh'
+
 # Switch to 'strmbase' User
 function switchUser_strmbase(){
 	su - strmbase
