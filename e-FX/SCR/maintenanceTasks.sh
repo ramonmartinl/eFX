@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 23/01/2015 
-# Last Modified: 23/01/2015 (ramn.martn)
+# Last Modified: 05/02/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -75,6 +75,15 @@ function maintenanceTasks.startBaxterBroadcast(){
 	#/bin/bash -c '$BAXTER_HOME/bin/broadcast start'
 	$BAXTER_HOME/bin/broadcast start
 	utils.logResult "Broadcast Server Baxter Process started succesfully\n"
+	return 0
+}
+
+# Stops Baxter Price Engine Broadcast
+# Usage: maintenanceTasks.stopBaxterBroadcast
+function maintenanceTasks.stopBaxterBroadcast(){
+	# Stop Broadcast Server
+	$BAXTER_HOME/bin/broadcast stop
+	utils.logResult "Broadcast Server Baxter Process stopped succesfully\n"
 	return 0
 }
 

@@ -19,3 +19,5 @@ function downloadSW(){
 	ls
 	#wget  [option]  [URL]
 }
+
+# Automatizar la parada de los servicios de Baxter

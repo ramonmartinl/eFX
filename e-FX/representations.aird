@@ -7842,7 +7842,7 @@
           <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Cb2SOZc_EeSF0pCT-mgLtQ" red="238" green="249" blue="244"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Composite%20Structure%20Diagram']/@defaultLayer/@containerMappings[name='CS_StructuredClassifier']"/>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GuIBYInmEeSf6YVZN2Xsyw" name=": MFHandler.sh :  [1]" width="12" height="10">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GuIBYInmEeSf6YVZN2Xsyw" name="MFHandler.sh :  [1]" width="12" height="10">
           <target xmi:type="uml:Property" href="environments.uml#_GuGzQInmEeSf6YVZN2Xsyw"/>
           <semanticElements xmi:type="uml:Property" href="environments.uml#_GuGzQInmEeSf6YVZN2Xsyw"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -8643,7 +8643,7 @@
             <styles xmi:type="notation:ShapeStyle" xmi:id="_5GTBuJaGEeSaLMhtV6zFhw" fontName="Segoe UI" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5GTBuZaGEeSaLMhtV6zFhw" x="2660" y="-70" width="160" height="50"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_VFQg0qe7EeSxur0glk8ejw" type="2001" element="_Uy9P1ae7EeSxur0glk8ejw">
+          <children xmi:type="notation:Node" xmi:id="_VFQg0qe7EeSxur0glk8ejw" visible="false" type="2001" element="_Uy9P1ae7EeSxur0glk8ejw">
             <children xmi:type="notation:Node" xmi:id="_VFQg1ae7EeSxur0glk8ejw" type="5002">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_VFQg1qe7EeSxur0glk8ejw" y="5"/>
             </children>
@@ -8653,6 +8653,17 @@
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_VFQg06e7EeSxur0glk8ejw" fontName="Segoe UI" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VFQg1Ke7EeSxur0glk8ejw" width="160" height="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9BsLEK1BEeScB59hYOUtMg" visible="false" type="2001" element="_9At6sK1BEeScB59hYOUtMg">
+            <children xmi:type="notation:Node" xmi:id="_9BsLE61BEeScB59hYOUtMg" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_9BsLFK1BEeScB59hYOUtMg" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9BsyIK1BEeScB59hYOUtMg" type="3003" element="_9At6sa1BEeScB59hYOUtMg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_9BsyIa1BEeScB59hYOUtMg" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9BsyIq1BEeScB59hYOUtMg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9BsLEa1BEeScB59hYOUtMg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9BsLEq1BEeScB59hYOUtMg" x="585" y="-70" width="160" height="50"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_GCUpGIqbEeSf6YVZN2Xsyw"/>
         </data>
@@ -9242,9 +9253,22 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Uy9P1ae7EeSxur0glk8ejw" name="Build Linux modules" width="16" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_9At6sK1BEeScB59hYOUtMg" name="Build Shell Scripts" visible="false" width="16" height="5" resizeKind="NSEW">
+        <target xmi:type="uml:Comment" href="cerebro.uml#_LAjvsKF7EeSLNr2IRGEC_A"/>
+        <semanticElements xmi:type="uml:Comment" href="cerebro.uml#_LAjvsKF7EeSLNr2IRGEC_A"/>
+        <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_BYhBYK1CEeScB59hYOUtMg"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_9At6sa1BEeScB59hYOUtMg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9At6sq1BEeScB59hYOUtMg"/>
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9At6s61BEeScB59hYOUtMg" red="214" green="197" blue="66"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_9At6tK1BEeScB59hYOUtMg" red="255" green="245" blue="181"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Uy9P1ae7EeSxur0glk8ejw" name="Build Linux modules" visible="false" width="16" height="5" resizeKind="NSEW">
         <target xmi:type="uml:Comment" href="cerebro.uml#_sg4xoKejEeSN_YV_897WIg"/>
         <semanticElements xmi:type="uml:Comment" href="cerebro.uml#_sg4xoKejEeSN_YV_897WIg"/>
+        <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_BYhBYa1CEeScB59hYOUtMg"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_Uy9P1qe7EeSxur0glk8ejw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Uy9P16e7EeSxur0glk8ejw"/>
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@nodeMappings[name='RED_Comment']/@style"/>

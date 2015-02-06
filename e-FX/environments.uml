@@ -342,7 +342,7 @@ http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html</bod
       <ownedAttribute xmi:id="_EejLcInmEeSf6YVZN2Xsyw" name="GSCombined" aggregation="composite"/>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_AaumIInlEeSf6YVZN2Xsyw" name="MF Execution Handler">
-      <ownedAttribute xmi:id="_GuGzQInmEeSf6YVZN2Xsyw" name=": MFHandler.sh" aggregation="composite"/>
+      <ownedAttribute xmi:id="_GuGzQInmEeSf6YVZN2Xsyw" name="MFHandler.sh" aggregation="composite"/>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_EA6CoInlEeSf6YVZN2Xsyw" name="Citi Execution Handler">
       <ownedAttribute xmi:id="_KCBbEInmEeSf6YVZN2Xsyw" name="CitiCombined" aggregation="composite"/>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="12.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>470</x>
+      <x>189</x>
       <y>0</y>
-      <w>180</w>
-      <h>30</h>
+      <w>126</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>LP (Liquidity Providers)
 bg=default
@@ -15,120 +15,27 @@ fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.custom.Component</type>
+    <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>250</x>
-      <y>200</y>
-      <w>420</w>
-      <h>100</h>
+      <x>140</x>
+      <y>133</y>
+      <w>245</w>
+      <h>42</h>
     </coordinates>
-    <panel_attributes> 
-'DB Combined Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>320</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'DBFIX-Classic Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>440</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'DBFIX-Rapid Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>560</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'GS Execution Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>70</y>
-      <w>420</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes> 
-'UBS Execution Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>670</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'MF Execution Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>790</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'Citi Execution Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>910</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'TI Execution Handler</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Component</type>
-    <coordinates>
-      <x>250</x>
-      <y>1030</y>
-      <w>420</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes> 
-'D3 Execution Handler</panel_attributes>
+    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
+$ . env_xxx.sh
+$ ./LP_HANDLER_SHELL_SCRIPT [start|stop|show]
+bg=red
+fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>690</x>
-      <y>70</y>
-      <w>590</w>
-      <h>110</h>
+      <x>7</x>
+      <y>35</y>
+      <w>798</w>
+      <h>609</h>
     </coordinates>
     <panel_attributes>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts&gt;
 DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts&gt;
@@ -136,799 +43,665 @@ DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts&gt;
 CAPLIN: /local/home/strmbase/EFX-all-Caplin/Linux/scripts&gt; (EFX-all-Caplin -&gt; EFX-all-CI)
 SIT1: /local/home/strmbase/EFX-lp/Linux/scripts&gt; (EFX-lp -&gt; EFX-lp-SIT)
 SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts&gt; (EFX-lp2 -&gt; EFX-lp-SIT2)
-bg=green
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>790</x>
-      <y>200</y>
-      <w>320</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>DEVX:   env_devx.sh
+------------------------------------------------------------------------------------------
+DEVX:   env_devx.sh
 CAPLIN: env_caplin.sh
 SIT All : env_sit.sh
 SIT2 all : env_sit2_sb7.sh
 SIT lp : env_sit_lp.sh
 SIT2 lp : env_sit_lp.sh 
-bg=yellow
-</panel_attributes>
+bg=default</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.custom.Artefact</type>
     <coordinates>
-      <x>260</x>
-      <y>130</y>
-      <w>160</w>
-      <h>40</h>
+      <x>441</x>
+      <y>147</y>
+      <w>126</w>
+      <h>28</h>
     </coordinates>
-    <panel_attributes>UBSCombined
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>250</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>DBCombined
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>370</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>DBFIX-Classic
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>490</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>DBFIX-Rapid
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>610</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>GSCombined
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>720</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>MFHandler.sh
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>840</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>CitiCombined
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>960</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>TIHandler.sh
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>260</x>
-      <y>1080</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>SFWDHandler.sh
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>490</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_lp_dbfix_rapid.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>370</y>
-      <w>190</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_lp_dbfix_classic.sh
+    <panel_attributes>env_common.sh
 bg=cyan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>390</x>
-      <y>360</y>
-      <w>90</w>
-      <h>50</h>
+      <x>308</x>
+      <y>140</y>
+      <w>146</w>
+      <h>125</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>480</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>70</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./UBSCombined start 
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>100</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>200</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./DBCombined start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>320</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./DBFIX-Classic start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>440</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./DBFIX-Rapid start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>230</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>350</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>470</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>560</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./GSCombined start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>670</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./MFHandler.sh start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>790</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./CitiCombined start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>910</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./TIHandler.sh start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>0</x>
-      <y>1030</y>
-      <w>240</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
-$ . env_xxx.sh
-$ ./SFWDHandler.sh start
-bg=red
-fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>590</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>700</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>820</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>940</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>150</x>
-      <y>1060</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30;30;100;50</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>250</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_lp_db.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>240</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>130</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_lp_ubs.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>120</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>720</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_mf.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>610</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_lp_gs.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>600</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>710</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>1080</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_d3.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>1070</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>840</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_lp_citi.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>830</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.Artefact</type>
-    <coordinates>
-      <x>460</x>
-      <y>960</y>
-      <w>180</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>env_mti.sh
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>390</x>
-      <y>950</y>
-      <w>90</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>30;30;70;30</additional_attributes>
+    <additional_attributes>21;112;98;112;98;21;133;21</additional_attributes>
   </element>
   <group>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>810</x>
-        <y>830</y>
-        <w>380</w>
-        <h>90</h>
-      </coordinates>
-      <panel_attributes>SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts&gt;</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>870</x>
-        <y>870</y>
-        <w>140</w>
-        <h>40</h>
-      </coordinates>
-      <panel_attributes>env_sit_lp.sh
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>581</x>
+          <y>490</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_d3.sh
 bg=cyan</panel_attributes>
-      <additional_attributes/>
-    </element>
-  </group>
-  <group>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>441</x>
+          <y>490</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>SFWDHandler.sh
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>532</x>
+          <y>483</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+    </group>
     <element>
-      <type>com.umlet.element.custom.Artefact</type>
+      <type>com.umlet.element.custom.Component</type>
       <coordinates>
-        <x>810</x>
-        <y>730</y>
-        <w>380</w>
-        <h>90</h>
+        <x>434</x>
+        <y>455</y>
+        <w>294</w>
+        <h>70</h>
       </coordinates>
-      <panel_attributes>SIT1: /local/home/strmbase/EFX-lp/Linux/scripts&gt;</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>870</x>
-        <y>770</y>
-        <w>140</w>
-        <h>40</h>
-      </coordinates>
-      <panel_attributes>env_sit_lp.sh
-bg=cyan</panel_attributes>
-      <additional_attributes/>
-    </element>
-  </group>
-  <group>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>810</x>
-        <y>530</y>
-        <w>380</w>
-        <h>90</h>
-      </coordinates>
-      <panel_attributes>DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts&gt;</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>870</x>
-        <y>570</y>
-        <w>140</w>
-        <h>40</h>
-      </coordinates>
-      <panel_attributes>env_dev4.sh
-bg=cyan</panel_attributes>
-      <additional_attributes/>
-    </element>
-  </group>
-  <group>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>810</x>
-        <y>430</y>
-        <w>380</w>
-        <h>90</h>
-      </coordinates>
-      <panel_attributes>DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts&gt;</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>870</x>
-        <y>470</y>
-        <w>140</w>
-        <h>40</h>
-      </coordinates>
-      <panel_attributes>env_dev3.sh
-bg=cyan</panel_attributes>
-      <additional_attributes/>
-    </element>
-  </group>
-  <group>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>810</x>
-        <y>330</y>
-        <w>380</w>
-        <h>90</h>
-      </coordinates>
-      <panel_attributes>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts&gt;</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>870</x>
-        <y>370</y>
-        <w>140</w>
-        <h>40</h>
-      </coordinates>
-      <panel_attributes>env_dev1.sh
-bg=cyan</panel_attributes>
+      <panel_attributes> 
+'D3 Execution Handler</panel_attributes>
       <additional_attributes/>
     </element>
   </group>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>120</w>
-      <h>180</h>
+      <x>308</x>
+      <y>140</y>
+      <w>146</w>
+      <h>209</h>
     </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>100;160;30;160;30;30;80;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>120</w>
-      <h>280</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>100;260;30;260;30;30;80;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>120</w>
-      <h>370</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>100;350;30;350;30;30;80;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>100</w>
-      <h>480</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>80;460;30;460;30;30;80;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>120</w>
-      <h>580</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>100;560;30;560;30;30;80;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>120</w>
-      <h>680</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>100;660;30;660;30;30;80;30</additional_attributes>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>21;196;98;196;98;21;133;21</additional_attributes>
   </element>
   <group>
+    <group>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>154</x>
+          <y>315</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>63</x>
+          <y>322</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>DBCombined
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>203</x>
+          <y>322</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_db.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
     <element>
-      <type>com.umlet.element.custom.Artefact</type>
+      <type>com.umlet.element.custom.Component</type>
       <coordinates>
-        <x>790</x>
-        <y>630</y>
-        <w>400</w>
-        <h>90</h>
+        <x>56</x>
+        <y>287</y>
+        <w>294</w>
+        <h>70</h>
       </coordinates>
-      <panel_attributes>DEV1: /local/home/strmbase/EFX-all-Caplin/Linux/scripts&gt;</panel_attributes>
+      <panel_attributes> 
+'DB Combined Handler</panel_attributes>
       <additional_attributes/>
     </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>870</x>
-        <y>670</y>
-        <w>140</w>
-        <h>40</h>
-      </coordinates>
-      <panel_attributes>env_caplin.sh
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>63</x>
+          <y>238</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>UBSCombined
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>154</x>
+          <y>231</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>203</x>
+          <y>238</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_ubs.sh
 bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>56</x>
+        <y>196</y>
+        <w>294</w>
+        <h>77</h>
+      </coordinates>
+      <panel_attributes> 
+'UBS Execution Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>315</x>
+      <y>140</y>
+      <w>139</w>
+      <h>293</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>21;280;91;280;91;21;126;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>308</x>
+      <y>140</y>
+      <w>146</w>
+      <h>377</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>21;364;98;364;98;21;133;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>308</x>
+      <y>140</y>
+      <w>146</w>
+      <h>461</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>21;448;98;448;98;21;133;21</additional_attributes>
+  </element>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>203</x>
+          <y>406</y>
+          <w>133</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_dbfix_classic.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>63</x>
+          <y>406</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>DBFIX-Classic
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>154</x>
+          <y>399</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>56</x>
+        <y>371</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'DBFIX-Classic Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>63</x>
+          <y>490</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>DBFIX-Rapid
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>154</x>
+          <y>483</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>203</x>
+          <y>490</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_dbfix_rapid.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>56</x>
+        <y>455</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'DBFIX-Rapid Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>63</x>
+          <y>574</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>GSCombined
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>154</x>
+          <y>567</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>203</x>
+          <y>574</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_gs.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>56</x>
+        <y>539</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'GS Execution Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>441</x>
+          <y>238</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>MFHandler.sh
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>532</x>
+          <y>231</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>581</x>
+          <y>238</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_mf.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>434</x>
+        <y>203</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'MF Execution Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>546</x>
+      <y>140</y>
+      <w>230</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>161;112;217;112;217;21;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>546</x>
+      <y>140</y>
+      <w>230</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>168;196;217;196;217;21;21;21</additional_attributes>
+  </element>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>441</x>
+          <y>322</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>CitiCombined
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>532</x>
+          <y>315</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>581</x>
+          <y>322</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_citi.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>434</x>
+        <y>287</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'Citi Execution Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>441</x>
+          <y>406</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>TIHandler.sh
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>532</x>
+          <y>399</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>581</x>
+          <y>406</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_mti.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>434</x>
+        <y>371</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'TI Execution Handler</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>546</x>
+      <y>140</y>
+      <w>230</w>
+      <h>293</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>161;280;217;280;217;21;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>546</x>
+      <y>140</y>
+      <w>230</w>
+      <h>377</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>161;364;217;364;217;21;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>546</x>
+      <y>140</y>
+      <w>230</w>
+      <h>461</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>161;448;217;448;217;21;21;21</additional_attributes>
+  </element>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>441</x>
+          <y>574</y>
+          <w>112</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>FIXCombined
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.Relation</type>
+        <coordinates>
+          <x>532</x>
+          <y>567</y>
+          <w>62</w>
+          <h>34</h>
+        </coordinates>
+        <panel_attributes>lt=-
+</panel_attributes>
+        <additional_attributes>21;21;49;21</additional_attributes>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>581</x>
+          <y>574</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>env_lp_fix.sh
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.custom.Component</type>
+      <coordinates>
+        <x>434</x>
+        <y>539</y>
+        <w>294</w>
+        <h>70</h>
+      </coordinates>
+      <panel_attributes> 
+'FIX Execution Handler</panel_attributes>
       <additional_attributes/>
     </element>
   </group>

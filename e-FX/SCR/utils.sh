@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 27/01/2015 
-# Last Modified: 27/01/2015 (ramn.martn)
+# Last Modified: 05/02/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -58,39 +58,33 @@ function utils.executeAsStreambase(){
 # Usage: utils.getMachine $1 $2
 # $1: Service
 # $1: Environment
-function utils.getMachine(){
+function utils.getMachineFromDeployEnvConf(){
 	# Asks for a Process
 	readProccess
 	# Ask for a Deployment Environment
 	readDeploymentEnvironment
 
-	declare -a DEV1_ADAFIX_EFX36=(${EFX_ENVIRONMENTS[1]} ${ENV_PROCESSES[1]} ${ENV_MACHINES_EFXD[36]})
-	declare -a DEV1_ADARTENON_EFX37=(${EFX_ENVIRONMENTS[1]} ${ENV_PROCESSES[2]} ${ENV_MACHINES_EFXD[37]})
-	declare -a DEV1_ADAXTER_EFX39=(${EFX_ENVIRONMENTS[1]} ${ENV_PROCESSES[3]} ${ENV_MACHINES_EFXD[39]})
-	
-	declare -a DEPLOYMENT_ENVIRONMENTS
-	DEPLOYMENT_ENVIRONMENTS[0]=DEV1_ADAFIX_EFX36[@]
-	DEPLOYMENT_ENVIRONMENTS[1]=DEV1_ADARTENON_EFX37[@] 
-	DEPLOYMENT_ENVIRONMENTS[2]=DEV1_ADAXTER_EFX39[@]
-	
 	TARGET_MACHINE=""
+	TARGET_PORT=""
 	  
 	# Loop and print it.  Using offset and length to extract values
-	COUNT=${#DEPLOYMENT_ENVIRONMENTS[@]}
+	COUNT=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}
 	for ((i=0; i<$COUNT; i++))
 	do
-	  declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS[i]}
+	  declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS_CONF[i]}
 	  #echo ${#DEPLOY_ENV[*]}
 	  read -a DEPLOYMENT_ENVIRONMENT <<< "${!DEPLOY_ENV[0]}"
 	  ENV=${DEPLOYMENT_ENVIRONMENT[0]}
 	  PROCESS=${DEPLOYMENT_ENVIRONMENT[1]}
-	  HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[2]}
+	  PORT=${DEPLOYMENT_ENVIRONMENT[2]}
+	  HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
 	  #echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, HOST: $HOST_MACHINE"
 	  if [ "$PROCESS" == "${ENV_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
 	  	TARGET_MACHINE="$HOST_MACHINE"
+	  	TARGET_PORT="$PORT"
 	  fi
 	done  
-	utils.logResult "${ENV_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine"
+	utils.logResult "${ENV_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
 	#return $TARGET_MACHINE
 }
 
@@ -124,11 +118,6 @@ function readProccess(){
     echo -e "24) ${ENV_PROCESSES[24]}"
     echo -e "25) ${ENV_PROCESSES[25]}"
     echo -e "26) ${ENV_PROCESSES[26]}"
-    echo -e "27) ${ENV_PROCESSES[27]}"
-    echo -e "28) ${ENV_PROCESSES[28]}"
-    echo -e "29) ${ENV_PROCESSES[29]}"
-    echo -e "30) ${ENV_PROCESSES[30]}"
-    echo -e "31) ${ENV_PROCESSES[31]}"
 	read targetProcess
 }
 

@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 03/02/2015 
-# Last Modified: 03/02/2015 (ramn.martn)
+# Last Modified: 05/02/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -54,7 +54,7 @@ function listenMaintenanceTasksMenu(){
 	        3) clear
 	        # CHECK MACHINES
 	            option_picked_identified "you chose to Check Machines"
-	        	utils.executeAsBuild utils.getMachine 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.executeAsBuild utils.getMachineFromDeployEnvConf 2>>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
