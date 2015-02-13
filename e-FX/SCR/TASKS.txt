@@ -1,15 +1,16 @@
 Instalarse el Plugion SVN en eclipse Luna
 Revisar el ./dbserver
-	añadir el proceso Adafix en el Deployment diagram de los entornos
+Añadir el proceso Adafix en el Deployment diagram de los entornos
 Añadir diagrama de actividades al Proceso de despliegue de Baxter.
 Añadir El builrpm de linux (condicional) en el diagrama de actividades de Cerebro
-revisar el paso 8 de Cerebro Deployemnt Diagram
+Revisar el paso 8 de Cerebro Deployemnt Diagram
 Añadir el diagrama de Subidas a Satellite
-#Añadir el Entorno CAPLIN
-#Añadir el Diagrama de Actividades de Deployment de Caplin
+Añadir el Entorno CAPLIN
+Añadir el Diagrama de Actividades de Deployment de Caplin
 #Añadir el Entorno del Dot Dashboard (Dashboard.bat y Dashboard.exe.config)
 Añadir la fecha al archivo de log
 Automatizar la parada de los servicios de Baxter
+#Añadir la funcionlidad de bajar Release  al script con Credenciales y timeout
 
 # Añadir SSH
 http://www.linuxproblem.org/art_9.html
@@ -17,6 +18,5 @@ http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to
 
 #Añadir la funcionalidad de borrar logs al script
 find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
-find /local/home/strmbase -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
 #Añadir la funcionalidad de arrancar puntos al script
-Añadir la funcionlidad de bajar Release  al script
+#Añadir los demás diagramas despliegue de los demás entornos

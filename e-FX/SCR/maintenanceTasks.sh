@@ -19,7 +19,11 @@
 # Downloads software from URL
 # Usage: maintenanceTasks.downloadEFX $1
 # $1: URL to get the SW
+# Tips: 4 Baxter you need credentials Usr:moob_juancarlos Passwd: pumby1012
+# wget --dns-timeout=seconds, --connect-timeout=seconds, --read-timeout=seconds
 function maintenanceTasks.downloadEFX(){
+	downlUser="moob_juancarlos"
+	downlPasswd="pumby1012"
 	# Ask for new Release details
 	declare -x releaseFolder=''
 	utils.ask4SWReleaseDetails releaseFolder
@@ -31,9 +35,9 @@ function maintenanceTasks.downloadEFX(){
 	if [ -z "$1" ]; then
 		echo -n "Please introduce URL to download, Ej.: http://host:port/path > "
 		read downloadURL
-		wget "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
+		wget --user="$downlUser" --password="$downlPasswd" "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
 	else 
-		wget "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE 	
+		wget --user="$downlUser" --password="$downlPasswd" "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE 	
 	fi 
 	OUT=$?
 	if [ $OUT -eq 0 ]; then
@@ -71,6 +75,12 @@ function maintenanceTasks.startSimulationPoints(){
 	 	utils.logResult "Sorry you can only execute this functionality from Host: $allowedHost"
 		exit $ERROR_UNAUTHORIZED
 	fi		
+}
+
+# Find log files bigger than 2GB
+# Usage: maintenanceTasks.findBigLogs
+function maintenanceTasks.findBigLogs(){
+	utils.logResult "$(find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr)"
 }
 
 # Stops Baxter

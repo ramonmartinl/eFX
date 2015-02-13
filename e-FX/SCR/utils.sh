@@ -101,8 +101,8 @@ function utils.getMachineFromDeployEnvConf(){
 	TARGET_PORT=""
 	  
 	# Loop and print it.  Using offset and length to extract values
-	COUNT=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}; #echo "SIZE: $COUNT"
-	for ((i=0; i<$COUNT; i++))
+	count=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}; #echo "SIZE: $count"
+	for ((i=0; i<$count; i++))
 	do
 	  declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS_CONF[i]}
 	  #echo ${#DEPLOY_ENV[*]}
@@ -125,32 +125,11 @@ function utils.getMachineFromDeployEnvConf(){
 #Usage: readProccess
 function readProccess(){
 	echo "Select one of the following Processes >..."
-    echo -e "1) ${ENV_PROCESSES[1]}"
-    echo -e "2) ${ENV_PROCESSES[2]}"
-    echo -e "3) ${ENV_PROCESSES[3]}"
-    echo -e "4) ${ENV_PROCESSES[4]}"
-    echo -e "5) ${ENV_PROCESSES[5]}"
-    echo -e "6) ${ENV_PROCESSES[6]}"
-    echo -e "7) ${ENV_PROCESSES[7]}"
-    echo -e "8) ${ENV_PROCESSES[8]}"
-    echo -e "9) ${ENV_PROCESSES[9]}"
-    echo -e "10) ${ENV_PROCESSES[10]}"
-    echo -e "11) ${ENV_PROCESSES[11]}"
-    echo -e "12) ${ENV_PROCESSES[12]}"
-    echo -e "13) ${ENV_PROCESSES[13]}"
-    echo -e "14) ${ENV_PROCESSES[14]}"
-    echo -e "15) ${ENV_PROCESSES[15]}"
-    echo -e "16) ${ENV_PROCESSES[16]}"
-    echo -e "17) ${ENV_PROCESSES[17]}"
-    echo -e "18) ${ENV_PROCESSES[18]}"
-    echo -e "19) ${ENV_PROCESSES[19]}"
-    echo -e "20) ${ENV_PROCESSES[20]}"
-    echo -e "21) ${ENV_PROCESSES[21]}"
-    echo -e "22) ${ENV_PROCESSES[22]}"
-    echo -e "23) ${ENV_PROCESSES[23]}"
-    echo -e "24) ${ENV_PROCESSES[24]}"
-    echo -e "25) ${ENV_PROCESSES[25]}"
-    echo -e "26) ${ENV_PROCESSES[26]}"
+	count=${#ENV_PROCESSES[@]}; #echo "SIZE: $count"
+	for ((i=1; i<$count; i++))
+	do
+		echo -e "$i) ${ENV_PROCESSES[i]}"
+	done
 	read targetProcess
 }
 
@@ -158,11 +137,10 @@ function readProccess(){
 #Usage: readProccess
 function readDeploymentEnvironment(){
 	echo "Select one of the following Environments >..."
-	echo -e "1) ${EFX_ENVIRONMENTS[1]}"
-	echo -e "2) ${EFX_ENVIRONMENTS[2]}"
-	echo -e "3) ${EFX_ENVIRONMENTS[3]}"
-	echo -e "4) ${EFX_ENVIRONMENTS[4]}"
-	echo -e "5) ${EFX_ENVIRONMENTS[5]}"
-	echo -e "6) ${EFX_ENVIRONMENTS[6]}"
+	count=${#EFX_ENVIRONMENTS[@]}; #echo "SIZE: $count"
+	for ((i=1; i<$count; i++))
+	do
+		echo -e "$i) ${EFX_ENVIRONMENTS[i]}"
+	done
 	read targetEnv
 }
