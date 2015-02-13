@@ -708,13 +708,13 @@ center:lnx-sbankd8</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>135</x>
-      <y>860</y>
+      <y>865</y>
       <w>34</w>
-      <h>44</h>
+      <h>39</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>15;15;15;35;25;35</additional_attributes>
+    <additional_attributes>15;15;15;30;25;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
