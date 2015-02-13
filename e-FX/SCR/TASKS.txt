@@ -9,15 +9,14 @@ Añadir el diagrama de Subidas a Satellite
 #Añadir el Diagrama de Actividades de Deployment de Caplin
 #Añadir el Entorno del Dot Dashboard (Dashboard.bat y Dashboard.exe.config)
 Añadir la fecha al archivo de log
+Automatizar la parada de los servicios de Baxter
 
 # Añadir SSH
-Start LP Points Simulation in 'lnx-efxd38' host as 'strmbase' user
 http://www.linuxproblem.org/art_9.html
 http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
-# Downloads software from URL
-function downloadSW(){
-	ls
-	#wget  [option]  [URL]
-}
 
-# Automatizar la parada de los servicios de Baxter
+#Añadir la funcionalidad de borrar logs al script
+find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
+find /local/home/strmbase -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
+#Añadir la funcionalidad de arrancar puntos al script
+Añadir la funcionlidad de bajar Release  al script

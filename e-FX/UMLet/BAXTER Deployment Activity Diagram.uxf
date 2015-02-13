@@ -134,7 +134,7 @@ bg=green</panel_attributes>
     <panel_attributes>INSTALL ALL RPM´s
 [USER@HOST /home/efxbuild/upload_area_sit/Baxter.x.y.z]
 $ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm
-$ rpm -qa |grep baxter
+$ rpm -qa | grep -i baxter | grep -i x.y.z
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
@@ -164,7 +164,7 @@ baxterpe-server-license-x.y.z.noarch.rpm
 baxter-price-engine-om-x.y.z.rpm
 [USER@HOST /home/efxbuild/upload_area_sit/Baxter.x.y.z]
 $ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm
-$ rpm -qa |grep baxter
+$ rpm -qa | grep -i baxter | grep -i x.y.z
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
@@ -270,8 +270,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>21</x>
       <y>14</y>
-      <w>28</w>
-      <h>56</h>
+      <w>34</w>
+      <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -281,8 +281,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>21</x>
       <y>91</y>
-      <w>28</w>
-      <h>56</h>
+      <w>34</w>
+      <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -292,8 +292,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>21</x>
       <y>168</y>
-      <w>28</w>
-      <h>56</h>
+      <w>34</w>
+      <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -303,8 +303,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>154</x>
       <y>210</y>
-      <w>224</w>
-      <h>28</h>
+      <w>230</w>
+      <h>34</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>217;21;21;21</additional_attributes>
@@ -314,8 +314,8 @@ bg=pink</panel_attributes>
     <coordinates>
       <x>553</x>
       <y>252</y>
-      <w>28</w>
-      <h>56</h>
+      <w>34</w>
+      <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
@@ -538,8 +538,8 @@ bg=cyan</panel_attributes>
     <coordinates>
       <x>553</x>
       <y>1176</y>
-      <w>34</w>
-      <h>55</h>
+      <w>28</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;42;21;21</additional_attributes>

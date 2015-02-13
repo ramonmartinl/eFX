@@ -116,16 +116,6 @@ function editReleaseProperties_alt() {
 	utils.logResult "release.propeties file changed successfully"
 }
 
-# CREATE NEW RELEASE FOLDER
-function createNewReleaseFolder() {
-	if [ ! -d "$RELEASE_FOLDER" ]; then
-		mkdir $RELEASE_FOLDER
-		utils.logResult "Created nonExistent $RELEASE_FOLDER Folder succesfully"
-	else utils.logResult "$RELEASE_FOLDER Folder already exists"
-	fi
-
-}
-
 # BUILD APPLICATION CODE
 function buildApplication() {
 	utils.logResult "Building Cerebro.$RELEASE_NUMBER from $RELEASE_FOLDER Folder..."
@@ -253,7 +243,7 @@ function buildCerebro.build(){
 	ask4CerebroReleaseDetails 
 	#editReleaseProperties
 	#editReleaseProperties_alt 
-	#createNewReleaseFolder 
+	#utils.createNewFolder "$RELEASE_FOLDER"
 	#buildApplication
 	wait 
 	#cleanNewReleaseFolder 

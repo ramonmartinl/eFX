@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.InitialState</type>
+    <coordinates>
+      <x>90</x>
+      <y>50</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.FinalState</type>
+    <coordinates>
+      <x>90</x>
+      <y>470</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>100</y>
+      <w>480</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>GENERATE 'dataNDFnew' PRICES FILE WITH NEW DATES
+[strmbase@lnx-efxd38]
+$ /dev/shm/d3data/capture/demo/pruebas/GeneratedDateFixing.pl 
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>200</y>
+      <w>320</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>START THE SERVER
+[strmbase@lnx-efxd38 /dev/shm/d3data]
+$ ./startServer.sh.NDF
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>290</y>
+      <w>290</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>SET THE UPDATE RATE
+Enter: ur &amp; enter 20 (seconds)
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>40</x>
+      <y>370</y>
+      <w>840</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>RENAME GENERATED FILE
+[strmbase@lnx-efxd38]
+$ cp /local/home/strmbase/d3data/capture/demo/pruebas/dataNDFnew /local/home/strmbase/d3data/capture/demo/newDataNDF
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>40</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>140</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>230</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>310</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>410</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>370</x>
+      <y>0</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>LP SIMULATION
+bg=white
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

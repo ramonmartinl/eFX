@@ -22,11 +22,13 @@ function utils.logResult(){
 # Usage: utils.executeAsBuild $1
 # $1: Command to execute
 function utils.executeAsBuild(){
-	if [ "$USER" != "$USER_EFXBUILD" ]; then
+	if [ "$USER" == "$USER_EFXBUILD" ]; then
 		#/opt/boksm/bin/suexec -u $USER_EFXBUILD source $EFX_INSTALLER_HOME/installEFX.env;$1
-		su -m $USER_EFXBUILD -c 'source $EFX_INSTALLER_HOME/installEFX.env;$1'
-	else
+		#su -m $USER_EFXBUILD -c 'source $EFX_INSTALLER_HOME/installEFX.env;$1'
 		$1
+	else
+		utils.logResult "Sorry you can only execute this functionality as User: $USER_EFXBUILD"
+		exit $ERROR_UNAUTHORIZED
 	fi
 } 
 
@@ -34,10 +36,12 @@ function utils.executeAsBuild(){
 # Usage: utils.executeAsBaxter $1
 # $1: Command to execute
 function utils.executeAsBaxter(){
-	if [ "$USER" != "$USER_BAXTER" ]; then
-		su -m $USER_BAXTER -c 'source $EFX_INSTALLER_HOME/installEFX.env;$1'
-	else
+	if [ "$USER" == "$USER_BAXTER" ]; then
+		#su -m $USER_BAXTER -c 'source $EFX_INSTALLER_HOME/installEFX.env;$1'
 		$1
+	else
+		utils.logResult "Sorry you can only execute this functionality as User: $USER_BAXTER"
+		exit $ERROR_UNAUTHORIZED
 	fi
 } 
 
@@ -46,11 +50,40 @@ function utils.executeAsBaxter(){
 # Usage: utils.executeAsStreambase $1
 # $1: Command to execute
 function utils.executeAsStreambase(){
-	if [ "$USER" != "$USER_STRMBASE" ]; then
-		su -m $USER_STRMBASE -c 'source $EFX_INSTALLER_HOME/installEFX.env;$1'
-	else
+	if [ "$USER" == "$USER_STRMBASE" ]; then
+		#su -m $USER_STRMBASE -c 'source $EFX_INSTALLER_HOME/installEFX.env;$1'
 		$1
+	else
+		utils.logResult "Sorry you can only execute this functionality as User: $USER_STRMBASE"
+		exit $ERROR_UNAUTHORIZED
 	fi
+}
+
+# Create new Release Folder
+# Usage: utils.createNewFolder $1
+# $1: RELEASE_FOLDER
+function utils.createNewFolder() {
+	if [ ! -d "$1" ]; then
+		mkdir $1
+		utils.logResult "Created nonExistent $1 Folder successfully"
+	else utils.logResult "$1 Folder already exists"
+	fi
+
+}
+
+# Ask for new Release details
+# Usage: utils.ask4SWReleaseDetails
+# $1: variable to Evaluate
+# return Release Folder
+function utils.ask4SWReleaseDetails(){
+	# Read Application name & Release Number from user input
+	echo -n "Please introduce Application name, Options: Cerebro, Caplin, Baxter, etc.. > "
+	read application
+	echo -n "Please introduce Release number, Ej.: 3.4.29 > "
+	read releaseNumber 
+	releaseFolder="$UPLOAD_AREA_FOLDER/$application.$releaseNumber"
+	#return "$releaseFolder"
+	eval "$1='$releaseFolder'"
 }
 
 # Gets the machine that runs a service in deployment environment
@@ -68,7 +101,7 @@ function utils.getMachineFromDeployEnvConf(){
 	TARGET_PORT=""
 	  
 	# Loop and print it.  Using offset and length to extract values
-	COUNT=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}
+	COUNT=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}; #echo "SIZE: $COUNT"
 	for ((i=0; i<$COUNT; i++))
 	do
 	  declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS_CONF[i]}
@@ -78,7 +111,7 @@ function utils.getMachineFromDeployEnvConf(){
 	  PROCESS=${DEPLOYMENT_ENVIRONMENT[1]}
 	  PORT=${DEPLOYMENT_ENVIRONMENT[2]}
 	  HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
-	  #echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, HOST: $HOST_MACHINE"
+	  #echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, PORT: $PORT, HOST: $HOST_MACHINE"
 	  if [ "$PROCESS" == "${ENV_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
 	  	TARGET_MACHINE="$HOST_MACHINE"
 	  	TARGET_PORT="$PORT"

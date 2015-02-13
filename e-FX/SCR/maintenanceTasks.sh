@@ -17,17 +17,60 @@
 #http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
 
 # Downloads software from URL
-# Usage: downloadEFX
-function downloadEFX(){
-	#wget option URL
-	echo "hola"
+# Usage: maintenanceTasks.downloadEFX $1
+# $1: URL to get the SW
+function maintenanceTasks.downloadEFX(){
+	# Ask for new Release details
+	declare -x releaseFolder=''
+	utils.ask4SWReleaseDetails releaseFolder
+	# Create new Release Folder
+	#echo -n "Release folder: $releaseFolder"
+	utils.createNewFolder "$releaseFolder"
+	# Download the SW
+	pushd "$releaseFolder"
+	if [ -z "$1" ]; then
+		echo -n "Please introduce URL to download, Ej.: http://host:port/path > "
+		read downloadURL
+		wget "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
+	else 
+		wget "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE 	
+	fi 
+	OUT=$?
+	if [ $OUT -eq 0 ]; then
+		utils.logResult "Software from $downloadURL downloaded successfully"
+	else 
+		utils.logResult "Software from $downloadURL failed to download"
+	fi
+	popd
 }
 
 # Start LP Points Simulation
-# Usage: startSimulationPoints
-function startSimulationPoints(){
+# Usage: maintenanceTasks.startSimulationPoints
+function maintenanceTasks.startSimulationPoints(){
 	#ssh -OPTIONS -p SSH_PORT user@remote_server "remote_command1; remote_command2; remote_script.sh" 
-	ssh strmbase@lnx-efxd38 /dev/shm/d3data/startServer.sh.NDF
+	#ssh strmbase@lnx-efxd38 /dev/shm/d3data/startServer.sh.NDF
+	declare -x allowedHost=${ENV_MACHINES_EFXD[38]}
+	echo -n "hostname: $(hostname), allowedHost: $allowedHost"
+	if  [ "$(hostname)" == "$allowedHost" ]; then
+		#kill an existing process
+		declare -i pPid=$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}')
+		if [ ! -z "$pPid" ]; then
+			utils.logResult "Killing LP Points Simulation Process: $pPid.."
+			kill "$pPid"
+			#sleep 2
+			if [ $? -eq 0 ]; then
+				utils.logResult "LP Points Simulation Process: $pPid Killed successfully"
+			else 
+				utils.logResult "LP Points Simulation Process: $pPid failed to be Killed"
+			fi
+		fi
+		pushd "/dev/shm/d3data"
+		#./startServer.sh.NDF
+		popd
+	else
+	 	utils.logResult "Sorry you can only execute this functionality from Host: $allowedHost"
+		exit $ERROR_UNAUTHORIZED
+	fi		
 }
 
 # Stops Baxter

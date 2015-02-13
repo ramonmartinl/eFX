@@ -39,7 +39,7 @@ function buildCerebro.builCerebro(){
 	ask4CerebroReleaseDetails 
 	#editReleaseProperties
 	editReleaseProperties_alt 
-	#createNewReleaseFolder 
+	#createNewFolder 
 	#buildApplication
 	wait 
 	#cleanNewReleaseFolder 

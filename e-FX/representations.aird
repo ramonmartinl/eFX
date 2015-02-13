@@ -5848,7 +5848,7 @@
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_eL044JdCEeSF0pCT-mgLtQ" type="4001" element="_eKNIQJdCEeSF0pCT-mgLtQ" source="_CoZgcJc_EeSF0pCT-mgLtQ" target="_HSDXMInNEeSf6YVZN2Xsyw">
             <children xmi:type="notation:Node" xmi:id="_eL045JdCEeSF0pCT-mgLtQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eL045ZdCEeSF0pCT-mgLtQ" x="75" y="-680"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eL045ZdCEeSF0pCT-mgLtQ" x="689" y="80"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_eL045pdCEeSF0pCT-mgLtQ" type="6002">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eL0455dCEeSF0pCT-mgLtQ" y="10"/>
@@ -27803,7 +27803,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_kdLFgJceEeSaLMhtV6zFhw" name="START THE SERVVER&#xD;&#xA;&#xD;&#xA;[strmbase@lnx-efxd38 /dev/shm/d3data]&#xD;&#xA;$ ./startServer.sh.NDF" outgoingEdges="_f1-EwKB9EeSvLZlLl1KRPw" incomingEdges="_eYWQMKB9EeSvLZlLl1KRPw">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_kdLFgJceEeSaLMhtV6zFhw" name="START THE SERVER&#xD;&#xA;&#xD;&#xA;[strmbase@lnx-efxd38 /dev/shm/d3data]&#xD;&#xA;$ ./startServer.sh.NDF" outgoingEdges="_f1-EwKB9EeSvLZlLl1KRPw" incomingEdges="_eYWQMKB9EeSvLZlLl1KRPw">
           <target xmi:type="uml:OpaqueAction" href="lp.uml#_kdJQUJceEeSaLMhtV6zFhw"/>
           <semanticElements xmi:type="uml:OpaqueAction" href="lp.uml#_kdJQUJceEeSaLMhtV6zFhw"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -29018,7 +29018,7 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_AnuCEZp0EeSErr_g8YjIHw" name="SATELLITE Upload">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_AnuCEZp0EeSErr_g8YjIHw" name="CEREBRO">
         <target xmi:type="uml:Activity" href="cerebro.uml#_9lb80JpzEeSErr_g8YjIHw"/>
         <semanticElements xmi:type="uml:Activity" href="cerebro.uml#_9lb80JpzEeSErr_g8YjIHw"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>

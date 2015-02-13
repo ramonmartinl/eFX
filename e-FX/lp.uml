@@ -117,7 +117,7 @@ $ cp /local/home/strmbase/d3data/capture/demo/pruebas/dataNDFnew /local/home/str
 &#xD;
 </body>
     </node>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_kdJQUJceEeSaLMhtV6zFhw" name="START THE SERVVER" incoming="_eYTM4KB9EeSvLZlLl1KRPw" outgoing="_f16aYKB9EeSvLZlLl1KRPw">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_kdJQUJceEeSaLMhtV6zFhw" name="START THE SERVER" incoming="_eYTM4KB9EeSvLZlLl1KRPw" outgoing="_f16aYKB9EeSvLZlLl1KRPw">
       <body>[strmbase@lnx-efxd38 /dev/shm/d3data]&#xD;
 $ ./startServer.sh.NDF</body>
     </node>
