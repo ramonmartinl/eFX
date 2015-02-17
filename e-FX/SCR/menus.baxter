@@ -24,7 +24,8 @@ showBaxterTasksMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 5)${FMT_MENU} Start Baxter Price Engine Broadcast ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 6)${FMT_MENU} Start Baxter Price Engine Dashboard Web Application ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 7)${FMT_MENU} Restart All Baxter ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Stop Baxter Price Engine Broadcast ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Update Baxter Price Engine DBServer ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 9)${FMT_MENU} Stop Baxter Price Engine Broadcast ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_baxter_tasks
@@ -95,8 +96,16 @@ function listenBaxterTasksMenu(){
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
-	            	            	            	        
+	            
 	        8) clear
+	        # STOP BAXTER Price Engine Broadcast
+	            option_picked_identified "you chose to Update Baxter Price Engine DBServer"
+	            utils.executeAsBaxter maintenanceTasks.updateBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            showBaxterTasksMenu
+	            ;;
+	            	           	            	        
+	        9) clear
 	        # STOP BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Stop Baxter Price Engine Broadcast"
 	            utils.executeAsBaxter maintenanceTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE

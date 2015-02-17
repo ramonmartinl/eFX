@@ -244,7 +244,7 @@ fg=black</panel_attributes>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
       <x>252</x>
-      <y>1116</y>
+      <y>963</y>
       <w>18</w>
       <h>18</h>
     </coordinates>
@@ -353,52 +353,5 @@ fg=black</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>27;45;63;27</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.State</type>
-    <coordinates>
-      <x>180</x>
-      <y>963</y>
-      <w>306</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes>PREPARE NEW RELEASE NOTES DOCUMENT
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>234</x>
-      <y>972</y>
-      <w>44</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>27;63;27;27</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.custom.State</type>
-    <coordinates>
-      <x>180</x>
-      <y>1035</y>
-      <w>666</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>SEND CONFIRMATION E-MAIL FOR ENVIONMENT READY TO TEST
-BUZON EFX QA &lt;bzefxqa@isban.es&gt;; Buzon Services eFX &lt;bzeFXservices@isban.es&gt;; BUZON Deployers eFX
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>234</x>
-      <y>1053</y>
-      <w>44</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>27;63;27;27</additional_attributes>
   </element>
 </diagram>

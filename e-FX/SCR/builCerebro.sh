@@ -249,7 +249,7 @@ function buildCerebro.build(){
 	#cleanNewReleaseFolder 
 	buildEFXRPMPackages 
 	buildLinuxPMPackages 
-	#uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
+	uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
 }	
 
 # sends the result of the execution of the last command to log file

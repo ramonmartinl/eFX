@@ -88,7 +88,16 @@ function listenBuildEFXModulesMenu(){
 	            sleep 2
 	            showBuildEFXModulesMenu
 	            ;;
-	        	        
+	        	        	        
+	        16) clear
+	        # BUILD eFX-LP-MF MODULE
+	            option_picked_identified "you chose to Build eFX-LP-MF Module"
+	            echo "eFX-LP-MF" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-MF
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	            	        
 	        20) clear
 	        # BUILD eFX-NewTickStore MODULE
 	            option_picked_identified "you chose to Build eFX-NewTickStore Module"

@@ -56,7 +56,7 @@ function listenMaintenanceTasksMenu(){
 	        3) clear
 	        # DOWNLOAD SW
 	            option_picked_identified "you chose to Download Software"
-	        	utils.executeAsBuild maintenanceTasks.downloadEFX 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.executeAsBuild "maintenanceTasks.downloadEFX DOWNLOAD_URLS.in" 2>>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;

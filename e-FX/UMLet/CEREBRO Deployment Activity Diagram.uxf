@@ -4,7 +4,7 @@
   <element>
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
-      <x>161</x>
+      <x>168</x>
       <y>35</y>
       <w>14</w>
       <h>14</h>
@@ -15,8 +15,8 @@
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
-      <x>168</x>
-      <y>763</y>
+      <x>175</x>
+      <y>896</y>
       <w>14</w>
       <h>14</h>
     </coordinates>
@@ -26,7 +26,7 @@
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>70</y>
       <w>161</w>
       <h>28</h>
@@ -38,7 +38,7 @@ bg=red</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>147</x>
+      <x>154</x>
       <y>28</y>
       <w>34</w>
       <h>55</h>
@@ -49,7 +49,7 @@ bg=red</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>119</y>
       <w>280</w>
       <h>63</h>
@@ -64,7 +64,7 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>203</y>
       <w>315</w>
       <h>63</h>
@@ -79,7 +79,7 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>287</y>
       <w>266</w>
       <h>63</h>
@@ -94,22 +94,22 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>378</y>
       <w>455</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>UPDATE/INSTALL NEW PACKAGES
-[user@lnx-efxd37|lnx-efxd44 /home/efxbuild/upload_area_sit/Cerebro.x.y.z]
+[user@lnx-efxd37|lnx-efxd44 /home/efxbuild/upload_area/Cerebro.x.y.z]
 $ rpm -qa | grep sgbm-efx
-$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum-update PACKAGE_1.rpm PACKAGE_N.rpm
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum update PACKAGE_1.rpm PACKAGE_N.rpm
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>476</y>
       <w>315</w>
       <h>63</h>
@@ -124,7 +124,7 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>567</y>
       <w>294</w>
       <h>56</h>
@@ -139,7 +139,7 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>707</y>
       <w>266</w>
       <h>35</h>
@@ -152,7 +152,7 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>133</x>
+      <x>140</x>
       <y>651</y>
       <w>161</w>
       <h>28</h>
@@ -164,7 +164,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>189</x>
+      <x>196</x>
       <y>77</y>
       <w>34</w>
       <h>55</h>
@@ -175,7 +175,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>182</x>
+      <x>189</x>
       <y>161</y>
       <w>34</w>
       <h>55</h>
@@ -186,7 +186,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>182</x>
+      <x>189</x>
       <y>245</y>
       <w>34</w>
       <h>55</h>
@@ -197,7 +197,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>175</x>
+      <x>182</x>
       <y>329</y>
       <w>34</w>
       <h>62</h>
@@ -208,7 +208,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>399</x>
+      <x>406</x>
       <y>210</y>
       <w>90</w>
       <h>90</h>
@@ -219,7 +219,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>168</x>
+      <x>175</x>
       <y>427</y>
       <w>34</w>
       <h>62</h>
@@ -230,7 +230,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>161</x>
+      <x>168</x>
       <y>518</y>
       <w>34</w>
       <h>62</h>
@@ -241,7 +241,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>406</x>
+      <x>413</x>
       <y>483</y>
       <w>90</w>
       <h>90</h>
@@ -252,18 +252,18 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>154</x>
+      <x>161</x>
       <y>721</y>
       <w>34</w>
-      <h>55</h>
+      <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>21;42;21;21</additional_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>154</x>
+      <x>161</x>
       <y>658</y>
       <w>34</w>
       <h>62</h>
@@ -274,7 +274,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>154</x>
+      <x>161</x>
       <y>602</y>
       <w>34</w>
       <h>62</h>
@@ -285,7 +285,7 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>210</x>
+      <x>217</x>
       <y>0</y>
       <w>273</w>
       <h>21</h>
@@ -298,7 +298,7 @@ fg=blue</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>462</x>
+      <x>469</x>
       <y>168</y>
       <w>175</w>
       <h>49</h>
@@ -312,7 +312,7 @@ bg=yellow</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>497</x>
+      <x>504</x>
       <y>476</y>
       <w>161</w>
       <h>49</h>
@@ -320,5 +320,53 @@ bg=yellow</panel_attributes>
     <panel_attributes>Linux Module is a special case
 bg=yellow</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>140</x>
+      <y>833</y>
+      <w>266</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PREPARE NEW RELEASE NOTES DOCUMENT
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>140</x>
+      <y>770</y>
+      <w>525</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>SEND CONFIRMATION E-MAIL FOR ENVIONMENT READY TO TEST
+BUZON EFX QA &lt;bzefxqa@isban.es&gt;; Buzon Services eFX &lt;bzeFXservices@isban.es&gt;; BUZON Deployers eFX
+
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>161</x>
+      <y>784</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>161</x>
+      <y>847</y>
+      <w>34</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;49;21;21</additional_attributes>
   </element>
 </diagram>

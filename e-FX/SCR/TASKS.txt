@@ -11,6 +11,7 @@ Añadir el Diagrama de Actividades de Deployment de Caplin
 Añadir la fecha al archivo de log
 Automatizar la parada de los servicios de Baxter
 #Añadir la funcionlidad de bajar Release  al script con Credenciales y timeout
+--user 	--password --background --timeout --input-file --force-html --base=URL
 
 # Añadir SSH
 http://www.linuxproblem.org/art_9.html

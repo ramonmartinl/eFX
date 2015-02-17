@@ -18,26 +18,32 @@
 
 # Downloads software from URL
 # Usage: maintenanceTasks.downloadEFX $1
-# $1: URL to get the SW
+# $1: URL/FILE to get the SW
 # Tips: 4 Baxter you need credentials Usr:moob_juancarlos Passwd: pumby1012
 # wget --dns-timeout=seconds, --connect-timeout=seconds, --read-timeout=seconds
 function maintenanceTasks.downloadEFX(){
-	downlUser="moob_juancarlos"
-	downlPasswd="pumby1012"
+	DOWNLOAD_URLS_TMP=DOWNLOAD_URLS.in
+	dLoadUser="moob_juancarlos"
+	dLoadPasswd="pumby1012"
 	# Ask for new Release details
 	declare -x releaseFolder=''
 	utils.ask4SWReleaseDetails releaseFolder
 	# Create new Release Folder
 	#echo -n "Release folder: $releaseFolder"
 	utils.createNewFolder "$releaseFolder"
+	echo -n "DOWNLOAD_URLS_TMP: $1"
 	# Download the SW
 	pushd "$releaseFolder"
 	if [ -z "$1" ]; then
 		echo -n "Please introduce URL to download, Ej.: http://host:port/path > "
 		read downloadURL
-		wget --user="$downlUser" --password="$downlPasswd" "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
+		wget --user="$dLoadUser" --password="$dLoadPasswd" "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
 	else 
-		wget --user="$downlUser" --password="$downlPasswd" "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE 	
+		if [ "$1" == "$DOWNLOAD_URLS_TMP" ]; then
+			wget --user="$dLoadUser" --password="$dLoadPasswd" --input-file="$EFX_INSTALLER_HOME/$DOWNLOAD_URLS_TMP" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
+		else
+		 	wget --user="$dLoadUser" --password="$dLoadPasswd" --background "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILEç
+		fi 	
 	fi 
 	OUT=$?
 	if [ $OUT -eq 0 ]; then
@@ -97,7 +103,7 @@ function maintenanceTasks.stopBaxter(){
 function maintenanceTasks.startBaxterConfigurationServer(){
 	# Start Configuration Server
 	$BAXTER_HOME/bin/start-configuration-server --daemon &
-	utils.logResult "Configuration Server Baxter Process started succesfully\n"
+	utils.logResult "Configuration Server Baxter Process started successfully\n"
 	return 0
 }
 
@@ -107,7 +113,7 @@ function maintenanceTasks.startBaxterDBServer(){
 	# Start DB Server
 	#/bin/bash -c '$BAXTER_HOME/bin/dbserver start'
 	$BAXTER_HOME/bin/dbserver start
-	utils.logResult "DB Server Baxter Process started succesfully\n"
+	utils.logResult "DB Server Baxter Process started successfully\n"
 	return 0
 }
 
@@ -117,7 +123,7 @@ function maintenanceTasks.startBaxterBlotterServer(){
 	# Start Blotter Server
 	#/bin/bash -c '$BAXTER_HOME/bin/blotterserver start'
 	$BAXTER_HOME/bin/blotterserver start
-	utils.logResult "Blotter Server Baxter Process started succesfully\n"
+	utils.logResult "Blotter Server Baxter Process started successfully\n"
 	return 0
 }
 
@@ -131,15 +137,6 @@ function maintenanceTasks.startBaxterBroadcast(){
 	return 0
 }
 
-# Stops Baxter Price Engine Broadcast
-# Usage: maintenanceTasks.stopBaxterBroadcast
-function maintenanceTasks.stopBaxterBroadcast(){
-	# Stop Broadcast Server
-	$BAXTER_HOME/bin/broadcast stop
-	utils.logResult "Broadcast Server Baxter Process stopped succesfully\n"
-	return 0
-}
-
 # Starts Baxter Price Engine Dashboard Web Application
 # Usage: maintenanceTasks.startBaxterDashboard
 function maintenanceTasks.startBaxterDashboard(){
@@ -147,6 +144,24 @@ function maintenanceTasks.startBaxterDashboard(){
 	#/bin/bash -c '$BAXTER_HOME/bin/dashboard start'
 	$BAXTER_HOME/bin/dashboard start
 	utils.logResult "Dashboard Server Baxter Process started succesfully\n"
+	return 0
+}
+
+# Updates Baxter Price Engine DBServer Configuration
+# Usage: maintenanceTasks.updateBaxterDBServer
+function maintenanceTasks.updateBaxterDBServer(){
+	# Update DB Server
+	$BAXTER_HOME/bin/dbserver setup update
+	utils.logResult "DB Server Baxter Updated successfully\n"
+	return 0
+}
+
+# Stops Baxter Price Engine Broadcast
+# Usage: maintenanceTasks.stopBaxterBroadcast
+function maintenanceTasks.stopBaxterBroadcast(){
+	# Stop Broadcast Server
+	$BAXTER_HOME/bin/broadcast stop
+	utils.logResult "Broadcast Server Baxter Process stopped successfully\n"
 	return 0
 }
 
@@ -163,6 +178,7 @@ function maintenanceTasks.startBaxter(){
 		maintenanceTasks.startBaxterDBServer
 	else 
 		utils.logResult "Configuration Server Baxter Process failed to start\n"
+		#utils.logResult "DB Server Baxter failed to Update\n"
 	fi
 	# Start Blotter Server
 	if [[ $? == 0 ]]
@@ -191,6 +207,7 @@ function maintenanceTasks.startBaxter(){
 	if [[ $? == 0 ]]
 	then
 		sleep $BAXTER_START_WAIT_TIME
+		ps -fu baxter | tee --append $EFX_INSTALLER_LOG_FILE
 		utils.logResult "BAXTER STARTED SUCCESSFULLY ###"
 	else 
 		utils.logResult "Dashboard Server Baxter Process failed to start\n"
