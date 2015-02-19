@@ -32,24 +32,24 @@ fg=blue</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>7</x>
-      <y>35</y>
+      <x>21</x>
+      <y>770</y>
       <w>798</w>
-      <h>707</h>
+      <h>168</h>
     </coordinates>
-    <panel_attributes>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts&gt;
-DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts&gt;
-DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts&gt;
-CAPLIN: /local/home/strmbase/EFX-all-Caplin/Linux/scripts&gt; (EFX-all-Caplin -&gt; EFX-all-CI)
-SIT1: /local/home/strmbase/EFX-lp/Linux/scripts&gt; (EFX-lp -&gt; EFX-lp-SIT)
-SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts&gt; (EFX-lp2 -&gt; EFX-lp-SIT2)
+    <panel_attributes>------------------------------------------------------------------------------------------
+/local/home/strmbase/global/scripts
 ------------------------------------------------------------------------------------------
-DEVX:   env_devx.sh
-CAPLIN: env_caplin.sh
-SIT All : env_sit.sh
-SIT2 all : env_sit2_sb7.sh
-SIT lp : env_sit_lp.sh
-SIT2 lp : env_sit_lp.sh 
+DEVX: rv-devX-all
+SIT : rv-sit-all
+SIT2 : rv-sit2-all
+------------------------------------------------------------------------------------------
+BAM
+CITI
+SFWD
+CS
+UBS
+EBS
 bg=default</panel_attributes>
     <additional_attributes/>
   </element>
@@ -188,8 +188,8 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Artefact</type>
     <coordinates>
-      <x>161</x>
-      <y>196</y>
+      <x>217</x>
+      <y>189</y>
       <w>126</w>
       <h>28</h>
     </coordinates>
@@ -200,8 +200,8 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Artefact</type>
     <coordinates>
-      <x>441</x>
-      <y>196</y>
+      <x>497</x>
+      <y>189</y>
       <w>126</w>
       <h>28</h>
     </coordinates>
@@ -212,8 +212,8 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Artefact</type>
     <coordinates>
-      <x>301</x>
-      <y>196</y>
+      <x>357</x>
+      <y>189</y>
       <w>126</w>
       <h>28</h>
     </coordinates>
@@ -738,6 +738,93 @@ bg=cyan</panel_attributes>
       </coordinates>
       <panel_attributes> 
 'eFX-LP-DB</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>21</x>
+      <y>49</y>
+      <w>798</w>
+      <h>707</h>
+    </coordinates>
+    <panel_attributes>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts&gt;
+DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts&gt;
+DEV4: /local/home/strmbase/EFX-dev4/Linux/scripts&gt;
+CAPLIN: /local/home/strmbase/EFX-all-Caplin/Linux/scripts&gt; (EFX-all-Caplin -&gt; EFX-all-CI)
+SIT1: /local/home/strmbase/EFX-lp/Linux/scripts&gt; (EFX-lp -&gt; EFX-lp-SIT)
+SIT2: /local/home/strmbase/EFX-lp2/Linux/scripts&gt; (EFX-lp2 -&gt; EFX-lp-SIT2)
+------------------------------------------------------------------------------------------
+DEVX:   env_devx.sh
+CAPLIN: env_caplin.sh
+SIT All : env_sit.sh
+SIT2 all : env_sit2_sb7.sh
+SIT lp : env_sit_lp.sh
+SIT2 lp : env_sit_lp.sh 
+bg=default</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>343</x>
+      <y>791</y>
+      <w>182</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
+$ rv-XXX-all | grep RAW
+bg=red
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <group>
+    <element>
+      <type>com.umlet.element.custom.SimpleComponent</type>
+      <coordinates>
+        <x>147</x>
+        <y>861</y>
+        <w>553</w>
+        <h>63</h>
+      </coordinates>
+      <panel_attributes>/local/home/strmbase/global/scripts</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>217</x>
+        <y>882</y>
+        <w>126</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>rv-devX-all
+bg=cyan</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>364</x>
+        <y>882</y>
+        <w>126</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>rv-sit-all
+bg=cyan</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>511</x>
+        <y>882</y>
+        <w>126</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>rv-sit2-all
+bg=cyan</panel_attributes>
       <additional_attributes/>
     </element>
   </group>

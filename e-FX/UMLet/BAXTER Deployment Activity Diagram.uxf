@@ -48,8 +48,8 @@ bg=cyan</panel_attributes>
       <h>64</h>
     </coordinates>
     <panel_attributes>SIGN RPM´s
-[baxter@HOST/home/efxbuild/upload_area_sit/Baxter.x.y.z]
-$ rpm -addsign package1 package2.. packageN efx001
+[baxter@HOST/home/efxbuild/upload_area/Baxter.x.y.z]
+$ rpm -addsign *.rpm
 # Pass phrase: efx001 
 bg=pink</panel_attributes>
     <additional_attributes/>

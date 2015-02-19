@@ -23,8 +23,10 @@
 # wget --dns-timeout=seconds, --connect-timeout=seconds, --read-timeout=seconds
 function maintenanceTasks.downloadEFX(){
 	DOWNLOAD_URLS_TMP=DOWNLOAD_URLS.in
-	dLoadUser="moob_juancarlos"
-	dLoadPasswd="pumby1012"
+	baxterArtifactoryUser="moob_juancarlos"
+	baxterArtifactoryPasswd="pumby1012"
+	baxterReleaseUser="santander"
+	baxterReleasePasswd="EuWosDimlew1"
 	# Ask for new Release details
 	declare -x releaseFolder=''
 	utils.ask4SWReleaseDetails releaseFolder
@@ -37,12 +39,12 @@ function maintenanceTasks.downloadEFX(){
 	if [ -z "$1" ]; then
 		echo -n "Please introduce URL to download, Ej.: http://host:port/path > "
 		read downloadURL
-		wget --user="$dLoadUser" --password="$dLoadPasswd" "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
+		wget --user="$baxterArtifactoryUser" --password="$baxterArtifactoryPasswd" "$downloadURL" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
 	else 
 		if [ "$1" == "$DOWNLOAD_URLS_TMP" ]; then
-			wget --user="$dLoadUser" --password="$dLoadPasswd" --input-file="$EFX_INSTALLER_HOME/$DOWNLOAD_URLS_TMP" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
+			wget --user="$baxterArtifactoryUser" --password="$baxterArtifactoryPasswd" --input-file="$EFX_INSTALLER_HOME/$DOWNLOAD_URLS_TMP" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILE
 		else
-		 	wget --user="$dLoadUser" --password="$dLoadPasswd" --background "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILEç
+		 	wget --user="$baxterArtifactoryUser" --password="$baxterArtifactoryPasswd" --background "$1" 2>&1 | tee -a $EFX_INSTALLER_LOG_FILEç
 		fi 	
 	fi 
 	OUT=$?
@@ -59,28 +61,21 @@ function maintenanceTasks.downloadEFX(){
 function maintenanceTasks.startSimulationPoints(){
 	#ssh -OPTIONS -p SSH_PORT user@remote_server "remote_command1; remote_command2; remote_script.sh" 
 	#ssh strmbase@lnx-efxd38 /dev/shm/d3data/startServer.sh.NDF
-	declare -x allowedHost=${ENV_MACHINES_EFXD[38]}
-	echo -n "hostname: $(hostname), allowedHost: $allowedHost"
-	if  [ "$(hostname)" == "$allowedHost" ]; then
-		#kill an existing process
-		declare -i pPid=$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}')
-		if [ ! -z "$pPid" ]; then
-			utils.logResult "Killing LP Points Simulation Process: $pPid.."
-			kill "$pPid"
-			#sleep 2
-			if [ $? -eq 0 ]; then
-				utils.logResult "LP Points Simulation Process: $pPid Killed successfully"
-			else 
-				utils.logResult "LP Points Simulation Process: $pPid failed to be Killed"
-			fi
-		fi
+	ENV_MACHINES_ALLOWED[0]=${ENV_MACHINES_EFXD[38]}
+	utils.isAllowedHost hostAllowed
+	ENV_MACHINES_ALLOWED=()	
+	if  [ $hostAllowed = true ]; then
+		# kill existing processes
+		declare -i pPid1=$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}')
+		declare -i pPid2=$(ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print $2}')
+		kill -9 "$pPid1 $pPid2"
+		utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Killed successfully"
+		# start it
 		pushd "/dev/shm/d3data"
-		#./startServer.sh.NDF
+		./startServer.sh.NDF
+		utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Started successfully"
 		popd
-	else
-	 	utils.logResult "Sorry you can only execute this functionality from Host: $allowedHost"
-		exit $ERROR_UNAUTHORIZED
-	fi		
+	fi	
 }
 
 # Find log files bigger than 2GB
@@ -223,4 +218,61 @@ function maintenanceTasks.restartBaxter(){
 	 maintenanceTasks.stopBaxter
 	 # Start processes now
 	 maintenanceTasks.startBaxter
+}
+
+# Stops Process
+# Usage: maintenanceTasks.stopProcess
+function maintenanceTasks.stopProcess(){
+	 #Find the machine where the process runs
+	 utils.getTargetMachine 
+	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
+		 # Stop process now
+		 # ./$1 stop
+		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
+	 else
+	 	utils.logResult "Sorry you must stop the Process: $TARGET_PROCESS in Machine: $targetMachine"	 
+	 fi
+}
+
+# Starts Process
+# Usage: maintenanceTasks.startProcess
+function maintenanceTasks.startProcess(){
+	 #Find the machine where the process runs
+	 utils.getTargetMachine 
+	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
+		 # Start process now
+		 #./$1 start
+		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
+	 else
+	 	utils.logResult "Sorry you must start the Process: $TARGET_PROCESS in Machine: $targetMachine"	 
+	 fi
+}
+
+
+# Asks status for Process
+# Usage: maintenanceTasks.showProcess
+function maintenanceTasks.showProcess(){
+	 #Find the machine where the process runs
+	 utils.getTargetMachine 
+	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
+		 # Show process now
+		 #./$1 show
+		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
+	 else
+	 	utils.logResult "Sorry you must show the Process: $TARGET_PROCESS in Machine: $targetMachine"	 
+	 fi
+}
+
+# Asks status for Process
+# Usage: maintenanceTasks.signRPMs
+function maintenanceTasks.signRPMs(){
+	# Ask for new Release details
+	declare -x releaseFolder=''
+	utils.ask4SWReleaseDetails releaseFolder
+	# Sign RPMs
+	pushd "$releaseFolder"
+	rpmsToSign=$(ls | grep rpm | awk '{ ORS=" "; print; }')
+	echo -n "$rpmsToSign"
+	$EFX_INSTALLER_HOME/rpmSign.exp $rpmsToSign | tee --append $EFX_INSTALLER_LOG_FILE
+	popd
 }

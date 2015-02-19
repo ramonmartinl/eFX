@@ -59,6 +59,28 @@ function utils.executeAsStreambase(){
 	fi
 }
 
+# Checks if is allowed to operate in a Host Machine
+# Usage: utils.isAllowedHost $1
+# $1: variable to evaluate
+function utils.isAllowedHost(){
+	declare -x hostMatched=false
+	declare -x allowedHost=''
+	count=${#ENV_MACHINES_ALLOWED[@]}; #echo "SIZE: $count"
+	for ((i=0; i<$count; i++))
+	do
+		allowedHost=${ENV_MACHINES_ALLOWED[i]}
+		#echo -n "hostname: $(hostname), allowedHost: $allowedHost"
+		if  [ "$(hostname)" == "$allowedHost" ]; then
+			hostMatched=true
+		fi		
+	done
+	eval "$1='$hostMatched'"
+	if [ $hostMatched = false ]; then
+		utils.logResult "Sorry you can only execute this functionality from the following Hosts: ${ENV_MACHINES_ALLOWED[*]}"
+		exit $ERROR_UNAUTHORIZED
+	fi
+}
+
 # Create new Release Folder
 # Usage: utils.createNewFolder $1
 # $1: RELEASE_FOLDER
@@ -88,37 +110,30 @@ function utils.ask4SWReleaseDetails(){
 
 # Gets the machine that runs a service in deployment environment
 # http://stackoverflow.com/questions/16487258/how-to-declare-2d-array-in-bash
-# Usage: utils.getMachine $1 $2
-# $1: Service
-# $1: Environment
-function utils.getMachineFromDeployEnvConf(){
+# Usage: utils.getTargetMachine
+function utils.getTargetMachine(){
 	# Asks for a Process
 	readProccess
 	# Ask for a Deployment Environment
 	readDeploymentEnvironment
 
-	TARGET_MACHINE=""
-	TARGET_PORT=""
-	  
 	# Loop and print it.  Using offset and length to extract values
 	count=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}; #echo "SIZE: $count"
 	for ((i=0; i<$count; i++))
 	do
-	  declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS_CONF[i]}
-	  #echo ${#DEPLOY_ENV[*]}
-	  read -a DEPLOYMENT_ENVIRONMENT <<< "${!DEPLOY_ENV[0]}"
-	  ENV=${DEPLOYMENT_ENVIRONMENT[0]}
-	  PROCESS=${DEPLOYMENT_ENVIRONMENT[1]}
-	  PORT=${DEPLOYMENT_ENVIRONMENT[2]}
-	  HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
-	  #echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, PORT: $PORT, HOST: $HOST_MACHINE"
-	  if [ "$PROCESS" == "${ENV_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
-	  	TARGET_MACHINE="$HOST_MACHINE"
-	  	TARGET_PORT="$PORT"
-	  fi
-	done  
+		declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS_CONF[i]}
+		#echo ${#DEPLOY_ENV[*]}
+		read -a DEPLOYMENT_ENVIRONMENT <<< "${!DEPLOY_ENV[0]}"
+		ENV=${DEPLOYMENT_ENVIRONMENT[0]}
+		PROCESS=${DEPLOYMENT_ENVIRONMENT[1]}
+		PORT=${DEPLOYMENT_ENVIRONMENT[2]}
+		HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
+		echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, PORT: $PORT, HOST: $HOST_MACHINE"
+		if [ "$PROCESS" == "${ENV_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
+			TARGET_PROCESS="$PROCESS"; TARGET_ENV="$ENV"; TARGET_MACHINE="$HOST_MACHINE";TARGET_PORT="$PORT"
+		fi
+	done
 	utils.logResult "${ENV_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
-	#return $TARGET_MACHINE
 }
 
 # Asks for a Process

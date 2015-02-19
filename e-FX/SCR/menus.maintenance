@@ -22,6 +22,10 @@ showMaintenanceTasksMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Download Software as User: $USER_EFXBUILD in Host: ${ENV_MACHINES_SPECIAL[0]} ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 4)${FMT_MENU} Check Machines ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 5)${FMT_MENU} Find Big Log files ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 6)${FMT_MENU} Stop an EFX Process ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 7)${FMT_MENU} Start an EFX Process ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Show an EFX Process ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 9)${FMT_MENU} Sign RPMs ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_maintenance_tasks
@@ -64,7 +68,7 @@ function listenMaintenanceTasksMenu(){
 	        4) clear
 	        # CHECK MACHINES
 	            option_picked_identified "you chose to Check Machines"
-	        	utils.executeAsBuild utils.getMachineFromDeployEnvConf 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.executeAsBuild utils.getTargetMachine 2>>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
@@ -76,7 +80,39 @@ function listenMaintenanceTasksMenu(){
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
-	                    
+	            	            	               		        
+	        6) clear
+	        # STOP PROCESS
+	            option_picked_identified "you chose to Stop an EFX Process"
+	        	utils.executeAsStreambase maintenanceTasks.stopProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
+	            showMaintenanceTasksMenu
+	            ;;
+	          	            	            	               		        
+	        7) clear
+	        # START PROCESS
+	            option_picked_identified "you chose to Start an EFX Process"
+	        	utils.executeAsStreambase maintenanceTasks.startProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
+	            showMaintenanceTasksMenu
+	            ;;
+	            	            	            	               		        
+	        8) clear
+	        # SHOW PROCESS
+	            option_picked_identified "you chose to Show an EFX Process"
+	        	utils.executeAsStreambase maintenanceTasks.showProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
+	            showMaintenanceTasksMenu
+	            ;;
+	          	            	            	            	               		        
+	        9) clear
+	        # SIGN RPMs
+	            option_picked_identified "you chose to Sign RPMs"
+	        	maintenanceTasks.signRPMs 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
+	            showMaintenanceTasksMenu
+	            ;;
+	                        
 	        x) clear
 	        	exit 0
 	        	;;
