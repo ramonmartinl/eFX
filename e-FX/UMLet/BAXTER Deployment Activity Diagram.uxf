@@ -134,7 +134,7 @@ bg=pink</panel_attributes>
       <h>48</h>
     </coordinates>
     <panel_attributes>CHANGE TRADING LEADERSHIP
-tradingLeaderShip promote 1
+./tradingLeadership.sh promote 1
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
@@ -517,7 +517,7 @@ bg=pink</panel_attributes>
       <h>72</h>
     </coordinates>
     <panel_attributes>CHECK CORRECT OPERATION IN USER INTERFACE
-http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT1)
+http://lnx-efxd69.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT1)
 http://lnx-efxd54.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT2)
 * Usr: juanc Passwd: pumby1012
 bg=cyan</panel_attributes>
