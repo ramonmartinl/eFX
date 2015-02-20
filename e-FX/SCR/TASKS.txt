@@ -10,7 +10,11 @@ Añadir el Diagrama de Actividades de Deployment de Caplin
 #Añadir el Entorno del Dot Dashboard (Dashboard.bat y Dashboard.exe.config)
 Añadir la fecha al archivo de log
 Automatizar la parada de los servicios de Baxter
-#Añadir la funcionlidad de bajar Release  al script con Credenciales y timeout
+Añadir los demás diagramas despliegue de los demás entornos
+Añadir la funcionalidad de borrar logs de Baxter al script
+Añadir la funcionalidad de arrancar puntos al script
+Añadir la funcionalidad de cambiar el fichero de puntos en el script
+Añadir la funcionlidad de bajar Release  al script con Credenciales y timeout
 --user 	--password --background --timeout --input-file --force-html --base=URL
 
 # Añadir SSH
@@ -19,5 +23,5 @@ http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to
 
 #Añadir la funcionalidad de borrar logs al script
 find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
-#Añadir la funcionalidad de arrancar puntos al script
-#Añadir los demás diagramas despliegue de los demás entornos
+
+#Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos

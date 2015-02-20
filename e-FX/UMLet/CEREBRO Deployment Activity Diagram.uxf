@@ -16,7 +16,7 @@
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
       <x>175</x>
-      <y>896</y>
+      <y>994</y>
       <w>14</w>
       <h>14</h>
     </coordinates>
@@ -140,7 +140,7 @@ bg=pink</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>140</x>
-      <y>707</y>
+      <y>798</y>
       <w>266</w>
       <h>35</h>
     </coordinates>
@@ -253,12 +253,12 @@ bg=green</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>161</x>
-      <y>721</y>
+      <y>812</y>
       <w>34</w>
-      <h>62</h>
+      <h>69</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>21;49;21;21</additional_attributes>
+    <additional_attributes>21;56;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -325,7 +325,7 @@ bg=yellow</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>140</x>
-      <y>833</y>
+      <y>931</y>
       <w>266</w>
       <h>35</h>
     </coordinates>
@@ -337,7 +337,7 @@ bg=cyan</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>140</x>
-      <y>770</y>
+      <y>868</y>
       <w>525</w>
       <h>35</h>
     </coordinates>
@@ -351,7 +351,7 @@ bg=cyan</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>161</x>
-      <y>784</y>
+      <y>882</y>
       <w>34</w>
       <h>62</h>
     </coordinates>
@@ -362,11 +362,37 @@ bg=cyan</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>161</x>
-      <y>847</y>
+      <y>945</y>
       <w>34</w>
       <h>62</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>21;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>140</x>
+      <y>707</y>
+      <w>420</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>CHECK CORRECT OPERATION IN USER INTERFACE
+http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT1)
+http://lnx-efxd54.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT2)
+* Usr: juanc Passwd: pumby1012
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>161</x>
+      <y>742</y>
+      <w>34</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>21;56;21;21</additional_attributes>
   </element>
 </diagram>

@@ -78,146 +78,31 @@ function maintenanceTasks.startSimulationPoints(){
 	fi	
 }
 
+# Change LP Points Simulation File
+# Usage: maintenanceTasks.changeSimulationPointsFile
+# Tips: REMEMBER juancp.awk file must be Changed first
+function maintenanceTasks.changeSimulationPointsFile(){
+	ENV_MACHINES_ALLOWED[0]=${ENV_MACHINES_EFXD[38]}
+	utils.isAllowedHost hostAllowed
+	ENV_MACHINES_ALLOWED=()	
+	if  [ $hostAllowed = true ]; then
+		utils.logResult "REMEMBER: juancp.awk file must be Changed first"
+		declare -x now=$(date +"%Y-%m-%d-%H:%M:%S")
+		# Backup newDataNDF file
+		pushd "/dev/shm/d3data/capture/demo"
+		cp newDataNDF newDataNDF.$now.bak
+		# Transform the Prices file
+		awk -f juancp.awk newDataNDF
+		cp newDataNDF.new newDataNDF
+		popd
+		utils.logResult "LP Points Simulation File : Changed successfully"
+	fi	
+}
+
 # Find log files bigger than 2GB
 # Usage: maintenanceTasks.findBigLogs
 function maintenanceTasks.findBigLogs(){
 	utils.logResult "$(find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr)"
-}
-
-# Stops Baxter
-# Usage: maintenanceTasks.stopBaxter
-function maintenanceTasks.stopBaxter(){
-	# Stop processes now
-	 kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`
-	 #wait
-	utils.logResult "BAXTER STOPPED SUCCESSFULLY ###"
-}
-
-# Starts Baxter Configuration Server
-# Usage: maintenanceTasks.startBaxterConfigurationServer
-function maintenanceTasks.startBaxterConfigurationServer(){
-	# Start Configuration Server
-	$BAXTER_HOME/bin/start-configuration-server --daemon &
-	utils.logResult "Configuration Server Baxter Process started successfully\n"
-	return 0
-}
-
-# Starts Baxter Price Engine DBServer
-# Usage: maintenanceTasks.startBaxterDBServer
-function maintenanceTasks.startBaxterDBServer(){
-	# Start DB Server
-	#/bin/bash -c '$BAXTER_HOME/bin/dbserver start'
-	$BAXTER_HOME/bin/dbserver start
-	utils.logResult "DB Server Baxter Process started successfully\n"
-	return 0
-}
-
-# Starts Baxter Blotter Server
-# Usage: maintenanceTasks.startBaxterBlotterServer
-function maintenanceTasks.startBaxterBlotterServer(){
-	# Start Blotter Server
-	#/bin/bash -c '$BAXTER_HOME/bin/blotterserver start'
-	$BAXTER_HOME/bin/blotterserver start
-	utils.logResult "Blotter Server Baxter Process started successfully\n"
-	return 0
-}
-
-# Starts Baxter Price Engine Broadcast
-# Usage: maintenanceTasks.startBaxterBroadcast
-function maintenanceTasks.startBaxterBroadcast(){
-	# Start Broadcast Server
-	#/bin/bash -c '$BAXTER_HOME/bin/broadcast start'
-	$BAXTER_HOME/bin/broadcast start
-	utils.logResult "Broadcast Server Baxter Process started succesfully\n"
-	return 0
-}
-
-# Starts Baxter Price Engine Dashboard Web Application
-# Usage: maintenanceTasks.startBaxterDashboard
-function maintenanceTasks.startBaxterDashboard(){
-	# Start Dashboard Server
-	#/bin/bash -c '$BAXTER_HOME/bin/dashboard start'
-	$BAXTER_HOME/bin/dashboard start
-	utils.logResult "Dashboard Server Baxter Process started succesfully\n"
-	return 0
-}
-
-# Updates Baxter Price Engine DBServer Configuration
-# Usage: maintenanceTasks.updateBaxterDBServer
-function maintenanceTasks.updateBaxterDBServer(){
-	# Update DB Server
-	$BAXTER_HOME/bin/dbserver setup update
-	utils.logResult "DB Server Baxter Updated successfully\n"
-	return 0
-}
-
-# Stops Baxter Price Engine Broadcast
-# Usage: maintenanceTasks.stopBaxterBroadcast
-function maintenanceTasks.stopBaxterBroadcast(){
-	# Stop Broadcast Server
-	$BAXTER_HOME/bin/broadcast stop
-	utils.logResult "Broadcast Server Baxter Process stopped successfully\n"
-	return 0
-}
-
-# Starts Baxter
-# Usage: maintenanceTasks.startBaxter
-function maintenanceTasks.startBaxter(){
-	BAXTER_START_WAIT_TIME=15
-	# Start Configuration Server
-	maintenanceTasks.startBaxterConfigurationServer
-	# Start DB Server
-	if [[ $? == 0 ]]
-	then
-		sleep $BAXTER_START_WAIT_TIME
-		maintenanceTasks.startBaxterDBServer
-	else 
-		utils.logResult "Configuration Server Baxter Process failed to start\n"
-		#utils.logResult "DB Server Baxter failed to Update\n"
-	fi
-	# Start Blotter Server
-	if [[ $? == 0 ]]
-	then
-		sleep $BAXTER_START_WAIT_TIME
-		maintenanceTasks.startBaxterBlotterServer
-	else 
-		utils.logResult "DB Server Baxter Process failed to start\n"
-	fi
-	# Start Broadcast Server
-	if [[ $? == 0 ]]
-	then
-		sleep $BAXTER_START_WAIT_TIME
-		maintenanceTasks.startBaxterBroadcast
-	else 
-		utils.logResult "Blotter Server Baxter Process failed to start\n"
-	fi
-	# Start Dashboard Server
-	if [[ $? == 0 ]]
-	then
-		sleep $BAXTER_START_WAIT_TIME
-		maintenanceTasks.startBaxterDashboard
-	else 
-		utils.logResult "Broadcast Server Baxter Process failed to start\n"
-	fi
-	if [[ $? == 0 ]]
-	then
-		sleep $BAXTER_START_WAIT_TIME
-		ps -fu baxter | tee --append $EFX_INSTALLER_LOG_FILE
-		utils.logResult "BAXTER STARTED SUCCESSFULLY ###"
-	else 
-		utils.logResult "Dashboard Server Baxter Process failed to start\n"
-		utils.logResult "BAXTER FAILED TO START ###"
-	fi
-	#wait
-}
-
-# Restarts Baxter
-# Usage: maintenanceTasks.restartBaxter
-function maintenanceTasks.restartBaxter(){
-	 # Stop processes now
-	 maintenanceTasks.stopBaxter
-	 # Start processes now
-	 maintenanceTasks.startBaxter
 }
 
 # Stops Process

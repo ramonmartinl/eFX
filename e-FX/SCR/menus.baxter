@@ -44,7 +44,7 @@ function listenBaxterTasksMenu(){
 	        1) clear
 	        # STOP BAXTER
 	            option_picked_identified "you chose to Stop All Baxter"
-	            utils.executeAsBaxter maintenanceTasks.stopBaxter 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.stopBaxter 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -52,7 +52,7 @@ function listenBaxterTasksMenu(){
 	        2) clear
 	        # START BAXTER Configuration Server
 	            option_picked_identified "you chose to Start Baxter Configuration Server"
-	            utils.executeAsBaxter maintenanceTasks.startBaxterConfigurationServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.startBaxterConfigurationServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -60,7 +60,7 @@ function listenBaxterTasksMenu(){
 	        3) clear
 	        # START BAXTER Price Engine DBServer
 	            option_picked_identified "you chose to Start Baxter Price Engine DBServer"
-	            utils.executeAsBaxter maintenanceTasks.startBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.startBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -68,7 +68,7 @@ function listenBaxterTasksMenu(){
 	        4) clear
 	        # START BAXTER Blotter Server
 	            option_picked_identified "you chose to Start Baxter Blotter Server"
-	            utils.executeAsBaxter maintenanceTasks.startBaxterBlotterServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.startBaxterBlotterServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -76,7 +76,7 @@ function listenBaxterTasksMenu(){
 	        5) clear
 	        # START BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Start Baxter Price Engine Broadcast"
-	            utils.executeAsBaxter maintenanceTasks.startBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.startBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -84,7 +84,7 @@ function listenBaxterTasksMenu(){
 	        6) clear
 	        # START BAXTER Price Engine Dashboard Web Application
 	            option_picked_identified "you chose to Start Baxter Price Engine Dashboard Web Application"
-	            utils.executeAsBaxter maintenanceTasks.startBaxterDashboard 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.startBaxterDashboard 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -92,7 +92,7 @@ function listenBaxterTasksMenu(){
 	        7) clear
 	        # RESTART BAXTER
 	            option_picked_identified "you chose to Restart All Baxter"
-	            utils.executeAsBaxter maintenanceTasks.restartBaxter 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.restartBaxter 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -100,7 +100,7 @@ function listenBaxterTasksMenu(){
 	        8) clear
 	        # STOP BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Update Baxter Price Engine DBServer"
-	            utils.executeAsBaxter maintenanceTasks.updateBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.updateBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;
@@ -108,7 +108,7 @@ function listenBaxterTasksMenu(){
 	        9) clear
 	        # STOP BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Stop Baxter Price Engine Broadcast"
-	            utils.executeAsBaxter maintenanceTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
+	            utils.executeAsBaxter baxterTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;

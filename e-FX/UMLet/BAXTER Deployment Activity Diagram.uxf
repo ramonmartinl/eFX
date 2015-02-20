@@ -78,7 +78,7 @@ bg=red</panel_attributes>
     <panel_attributes>BACKUP CONFIGURATION FILES &amp; FOLDERS
 [baxter@HOST /opt/baxter/webpages/dashboard]
 $cp config.cfg /opt/baxter/bak/config.cfg
-$cp -rf locale /opt/baxter/bak/locale
+$cp -rf locale /opt/baxter/bak/
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
@@ -148,7 +148,7 @@ bg=pink</panel_attributes>
     </coordinates>
     <panel_attributes>INSTALL RPM´s IN MACHINES WHERE Adaxter, RFQAdaxter, Trading ARE RUNNING
 [USER@HOST /home/efxbuild/upload_area/Baxter.x.y.z]
-$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum [install/update] PACKAGE.X.Y.Z.rpm
+$ /opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum update baxter*.rpm
 $ rpm -qa | grep -i baxter | grep -i x.y.z
 # baxterpe-server-license-x.y.z.noarch.rpm 
 # baxter-price-engine-om-x.y.z.rpm
@@ -158,8 +158,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>392</x>
-      <y>1088</y>
+      <x>384</x>
+      <y>1184</y>
       <w>312</w>
       <h>48</h>
     </coordinates>
@@ -184,7 +184,7 @@ bg=orange</panel_attributes>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>0</x>
-      <y>1088</y>
+      <y>1184</y>
       <w>272</w>
       <h>40</h>
     </coordinates>
@@ -384,12 +384,12 @@ bg=pink</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>248</x>
-      <y>1080</y>
-      <w>160</w>
+      <y>1176</y>
+      <w>152</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>144;24;24;24</additional_attributes>
+    <additional_attributes>136;24;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -397,16 +397,16 @@ bg=pink</panel_attributes>
       <x>176</x>
       <y>1032</y>
       <w>40</w>
-      <h>72</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;56;24;24</additional_attributes>
+    <additional_attributes>24;48;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
-      <x>648</x>
-      <y>1288</y>
+      <x>640</x>
+      <y>1384</y>
       <w>16</w>
       <h>16</h>
     </coordinates>
@@ -416,8 +416,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>632</x>
-      <y>1112</y>
+      <x>624</x>
+      <y>1208</y>
       <w>40</w>
       <h>72</h>
     </coordinates>
@@ -438,8 +438,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>456</x>
-      <y>1168</y>
+      <x>448</x>
+      <y>1264</y>
       <w>248</w>
       <h>32</h>
     </coordinates>
@@ -451,8 +451,8 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>632</x>
-      <y>1176</y>
+      <x>624</x>
+      <y>1272</y>
       <w>40</w>
       <h>64</h>
     </coordinates>
@@ -462,8 +462,8 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>88</x>
-      <y>1224</y>
+      <x>80</x>
+      <y>1320</y>
       <w>608</w>
       <h>40</h>
     </coordinates>
@@ -475,8 +475,8 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>632</x>
-      <y>1240</y>
+      <x>624</x>
+      <y>1336</y>
       <w>40</w>
       <h>64</h>
     </coordinates>
@@ -507,5 +507,31 @@ bg=cyan</panel_attributes>
 $ unlink log; rmdir log
 bg=pink</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>0</x>
+      <y>1080</y>
+      <w>576</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>CHECK CORRECT OPERATION IN USER INTERFACE
+http://lnx-efxd2.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT1)
+http://lnx-efxd54.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html (SIT2)
+* Usr: juanc Passwd: pumby1012
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>80</x>
+      <y>1128</y>
+      <w>40</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>24;56;24;24</additional_attributes>
   </element>
 </diagram>
