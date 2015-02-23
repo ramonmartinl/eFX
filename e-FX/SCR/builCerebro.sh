@@ -241,11 +241,10 @@ function builCerebro.buildAllLinuxModules(){
 function buildCerebro.build(){
 	#caller 0
 	ask4CerebroReleaseDetails 
-	#editReleaseProperties
 	editReleaseProperties_alt 
 	utils.createNewFolder "$RELEASE_FOLDER"
 	buildApplication
-	wait 
+	#wait 
 	cleanNewReleaseFolder 
 	buildEFXRPMPackages 
 	buildLinuxPMPackages 

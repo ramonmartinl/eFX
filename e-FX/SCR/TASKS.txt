@@ -25,3 +25,4 @@ http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to
 find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
 
 #Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos
+#Revisar la confirmacion del ultimo paso de ask4CerebroReleaseDetails
