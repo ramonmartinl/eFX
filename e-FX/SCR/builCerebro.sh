@@ -242,11 +242,11 @@ function buildCerebro.build(){
 	#caller 0
 	ask4CerebroReleaseDetails 
 	#editReleaseProperties
-	#editReleaseProperties_alt 
-	#utils.createNewFolder "$RELEASE_FOLDER"
-	#buildApplication
+	editReleaseProperties_alt 
+	utils.createNewFolder "$RELEASE_FOLDER"
+	buildApplication
 	wait 
-	#cleanNewReleaseFolder 
+	cleanNewReleaseFolder 
 	buildEFXRPMPackages 
 	buildLinuxPMPackages 
 	uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER

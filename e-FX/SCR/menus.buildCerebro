@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 28/01/2015 
-# Last Modified: 28/01/2015 (ramn.martn)
+# Last Modified: 23/02/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -88,7 +88,124 @@ function listenBuildEFXModulesMenu(){
 	            sleep 2
 	            showBuildEFXModulesMenu
 	            ;;
-	        	        	        
+	        		          	        
+	        4) clear
+	        # BUILD eFX-Adaxter MODULE
+	            option_picked_identified "you chose to Build eFX-Adaxter Module"
+	            echo "eFX-Adaxter" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-Adaxter
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	         	        		          	        
+	        5) clear
+	        # BUILD eFX-Aggregation MODULE
+	            option_picked_identified "you chose to Build eFX-Aggregation Module"
+	            echo "eFX-Aggregation" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-Aggregation
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        	         	        		          	        
+	        6) clear
+	        # BUILD eFX-AutoCM MODULE
+	            option_picked_identified "you chose to Build eFX-AutoCM Module"
+	            echo "eFX-AutoCM" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-AutoCM
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        	        	         	        		          	        
+	        7) clear
+	        # BUILD eFX-Cleansing MODULE
+	            option_picked_identified "you chose to Build eFX-Cleansing Module"
+	            echo "eFX-Cleansing" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-Cleansing
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+				        	        	         	        		          	        
+	        8) clear
+	        # BUILD eFX-CustomerPricing MODULE
+	            option_picked_identified "you chose to Build eFX-CustomerPricing Module"
+	            echo "eFX-CustomerPricing" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-CustomerPricing
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+							        	        	         	        		          	        
+	        9) clear
+	        # BUILD eFX-DashboardBridge MODULE
+	            option_picked_identified "you chose to Build eFX-DashboardBridge Module"
+	            echo "eFX-DashboardBridge" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-DashboardBridge
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        							        	        	         	        		          	        
+	        10) clear
+	        # BUILD eFX-ForwardPricing MODULE
+	            option_picked_identified "you chose to Build eFX-ForwardPricing Module"
+	            echo "eFX-ForwardPricing" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-ForwardPricing
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        	        							        	        	         	        		          	        
+	        11) clear
+	        # BUILD eFX-LP-Citi MODULE
+	            option_picked_identified "you chose to Build eFX-LP-Citi Module"
+	            echo "eFX-LP-Citi" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-Citi
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        	        	        							        	        	         	        		          	        
+	        12) clear
+	        # BUILD eFX-LP-D3 MODULE
+	            option_picked_identified "you chose to Build eFX-LP-D3 Module"
+	            echo "eFX-LP-D3" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-D3
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        	        	        	        							        	        	         	        		          	        
+	        13) clear
+	        # BUILD eFX-LP-D3 MODULE
+	            option_picked_identified "you chose to Build eFX-LP-D3 Module"
+	            echo "eFX-LP-D3" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-D3
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	        	        	        	        	        							        	        	         	        		          	        
+	        13) clear
+	        # BUILD eFX-LP-DB MODULE
+	            option_picked_identified "you chose to Build eFX-LP-DB Module"
+	            echo "eFX-LP-DB" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-DB
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;    
+	        	        	        	        	        	        							        	        	         	        		          	        
+	        14) clear
+	        # BUILD eFX-LP-FIX MODULE
+	            option_picked_identified "you chose to Build eFX-LP-FIX Module"
+	            echo "eFX-LP-FIX" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-FIX
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;; 
+	        	        	        	        	        	        	        							        	        	         	        		          	        
+	        15) clear
+	        # BUILD eFX-LP-GS MODULE
+	            option_picked_identified "you chose to Build eFX-LP-GS Module"
+	            echo "eFX-LP-GS" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-GS
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;; 
+	                                    	            	                               	        
 	        16) clear
 	        # BUILD eFX-LP-MF MODULE
 	            option_picked_identified "you chose to Build eFX-LP-MF Module"
@@ -97,7 +214,34 @@ function listenBuildEFXModulesMenu(){
 	            sleep 2
 	            showBuildEFXModulesMenu
 	            ;;
-	            	        
+	        	                                    	            	                               	        
+	        17) clear
+	        # BUILD eFX-LP-MTI MODULE
+	            option_picked_identified "you chose to Build eFX-LP-MTI Module"
+	            echo "eFX-LP-MTI" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-MTI
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;    
+	        	        	                                    	            	                               	        
+	        18) clear
+	        # BUILD eFX-LP-UBS MODULE
+	            option_picked_identified "you chose to Build eFX-LP-UBS Module"
+	            echo "eFX-LP-UBS" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-LP-UBS
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;; 
+	        	        	        	                                    	            	                               	        
+	        19) clear
+	        # BUILD eFX-Modules MODULE
+	            option_picked_identified "you chose to Build eFX-Modules Module"
+	            echo "eFX-Modules" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-Modules
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;
+	                    	        
 	        20) clear
 	        # BUILD eFX-NewTickStore MODULE
 	            option_picked_identified "you chose to Build eFX-NewTickStore Module"
@@ -106,7 +250,25 @@ function listenBuildEFXModulesMenu(){
 	            sleep 2
 	            showBuildEFXModulesMenu
 	            ;;
-	                  	        
+	        	                    	        
+	        21) clear
+	        # BUILD eFX-Pricetenon MODULE
+	            option_picked_identified "you chose to Build eFX-Pricetenon Module"
+	            echo "eFX-Pricetenon" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-Pricetenon
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;    
+	        	        	                    	        
+	        22) clear
+	        # BUILD eFX-Pricing MODULE
+	            option_picked_identified "you chose to Build eFX-Pricing Module"
+	            echo "eFX-Pricing" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	            builCerebro.buildEFXModule eFX-Pricing
+	            sleep 2
+	            showBuildEFXModulesMenu
+	            ;;  
+	                      	        
 	        23) clear
 	        # BUILD eFX-SB7-Common MODULE
 	            option_picked_identified "you chose to Build eFX-SB7-Common Module"
@@ -115,7 +277,70 @@ function listenBuildEFXModulesMenu(){
 	        	sleep 2
 	        	showBuildEFXModulesMenu
 	            ;;
-	
+	        	                      	        
+	        24) clear
+	        # BUILD eFX-SB7-Parent MODULE
+	            option_picked_identified "you chose to Build eFX-SB7-Parent Module"
+	            echo "eFX-SB7-Parent" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-SB7-Parent
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;;   
+	        	        	                      	        
+	        25) clear
+	        # BUILD eFX-SB7-Tools MODULE
+	            option_picked_identified "you chose to Build eFX-SB7-Tools Module"
+	            echo "eFX-SB7-Tools" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-SB7-Tools
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;; 
+	        	        	        	                      	        
+	        26) clear
+	        # BUILD eFX-TenorService MODULE
+	            option_picked_identified "you chose to Build eFX-TenorService Module"
+	            echo "eFX-TenorService" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-TenorService
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;;   
+	        	        	        	        	                      	        
+	        27) clear
+	        # BUILD eFX-TickStore MODULE
+	            option_picked_identified "you chose to Build eFX-TickStore Module"
+	            echo "eFX-TickStore" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-TickStore
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;;    
+	         	        	        	        	        	                      	        
+	        28) clear
+	        # BUILD eFX-TradeReports MODULE
+	            option_picked_identified "you chose to Build eFX-TradeReports Module"
+	            echo "eFX-TradeReports" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-TradeReports
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;;        
+	       	         	        	        	        	        	                      	        
+	        29) clear
+	        # BUILD eFX-Trading MODULE
+	            option_picked_identified "you chose to Build eFX-Trading Module"
+	            echo "eFX-Trading" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-Trading
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;;   
+	        	       	         	        	        	        	        	                      	        
+	        30) clear
+	        # BUILD eFX-Volatility MODULE
+	            option_picked_identified "you chose to Build eFX-Volatility Module"
+	            echo "eFX-Volatility" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-Volatility
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;;       
+	                
 	        *) clear
 	        	option_picked "Pick an option from the menu";
 	        	showBuildEFXModulesMenu
