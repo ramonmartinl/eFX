@@ -37,7 +37,7 @@ function option_picked_identified(){
     IDENTIFY='\033[01;34;47m' # bold red on green
     RESET='\033[00;00m' # normal white
     MESSAGE=${@:-"${RESET}Error: No message passed"}
-    echo -e "${COLOR}${MESSAGE} in Machine: ${IDENTIFY}$(hostname)${COLOR} as User: ${IDENTIFY}$USER${RESET}"
+    echo -e "${COLOR}${MESSAGE} from Machine: ${IDENTIFY}$(hostname)${COLOR} as User: ${IDENTIFY}$USER${RESET}"
 }
 
 #Main menu

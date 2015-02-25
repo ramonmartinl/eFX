@@ -30,30 +30,6 @@ fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>21</x>
-      <y>770</y>
-      <w>798</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>------------------------------------------------------------------------------------------
-/local/home/strmbase/global/scripts
-------------------------------------------------------------------------------------------
-DEVX: rv-devX-all
-SIT : rv-sit-all
-SIT2 : rv-sit2-all
-------------------------------------------------------------------------------------------
-BAM
-CITI
-SFWD
-CS
-UBS
-EBS
-bg=default</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>com.umlet.element.custom.Artefact</type>
     <coordinates>
       <x>441</x>
@@ -747,7 +723,7 @@ bg=cyan</panel_attributes>
       <x>21</x>
       <y>49</y>
       <w>798</w>
-      <h>707</h>
+      <h>756</h>
     </coordinates>
     <panel_attributes>DEV1: /local/home/strmbase/EFX-dev1/Linux/scripts&gt;
 DEV3: /local/home/strmbase/EFX-dev3/Linux/scripts&gt;
@@ -765,67 +741,141 @@ SIT2 lp : env_sit_lp.sh
 bg=default</panel_attributes>
     <additional_attributes/>
   </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>343</x>
-      <y>791</y>
-      <w>182</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.custom.SimpleComponent</type>
+        <coordinates>
+          <x>147</x>
+          <y>917</y>
+          <w>553</w>
+          <h>63</h>
+        </coordinates>
+        <panel_attributes>/local/home/strmbase/global/scripts</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>217</x>
+          <y>938</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>rv-devX-all
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>364</x>
+          <y>938</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>rv-sit-all
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>511</x>
+          <y>938</y>
+          <w>126</w>
+          <h>28</h>
+        </coordinates>
+        <panel_attributes>rv-sit2-all
+bg=cyan</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.Note</type>
+      <coordinates>
+        <x>343</x>
+        <y>847</y>
+        <w>182</w>
+        <h>42</h>
+      </coordinates>
+      <panel_attributes>[strmbase@lnx-efxd60|lnx-efxd61]
 $ rv-XXX-all | grep RAW
 bg=red
 fg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <group>
-    <element>
-      <type>com.umlet.element.custom.SimpleComponent</type>
-      <coordinates>
-        <x>147</x>
-        <y>861</y>
-        <w>553</w>
-        <h>63</h>
-      </coordinates>
-      <panel_attributes>/local/home/strmbase/global/scripts</panel_attributes>
       <additional_attributes/>
     </element>
     <element>
-      <type>com.umlet.element.custom.Artefact</type>
+      <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>217</x>
-        <y>882</y>
-        <w>126</w>
-        <h>28</h>
+        <x>21</x>
+        <y>826</y>
+        <w>798</w>
+        <h>168</h>
       </coordinates>
-      <panel_attributes>rv-devX-all
-bg=cyan</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>364</x>
-        <y>882</y>
-        <w>126</w>
-        <h>28</h>
-      </coordinates>
-      <panel_attributes>rv-sit-all
-bg=cyan</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.custom.Artefact</type>
-      <coordinates>
-        <x>511</x>
-        <y>882</y>
-        <w>126</w>
-        <h>28</h>
-      </coordinates>
-      <panel_attributes>rv-sit2-all
-bg=cyan</panel_attributes>
+      <panel_attributes>------------------------------------------------------------------------------------------
+/local/home/strmbase/global/scripts
+------------------------------------------------------------------------------------------
+DEVX: rv-devX-all
+SIT : rv-sit-all
+SIT2 : rv-sit2-all
+------------------------------------------------------------------------------------------
+BAM
+CITI
+SFWD
+CS
+UBS
+EBS
+bg=default</panel_attributes>
       <additional_attributes/>
     </element>
   </group>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>56</x>
+      <y>721</y>
+      <w>294</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> 
+'eFX-Trial-lp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Artefact</type>
+    <coordinates>
+      <x>63</x>
+      <y>756</y>
+      <w>112</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>XXXXX
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>154</x>
+      <y>749</y>
+      <w>62</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>21;21;49;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Artefact</type>
+    <coordinates>
+      <x>203</x>
+      <y>756</y>
+      <w>126</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>env_XXXX.sh
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

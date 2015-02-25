@@ -59,14 +59,16 @@ function ask4CerebroReleaseDetails() {
 	        case $opt_fixedVersion in
 	        y) 
 	        # No Fixed Version
-	        	option_picked "you chose to increase Version of generated artifacts"
+	        	option_picked "\nyou chose to increase Version of generated artifacts"
+	        	#sleep 1
 	        	FIXED_VERSION=false
 	        	break
 	        	;;
 	        
 	        n) 
 	        # Fixed Version
-	            option_picked "you chose not to increase Version of generated artifacts"
+	            option_picked "\nyou chose not to increase Version of generated artifacts"
+	            #sleep 1
 	            FIXED_VERSION=true
 	            break
 	            ;;
@@ -89,7 +91,7 @@ function ask4CerebroReleaseDetails() {
 #previousTag=3.4.29
 #commitMsg="[GBM-19970] Cerebro Release 3.4.30"
 #fixedVersion=3.4.33
-function editReleaseProperties() {
+function editReleaseProperties_alt() {
 	sed -i 's\^installDir.*$\installDir='"$EFX_SCRIPTS_FOLDER"'/'"$RELEASE_NUMBER"'\' $EFX_SCRIPTS_FOLDER/release.properties
 	sed -i 's/^devName.*$/devName=SIT1/' $EFX_SCRIPTS_FOLDER/release.properties
 	sed -i 's/^tagName.*$/tagName='"$RELEASE_NUMBER"'/' $EFX_SCRIPTS_FOLDER/release.properties
@@ -103,7 +105,7 @@ function editReleaseProperties() {
 	utils.logResult "release.propeties file changed successfully"
 }
 # Alternative
-function editReleaseProperties_alt() {
+function editReleaseProperties() {
 	echo "installDir=$EFX_SCRIPTS_FOLDER/$RELEASE_NUMBER" >$EFX_SCRIPTS_FOLDER/release.properties
 	echo "branchName=$BRANCH_NAME" >>$EFX_SCRIPTS_FOLDER/release.properties
 	echo "devName=$SIT_ENVIRONMENT" >>$EFX_SCRIPTS_FOLDER/release.properties	
@@ -142,6 +144,14 @@ function buildEFXRPMPackages() {
 	listenBuildEFXModulesMenu
 }
 
+# BUILD RPM PACKAGES with (efx001) Passwd
+function buildEFXTrailPackages() {
+	# Build EFX-Trial-all
+	builCerebro.buildEFXTrialModule all
+	# Build EFX-Trial-lp
+	builCerebro.buildEFXTrialModule lp
+}
+
 # BUILD SHELL SCRIPTS with (efx001) Passwd
 function buildLinuxPMPackages() {
 	# Clear temporal file 4 specifying modules to build
@@ -170,6 +180,13 @@ function buildEFXSB7CommonModulesRPM(){
 	$EFX_INSTALLER_HOME/rpmbuildEFXSB7Common.exp $RELEASE_NUMBER 1 eFX-SB7-Common  | tee --append $EFX_INSTALLER_LOG_FILE
 }
 
+# Build RPM package for an EFX-Trial Module
+# Usage: buildEFXTrialModuleRPM $1
+# $1: Module (all |lp)
+function buildEFXTrialModuleRPM(){
+	$EFX_INSTALLER_HOME/rpmbuildEFXTrial.exp $RELEASE_NUMBER 1 $1  | tee --append $EFX_INSTALLER_LOG_FILE
+}
+
 # Build a RPM package for a Linux Module
 # Usage: buildLinuxModuleRPM $1
 # $1: Module
@@ -182,7 +199,6 @@ function buildLinuxModuleRPM(){
 function buildAllLinuxModulesRPM(){
 	$EFX_INSTALLER_HOME/rpmbuildLinuxAll.exp $RELEASE_NUMBER 1 all  | tee --append $EFX_INSTALLER_LOG_FILE
 }
-
 
 # Builds a EFX Module
 # Usage: builCerebro.buildEFXModule $1
@@ -215,6 +231,17 @@ function builCerebro.buildEFXSB7CommonModules(){
 	popd
 }
 
+# Builds a EFX-Trial Module
+# Usage: builCerebro.buildEFXTrialModule $1
+# $1: Module
+function builCerebro.buildEFXTrialModule(){
+	utils.logResult "Building EFX-Trial-$1 Module for Cerebro.$RELEASE_NUMBER..."
+	pushd $EFX_INSTALLER_FOLDER
+	buildEFXTrialModuleRPM $1
+	logBuildModuleResult $1
+	popd
+}
+
 # Builds a Linux Module
 # Usage: builCerebro.buildLinuxModule $1
 # $1: Module
@@ -240,15 +267,25 @@ function builCerebro.buildAllLinuxModules(){
 # Usage: builCerebro.build
 function buildCerebro.build(){
 	#caller 0
+	# Ask 4 user input to edit release properties
 	ask4CerebroReleaseDetails 
-	editReleaseProperties_alt 
-	utils.createNewFolder "$RELEASE_FOLDER"
-	buildApplication
+	# EDIT 'release.properties' FILE WITH PARAMETERS FOR THE NEW RELEASE
+	#editReleaseProperties
+	# CREATE NEW RELEASE FOLDER
+	#utils.createNewFolder "$RELEASE_FOLDER"
+	# BUILD APPLICATION CODE AND CREATE NEW VERSION BRANCH
+	#buildApplication
 	#wait 
-	cleanNewReleaseFolder 
+	# CLEAN . $ .svn FILES FROM NEW RELEASE FOLDER
+	#cleanNewReleaseFolder 
+	# BUILD EACH AFFECTED EFX MODULE RPM PACKAGE 
 	buildEFXRPMPackages 
-	buildLinuxPMPackages 
-	uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
+	# BUILD EACH AFFECTED LINUX MODULE RPM PACKAGE 
+	#buildLinuxPMPackages 
+	# BUILD EFX TRAIL RPM PACKAGES
+	#buildEFXTrailPackages
+	# UPLOAD RMP PACKAGES TO SATELLITE
+	#uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
 }	
 
 # sends the result of the execution of the last command to log file

@@ -27,6 +27,7 @@ showMaintenanceTasksMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Start an EFX Process ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 9)${FMT_MENU} Show an EFX Process ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 10)${FMT_MENU} Sign RPMs ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 11)${FMT_MENU} Manage Cerebro Process ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_maintenance_tasks
@@ -77,7 +78,7 @@ function listenMaintenanceTasksMenu(){
 	        5) clear
 	        # CHECK MACHINES
 	            option_picked_identified "you chose to Check Machines"
-	        	utils.executeAsBuild utils.getTargetMachine 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.getTargetMachine 2>>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
@@ -121,7 +122,15 @@ function listenMaintenanceTasksMenu(){
 	        	sleep 2
 	            showMaintenanceTasksMenu
 	            ;;
-	                        
+	        	          	            	            	            	               		        
+	        11) clear
+	        # MANAGE CEREBRO PROCESS
+	            option_picked_identified "you chose to Manage a Cerebro Process"
+	        	utils.executeAsBuild maintenanceTasks.manageEFXProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
+	            showMaintenanceTasksMenu
+	            ;;
+	                            
 	        x) clear
 	        	exit 0
 	        	;;
@@ -133,6 +142,74 @@ function listenMaintenanceTasksMenu(){
 	        *) clear
 	        	option_picked "Pick an option from the menu";
 	        	showMainMenu
+	        	;;
+	    	esac
+		fi
+	done
+}
+
+# Menu for EFX Process Actions Tasks
+showEFXProcessActionsMenu(){
+    clear
+    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
+    echo -e "${FMT_MENU}* Baxter --> Maintenance Tasks ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Stop Cerebro Process ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Start Cerebro Process ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Show Cerebro Process ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
+    echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
+    read opt_efx_process_action_tasks
+}
+
+# Read option from Baxter Maintenance Menu
+function listenEFXProcessActionsMenu(){
+	while [ opt_efx_process_action_tasks != '' ]
+	    do
+	    if [[ $opt_efx_process_action_tasks = "" ]]; then 
+	            # Show Maintenance Tasks Menu
+				showMaintenanceTasksMenu
+				listenMaintenanceTasksMenu
+	    else
+	        case $opt_efx_process_action_tasks in
+	        1) clear
+	        # STOP PROCESS
+	            option_picked_identified "you chose to Stop the Process"
+	            #utils.executeAsBaxter baxterTasks.stopBaxter 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 1
+	            maintenanceTasks.stopProcess
+	            showEFXProcessActionsMenu
+	            ;;
+	            	            	        
+	        2) clear
+	        # START PROCESS
+	            option_picked_identified "you chose to Start Baxter the Process"
+	            #utils.executeAsBaxter baxterTasks.startBaxterConfigurationServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 1
+	            maintenanceTasks.startProcess
+	            showEFXProcessActionsMenu
+	            ;;
+	            	            	        
+	        3) clear
+	        # SHOW PROCESS
+	            option_picked_identified "you chose to Show the Process"
+	            #utils.executeAsBaxter baxterTasks.startBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 1
+	            maintenanceTasks.showProcess
+	            showEFXProcessActionsMenu
+	            ;;
+	            
+	        x) clear
+	        	exit 0
+	        	;;
+	
+	        \n) clear
+	        	exit 0
+	        	;;
+	
+	        *) clear
+	        	option_picked "Pick an option from the menu";
+	        	showMaintenanceTasksMenu
 	        	;;
 	    	esac
 		fi

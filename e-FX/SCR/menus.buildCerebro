@@ -66,7 +66,7 @@ function listenBuildEFXModulesMenu(){
 	        # BUILD ALL MODULES
 	        	option_picked_identified "you chose to Build All eFX Modules"
 	        	echo "All" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
-	        	builCerebro.buildAllEFXModules
+	        	builCerebro.buildEFXModule all
 	        	sleep 2
 	        	break
 	        	;;
@@ -273,7 +273,7 @@ function listenBuildEFXModulesMenu(){
 	        # BUILD eFX-SB7-Common MODULE
 	            option_picked_identified "you chose to Build eFX-SB7-Common Module"
 	            echo "eFX-SB7-Common" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
-	        	builCerebro.buildEFXSB7CommonModules
+	        	builCerebro.buildEFXModule eFX-SB7-Common
 	        	sleep 2
 	        	showBuildEFXModulesMenu
 	            ;;
@@ -340,7 +340,7 @@ function listenBuildEFXModulesMenu(){
 	        	sleep 2
 	        	showBuildEFXModulesMenu 
 	            ;;       
-	                
+	                   
 	        *) clear
 	        	option_picked "Pick an option from the menu";
 	        	showBuildEFXModulesMenu

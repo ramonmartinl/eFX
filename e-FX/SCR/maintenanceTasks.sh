@@ -11,10 +11,7 @@
 #
 ###############################################################################
 
-# Añadir SSH
-#Start LP Points Simulation in 'lnx-efxd38' host as 'strmbase' user
-#http://www.linuxproblem.org/art_9.html
-#http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
+
 
 # Downloads software from URL
 # Usage: maintenanceTasks.downloadEFX $1
@@ -105,17 +102,181 @@ function maintenanceTasks.findBigLogs(){
 	utils.logResult "$(find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr)"
 }
 
+# Stars/Stops/Manages Processes
+# Usage: maintenanceTasks.manageEFXProcess
+function maintenanceTasks.manageEFXProcess(){
+	utils.getTargetMachine
+	echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
+	echo "Start[t], Stop[p], Show[w] >"
+	read opt_efx_process_action
+	case $opt_efx_process_action in
+	        
+	        t)
+	        # START PROCESS
+	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
+	        	maintenanceTasks.startProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	#showMaintenanceTasksMenu
+	        	;;
+	        	
+	        p)
+	        # STOP PROCESS
+	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
+	        	maintenanceTasks.stopProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	#showMaintenanceTasksMenu
+	        	;;
+	        	
+	       	w)
+	        # SHOW PROCESS
+	        	option_picked_identified "you chose to Show $TARGET_PROCESS Process"
+	        	maintenanceTasks.showProcess 2>>$EFX_INSTALLER_ERROR_FILE
+	        	#showMaintenanceTasksMenu
+	        	;; 		
+	esac        	
+	#ssh strmbase@"$TARGET_MACHINE" ls;
+}
+
+# Gets EFX processes related scripts 
+# Usage: maintenanceTasks.getTargetScripts $1 $2
+# $1: $TARGET_PROCESS
+# $2: $TARGET_ENV
+function maintenanceTasks.getTargetScripts(){
+
+	for (( i = 0; i < ${#ENV_PROCESSES[@]}; i++ )); do
+	   if [ "${ENV_PROCESSES[$i]}" = "$TARGET_PROCESS" ]; then
+	       position=$i;
+	   fi
+	done
+	case $position in
+	        
+	        1) 
+	        	TARGET_SH_SCRIPT=adafix
+	        	;;
+	        	
+	        2) 
+	        	TARGET_SH_SCRIPT=adartenon
+	        	;;
+	        	
+	       	3) 
+	       		TARGET_SH_SCRIPT=adaxter; 
+	       		TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;	
+	       	        	
+	        4) 
+	        	TARGET_SH_SCRIPT=agg
+	        	;;
+	        	        	
+	        5) 
+	        	TARGET_SH_SCRIPT=autoCMService
+	        	;;
+	        	        	
+	        6) 
+	        	TARGET_SH_SCRIPT=cleansing
+	        	;;		
+	        	        	        	
+	        7) 
+	        	TARGET_SH_SCRIPT=customerPricing; 
+	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;
+	        	        	        	
+	        8) 
+	        	TARGET_SH_SCRIPT=DashboardBridge
+	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;
+	        		        	        	        	
+	        9) 
+	        	TARGET_SH_SCRIPT=fwdPricing
+	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;	
+	        	        	        	
+	        10) 
+	        	TARGET_SH_SCRIPT=pricetenon
+	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;	
+	        		        	        	
+	        11) 
+	        	TARGET_SH_SCRIPT=corepricing
+	        	;;	
+	        		        	        	
+	        12) 
+	        	TARGET_SH_SCRIPT=tenorService
+	        	;;	
+	        		        		        	        	
+	        13) 
+	        	TARGET_SH_SCRIPT=newTickStore
+	        	;;
+	        		        		        	        	
+	        14) 
+	        	TARGET_SH_SCRIPT=tradeReports
+	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;
+	        		        		        	        	
+	        15) 
+	        	TARGET_SH_SCRIPT=trading
+	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;
+	        		        		        	        	
+	        16) 
+	        	TARGET_SH_SCRIPT=VOLHandler
+	        	;;
+	        		        		        	        	
+	        17) 
+	        	TARGET_SH_SCRIPT=CitiCombined
+	        	;;
+	        		        		        	        	
+	        18) 
+	        	TARGET_SH_SCRIPT=SFWDHandler.sh
+	        	;;
+	        		        		        	        	
+	        19) 
+	        	TARGET_SH_SCRIPT=DBCombined
+	        	;;
+	        		        		        	        	
+	        20) 
+	        	TARGET_SH_SCRIPT=DBFIX-Classic
+	        	;;
+	        		        		        	        	
+	        21) 
+	        	TARGET_SH_SCRIPT=DBFIX-Rapid
+	        	;;
+	        		        		        	        	
+	        22) 
+	        	TARGET_SH_SCRIPT=FIXCombined
+	        	;;
+	        		        		        	        	
+	        23) 
+	        	TARGET_SH_SCRIPT=GSCombined
+	        	;;
+	        		        		        		        	        	
+	        24) 
+	        	TARGET_SH_SCRIPT=MFHandler.sh
+	        	;;	
+	        	        		        		        	        	
+	        25) 
+	        	TARGET_SH_SCRIPT=TIHandler.sh
+	        	;;
+	        		        		        		        	        	
+	        26) 
+	        	TARGET_SH_SCRIPT=UBSCombined
+	        	;;		
+	        		        		        		        	        	
+	 esac 
+}
+
 # Stops Process
 # Usage: maintenanceTasks.stopProcess
 function maintenanceTasks.stopProcess(){
 	 #Find the machine where the process runs
-	 utils.getTargetMachine 
+	 #utils.getTargetMachine 
 	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
 		 # Stop process now
 		 # ./$1 stop
 		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
 	 else
-	 	utils.logResult "Sorry you must stop the Process: $TARGET_PROCESS in Machine: $targetMachine"	 
+	 	#utils.logResult "Sorry you must stop the Process:$TARGET_PROCESS in Machine:$targetMachine"
+	 	# ssh strmbase@"$TARGET_MACHINE" $1 stop
+	 	maintenanceTasks.getTargetScripts; echo "$TARGET_SH_SCRIPT"
+	 	ssh strmbase@"$TARGET_MACHINE" whoami;
+	 	utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE stopped"
 	 fi
 }
 
@@ -123,13 +284,16 @@ function maintenanceTasks.stopProcess(){
 # Usage: maintenanceTasks.startProcess
 function maintenanceTasks.startProcess(){
 	 #Find the machine where the process runs
-	 utils.getTargetMachine 
+	 #utils.getTargetMachine 
 	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
 		 # Start process now
 		 #./$1 start
-		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
+		 utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE started"
 	 else
-	 	utils.logResult "Sorry you must start the Process: $TARGET_PROCESS in Machine: $targetMachine"	 
+	 	# ssh strmbase@"$TARGET_MACHINE" $1 start
+	 	maintenanceTasks.getTargetScripts; echo "$TARGET_SH_SCRIPT"
+	 	ssh strmbase@"$TARGET_MACHINE" whoami;
+	 	utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE started"	 
 	 fi
 }
 
@@ -138,13 +302,16 @@ function maintenanceTasks.startProcess(){
 # Usage: maintenanceTasks.showProcess
 function maintenanceTasks.showProcess(){
 	 #Find the machine where the process runs
-	 utils.getTargetMachine 
+	 #utils.getTargetMachine 
 	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
 		 # Show process now
 		 #./$1 show
-		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
+		 utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE showed"
 	 else
-	 	utils.logResult "Sorry you must show the Process: $TARGET_PROCESS in Machine: $targetMachine"	 
+	 	# ssh strmbase@"$TARGET_MACHINE" $1 show
+	 	maintenanceTasks.getTargetScripts; echo "$TARGET_SH_SCRIPT"
+	 	ssh strmbase@"$TARGET_MACHINE" whoami;
+	 	utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE showed"	 
 	 fi
 }
 
