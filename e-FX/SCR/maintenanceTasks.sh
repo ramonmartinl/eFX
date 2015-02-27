@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 23/01/2015 
-# Last Modified: 05/02/2015 (ramn.martn)
+# Last Modified: 26/02/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -114,35 +114,55 @@ function maintenanceTasks.manageEFXProcess(){
 	        t)
 	        # START PROCESS
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
-	        	maintenanceTasks.startProcess 2>>$EFX_INSTALLER_ERROR_FILE
-	        	#showMaintenanceTasksMenu
+	        	maintenanceTasks.operateEFXProcess start 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
 	        	;;
 	        	
 	        p)
 	        # STOP PROCESS
 	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
-	        	maintenanceTasks.stopProcess 2>>$EFX_INSTALLER_ERROR_FILE
-	        	#showMaintenanceTasksMenu
+	        	maintenanceTasks.operateEFXProcess stop 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
 	        	;;
 	        	
 	       	w)
 	        # SHOW PROCESS
 	        	option_picked_identified "you chose to Show $TARGET_PROCESS Process"
-	        	maintenanceTasks.showProcess 2>>$EFX_INSTALLER_ERROR_FILE
-	        	#showMaintenanceTasksMenu
+	        	maintenanceTasks.operateEFXProcess show 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
 	        	;; 		
 	esac        	
 	#ssh strmbase@"$TARGET_MACHINE" ls;
 }
 
+# Stops/Starts/Shows Process
+# Usage: maintenanceTasks.operateEFXProcess $1 $2 $3
+# $1: shell Command to setup variables
+# $2: shell Command to run
+# $3: operation to do
+function maintenanceTasks.operateEFXProcess(){
+	 maintenanceTasks.getTargetScripts; #echo "Path: $TARGET_PATH_SCRIPT, Environment: $TARGET_ENV_SCRIPT, Command: $TARGET_SH_SCRIPT"
+	 if [ -n "$TARGET_SH_SCRIPT" ]; then
+		if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
+			 # Operate process now
+			 # . $1 ./$2 $3
+			 echo "TEST"
+		 else
+		 		ssh "$USER_STRMBASE@$TARGET_MACHINE" "pushd \"$TARGET_PATH_SCRIPT\"; . \"$TARGET_ENV_SCRIPT\"; ./\"$TARGET_SH_SCRIPT\" \"$1\"; popd"
+		 fi
+	 else 
+		utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE not found"
+	 fi
+}
+
 # Gets EFX processes related scripts 
-# Usage: maintenanceTasks.getTargetScripts $1 $2
-# $1: $TARGET_PROCESS
-# $2: $TARGET_ENV
+# Usage: maintenanceTasks.getTargetScripts
 function maintenanceTasks.getTargetScripts(){
 
-	for (( i = 0; i < ${#ENV_PROCESSES[@]}; i++ )); do
-	   if [ "${ENV_PROCESSES[$i]}" = "$TARGET_PROCESS" ]; then
+	TARGET_SH_SCRIPT=''
+	TARGET_ENV_SCRIPT=''
+	for (( i = 0; i < ${#EFX_PROCESSES[@]}; i++ )); do
+	   if [ "${EFX_PROCESSES[$i]}" = "$TARGET_PROCESS" ]; then
 	       position=$i;
 	   fi
 	done
@@ -259,60 +279,67 @@ function maintenanceTasks.getTargetScripts(){
 	        	TARGET_SH_SCRIPT=UBSCombined
 	        	;;		
 	        		        		        		        	        	
-	 esac 
-}
-
-# Stops Process
-# Usage: maintenanceTasks.stopProcess
-function maintenanceTasks.stopProcess(){
-	 #Find the machine where the process runs
-	 #utils.getTargetMachine 
-	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
-		 # Stop process now
-		 # ./$1 stop
-		 utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
-	 else
-	 	#utils.logResult "Sorry you must stop the Process:$TARGET_PROCESS in Machine:$targetMachine"
-	 	# ssh strmbase@"$TARGET_MACHINE" $1 stop
-	 	maintenanceTasks.getTargetScripts; echo "$TARGET_SH_SCRIPT"
-	 	ssh strmbase@"$TARGET_MACHINE" whoami;
-	 	utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE stopped"
-	 fi
-}
-
-# Starts Process
-# Usage: maintenanceTasks.startProcess
-function maintenanceTasks.startProcess(){
-	 #Find the machine where the process runs
-	 #utils.getTargetMachine 
-	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
-		 # Start process now
-		 #./$1 start
-		 utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE started"
-	 else
-	 	# ssh strmbase@"$TARGET_MACHINE" $1 start
-	 	maintenanceTasks.getTargetScripts; echo "$TARGET_SH_SCRIPT"
-	 	ssh strmbase@"$TARGET_MACHINE" whoami;
-	 	utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE started"	 
-	 fi
-}
-
-
-# Asks status for Process
-# Usage: maintenanceTasks.showProcess
-function maintenanceTasks.showProcess(){
-	 #Find the machine where the process runs
-	 #utils.getTargetMachine 
-	 if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
-		 # Show process now
-		 #./$1 show
-		 utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE showed"
-	 else
-	 	# ssh strmbase@"$TARGET_MACHINE" $1 show
-	 	maintenanceTasks.getTargetScripts; echo "$TARGET_SH_SCRIPT"
-	 	ssh strmbase@"$TARGET_MACHINE" whoami;
-	 	utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE showed"	 
-	 fi
+	 esac
+	 
+	 for (( j = 0; j < ${#EFX_ENVIRONMENTS[@]}; j++ )); do
+	   if [ "${EFX_ENVIRONMENTS[$j]}" = "$TARGET_ENV" ]; then
+	       position=$j;
+	   fi
+	 done
+	 declare -x isLP=$(echo "$TARGET_PROCESS" | grep 'eFX-LP');
+	 case $position in 
+	 
+			1) 
+				#DEV1
+				TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-dev1/Linux/scripts
+	        	TARGET_ENV_SCRIPT=env_dev1.sh
+				;;	
+				
+			2) 
+				#DEV3
+				TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-dev3/Linux/scripts
+	        	TARGET_ENV_SCRIPT=env_dev3.sh
+				;;		
+							
+			3) 
+				#DEV5
+				TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-dev4/Linux/scripts
+	        	TARGET_ENV_SCRIPT=env_dev4.sh
+				;;
+				
+			4) 
+				#SIT1
+				if [ -z $isLP ]; then
+					TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all/Linux/scripts
+	        		TARGET_ENV_SCRIPT=env_sit.sh
+				else
+		        	if [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
+		        		TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-lp/Linux/scripts
+		        		TARGET_ENV_SCRIPT=env_sit_lp.sh
+		        	fi
+		        fi	
+				;;	
+				
+			5) 
+				#SIT2
+				if [ -z $isLP ]; then
+					TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all2/Linux/scripts
+	        		TARGET_ENV_SCRIPT=env_sit2_sb7.sh
+	        	else	
+		        	if [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
+		        		TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-lp2/Linux/scripts
+		        		TARGET_ENV_SCRIPT=env_sit_lp.sh
+		        	fi
+		        fi	
+				;;
+				
+			6) 
+				#CAPLIN
+				TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all-Caplin/Linux/scripts
+	        	TARGET_ENV_SCRIPT=env_caplin.sh
+				;;	
+																        		        		        		        	        	
+	 esac
 }
 
 # Asks status for Process

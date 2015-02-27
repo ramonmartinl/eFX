@@ -129,21 +129,21 @@ function utils.getTargetMachine(){
 		PORT=${DEPLOYMENT_ENVIRONMENT[2]}
 		HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
 		#echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, PORT: $PORT, HOST: $HOST_MACHINE"
-		if [ "$PROCESS" == "${ENV_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
+		if [ "$PROCESS" == "${EFX_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
 			TARGET_PROCESS="$PROCESS"; TARGET_ENV="$ENV"; TARGET_MACHINE="$HOST_MACHINE"; TARGET_PORT="$PORT"
 		fi
 	done
-	utils.logResult "${ENV_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
+	utils.logResult "${EFX_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
 }
 
 # Asks for a Process
 #Usage: readProccess
 function readProccess(){
 	echo "Select one of the following Processes >..."
-	count=${#ENV_PROCESSES[@]}; #echo "SIZE: $count"
+	count=${#EFX_PROCESSES[@]}; #echo "SIZE: $count"
 	for ((i=1; i<$count; i++))
 	do
-		echo -e "$i) ${ENV_PROCESSES[i]}"
+		echo -e "$i) ${EFX_PROCESSES[i]}"
 	done
 	read targetProcess
 }
