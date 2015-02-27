@@ -21,7 +21,6 @@ Revisar la confirmacion del ultimo paso de ask4CerebroReleaseDetails
 # Añadir SSH
 http://www.linuxproblem.org/art_9.html
 http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to-remote-machine
-
 [efxbuild@lnx-efxbuild ~]$ ssh-keygen -t rsa
 [efxbuild@lnx-efxbuild ~]$ ssh strmbase@lnx-efxXXX mkdir -p .ssh
 [efxbuild@lnx-efxbuild ~]$ cat .ssh/id_rsa.pub | ssh strmbase@lnx-efxXXX 'cat >> .ssh/authorized_keys'
@@ -32,6 +31,6 @@ find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\
 
 #Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos
 #Pasar todo UMLDesigner a UMLet
-#Añadir la funcionalidad de Parar/Arrancar/Mostrar los procesos. 
+#Añadir la funcionalidad de Parar/Arrancar/Mostrar los procesos (primary/secondary) 
 #Añadir Color al menu de procesos y entornos de Arrancar procesos de EFX.
-#Revisar AutoCM a SIT1 y SIT2 y LP-FIX (poner un error cuando hay procesos que faltan para algunos entornos)
+Revisar AutoCM a SIT1 y SIT2 y LP-FIX (poner un error cuando hay procesos que faltan para algunos entornos)

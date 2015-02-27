@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 23/01/2015 
-# Last Modified: 26/02/2015 (ramn.martn)
+# Last Modified: 27/02/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -56,23 +56,24 @@ function maintenanceTasks.downloadEFX(){
 # Start LP Points Simulation
 # Usage: maintenanceTasks.startSimulationPoints
 function maintenanceTasks.startSimulationPoints(){
-	#ssh -OPTIONS -p SSH_PORT user@remote_server "remote_command1; remote_command2; remote_script.sh" 
-	#ssh strmbase@lnx-efxd38 /dev/shm/d3data/startServer.sh.NDF
 	ENV_MACHINES_ALLOWED[0]=${ENV_MACHINES_EFXD[38]}
 	utils.isAllowedHost hostAllowed
 	ENV_MACHINES_ALLOWED=()	
-	if  [ $hostAllowed = true ]; then
-		# kill existing processes
-		declare -i pPid1=$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}')
-		declare -i pPid2=$(ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print $2}')
-		kill -9 "$pPid1 $pPid2"
-		utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Killed successfully"
-		# start it
-		pushd "/dev/shm/d3data"
-		./startServer.sh.NDF
+	#if  [ $hostAllowed = true ]; then
+		declare -x REMOTE_COMMAND="
+			# kill existing processes
+			declare -i pPid1=\"$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print \"$2}');
+			declare -i pPid2=\"$(ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print \"$2}');
+			kill -9 "\"$pPid1 \"$pPid2";
+			# start it
+			pushd /dev/shm/d3data; 
+			./startServer.sh.NDF; 
+			popd"
+		
+		ssh "$USER_STRMBASE@$ENV_MACHINES_EFXD[38]" $REMOTE_COMMAND
+		#utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Killed successfully"
 		utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Started successfully"
-		popd
-	fi	
+	#fi	
 }
 
 # Change LP Points Simulation File
@@ -82,18 +83,21 @@ function maintenanceTasks.changeSimulationPointsFile(){
 	ENV_MACHINES_ALLOWED[0]=${ENV_MACHINES_EFXD[38]}
 	utils.isAllowedHost hostAllowed
 	ENV_MACHINES_ALLOWED=()	
-	if  [ $hostAllowed = true ]; then
+	#if  [ $hostAllowed = true ]; then
 		utils.logResult "REMEMBER: juancp.awk file must be Changed first"
-		declare -x now=$(date +"%Y-%m-%d-%H:%M:%S")
-		# Backup newDataNDF file
-		pushd "/dev/shm/d3data/capture/demo"
-		cp newDataNDF newDataNDF.$now.bak
-		# Transform the Prices file
-		awk -f juancp.awk newDataNDF
-		cp newDataNDF.new newDataNDF
-		popd
+		declare -x REMOTE_COMMAND="
+			declare -x now=\"$(date +"%Y-%m-%d-%H:%M:%S");
+			# Backup newDataNDF file
+			pushd "/dev/shm/d3data/capture/demo";
+			cp newDataNDF newDataNDF.\"$now.bak;
+			# Transform the Prices file
+			awk -f juancp.awk newDataNDF;
+			cp newDataNDF.new newDataNDF;
+			popd;"
+			
+		ssh "$USER_STRMBASE@$ENV_MACHINES_EFXD[38]" $REMOTE_COMMAND
 		utils.logResult "LP Points Simulation File : Changed successfully"
-	fi	
+	#fi	
 }
 
 # Find log files bigger than 2GB
@@ -109,26 +113,35 @@ function maintenanceTasks.manageEFXProcess(){
 	echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
 	echo "Start[t], Stop[p], Show[w] >"
 	read opt_efx_process_action
+	
+	//TODO: check this
+	if [ "$TARGET_PROCESS" == "eFX-Adaxter" ] || [ "$TARGET_PROCESS" == "eFX-CustomerPricing" ] || [ "$TARGET_PROCESS" == "eFX-DashboardBridge" ]
+		  || [ "$TARGET_PROCESS" == "eFX-ForwardPricing" ] || [ "$TARGET_PROCESS" == "eFX-Pricetenon" ] || [ "$TARGET_PROCESS" == "eFX-TradeReports" ]
+		  || [ "$TARGET_PROCESS" == "eFX-Trading" ]; then 
+		echo "Use: Primary[p], Secondary[s] >"
+		read opt_efx_process_instance
+	fi
+	
 	case $opt_efx_process_action in
 	        
 	        t)
 	        # START PROCESS
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
-	        	maintenanceTasks.operateEFXProcess start 2>>$EFX_INSTALLER_ERROR_FILE
+	        	maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
 	        	;;
 	        	
 	        p)
 	        # STOP PROCESS
 	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
-	        	maintenanceTasks.operateEFXProcess stop 2>>$EFX_INSTALLER_ERROR_FILE
+	        	maintenanceTasks.operateEFXProcess stop $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
 	        	;;
 	        	
 	       	w)
 	        # SHOW PROCESS
 	        	option_picked_identified "you chose to Show $TARGET_PROCESS Process"
-	        	maintenanceTasks.operateEFXProcess show 2>>$EFX_INSTALLER_ERROR_FILE
+	        	maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
 	        	;; 		
 	esac        	
@@ -136,19 +149,31 @@ function maintenanceTasks.manageEFXProcess(){
 }
 
 # Stops/Starts/Shows Process
-# Usage: maintenanceTasks.operateEFXProcess $1 $2 $3
-# $1: shell Command to setup variables
-# $2: shell Command to run
-# $3: operation to do
+# Usage: maintenanceTasks.operateEFXProcess $1 $2
+# $1: operation to do
+# $2: Primary/Secondary
+# Hint: ssh -OPTIONS -p SSH_PORT user@remote_server "remote_command1; remote_command2; remote_script.sh" 
 function maintenanceTasks.operateEFXProcess(){
-	 maintenanceTasks.getTargetScripts; #echo "Path: $TARGET_PATH_SCRIPT, Environment: $TARGET_ENV_SCRIPT, Command: $TARGET_SH_SCRIPT"
+	 maintenanceTasks.getTargetScripts; #echo "Path: $TARGET_PATH_SCRIPT, Environment: $TARGET_ENV_SCRIPT, primary: $TARGET_SH_SCRIPT_PRIMARY, secondary:  $TARGET_SH_SCRIPT_SECONDARY, Command: $TARGET_SH_SCRIPT"
+	 if [ -n "$TARGET_SH_SCRIPT_PRIMARY" ] && [ "$2" == "p" ]; then
+	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_PRIMARY
+	 fi
+	 if [ -n "$TARGET_SH_SCRIPT_SECONDARY" ] && [ "$2" == "s" ]; then
+	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_SECONDARY
+	 fi 
 	 if [ -n "$TARGET_SH_SCRIPT" ]; then
 		if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
 			 # Operate process now
 			 # . $1 ./$2 $3
 			 echo "TEST"
 		 else
-		 		ssh "$USER_STRMBASE@$TARGET_MACHINE" "pushd \"$TARGET_PATH_SCRIPT\"; . \"$TARGET_ENV_SCRIPT\"; ./\"$TARGET_SH_SCRIPT\" \"$1\"; popd"
+		 	declare -r REMOTE_EFX_PROCESS_COMMAND="
+		 		pushd \"$TARGET_PATH_SCRIPT\";
+				. \"$TARGET_ENV_SCRIPT\"; 
+				./\"$TARGET_SH_SCRIPT\" \"$1\"; 
+				popd"
+				
+		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
 		 fi
 	 else 
 		utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE not found"
