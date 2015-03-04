@@ -113,9 +113,9 @@ function utils.ask4SWReleaseDetails(){
 # Usage: utils.getTargetMachine
 function utils.getTargetMachine(){
 	# Asks for a Process
-	readProccess
+	utils.readProccess
 	# Ask for a Deployment Environment
-	readDeploymentEnvironment
+	utils.readDeploymentEnvironment
 
 	# Loop and print it.  Using offset and length to extract values
 	count=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}; #echo "SIZE: $count"
@@ -137,8 +137,8 @@ function utils.getTargetMachine(){
 }
 
 # Asks for a Process
-#Usage: readProccess
-function readProccess(){
+#Usage: utils.readProccess
+function utils.readProccess(){
 	echo "Select one of the following Processes >..."
 	count=${#EFX_PROCESSES[@]}; #echo "SIZE: $count"
 	for ((i=1; i<$count; i++))
@@ -149,8 +149,8 @@ function readProccess(){
 }
 
 # Asks for a Deployment Environment
-#Usage: readProccess
-function readDeploymentEnvironment(){
+#Usage: utils.readDeploymentEnvironment
+function utils.readDeploymentEnvironment(){
 	echo "Select one of the following Environments >..."
 	count=${#EFX_ENVIRONMENTS[@]}; #echo "SIZE: $count"
 	for ((i=1; i<$count; i++))
@@ -158,4 +158,17 @@ function readDeploymentEnvironment(){
 		echo -e "$i) ${EFX_ENVIRONMENTS[i]}"
 	done
 	read targetEnv
+}
+
+# Read any option to Confirm process
+# Usage: utils.listenConfirmation $1 $2
+# $1: Menu To show
+# $1: Menu To Listen
+function utils.listenConfirmation(){
+    echo -e "${FMT_ENTER_LINE}Please ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
+    read opt_confirm
+	while [ opt_confirm != '' ]
+	    do
+		$1; $2
+	done
 }

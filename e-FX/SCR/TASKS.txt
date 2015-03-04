@@ -17,6 +17,9 @@ Añadir la funcionalidad de cambiar el fichero de puntos en el script
 Añadir la funcionlidad de bajar Release  al script con Credenciales y timeout
 --user 	--password --background --timeout --input-file --force-html --base=URL
 Revisar la confirmacion del ultimo paso de ask4CerebroReleaseDetails
+Añadir la funcionalidad de Parar/Arrancar/Mostrar los procesos (primary/secondary) 
+Revisar AutoCM a SIT1 y SIT2 y LP-FIX (poner un error cuando hay procesos que faltan para algunos entornos)
+Añadir borrar logs
 
 # Añadir SSH
 http://www.linuxproblem.org/art_9.html
@@ -26,11 +29,21 @@ http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to
 [efxbuild@lnx-efxbuild ~]$ cat .ssh/id_rsa.pub | ssh strmbase@lnx-efxXXX 'cat >> .ssh/authorized_keys'
 [efxbuild@lnx-efxbuild ~]$ ssh strmbase@lnx-efxXXX ls;
 
-#Añadir la funcionalidad de borrar logs al script
+Añadir la funcionalidad de borrar logs al script
 find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
 
 #Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos
 #Pasar todo UMLDesigner a UMLet
-#Añadir la funcionalidad de Parar/Arrancar/Mostrar los procesos (primary/secondary) 
 #Añadir Color al menu de procesos y entornos de Arrancar procesos de EFX.
-Revisar AutoCM a SIT1 y SIT2 y LP-FIX (poner un error cuando hay procesos que faltan para algunos entornos)
+Añadir matar rapido todos los procesos de un entorno
+Añadir reiniciar los puntos
+Añadir la funcionalidad de desbloquear un puerto de Tibco cuando no arranca un proceso
+$ netstat -putan | grep puerto
+tcp        0      0 :::8098                     :::*                        LISTEN      1772/"/usr/lib/jvm/
+tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50949      TIME_WAIT   -
+tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50994      TIME_WAIT   -
+tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50993      TIME_WAIT   -
+tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50950      TIME_WAIT   -
+
+$ kill -9 1772
+Añadir la funcionalidad de iniciar los puntos con ur:20

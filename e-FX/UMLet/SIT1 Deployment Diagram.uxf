@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="12.2">
-  <zoom_level>5</zoom_level>
+  <zoom_level>4</zoom_level>
   <element>
     <type>com.umlet.element.custom.Node</type>
     <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>960</w>
-      <h>995</h>
+      <x>128</x>
+      <y>4</y>
+      <w>768</w>
+      <h>796</h>
     </coordinates>
     <panel_attributes>center:SIT1</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>630</x>
-      <y>950</y>
-      <w>295</w>
-      <h>25</h>
+      <x>632</x>
+      <y>764</y>
+      <w>236</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>/local/home/strmbase/EFX-all/fx-logs -&gt; /logs/strmbase/CerebroLogs/sit-all
 /local/home/strmbase/EFX-lp/fx-logs -&gt; /logs/strmbase/CerebroLogs/sit-lp
@@ -29,10 +29,10 @@ bg=green</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>745</x>
-      <y>35</y>
-      <w>175</w>
-      <h>20</h>
+      <x>724</x>
+      <y>32</y>
+      <w>140</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>/local/home/strmbase/EFX-all/Linux/scripts
 /local/home/strmbase/EFX-lp/Linux/scripts
@@ -44,10 +44,10 @@ bg=green</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>215</y>
-          <w>90</w>
-          <h>20</h>
+          <x>164</x>
+          <y>176</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-tenorService.sh
@@ -57,10 +57,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>190</y>
-          <w>85</w>
-          <h>20</h>
+          <x>164</x>
+          <y>156</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 TenorService_x.y.z
@@ -70,10 +70,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>30</x>
-          <y>165</y>
-          <w>125</w>
-          <h>75</h>
+          <x>152</x>
+          <y>136</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:TenorService : 9100</panel_attributes>
@@ -84,10 +84,10 @@ center:TenorService : 9100</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>165</x>
-          <y>165</y>
-          <w>125</w>
-          <h>75</h>
+          <x>260</x>
+          <y>136</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:TradeReports : 8800</panel_attributes>
@@ -96,10 +96,10 @@ center:TradeReports : 8800</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>180</x>
-          <y>190</y>
-          <w>85</w>
-          <h>20</h>
+          <x>272</x>
+          <y>156</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 TradeReports_x.y.z
@@ -109,10 +109,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>180</x>
-          <y>215</y>
-          <w>90</w>
-          <h>20</h>
+          <x>272</x>
+          <y>176</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-tradeReports.sh
@@ -124,10 +124,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>300</x>
-          <y>165</y>
-          <w>125</w>
-          <h>75</h>
+          <x>368</x>
+          <y>136</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:PrimaryCustomerPricing : 8500</panel_attributes>
@@ -136,10 +136,10 @@ center:PrimaryCustomerPricing : 8500</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>315</x>
-          <y>190</y>
-          <w>85</w>
-          <h>20</h>
+          <x>380</x>
+          <y>156</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 CustomerPricing_x.y.z
@@ -149,10 +149,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>315</x>
-          <y>215</y>
-          <w>90</w>
-          <h>20</h>
+          <x>380</x>
+          <y>176</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-customerPricing.sh
@@ -164,10 +164,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>450</x>
-          <y>215</y>
-          <w>90</w>
-          <h>20</h>
+          <x>488</x>
+          <y>176</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 TIHandler.sh
@@ -177,10 +177,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>450</x>
-          <y>190</y>
-          <w>85</w>
-          <h>20</h>
+          <x>488</x>
+          <y>156</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 MTIHandler_x.y.z
@@ -190,10 +190,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>435</x>
-          <y>165</y>
-          <w>125</w>
-          <h>75</h>
+          <x>476</x>
+          <y>136</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:MTIHandler : 8098</panel_attributes>
@@ -203,10 +203,10 @@ center:MTIHandler : 8098</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>15</x>
-        <y>135</y>
-        <w>565</w>
-        <h>120</h>
+        <x>140</x>
+        <y>112</y>
+        <w>452</w>
+        <h>96</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd62</panel_attributes>
@@ -215,21 +215,21 @@ center:lnx-efxd62</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>565</x>
-        <y>135</y>
-        <w>69</w>
-        <h>44</h>
+        <x>580</x>
+        <y>112</y>
+        <w>56</w>
+        <h>36</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;35;60;15</additional_attributes>
+      <additional_attributes>12;28;48;12</additional_attributes>
     </element>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>600</x>
-        <y>135</y>
-        <w>55</w>
-        <h>15</h>
+        <x>608</x>
+        <y>112</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 62
 bg=pink</panel_attributes>
@@ -241,10 +241,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>30</x>
-          <y>295</y>
-          <w>125</w>
-          <h>75</h>
+          <x>152</x>
+          <y>240</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:Cleansing : 8100</panel_attributes>
@@ -253,10 +253,10 @@ center:Cleansing : 8100</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>320</y>
-          <w>85</w>
-          <h>20</h>
+          <x>164</x>
+          <y>260</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 Cleansing_x.y.z
@@ -266,10 +266,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>345</y>
-          <w>90</w>
-          <h>20</h>
+          <x>164</x>
+          <y>280</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 cleansing.sh
@@ -281,10 +281,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>165</x>
-          <y>295</y>
-          <w>125</w>
-          <h>75</h>
+          <x>260</x>
+          <y>240</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:PrimaryTrading : 8600 </panel_attributes>
@@ -293,10 +293,10 @@ center:PrimaryTrading : 8600 </panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>180</x>
-          <y>320</y>
-          <w>85</w>
-          <h>20</h>
+          <x>272</x>
+          <y>260</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 PrimaryTrading_x.y.z
@@ -306,10 +306,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>180</x>
-          <y>345</y>
-          <w>90</w>
-          <h>20</h>
+          <x>272</x>
+          <y>280</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-trading.sh
@@ -319,10 +319,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Note</type>
         <coordinates>
-          <x>170</x>
-          <y>375</y>
-          <w>115</w>
-          <h>15</h>
+          <x>264</x>
+          <y>304</y>
+          <w>92</w>
+          <h>12</h>
         </coordinates>
         <panel_attributes>tradingLeadership.sh promote 1
 bg=yellow</panel_attributes>
@@ -331,24 +331,24 @@ bg=yellow</panel_attributes>
       <element>
         <type>com.umlet.element.Relation</type>
         <coordinates>
-          <x>165</x>
-          <y>355</y>
-          <w>64</w>
-          <h>29</h>
+          <x>260</x>
+          <y>288</y>
+          <w>52</w>
+          <h>24</h>
         </coordinates>
         <panel_attributes>lt=-
 </panel_attributes>
-        <additional_attributes>15;15;55;20</additional_attributes>
+        <additional_attributes>12;12;44;16</additional_attributes>
       </element>
     </group>
     <group>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>305</x>
-          <y>295</y>
-          <w>125</w>
-          <h>75</h>
+          <x>372</x>
+          <y>240</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:D3Handler : 8097</panel_attributes>
@@ -357,10 +357,10 @@ center:D3Handler : 8097</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>320</x>
-          <y>320</y>
-          <w>85</w>
-          <h>20</h>
+          <x>384</x>
+          <y>260</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 D3Handler_x.y.z
@@ -370,10 +370,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>320</x>
-          <y>345</y>
-          <w>90</w>
-          <h>20</h>
+          <x>384</x>
+          <y>280</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 SFWDHandler.sh
@@ -385,10 +385,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>455</x>
-          <y>345</y>
-          <w>90</w>
-          <h>20</h>
+          <x>492</x>
+          <y>280</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 adafix.sh
@@ -398,10 +398,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>455</x>
-          <y>320</y>
-          <w>85</w>
-          <h>20</h>
+          <x>492</x>
+          <y>260</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 Adafix_x.y.z
@@ -411,10 +411,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>440</x>
-          <y>295</y>
-          <w>125</w>
-          <h>75</h>
+          <x>480</x>
+          <y>240</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:Adafix : 9000</panel_attributes>
@@ -424,10 +424,10 @@ center:Adafix : 9000</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>15</x>
-        <y>265</y>
-        <w>575</w>
-        <h>135</h>
+        <x>140</x>
+        <y>216</y>
+        <w>460</w>
+        <h>108</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd65</panel_attributes>
@@ -436,21 +436,21 @@ center:lnx-efxd65</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>575</x>
-        <y>265</y>
-        <w>59</w>
-        <h>34</h>
+        <x>588</x>
+        <y>216</y>
+        <w>48</w>
+        <h>28</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;25;50;15</additional_attributes>
+      <additional_attributes>12;20;40;12</additional_attributes>
     </element>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>610</x>
-        <y>265</y>
-        <w>55</w>
-        <h>15</h>
+        <x>616</x>
+        <y>216</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 65
 bg=pink</panel_attributes>
@@ -461,10 +461,10 @@ bg=pink</panel_attributes>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>880</x>
-        <y>420</y>
-        <w>55</w>
-        <h>15</h>
+        <x>832</x>
+        <y>340</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 66
 bg=pink</panel_attributes>
@@ -473,22 +473,22 @@ bg=pink</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>845</x>
-        <y>420</y>
-        <w>69</w>
-        <h>34</h>
+        <x>804</x>
+        <y>340</y>
+        <w>56</w>
+        <h>28</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;25;60;15</additional_attributes>
+      <additional_attributes>12;20;48;12</additional_attributes>
     </element>
     <group>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>715</x>
-          <y>450</y>
-          <w>125</w>
-          <h>75</h>
+          <x>700</x>
+          <y>364</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:Adartenon : 8750</panel_attributes>
@@ -497,10 +497,10 @@ center:Adartenon : 8750</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>730</x>
-          <y>475</y>
-          <w>85</w>
-          <h>20</h>
+          <x>712</x>
+          <y>384</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 Adartenon_x.y.z
@@ -510,10 +510,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>730</x>
-          <y>500</y>
-          <w>90</w>
-          <h>20</h>
+          <x>712</x>
+          <y>404</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 adartenon.sh
@@ -525,10 +525,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>575</x>
-          <y>450</y>
-          <w>125</w>
-          <h>75</h>
+          <x>588</x>
+          <y>364</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:VolHandler : 8700</panel_attributes>
@@ -537,10 +537,10 @@ center:VolHandler : 8700</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>590</x>
-          <y>475</y>
-          <w>85</w>
-          <h>20</h>
+          <x>600</x>
+          <y>384</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 VolHandler_x.y.z
@@ -550,10 +550,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>590</x>
-          <y>500</y>
-          <w>90</w>
-          <h>20</h>
+          <x>600</x>
+          <y>404</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 VolHandler.sh
@@ -565,10 +565,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>455</x>
-          <y>500</y>
-          <w>90</w>
-          <h>20</h>
+          <x>492</x>
+          <y>404</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 pricetenon.sh
@@ -578,10 +578,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>440</x>
-          <y>450</y>
-          <w>125</w>
-          <h>75</h>
+          <x>480</x>
+          <y>364</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:Pricetenon : 10100</panel_attributes>
@@ -590,10 +590,10 @@ center:Pricetenon : 10100</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>455</x>
-          <y>475</y>
-          <w>85</w>
-          <h>20</h>
+          <x>492</x>
+          <y>384</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 Pricetenon_x.y.z
@@ -605,10 +605,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>315</x>
-          <y>500</y>
-          <w>90</w>
-          <h>20</h>
+          <x>380</x>
+          <y>404</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 NewTickStore
@@ -618,10 +618,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>315</x>
-          <y>475</y>
-          <w>85</w>
-          <h>20</h>
+          <x>380</x>
+          <y>384</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 NewTickStore_x.y.z
@@ -631,10 +631,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>300</x>
-          <y>450</y>
-          <w>125</w>
-          <h>75</h>
+          <x>368</x>
+          <y>364</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:NewTickStore : 8400</panel_attributes>
@@ -645,10 +645,10 @@ center:NewTickStore : 8400</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>175</x>
-          <y>500</y>
-          <w>100</w>
-          <h>20</h>
+          <x>268</x>
+          <y>404</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-DashboardBridge
@@ -658,10 +658,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>175</x>
-          <y>475</y>
-          <w>100</w>
-          <h>20</h>
+          <x>268</x>
+          <y>384</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 PrimaryDashboardBridge_x.y.z
@@ -671,10 +671,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>165</x>
-          <y>450</y>
-          <w>125</w>
-          <h>75</h>
+          <x>260</x>
+          <y>364</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:PrimaryDashboardBridge : 9250</panel_attributes>
@@ -685,10 +685,10 @@ center:PrimaryDashboardBridge : 9250</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>30</x>
-          <y>450</y>
-          <w>125</w>
-          <h>75</h>
+          <x>152</x>
+          <y>364</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:Aggregation : 8200</panel_attributes>
@@ -697,10 +697,10 @@ center:Aggregation : 8200</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>475</y>
-          <w>85</w>
-          <h>20</h>
+          <x>164</x>
+          <y>384</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 Aggregation_x.y.z
@@ -710,10 +710,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>500</y>
-          <w>90</w>
-          <h>20</h>
+          <x>164</x>
+          <y>404</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 agg.sh
@@ -724,10 +724,10 @@ bg=pink</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>15</x>
-        <y>420</y>
-        <w>845</w>
-        <h>120</h>
+        <x>140</x>
+        <y>340</y>
+        <w>676</w>
+        <h>96</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd66</panel_attributes>
@@ -739,10 +739,10 @@ center:lnx-efxd66</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>30</x>
-          <y>585</y>
-          <w>125</w>
-          <h>75</h>
+          <x>152</x>
+          <y>472</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:CorePricing : 8300</panel_attributes>
@@ -751,10 +751,10 @@ center:CorePricing : 8300</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>610</y>
-          <w>85</w>
-          <h>20</h>
+          <x>164</x>
+          <y>492</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 CorePricing_x.y.z
@@ -764,10 +764,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>635</y>
-          <w>90</w>
-          <h>20</h>
+          <x>164</x>
+          <y>512</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 corepricing.sh
@@ -779,10 +779,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>185</x>
-          <y>635</y>
-          <w>90</w>
-          <h>20</h>
+          <x>276</x>
+          <y>512</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-fwdPricing.sh
@@ -792,10 +792,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>185</x>
-          <y>610</y>
-          <w>85</w>
-          <h>20</h>
+          <x>276</x>
+          <y>492</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 FwdPricing_x.y.z
@@ -805,10 +805,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>170</x>
-          <y>585</y>
-          <w>125</w>
-          <h>75</h>
+          <x>264</x>
+          <y>472</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:FwdPricing : 8630</panel_attributes>
@@ -818,10 +818,10 @@ center:FwdPricing : 8630</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>15</x>
-        <y>555</y>
-        <w>300</w>
-        <h>120</h>
+        <x>140</x>
+        <y>448</y>
+        <w>240</w>
+        <h>96</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd67</panel_attributes>
@@ -830,21 +830,21 @@ center:lnx-efxd67</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>300</x>
-        <y>555</y>
-        <w>74</w>
-        <h>34</h>
+        <x>368</x>
+        <y>448</y>
+        <w>60</w>
+        <h>28</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;25;65;15</additional_attributes>
+      <additional_attributes>12;20;52;12</additional_attributes>
     </element>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>340</x>
-        <y>555</y>
-        <w>55</w>
-        <h>15</h>
+        <x>400</x>
+        <y>448</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 67
 bg=pink</panel_attributes>
@@ -856,10 +856,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>780</y>
-          <w>90</w>
-          <h>20</h>
+          <x>164</x>
+          <y>628</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-adaxter.sh
@@ -869,10 +869,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>45</x>
-          <y>755</y>
-          <w>85</w>
-          <h>20</h>
+          <x>164</x>
+          <y>608</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 PrimaryAdaxter_x.y.z
@@ -882,10 +882,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>30</x>
-          <y>730</y>
-          <w>125</w>
-          <h>75</h>
+          <x>152</x>
+          <y>588</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:PrimaryAdaxter : 8900</panel_attributes>
@@ -896,10 +896,10 @@ center:PrimaryAdaxter : 8900</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>185</x>
-          <y>780</y>
-          <w>90</w>
-          <h>20</h>
+          <x>276</x>
+          <y>628</y>
+          <w>72</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 primary-RFQadaxter.sh
@@ -909,10 +909,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>185</x>
-          <y>755</y>
-          <w>85</w>
-          <h>20</h>
+          <x>276</x>
+          <y>608</y>
+          <w>68</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 RFQAdaxter_x.y.z
@@ -922,10 +922,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>170</x>
-          <y>730</y>
-          <w>125</w>
-          <h>75</h>
+          <x>264</x>
+          <y>588</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:RFQAdaxter : 8950</panel_attributes>
@@ -935,10 +935,10 @@ center:RFQAdaxter : 8950</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>15</x>
-        <y>695</y>
-        <w>300</w>
-        <h>120</h>
+        <x>140</x>
+        <y>560</y>
+        <w>240</w>
+        <h>96</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd68</panel_attributes>
@@ -947,10 +947,10 @@ center:lnx-efxd68</panel_attributes>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>335</x>
-        <y>695</y>
-        <w>55</w>
-        <h>15</h>
+        <x>396</x>
+        <y>560</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 68
 bg=pink</panel_attributes>
@@ -959,23 +959,23 @@ bg=pink</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>300</x>
-        <y>695</y>
-        <w>64</w>
-        <h>34</h>
+        <x>368</x>
+        <y>560</y>
+        <w>52</w>
+        <h>28</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;25;55;15</additional_attributes>
+      <additional_attributes>12;20;44;12</additional_attributes>
     </element>
   </group>
   <group>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>405</x>
-        <y>585</y>
-        <w>155</w>
-        <h>335</h>
+        <x>452</x>
+        <y>472</y>
+        <w>124</w>
+        <h>268</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd60</panel_attributes>
@@ -985,10 +985,10 @@ center:lnx-efxd60</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>425</x>
-          <y>670</y>
-          <w>100</w>
-          <h>20</h>
+          <x>468</x>
+          <y>540</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 UBSCombined
@@ -998,10 +998,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>425</x>
-          <y>645</y>
-          <w>100</w>
-          <h>20</h>
+          <x>468</x>
+          <y>520</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-UBS_x.y.z
@@ -1011,10 +1011,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>415</x>
-          <y>620</y>
-          <w>125</w>
-          <h>75</h>
+          <x>460</x>
+          <y>500</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-UBS : 11020</panel_attributes>
@@ -1024,10 +1024,10 @@ center:LP-UBS : 11020</panel_attributes>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>510</x>
-        <y>555</y>
-        <w>55</w>
-        <h>15</h>
+        <x>536</x>
+        <y>448</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 60
 bg=pink</panel_attributes>
@@ -1036,13 +1036,13 @@ bg=pink</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>505</x>
-        <y>555</y>
-        <w>34</w>
-        <h>39</h>
+        <x>532</x>
+        <y>448</y>
+        <w>28</w>
+        <h>32</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;30;25;15</additional_attributes>
+      <additional_attributes>12;24;20;12</additional_attributes>
     </element>
   </group>
   <group>
@@ -1050,10 +1050,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>25</x>
-          <y>65</y>
-          <w>130</w>
-          <h>50</h>
+          <x>148</x>
+          <y>56</y>
+          <w>104</w>
+          <h>40</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:Jetty 6 Web server
@@ -1063,10 +1063,10 @@ bg=default</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>35</x>
-          <y>90</y>
-          <w>105</w>
-          <h>20</h>
+          <x>156</x>
+          <y>76</y>
+          <w>84</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 baxter-config-server-x.y.z.war
@@ -1077,10 +1077,10 @@ bg=orange</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>15</x>
-        <y>35</y>
-        <w>155</w>
-        <h>90</h>
+        <x>140</x>
+        <y>32</y>
+        <w>124</w>
+        <h>72</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd69.ants.ad.anplc.co.uk
@@ -1090,10 +1090,10 @@ bg=default</panel_attributes>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>180</x>
-        <y>65</y>
-        <w>260</w>
-        <h>20</h>
+        <x>272</x>
+        <y>56</y>
+        <w>208</w>
+        <h>16</h>
       </coordinates>
       <panel_attributes>Baxter
 http://lnx-efxd69.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html
@@ -1103,33 +1103,33 @@ bg=magenta</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>155</x>
-        <y>60</y>
-        <w>34</w>
-        <h>29</h>
+        <x>252</x>
+        <y>52</y>
+        <w>28</w>
+        <h>24</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;20;25;15</additional_attributes>
+      <additional_attributes>12;16;20;12</additional_attributes>
     </element>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>155</x>
-        <y>35</y>
-        <w>54</w>
-        <h>39</h>
+        <x>252</x>
+        <y>32</y>
+        <w>44</w>
+        <h>32</h>
       </coordinates>
       <panel_attributes>lt=-
 </panel_attributes>
-      <additional_attributes>15;30;45;15</additional_attributes>
+      <additional_attributes>12;24;36;12</additional_attributes>
     </element>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>180</x>
-        <y>35</y>
-        <w>55</w>
-        <h>15</h>
+        <x>272</x>
+        <y>32</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 69
 bg=pink</panel_attributes>
@@ -1141,10 +1141,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>890</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>716</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 FixCombined
@@ -1154,10 +1154,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>865</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>696</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-FIX_x.y.z
@@ -1167,10 +1167,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>590</x>
-          <y>840</y>
-          <w>125</w>
-          <h>75</h>
+          <x>600</x>
+          <y>676</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-FIX : 9200</panel_attributes>
@@ -1181,10 +1181,10 @@ center:LP-FIX : 9200</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>805</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>648</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 MFHandler.sh
@@ -1194,10 +1194,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>780</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>628</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-MF_x.y.z
@@ -1207,10 +1207,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>590</x>
-          <y>755</y>
-          <w>125</w>
-          <h>75</h>
+          <x>600</x>
+          <y>608</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-MF : 8099</panel_attributes>
@@ -1221,10 +1221,10 @@ center:LP-MF : 8099</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>720</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>580</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 GSCombined
@@ -1234,10 +1234,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>695</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>560</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-GS_x.y.z
@@ -1247,10 +1247,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>590</x>
-          <y>670</y>
-          <w>125</w>
-          <h>75</h>
+          <x>600</x>
+          <y>540</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-GS : 11005</panel_attributes>
@@ -1261,10 +1261,10 @@ center:LP-GS : 11005</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>635</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>512</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 DBCombined
@@ -1274,10 +1274,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>600</x>
-          <y>610</y>
-          <w>100</w>
-          <h>20</h>
+          <x>608</x>
+          <y>492</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-DB_x.y.z
@@ -1287,10 +1287,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>590</x>
-          <y>585</y>
-          <w>125</w>
-          <h>75</h>
+          <x>600</x>
+          <y>472</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-DB : 11010</panel_attributes>
@@ -1301,10 +1301,10 @@ center:LP-DB : 11010</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>735</x>
-          <y>635</y>
-          <w>100</w>
-          <h>20</h>
+          <x>716</x>
+          <y>512</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 DBFIX-Classic
@@ -1314,10 +1314,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>735</x>
-          <y>610</y>
-          <w>100</w>
-          <h>20</h>
+          <x>716</x>
+          <y>492</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-DBFIX-Classic_x.y.z
@@ -1327,10 +1327,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>725</x>
-          <y>585</y>
-          <w>125</w>
-          <h>75</h>
+          <x>708</x>
+          <y>472</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-DBFIX-Classic : 11020</panel_attributes>
@@ -1341,10 +1341,10 @@ center:LP-DBFIX-Classic : 11020</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>735</x>
-          <y>720</y>
-          <w>100</w>
-          <h>20</h>
+          <x>716</x>
+          <y>580</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 DBFIX-Rapid
@@ -1354,10 +1354,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>735</x>
-          <y>695</y>
-          <w>100</w>
-          <h>20</h>
+          <x>716</x>
+          <y>560</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-DBFIX-Rapid_x.y.z
@@ -1367,10 +1367,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>725</x>
-          <y>670</y>
-          <w>125</w>
-          <h>75</h>
+          <x>708</x>
+          <y>540</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-DBFIX-Rapid : 11015</panel_attributes>
@@ -1381,10 +1381,10 @@ center:LP-DBFIX-Rapid : 11015</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>735</x>
-          <y>805</y>
-          <w>100</w>
-          <h>20</h>
+          <x>716</x>
+          <y>648</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;component&gt;&gt;
 CitiCombined
@@ -1394,10 +1394,10 @@ bg=pink</panel_attributes>
       <element>
         <type>com.umlet.element.Class</type>
         <coordinates>
-          <x>735</x>
-          <y>780</y>
-          <w>100</w>
-          <h>20</h>
+          <x>716</x>
+          <y>628</y>
+          <w>80</w>
+          <h>16</h>
         </coordinates>
         <panel_attributes>&lt;&lt;artefact&gt;&gt;
 LP-Citi_x.y.z
@@ -1407,10 +1407,10 @@ bg=orange</panel_attributes>
       <element>
         <type>com.umlet.element.custom.Node</type>
         <coordinates>
-          <x>725</x>
-          <y>755</y>
-          <w>125</w>
-          <h>75</h>
+          <x>708</x>
+          <y>608</y>
+          <w>100</w>
+          <h>60</h>
         </coordinates>
         <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
 center:LP-Citi : 11030</panel_attributes>
@@ -1420,10 +1420,10 @@ center:LP-Citi : 11030</panel_attributes>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>575</x>
-        <y>555</y>
-        <w>290</w>
-        <h>365</h>
+        <x>588</x>
+        <y>448</y>
+        <w>232</w>
+        <h>292</h>
       </coordinates>
       <panel_attributes>center:&lt;&lt;device&gt;&gt;
 center:lnx-efxd61</panel_attributes>
@@ -1432,21 +1432,21 @@ center:lnx-efxd61</panel_attributes>
     <element>
       <type>com.umlet.element.Relation</type>
       <coordinates>
-        <x>850</x>
-        <y>555</y>
-        <w>59</w>
-        <h>34</h>
+        <x>808</x>
+        <y>448</y>
+        <w>48</w>
+        <h>28</h>
       </coordinates>
       <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>15;25;50;15</additional_attributes>
+      <additional_attributes>12;20;40;12</additional_attributes>
     </element>
     <element>
       <type>com.umlet.element.Note</type>
       <coordinates>
-        <x>885</x>
-        <y>555</y>
-        <w>55</w>
-        <h>15</h>
+        <x>836</x>
+        <y>448</y>
+        <w>44</w>
+        <h>12</h>
       </coordinates>
       <panel_attributes>EFX 61
 bg=pink</panel_attributes>

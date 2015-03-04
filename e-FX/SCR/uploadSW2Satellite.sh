@@ -27,7 +27,7 @@ function uploadSW2Satellite.upload2Satellite() {
 		read application
 		APPLICATION="$application"
 		echo -e "\nChoose a Release from one of the following in $UPLOAD_AREA_FOLDER	\n"
-		find $UPLOAD_AREA_FOLDER -type d | grep $APPLICATION
+		#find $UPLOAD_AREA_FOLDER -type d | grep $APPLICATION
 		echo -n "Please introduce Release number, Ej.: 3.4.29 > "
 		read releaseNumber 
 		RELEASE_NUMBER="$releaseNumber"

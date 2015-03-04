@@ -109,8 +109,8 @@ function listenMainMenu(){
 	        6) clear
 	        # MAINTENANCE TASKS
 	            option_picked_identified "you chose to Execute other Maintenance Tasks"
-	            showMaintenanceTasksMenu
-	            listenMaintenanceTasksMenu
+	            menus.maintenance.showMaintenanceTasksMenu
+	            menus.maintenance.listenMaintenanceTasksMenu
 	        	sleep 2
 	            showMainMenu
 	            ;;

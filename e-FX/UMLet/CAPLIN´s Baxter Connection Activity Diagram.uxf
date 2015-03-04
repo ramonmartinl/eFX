@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.InitialState</type>
+    <coordinates>
+      <x>99</x>
+      <y>135</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>171</x>
+      <y>81</y>
+      <w>243</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>CAPLIN´S BAXTER CONNECTION (SIT1 | SIT2)
+bg=white
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>45</x>
+      <y>189</y>
+      <w>513</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>CHANGE CONNECTION COFIGURATION
+Edit: cerebroadapter.properties
+Change SIT1 to SIT2
+[caplin@lnx-sbankd5 | lnx-sbankd6 /opt/caplin/global_config/overrides/Datasource/etc ]
+* cerebroadapter.properties
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>81</x>
+      <y>117</y>
+      <w>44</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;72;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>45</x>
+      <y>333</y>
+      <w>396</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>SWITCH CONNECTION WITH BAXTER´S ADMIN TOOL
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>81</x>
+      <y>261</y>
+      <w>44</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;72;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>468</x>
+      <y>342</y>
+      <w>234</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Edit pe_env pointing to SIT1 or SIT2
+Start Baxter´s price-angine-admintool
+Broadcasting -&gt;Caplin -&gt;Broadcast Node (0: Deactivate, 4: Activate)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>333</y>
+      <w>71</w>
+      <h>53</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;54;36</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>585</x>
+      <y>189</y>
+      <w>252</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>(SIT1)
+daemon=180.37.194.62:8350
+network=;239.195.192.6
+service=8350
+(SIT2)
+daemon=180.37.194.55:4325
+network=;239.195.192.1
+service=4325
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>531</x>
+      <y>189</y>
+      <w>71</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>54;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>45</x>
+      <y>432</y>
+      <w>90</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>state</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

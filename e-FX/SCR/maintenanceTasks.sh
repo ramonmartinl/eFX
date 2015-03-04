@@ -11,7 +11,7 @@
 #
 ###############################################################################
 
-
+declare -r BIG_LOG_FILES=bigLogs.out
 
 # Downloads software from URL
 # Usage: maintenanceTasks.downloadEFX $1
@@ -51,76 +51,88 @@ function maintenanceTasks.downloadEFX(){
 		utils.logResult "Software from $downloadURL failed to download"
 	fi
 	popd
-}
+}	
 
 # Start LP Points Simulation
 # Usage: maintenanceTasks.startSimulationPoints
 function maintenanceTasks.startSimulationPoints(){
-	ENV_MACHINES_ALLOWED[0]=${ENV_MACHINES_EFXD[38]}
-	utils.isAllowedHost hostAllowed
-	ENV_MACHINES_ALLOWED=()	
-	#if  [ $hostAllowed = true ]; then
+			#declare -i pPid1=$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}');
+			#declare -i pPid2=$(ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print $2}');
+			#kill -9 "$pPid1 $pPid2";
+			#ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}'|xargs kill;
+			#ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print $2}'|xargs kill;
+			#pushd /dev/shm/d3data;
+			#./startServer.sh.NDF.20;
+		echo "Enter Update Rate: >"
+		read updateRate	
 		declare -x REMOTE_COMMAND="
-			# kill existing processes
-			declare -i pPid1=\"$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print \"$2}');
-			declare -i pPid2=\"$(ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print \"$2}');
-			kill -9 "\"$pPid1 \"$pPid2";
-			# start it
-			pushd /dev/shm/d3data; 
-			./startServer.sh.NDF; 
-			popd"
-		
-		ssh "$USER_STRMBASE@$ENV_MACHINES_EFXD[38]" $REMOTE_COMMAND
-		#utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Killed successfully"
+			killall -9 sink_driven_src
+			pushd /dev/shm/d3data/replay/demo;
+			export LD_LIBRARY_PATH=.;
+			./sink_driven_src -S SFWD -c -I 1 -E sslauto -Q /dev/shm/d3data/capture/demo/newDataNDF -K -N 8105 -U \"$updateRate\";
+			popd;"
+			
+		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" $REMOTE_COMMAND
 		utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Started successfully"
-	#fi	
 }
 
 # Change LP Points Simulation File
 # Usage: maintenanceTasks.changeSimulationPointsFile
 # Tips: REMEMBER juancp.awk file must be Changed first
 function maintenanceTasks.changeSimulationPointsFile(){
-	ENV_MACHINES_ALLOWED[0]=${ENV_MACHINES_EFXD[38]}
-	utils.isAllowedHost hostAllowed
-	ENV_MACHINES_ALLOWED=()	
-	#if  [ $hostAllowed = true ]; then
-		utils.logResult "REMEMBER: juancp.awk file must be Changed first"
+		utils.logResult "REMEMBER: changeNewDataNDF.awk file must be Changed first"
 		declare -x REMOTE_COMMAND="
-			declare -x now=\"$(date +"%Y-%m-%d-%H:%M:%S");
-			# Backup newDataNDF file
 			pushd "/dev/shm/d3data/capture/demo";
-			cp newDataNDF newDataNDF.\"$now.bak;
-			# Transform the Prices file
-			awk -f juancp.awk newDataNDF;
+			cp newDataNDF newDataNDF.$(date +"%Y-%m-%d-%H-%M-%S").bak;
+			awk -f changeNewDataNDF.awk newDataNDF;
 			cp newDataNDF.new newDataNDF;
 			popd;"
-			
-		ssh "$USER_STRMBASE@$ENV_MACHINES_EFXD[38]" $REMOTE_COMMAND
+		
+		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" $REMOTE_COMMAND
 		utils.logResult "LP Points Simulation File : Changed successfully"
-	#fi	
 }
 
 # Find log files bigger than 2GB
 # Usage: maintenanceTasks.findBigLogs
 function maintenanceTasks.findBigLogs(){
-	utils.logResult "$(find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr)"
+	touch $BIG_LOG_FILES
+	find /logs -name '*.log' -type f -size +2000M -printf '%p\n'| sort -nr >$BIG_LOG_FILES
+	if [[ -s $BIG_LOG_FILES ]]; then
+		utils.logResult "$(cat $BIG_LOG_FILES) found"
+	fi	
+}
+
+# Removes log files bigger than 2GB
+# Usage: maintenanceTasks.removeBigLogs
+# Hint: you must remove processes first
+function maintenanceTasks.removeBigLogs(){
+	maintenanceTasks.findBigLogs
+	if [[ -s $BIG_LOG_FILES ]]; then
+		while read -r filename; do
+	  		rm "$filename"
+			if [ $? -eq 0 ]; then
+				utils.logResult "$filename removed successfully"
+			else 	
+				utils.logResult "$filename could not be removed"
+			fi
+		done < $BIG_LOG_FILES
+	else utils.logResult "No Big log files found" 	
+	fi
 }
 
 # Stars/Stops/Manages Processes
 # Usage: maintenanceTasks.manageEFXProcess
 function maintenanceTasks.manageEFXProcess(){
 	utils.getTargetMachine
-	echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
-	echo "Start[t], Stop[p], Show[w] >"
-	read opt_efx_process_action
-	
-	//TODO: check this
-	if [ "$TARGET_PROCESS" == "eFX-Adaxter" ] || [ "$TARGET_PROCESS" == "eFX-CustomerPricing" ] || [ "$TARGET_PROCESS" == "eFX-DashboardBridge" ]
-		  || [ "$TARGET_PROCESS" == "eFX-ForwardPricing" ] || [ "$TARGET_PROCESS" == "eFX-Pricetenon" ] || [ "$TARGET_PROCESS" == "eFX-TradeReports" ]
-		  || [ "$TARGET_PROCESS" == "eFX-Trading" ]; then 
+	#echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
+	if [ "$TARGET_PROCESS" == "eFX-Adaxter" ] || [ "$TARGET_PROCESS" == "eFX-CustomerPricing" ] || [ "$TARGET_PROCESS" == "eFX-DashboardBridge" ] ||
+	 [ "$TARGET_PROCESS" == "eFX-ForwardPricing" ] || [ "$TARGET_PROCESS" == "eFX-Pricetenon" ] || [ "$TARGET_PROCESS" == "eFX-TradeReports" ] || 
+	 [ "$TARGET_PROCESS" == "eFX-Trading" ]; then 
 		echo "Use: Primary[p], Secondary[s] >"
 		read opt_efx_process_instance
 	fi
+	echo "Start[t], Stop[p], Show[w], Kill[k]  >"
+	read opt_efx_process_action
 	
 	case $opt_efx_process_action in
 	        
@@ -129,6 +141,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
+	        	sleep 2
 	        	;;
 	        	
 	        p)
@@ -136,6 +149,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess stop $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
+	        	sleep 2
 	        	;;
 	        	
 	       	w)
@@ -143,9 +157,19 @@ function maintenanceTasks.manageEFXProcess(){
 	        	option_picked_identified "you chose to Show $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
+	        	#sleep 2
+	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
+	        	;; 	
+	       
+	        k)
+	        # KILL PROCESS
+	        	option_picked_identified "you chose to Kill $TARGET_PROCESS Process"
+	        	maintenanceTasks.operateEFXProcess kill $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE killed"
+	        	#sleep 2
+	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
 	        	;; 		
 	esac        	
-	#ssh strmbase@"$TARGET_MACHINE" ls;
 }
 
 # Stops/Starts/Shows Process
@@ -167,6 +191,9 @@ function maintenanceTasks.operateEFXProcess(){
 			 # . $1 ./$2 $3
 			 echo "TEST"
 		 else
+		 	# Check the TIBCO port is free
+		 	declare -r REMOTE_EFX_PROCESS_FREE="netstat -putan | grep \"$TARGET_PORT\" |grep LISTEN |awk '{print $7}' |awk -F "/" '{print $1}'|xargs kill;"
+		 	# operate the process
 		 	declare -r REMOTE_EFX_PROCESS_COMMAND="
 		 		pushd \"$TARGET_PATH_SCRIPT\";
 				. \"$TARGET_ENV_SCRIPT\"; 
@@ -186,6 +213,7 @@ function maintenanceTasks.getTargetScripts(){
 
 	TARGET_SH_SCRIPT=''
 	TARGET_ENV_SCRIPT=''
+	TARGET_SH_SCRIPT_PRIMARY=''; TARGET_SH_SCRIPT_SECONDARY=''
 	for (( i = 0; i < ${#EFX_PROCESSES[@]}; i++ )); do
 	   if [ "${EFX_PROCESSES[$i]}" = "$TARGET_PROCESS" ]; then
 	       position=$i;
@@ -334,11 +362,11 @@ function maintenanceTasks.getTargetScripts(){
 				
 			4) 
 				#SIT1
-				if [ -z $isLP ]; then
+				if [ -z $isLP ] || [ "$TARGET_PROCESS" == 'eFX-LP-D3' ] || [ "$TARGET_PROCESS" == 'eFX-LP-MTI' ]; then
 					TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all/Linux/scripts
 	        		TARGET_ENV_SCRIPT=env_sit.sh
 				else
-		        	if [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
+		        	if [ -n $isLP ] && [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
 		        		TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-lp/Linux/scripts
 		        		TARGET_ENV_SCRIPT=env_sit_lp.sh
 		        	fi
@@ -347,11 +375,11 @@ function maintenanceTasks.getTargetScripts(){
 				
 			5) 
 				#SIT2
-				if [ -z $isLP ]; then
+				if [ -z $isLP ] || [ "$TARGET_PROCESS" == 'eFX-LP-D3' ] || [ "$TARGET_PROCESS" == 'eFX-LP-MTI' ]; then
 					TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all2/Linux/scripts
 	        		TARGET_ENV_SCRIPT=env_sit2_sb7.sh
 	        	else	
-		        	if [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
+		        	if [ -n $isLP ] && [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
 		        		TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-lp2/Linux/scripts
 		        		TARGET_ENV_SCRIPT=env_sit_lp.sh
 		        	fi

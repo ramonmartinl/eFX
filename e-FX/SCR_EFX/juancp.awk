@@ -40,24 +40,24 @@ if ($1 ~/SSL_ET/)
 #   { swmoneda1ok="1"
 # }
 
- if ($0 ~/EURGBP1W/)
+ if ($0 ~/USDCLP1M/)
    { swmoneda1ok="1" 
  }
   
- if (swmoneda1ok=="1")
-  { gsub(/TRADABLE/,"INDICATIVE")
-  }
+# if (swmoneda1ok=="1")
+#  { gsub(/TRADABLE/,"INDICATIVE")
+#  }
 
 # gsub(/INDICATIVE/,"TRADABLE")
 
 # if (swmoneda2ok=="1" && $0 ~/68<US>/)
-#   { gsub(/16 JUN 2014/,"18 JUN 2014")
+#   { gsub(/16 JUN 2014/,"18 JUN 2014")	
 #   }
 
 
-# if (swmoneda1ok=="1" && $0 ~/1691<US>/)
-#    { gsub(/1691<US>250<RS>/,"1691<US>5<RS>")
-#    }
+ if (swmoneda1ok=="1" && $0 ~/1694<US>/)
+    { gsub(/1694<US>02 APR 2015<RS>/,"1694<US>01 APR 2015<RS>")
+    }
 
 # if (swmoneda2ok=="1" && $0 ~/1691<US>/)
 #    { gsub(/1691<US>250<RS>/,"1691<US>10<RS>")
