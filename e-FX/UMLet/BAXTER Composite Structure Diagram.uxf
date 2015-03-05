@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>665</x>
+      <y>525</y>
+      <w>196</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+/opt/baxter/bin/price-engine-server-util.sh
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <group>
+    <group>
+      <element>
+        <type>com.umlet.element.Class</type>
+        <coordinates>
+          <x>301</x>
+          <y>280</y>
+          <w>539</w>
+          <h>168</h>
+        </coordinates>
+        <panel_attributes>&lt;&lt;component&gt;&gt;
+/opt/baxter/config-server/processors/
+fg=default
+bg=default</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>315</x>
+          <y>315</y>
+          <w>483</w>
+          <h>35</h>
+        </coordinates>
+        <panel_attributes>baxter-config-processor-price-engine.jar -&gt; /opt/baxter/lib/baxter-config-processor-price-engine-x.y.z.jar
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>315</x>
+          <y>357</y>
+          <w>497</w>
+          <h>35</h>
+        </coordinates>
+        <panel_attributes> baxter-config-processor-statistics.jar -&gt; /opt/baxter/lib/baxter-config-processor-statistics-x.y.z.jarbg=orange
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+      <element>
+        <type>com.umlet.element.custom.Artefact</type>
+        <coordinates>
+          <x>315</x>
+          <y>399</y>
+          <w>392</w>
+          <h>35</h>
+        </coordinates>
+        <panel_attributes>statistics-config-processor.jar -&gt; /opt/baxter/lib/statistics-config-processor-x.y.z.jar
+bg=orange</panel_attributes>
+        <additional_attributes/>
+      </element>
+    </group>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>301</x>
+        <y>462</y>
+        <w>224</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+/opt/baxter/etc/configuration-server-log.xml
+bg=green</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>301</x>
+        <y>245</y>
+        <w>259</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+/opt/baxter/config-server/jetty/contexts/config-server.xml
+bg=green</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>301</x>
+        <y>210</y>
+        <w>259</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+/opt/baxter/config-server/jetty/config-server-web.xml
+bg=green</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>301</x>
+        <y>175</y>
+        <w>245</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+/opt/baxter/config-server/jetty/jetty.conf
+bg=green</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>301</x>
+        <y>133</y>
+        <w>245</w>
+        <h>35</h>
+      </coordinates>
+      <panel_attributes>/opt/baxter/lib/baxter-config-server-x.y.z.war
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>266</x>
+        <y>91</y>
+        <w>140</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+start-configuration-server
+bg=cyan</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.SimpleComponent</type>
+      <coordinates>
+        <x>210</x>
+        <y>49</y>
+        <w>644</w>
+        <h>462</h>
+      </coordinates>
+      <panel_attributes>baxter-config-server</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>266</x>
+        <y>763</y>
+        <w>280</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+ blotterserver -&gt; /opt/baxter/bin/price-engine-blotterserver.sh
+bg=cyan</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>301</x>
+        <y>805</y>
+        <w>364</w>
+        <h>35</h>
+      </coordinates>
+      <panel_attributes>/opt/baxter/lib/price-engine-blotterserver/price-engine-blotterserver-x.y.z.jar
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.SimpleComponent</type>
+      <coordinates>
+        <x>210</x>
+        <y>728</y>
+        <w>644</w>
+        <h>133</h>
+      </coordinates>
+      <panel_attributes>price-engine-blotterserver</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <group>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>301</x>
+        <y>658</y>
+        <w>322</w>
+        <h>35</h>
+      </coordinates>
+      <panel_attributes>/opt/baxter/lib/price-engine-dbserver/price-engine-dbserver-x.y.z.jar
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>266</x>
+        <y>616</y>
+        <w>245</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+dbserver -&gt; /opt/baxter/bin/price-engine-dbserver.sh
+bg=cyan</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.SimpleComponent</type>
+      <coordinates>
+        <x>210</x>
+        <y>581</y>
+        <w>644</w>
+        <h>133</h>
+      </coordinates>
+      <panel_attributes>price-engine-dbserver</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.custom.Artefact</type>
+    <coordinates>
+      <x>301</x>
+      <y>1099</y>
+      <w>308</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>/opt/baxter/lib/price-engine-servlet/price-engine-servlet-x.y.z.jar
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>266</x>
+      <y>1057</y>
+      <w>252</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+dashboard -&gt; /opt/baxter/bin/price-engine-servlet.sh
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.SimpleComponent</type>
+    <coordinates>
+      <x>210</x>
+      <y>1022</y>
+      <w>644</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>price-engine-servlet (dashboard)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>490</x>
+      <y>539</y>
+      <w>209</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>196;21;196;91;21;91</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>525</x>
+      <y>539</y>
+      <w>174</w>
+      <h>251</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>161;21;161;238;21;238</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>497</x>
+      <y>539</y>
+      <w>202</w>
+      <h>398</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>189;21;189;385;21;385</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>497</x>
+      <y>539</y>
+      <w>202</w>
+      <h>545</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>189;21;189;532;21;532</additional_attributes>
+  </element>
+  <group>
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>266</x>
+        <y>910</y>
+        <w>252</w>
+        <h>28</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;component&gt;&gt;
+ broadcast -&gt; /opt/baxter/bin/price-engine-broadcast.sh
+bg=cyan</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.Artefact</type>
+      <coordinates>
+        <x>301</x>
+        <y>952</y>
+        <w>336</w>
+        <h>35</h>
+      </coordinates>
+      <panel_attributes>/opt/baxter/lib/price-engine-broadcast/price-engine-broadcast-x.y.z.jar
+bg=orange</panel_attributes>
+      <additional_attributes/>
+    </element>
+    <element>
+      <type>com.umlet.element.custom.SimpleComponent</type>
+      <coordinates>
+        <x>210</x>
+        <y>875</y>
+        <w>644</w>
+        <h>133</h>
+      </coordinates>
+      <panel_attributes>price-engine-broadcast</panel_attributes>
+      <additional_attributes/>
+    </element>
+  </group>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>448</x>
+      <y>0</y>
+      <w>147</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>BAXTER COMPONENTS
+bg=default
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -4,8 +4,8 @@
   <element>
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
-      <x>99</x>
-      <y>135</y>
+      <x>108</x>
+      <y>144</y>
       <w>18</w>
       <h>18</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>171</x>
-      <y>81</y>
+      <x>180</x>
+      <y>90</y>
       <w>243</w>
       <h>27</h>
     </coordinates>
@@ -28,8 +28,8 @@ fg=blue</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>45</x>
-      <y>189</y>
+      <x>54</x>
+      <y>198</y>
       <w>513</w>
       <h>99</h>
     </coordinates>
@@ -44,8 +44,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>81</x>
-      <y>117</y>
+      <x>90</x>
+      <y>126</y>
       <w>44</w>
       <h>89</h>
     </coordinates>
@@ -55,8 +55,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>45</x>
-      <y>333</y>
+      <x>54</x>
+      <y>342</y>
       <w>396</w>
       <h>63</h>
     </coordinates>
@@ -68,8 +68,8 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>81</x>
-      <y>261</y>
+      <x>90</x>
+      <y>270</y>
       <w>44</w>
       <h>89</h>
     </coordinates>
@@ -79,9 +79,9 @@ bg=pink</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>468</x>
-      <y>342</y>
-      <w>234</w>
+      <x>477</x>
+      <y>351</y>
+      <w>405</w>
       <h>99</h>
     </coordinates>
     <panel_attributes>Edit pe_env pointing to SIT1 or SIT2
@@ -93,8 +93,8 @@ bg=yellow</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>414</x>
-      <y>333</y>
+      <x>423</x>
+      <y>342</y>
       <w>71</w>
       <h>53</h>
     </coordinates>
@@ -104,8 +104,8 @@ bg=yellow</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>585</x>
-      <y>189</y>
+      <x>594</x>
+      <y>198</y>
       <w>252</w>
       <h>135</h>
     </coordinates>
@@ -123,8 +123,8 @@ bg=yellow</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>531</x>
-      <y>189</y>
+      <x>540</x>
+      <y>198</y>
       <w>71</w>
       <h>44</h>
     </coordinates>
@@ -134,12 +134,69 @@ bg=yellow</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>45</x>
-      <y>432</y>
-      <w>90</w>
-      <h>36</h>
+      <x>54</x>
+      <y>450</y>
+      <w>306</w>
+      <h>54</h>
     </coordinates>
-    <panel_attributes>state</panel_attributes>
+    <panel_attributes>RESTART BAXTER
+bg=pink</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>90</x>
+      <y>378</y>
+      <w>44</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;72;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>54</x>
+      <y>549</y>
+      <w>306</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>RESTART CAPLIN
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>90</x>
+      <y>477</y>
+      <w>44</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;72;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.FinalState</type>
+    <coordinates>
+      <x>108</x>
+      <y>639</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>i</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>90</x>
+      <y>576</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;63;27;27</additional_attributes>
   </element>
 </diagram>
