@@ -59,7 +59,6 @@ function maintenanceTasks.startSimulationPoints(){
 			#declare -i pPid1=$(ps -fu strmbase|grep startServer.sh.NDF|grep -v grep|awk '{print $2}');
 			#declare -i pPid2=$(ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print $2}');
 			#kill -9 "$pPid1 $pPid2";
-			#ps -fu strmbase|grep /dev/shm/d3data/capture/demo/newDataNDF|grep -v grep|awk '{print $2}'|xargs kill;
 			#ps -fu strmbase|grep sink_driven_src|grep -v grep|awk '{print $2}'|xargs kill;
 			#pushd /dev/shm/d3data;
 			#./startServer.sh.NDF.20;
@@ -69,7 +68,7 @@ function maintenanceTasks.startSimulationPoints(){
 			killall -9 sink_driven_src;
 			pushd "/dev/shm/d3data/replay/demo";
 			export LD_LIBRARY_PATH=.;
-			nohup /dev/shm/d3data/replay/demo/sink_driven_src -S SFWD -c -I 1 -E sslauto -Q /dev/shm/d3data/capture/demo/newDataNDF -K -N 8105 -U $updateRate \"&\" ;
+			nohup ./sink_driven_src -S SFWD -c -I 1 -E sslauto -Q /dev/shm/d3data/capture/demo/newDataNDF -K -N 8105 -U $updateRate >/dev/null 2>&1 ;
 			popd;"
 			
 		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" $REMOTE_COMMAND
