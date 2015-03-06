@@ -40,13 +40,14 @@ showBuildEFXModulesMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 21)${FMT_MENU} Build eFX-Pricetenon ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 22)${FMT_MENU} Build eFX-Pricing ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 23)${FMT_MENU} Build eFX-SB7-Common ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 24)${FMT_MENU} Build eFX-SB7-Parent ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 25)${FMT_MENU} Build eFX-SB7-Tools ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 26)${FMT_MENU} Build eFX-TenorService ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 27)${FMT_MENU} Build eFX-TickStore ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 28)${FMT_MENU} Build eFX-TradeReports ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 29)${FMT_MENU} Build eFX-Trading ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 30)${FMT_MENU} Build eFX-Volatility ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 24)${FMT_MENU} Build eFX-SB73-Common ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 25)${FMT_MENU} Build eFX-SB7-Parent ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 26)${FMT_MENU} Build eFX-SB7-Tools ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 27)${FMT_MENU} Build eFX-TenorService ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 28)${FMT_MENU} Build eFX-TickStore ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 29)${FMT_MENU} Build eFX-TradeReports ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 30)${FMT_MENU} Build eFX-Trading ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 31)${FMT_MENU} Build eFX-Volatility ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_efx_modules
@@ -277,8 +278,17 @@ function listenBuildEFXModulesMenu(){
 	        	sleep 2
 	        	showBuildEFXModulesMenu
 	            ;;
-	        	                      	        
+	        	        	                      	        
 	        24) clear
+	        # BUILD eFX-SB73-Common MODULE
+	            option_picked_identified "you chose to Build eFX-SB73-Common Module"
+	            echo "eFX-SB73-Common" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
+	        	builCerebro.buildEFXModule eFX-SB73-Common
+	        	sleep 2
+	        	showBuildEFXModulesMenu 
+	            ;; 
+	        	                      	        
+	        25) clear
 	        # BUILD eFX-SB7-Parent MODULE
 	            option_picked_identified "you chose to Build eFX-SB7-Parent Module"
 	            echo "eFX-SB7-Parent" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
@@ -286,8 +296,8 @@ function listenBuildEFXModulesMenu(){
 	        	sleep 2
 	        	showBuildEFXModulesMenu 
 	            ;;   
-	        	        	                      	        
-	        25) clear
+	        	        	        	                      	        
+	        26) clear
 	        # BUILD eFX-SB7-Tools MODULE
 	            option_picked_identified "you chose to Build eFX-SB7-Tools Module"
 	            echo "eFX-SB7-Tools" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
@@ -295,8 +305,8 @@ function listenBuildEFXModulesMenu(){
 	        	sleep 2
 	        	showBuildEFXModulesMenu 
 	            ;; 
-	        	        	        	                      	        
-	        26) clear
+	            	        	        	                      	        
+	        27) clear
 	        # BUILD eFX-TenorService MODULE
 	            option_picked_identified "you chose to Build eFX-TenorService Module"
 	            echo "eFX-TenorService" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
@@ -305,7 +315,7 @@ function listenBuildEFXModulesMenu(){
 	        	showBuildEFXModulesMenu 
 	            ;;   
 	        	        	        	        	                      	        
-	        27) clear
+	        28) clear
 	        # BUILD eFX-TickStore MODULE
 	            option_picked_identified "you chose to Build eFX-TickStore Module"
 	            echo "eFX-TickStore" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
@@ -314,7 +324,7 @@ function listenBuildEFXModulesMenu(){
 	        	showBuildEFXModulesMenu 
 	            ;;    
 	         	        	        	        	        	                      	        
-	        28) clear
+	        29) clear
 	        # BUILD eFX-TradeReports MODULE
 	            option_picked_identified "you chose to Build eFX-TradeReports Module"
 	            echo "eFX-TradeReports" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
@@ -323,7 +333,7 @@ function listenBuildEFXModulesMenu(){
 	        	showBuildEFXModulesMenu 
 	            ;;        
 	       	         	        	        	        	        	                      	        
-	        29) clear
+	        30) clear
 	        # BUILD eFX-Trading MODULE
 	            option_picked_identified "you chose to Build eFX-Trading Module"
 	            echo "eFX-Trading" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out
@@ -332,7 +342,7 @@ function listenBuildEFXModulesMenu(){
 	        	showBuildEFXModulesMenu 
 	            ;;   
 	        	       	         	        	        	        	        	                      	        
-	        30) clear
+	        31) clear
 	        # BUILD eFX-Volatility MODULE
 	            option_picked_identified "you chose to Build eFX-Volatility Module"
 	            echo "eFX-Volatility" >>$NEW_EFX_MODULES_TMP.$RELEASE_NUMBER.out

@@ -27,6 +27,9 @@ function baxterTasks.startBaxterConfigurationServer(){
 	$BAXTER_HOME/bin/start-configuration-server --daemon &
 	utils.logResult "Configuration Server Baxter Process started successfully\n"
 	return 0
+	#if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
+	#else
+	#fi
 }
 
 # Starts Baxter Price Engine DBServer

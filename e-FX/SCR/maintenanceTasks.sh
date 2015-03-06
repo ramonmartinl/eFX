@@ -98,6 +98,8 @@ function maintenanceTasks.findBigLogs(){
 	find /logs -name '*.log' -type f -size +2000M -printf '%p\n'| sort -nr >$BIG_LOG_FILES
 	if [[ -s $BIG_LOG_FILES ]]; then
 		utils.logResult "$(cat $BIG_LOG_FILES) found"
+	else 
+		utils.logResult "No Big log Files found"	
 	fi	
 }
 
@@ -119,9 +121,10 @@ function maintenanceTasks.removeBigLogs(){
 	fi
 }
 
-# Stars/Stops/Manages Processes
+# Stars/Stops/Manages EFX Processes
 # Usage: maintenanceTasks.manageEFXProcess
 function maintenanceTasks.manageEFXProcess(){
+	# get Target configuration
 	utils.getTargetMachine
 	#echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
 	if [ "$TARGET_PROCESS" == "eFX-Adaxter" ] || [ "$TARGET_PROCESS" == "eFX-CustomerPricing" ] || [ "$TARGET_PROCESS" == "eFX-DashboardBridge" ] ||
@@ -138,7 +141,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        t)
 	        # START PROCESS
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
-	        	maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        		maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
 	        	sleep 2
 	        	;;
@@ -154,7 +157,13 @@ function maintenanceTasks.manageEFXProcess(){
 	       	w)
 	        # SHOW PROCESS
 	        	option_picked_identified "you chose to Show $TARGET_PROCESS Process"
-	        	maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        	if [ "$TARGET_PROCESS" == 'Baxter' ]; then
+	        		echo "$TARGET_PROCESS"
+	        	elif [ "$TARGET_PROCESS" == 'Caplin' ]; then
+	        		echo "$TARGET_PROCESS"
+	        	else
+	        		maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        	fi	
 	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
 	        	#sleep 2
 	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
@@ -171,6 +180,62 @@ function maintenanceTasks.manageEFXProcess(){
 	esac        	
 }
 
+# Search BUS for Prices
+# Usage: maintenanceTasks.search4Prices
+function maintenanceTasks.search4Prices(){
+	# get Target configuration
+	utils.getTargetMachine4LP
+	#echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
+	TARGET_PATH_SCRIPT=/local/home/strmbase/global/scripts
+	for (( i = 0; i < ${#EFX_ENVIRONMENTS[@]}; i++ )); do
+	   if [ "${EFX_ENVIRONMENTS[$i]}" = "$TARGET_ENV" ]; then
+	       position=$i;
+	   fi
+	 done
+	 case $position in 
+	 
+			1) 
+				#DEV1
+	        	TARGET_SH_SCRIPT=rv-dev1-all
+				;;	
+				
+			2) 
+				#DEV3
+	        	TARGET_SH_SCRIPT=rv-dev3-all
+				;;		
+							
+			3) 
+				#DEV4
+	        	TARGET_SH_SCRIPT=rv-dev4-all
+				;;
+				
+			4) 
+				#SIT1
+				TARGET_SH_SCRIPT=rv-sit-all	
+				;;	
+				
+			5) 
+				#SIT2
+				TARGET_SH_SCRIPT=rv-sit2-all	
+				;;
+				
+			6) 
+				#CAPLIN
+	        	TARGET_SH_SCRIPT=rv-caplin-all
+				;;	
+	
+	esac
+	
+	# operate the process
+	declare -r REMOTE_EFX_LP_COMMAND="
+		pushd \"$TARGET_PATH_SCRIPT\";
+		./\"$TARGET_SH_SCRIPT\" | grep RAW; 
+		popd;"
+	
+	echo "$REMOTE_EFX_LP_COMMAND"			
+	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
+}
+
 # Stops/Starts/Shows Process
 # Usage: maintenanceTasks.operateEFXProcess $1 $2
 # $1: operation to do
@@ -184,12 +249,7 @@ function maintenanceTasks.operateEFXProcess(){
 	 if [ -n "$TARGET_SH_SCRIPT_SECONDARY" ] && [ "$2" == "s" ]; then
 	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_SECONDARY
 	 fi 
-	 if [ -n "$TARGET_SH_SCRIPT" ]; then
-		if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
-			 # Operate process now
-			 # . $1 ./$2 $3
-			 echo "TEST"
-		 else
+	 if [ -n "$TARGET_SH_SCRIPT" ] && [ "$TARGET_SH_SCRIPT" != 'Baxter' ] && [ "$TARGET_SH_SCRIPT" != 'Caplin' ]; then
 		 	# Check the TIBCO port is free
 		 	declare -r REMOTE_EFX_PROCESS_FREE="netstat -putan | grep \"$TARGET_PORT\" |grep LISTEN |awk '{print $7}' |awk -F "/" '{print $1}'|xargs kill;"
 		 	# operate the process
@@ -197,10 +257,10 @@ function maintenanceTasks.operateEFXProcess(){
 		 		pushd \"$TARGET_PATH_SCRIPT\";
 				. \"$TARGET_ENV_SCRIPT\"; 
 				./\"$TARGET_SH_SCRIPT\" \"$1\"; 
-				popd"
-				
+				popd;"
+			
+			#echo "$REMOTE_EFX_PROCESS_COMMAND"	
 		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
-		 fi
 	 else 
 		utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE not found"
 	 fi
@@ -329,6 +389,14 @@ function maintenanceTasks.getTargetScripts(){
 	        		        		        		        	        	
 	        26) 
 	        	TARGET_SH_SCRIPT=UBSCombined
+	        	;;
+	        	        	        		        		        		        	        	
+	        27) 
+	        	TARGET_SH_SCRIPT=Baxter
+	        	;;			
+	        	        		        		        		        	        	
+	        28) 
+	        	TARGET_SH_SCRIPT=Caplin
 	        	;;		
 	        		        		        		        	        	
 	 esac
@@ -354,7 +422,7 @@ function maintenanceTasks.getTargetScripts(){
 				;;		
 							
 			3) 
-				#DEV5
+				#DEV4
 				TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-dev4/Linux/scripts
 	        	TARGET_ENV_SCRIPT=env_dev4.sh
 				;;

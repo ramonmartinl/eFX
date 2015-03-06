@@ -109,11 +109,28 @@ function utils.ask4SWReleaseDetails(){
 }
 
 # Gets the machine that runs a service in deployment environment
-# http://stackoverflow.com/questions/16487258/how-to-declare-2d-array-in-bash
 # Usage: utils.getTargetMachine
 function utils.getTargetMachine(){
 	# Asks for a Process
 	utils.readProccess
+	# Ask for a Deployment Environment
+	utils.getTargetConf
+}
+
+
+# Gets the machine that runs a service in deployment environment
+# Usage: utils.getTargetMachine4LP
+function utils.getTargetMachine4LP(){
+	# Asks for a Process
+	utils.readLP
+	# Ask for a Deployment Environment
+	utils.getTargetConf
+}
+
+# Gets the configuration in deployment environment
+# http://stackoverflow.com/questions/16487258/how-to-declare-2d-array-in-bash
+# Usage: utils.getTargetConf
+function utils.getTargetConf(){
 	# Ask for a Deployment Environment
 	utils.readDeploymentEnvironment
 
@@ -129,8 +146,11 @@ function utils.getTargetMachine(){
 		PORT=${DEPLOYMENT_ENVIRONMENT[2]}
 		HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
 		#echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, PORT: $PORT, HOST: $HOST_MACHINE"
-		if [ "$PROCESS" == "${EFX_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
+		if [ "$PROCESS" != 'Caplin' ] && [ "$PROCESS" == "${EFX_PROCESSES[targetProcess]}" ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
 			TARGET_PROCESS="$PROCESS"; TARGET_ENV="$ENV"; TARGET_MACHINE="$HOST_MACHINE"; TARGET_PORT="$PORT"
+		fi	
+		if [ "$PROCESS" == 'Caplin' ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
+			TARGET_PROCESS="$PROCESS"; TARGET_ENV="$ENV"; TARGET_MACHINE="CAPLIN"
 		fi
 	done
 	utils.logResult "${EFX_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
@@ -144,6 +164,20 @@ function utils.readProccess(){
 	for ((i=1; i<$count; i++))
 	do
 		echo -e "$i) ${EFX_PROCESSES[i]}"
+	done
+	read targetProcess
+}
+
+# Asks for an LP
+#Usage: utils.readLP
+function utils.readLP(){
+	echo "Select one of the following LPs >..."
+	count=${#EFX_PROCESSES[@]}; #echo "SIZE: $count"
+	for ((i=1; i<$count; i++))
+	do
+		if [[ "${EFX_PROCESSES[i]}" =~ .*eFX-LP.* ]]; then
+			echo -e "$i) ${EFX_PROCESSES[i]}"
+		fi	
 	done
 	read targetProcess
 }

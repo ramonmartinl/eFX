@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 22/01/2015 
-# Last Modified: 27/01/2015 (ramn.martn)
+# Last Modified: 05/03/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -46,12 +46,13 @@ showMainMenu(){
     echo -e "${FMT_MENU}#############################################${FMT_NORMAL}"
     echo -e "${FMT_MENU}# Welcome to the EFX Installation Program${FMT_NORMAL}"
     echo -e "${FMT_MENU}#############################################${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Build Cerebro ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Baxter ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Install Baxter Air ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 4)${FMT_MENU} Install Cerebro ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 5)${FMT_MENU} Install Caplin ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 6)${FMT_MENU} Maintenance Tasks ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Build Cerebro Release ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Install Cerebro Release ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Install Baxter Release ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 4)${FMT_MENU} Install Caplin Release ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 5)${FMT_MENU} Baxter´s Maintenance ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 6)${FMT_MENU} Caplin´s Maintenance ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 7)${FMT_MENU} Other Maintenance Tasks ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_main
@@ -72,25 +73,8 @@ function listenMainMenu(){
 	        	utils.executeAsBuild buildCerebro.build 2>>$EFX_INSTALLER_ERROR_FILE
 	        	showMainMenu
 	        	;;
-	        
+	
 	        2) clear
-	        # BAXTER
-	        	option_picked_identified "you chose to Manage Baxter"
-	        	showBaxterTasksMenu
-	            listenBaxterTasksMenu
-	        	sleep 2
-	        	showMainMenu
-	        	;;
-	
-	        3) clear
-	        # INSTALL BAXTER AIR
-	            option_picked_identified "you chose to Install new Baxter Air release"
-	            upload2Satellite Baxter_Air 2>$EFX_INSTALLER_ERROR_FILE
-	            sleep 2
-	        	showMainMenu
-	            ;;
-	
-	        4) clear
 	        # INSTALL CEREBRO
 	            option_picked_identified "you chose to Install new Cerebro release"
 	            upload2Satellite Cerebro 2>$EFX_INSTALLER_ERROR_FILE
@@ -98,15 +82,41 @@ function listenMainMenu(){
 	            showMainMenu
 	            ;;
 	
-	        5) clear
+	        3) clear
+	        # INSTALL BAXTER
+	            option_picked_identified "you chose to Install new Baxter Air release"
+	            upload2Satellite Baxter_Air 2>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	        	showMainMenu
+	            ;;
+	
+	        4) clear
 	        # INSTALL CAPLIN
 	            option_picked_identified "you chose to Install new Caplin release"
 	        	upload2Satellite Caplin 2>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            showMainMenu
 	            ;;
-	
+	        
+	        5) clear
+	        # BAXTER
+	        	option_picked_identified "you chose to Manage Baxter"
+	        	showBaxterTasksMenu
+	            listenBaxterTasksMenu
+	        	sleep 2
+	        	showMainMenu
+	        	;;
+	        
 	        6) clear
+	        # CAPLIN
+	        	option_picked_identified "you chose to Manage Baxter"
+	        	showCaplinTasksMenu
+	            listenCaplinTasksMenu
+	        	sleep 2
+	        	showMainMenu
+	        	;;
+	        		
+	        7) clear
 	        # MAINTENANCE TASKS
 	            option_picked_identified "you chose to Execute other Maintenance Tasks"
 	            menus.maintenance.showMaintenanceTasksMenu

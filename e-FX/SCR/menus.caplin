@@ -1,0 +1,86 @@
+################################################################################
+#!/bin/env bash
+#
+# Script for showing Caplin Maintenance menus
+#
+# Usage: menus.caplin
+#
+# Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
+# Since: 05/03/2015 
+# Last Modified: 05/03/2015 (ramn.martn)
+#
+###############################################################################
+
+# Menu for Caplin Maintenance Tasks
+showCaplinTasksMenu(){
+    clear
+    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
+    echo -e "${FMT_MENU}* Caplin --> Maintenance Tasks ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Stop Caplin ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Start Caplin ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 3)${FMT_MENU} Show Caplin Status ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 4)${FMT_MENU} Show Caplin Version ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
+    echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
+    read opt_caplin_tasks
+}
+
+# Read option from Caplin Maintenance Menu
+function listenCaplinTasksMenu(){
+	while [ opt_caplin_tasks != '' ]
+	    do
+	    if [[ $opt_caplin_tasks = "" ]]; then 
+	            # Show Main Menu
+				showMainMenu
+				listenMainMenu
+	    else
+	        case $opt_caplin_tasks in
+	        1) clear
+	        # STOP CAPLIN
+	            option_picked_identified "you chose to Stop Caplin"
+	            caplinTasks.stopCaplin 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            showCaplinTasksMenu
+	            ;;
+	            	            	        
+	        2) clear
+	        # START CAPLIN
+	            option_picked_identified "you chose to Start Caplin"
+	            caplinTasks.startCaplin 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            showCaplinTasksMenu
+	            ;;
+	            	            	        
+	        3) clear
+	        # SHOW CAPLIN STATUS
+	            option_picked_identified "you chose to Show Caplin Status"
+	            caplinTasks.statusCaplin 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            showCaplinTasksMenu
+	            ;;
+	            	            	            	        
+	        4) clear
+	        # SHOW CAPLIN VERSION
+	            option_picked_identified "you chose to Show Caplin Version"
+	            caplinTasks.versionCaplin 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            showCaplinTasksMenu
+	            ;;
+	            
+	        x) clear
+	        	exit 0
+	        	;;
+	
+	        \n) clear
+	        	exit 0
+	        	;;
+	
+	        *) clear
+	        	option_picked "Pick an option from the menu";
+	        	showMainMenu
+	        	;;
+	    	esac
+		fi
+	done
+}

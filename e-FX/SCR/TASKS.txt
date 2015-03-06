@@ -35,8 +35,11 @@ find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\
 #Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos
 #Pasar todo UMLDesigner a UMLet
 #Añadir Color al menu de procesos y entornos de Arrancar procesos de EFX.
+#Añadir la funcionalidad de iniciar los puntos con ur:20
+#Añadir reiniciar los puntos
+#Añadir el nuevo Modulo SB73-Common
+#Mirar precios en el BUS
 Añadir matar rapido todos los procesos de un entorno
-Añadir reiniciar los puntos
 Añadir la funcionalidad de desbloquear un puerto de Tibco cuando no arranca un proceso
 $ netstat -putan | grep puerto
 tcp        0      0 :::8098                     :::*                        LISTEN      1772/"/usr/lib/jvm/
@@ -46,4 +49,4 @@ tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50993      TIME
 tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50950      TIME_WAIT   -
 
 $ kill -9 1772
-Añadir la funcionalidad de iniciar los puntos con ur:20
+Start/Stop/Install Caplin

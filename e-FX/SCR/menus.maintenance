@@ -27,6 +27,7 @@ menus.maintenance.showMaintenanceTasksMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 7)${FMT_MENU} Sign RPMs ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Manage EFX Process ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 9)${FMT_MENU} Kill all EFX Processes 4 an Environment ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 10)${FMT_MENU} Search BUS for Prices ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_maintenance_tasks
@@ -128,6 +129,14 @@ function menus.maintenance.listenMaintenanceTasksMenu(){
 	        	maintenanceTasks.killEFXProcesses 2>>$EFX_INSTALLER_ERROR_FILE
 	        	sleep 2
 	            #menus.maintenance.showMaintenanceTasksMenu
+	            ;;
+	            	      	        	          	            	            	            	               		        
+	        10) clear
+	        # SEARCH BUS 4 PRICES
+	            option_picked_identified "you chose to Search BUS for Prices"
+	        	maintenanceTasks.search4Prices 2>>$EFX_INSTALLER_ERROR_FILE
+	        	sleep 2
+	            menus.maintenance.showMaintenanceTasksMenu
 	            ;;
 	                                  
 	        x) clear

@@ -130,9 +130,11 @@ function buildApplication() {
 function cleanNewReleaseFolder() {
 	echo -e "\nCleaning . & .svn Files from $RELEASE_FOLDER..."
 	find $RELEASE_FOLDER -name ".svn" | awk '{print "rm -rf "$0}' | sh
+	find $RELEASE_FOLDER -name "src" | awk '{print "rm -rf "$0}' | sh
+	find $RELEASE_FOLDER -name "target" | awk '{print "rm -rf "$0}' | sh
 	find $RELEASE_FOLDER/SB7 -name "." | awk '{print "rm -rf "$0}' | sh
 	find $RELEASE_FOLDER/Linux -name "." | awk '{print "rm -rf "$0}' | sh
-	utils.logResult ". & .svn Files cleaned successfully from $RELEASE_FOLDER"
+	utils.logResult "Files cleaned successfully from $RELEASE_FOLDER"
 }
 
 # BUILD RPM PACKAGES with (efx001) Passwd
