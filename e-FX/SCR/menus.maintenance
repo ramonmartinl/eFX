@@ -71,8 +71,7 @@ function menus.maintenance.listenMaintenanceTasksMenu(){
 	        # UPLOAD SW TO SATELLITE
 	            option_picked_identified "you chose to Upload Software to Satellite"
 	        	utils.executeAsBuild uploadSW2Satellite.upload2Satellite 2>>$EFX_INSTALLER_ERROR_FILE
-	        	sleep 2
-	            menus.maintenance.showMaintenanceTasksMenu
+	            utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
 	            ;;
 	         	        
 	        4) clear

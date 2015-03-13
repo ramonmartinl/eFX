@@ -18,6 +18,34 @@ function utils.logResult(){
 	echo -e "\n### $(date): "$1" " | tee --append $EFX_INSTALLER_LOG_FILE
 }
 
+# sends a success message to the log file
+# Usage: utils.logResultOK $1
+# $1: Message
+function utils.logResultOK(){
+	utils.logResult "${FMT_GREEN_TEXT}$1${FMT_NORMAL}"
+}
+
+# sends a Global success message to the log file
+# Usage: utils.logFinalResultOK $1
+# $1: Message
+function utils.logFinalResultOK(){
+	utils.logResult "${FMT_GREEN_BOLD_TEXT}$1${FMT_NORMAL}"
+}
+
+# sends a failure message to the log file
+# Usage: utils.logResultKO $1
+# $1: Message
+function utils.logResultKO(){
+	utils.logResult "${FMT_RED_TEXT}$1${FMT_NORMAL}"
+}
+
+# sends a Global failure message to the log file
+# Usage: utils.logFinalResultKO $1
+# $1: Message
+function utils.logFinalResultKO(){
+	utils.logResult "${FMT_RED_BOLD_TEXT}$1${FMT_NORMAL}"
+}
+
 # Executes a command as user 4 Build
 # Usage: utils.executeAsBuild $1
 # $1: Command to execute
@@ -156,6 +184,31 @@ function utils.getTargetConf(){
 	utils.logResult "${EFX_PROCESSES[targetProcess]} on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
 }
 
+# Gets the configuration in deployment environment
+# Usage: utils.getTargetBaxterConf
+function utils.getTargetBaxterConf(){
+	# Ask for a Deployment Environment
+	utils.readDeploymentEnvironment
+
+	# Loop and print it.  Using offset and length to extract values
+	count=${#DEPLOYMENT_ENVIRONMENTS_CONF[@]}; #echo "SIZE: $count"
+	for ((i=0; i<$count; i++))
+	do
+		declare -a DEPLOY_ENV=${DEPLOYMENT_ENVIRONMENTS_CONF[i]}
+		#echo ${#DEPLOY_ENV[*]}
+		read -a DEPLOYMENT_ENVIRONMENT <<< "${!DEPLOY_ENV[0]}"
+		ENV=${DEPLOYMENT_ENVIRONMENT[0]}
+		PROCESS=${DEPLOYMENT_ENVIRONMENT[1]}
+		PORT=${DEPLOYMENT_ENVIRONMENT[2]}
+		HOST_MACHINE=${DEPLOYMENT_ENVIRONMENT[3]}
+		#echo -e "\nENVIRONEMT: $ENV, PROCESS: $PROCESS, PORT: $PORT, HOST: $HOST_MACHINE"
+		if [ "$PROCESS" == 'Baxter' ] && [ "$ENV" == "${EFX_ENVIRONMENTS[targetEnv]}" ]; then
+			TARGET_PROCESS="$PROCESS"; TARGET_ENV="$ENV"; TARGET_MACHINE="$HOST_MACHINE"; TARGET_PORT="$PORT"
+		fi	
+	done
+	utils.logResult "Baxter on ${EFX_ENVIRONMENTS[targetEnv]} runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
+}
+
 # Asks for a Process
 #Usage: utils.readProccess
 function utils.readProccess(){
@@ -205,4 +258,29 @@ function utils.listenConfirmation(){
 	    do
 		$1; $2
 	done
+}
+
+
+# Install RPM Packages
+# Usage: utils.installRPMPackages $1
+# $1: package to install
+function utils.installRPMPackages() {
+	declare -x packageNames=''
+	if [ -z "$1" ]; then
+		ls "$RELEASE_FOLDER"
+		#rpmsToInstall=$(ls $RELEASE_FOLDER | grep rpm | awk '{ ORS=" "; print; }')
+		echo "Introduce package Names (separated by space) > "
+		read packageNames
+	else packageNames="$1"	
+	fi	
+	pushd "$RELEASE_FOLDER"
+	/opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum update "$packageNames" | tee --append $EFX_INSTALLER_LOG_FILE
+	if [ $? = 0 ]; then
+		utils.logResultOK "NEW RELEASE PACKAGES: $packageNames INSTALLED SUCCESSFULLY"
+		return 0
+	else 
+		utils.logResultKO "NEW RELEASE PACKAGES: $packageNames FAILED TO INSTALL"
+		return 1
+	fi	
+	popd
 }

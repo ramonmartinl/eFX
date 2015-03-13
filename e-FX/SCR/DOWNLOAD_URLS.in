@@ -1,5 +1,4 @@
-http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/sgbm-caplin-adapters/1.1.17-1726/sgbm-caplin-adapters-1.1.17-1726-x86_64.rpm
-http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/sgbm-caplin-deploymentframework/1.1.17-1726/sgbm-caplin-deploymentframework-1.1.17-1726-x86_64.rpm
-http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/sgbm-caplin-liberator/1.1.17-1726/sgbm-caplin-liberator-1.1.17-1726-x86_64.rpm
-http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/santandertrader-war/1.1.17-1726/santandertrader-war-1.1.17-1726.tar.gz
-http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/tcs-manually-accepted-script/1.1/tcs-manually-accepted-script-1.1.zip
+http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/sgbm-caplin-adapters/1.2.1-1924/sgbm-caplin-adapters-1.2.1-1924-x86_64.rpm
+http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/sgbm-caplin-deploymentframework/1.2.1-1924/sgbm-caplin-deploymentframework-1.2.1-1924-x86_64.rpm
+http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/sgbm-caplin-liberator/1.2.1-1924/sgbm-caplin-liberator-1.2.1-1924-x86_64.rpm
+http://lnx-sbankd1:8081/artifactory/santander-release/com/santander/santandertrader-war/1.2.1-1924/santandertrader-war-1.2.1-1924.tar.gz

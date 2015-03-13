@@ -25,7 +25,7 @@ FIXED_VERSION=false
 
 export EFX_INSTALLER_FOLDER
 
-# Read new Release Details from Console
+# Read new Cerebro Release Details from Console
 function ask4CerebroReleaseDetails() {
 	# Introduce Release Number
 	echo -n "Please introduce new Release number, Ej.: 3.4.29 > "
@@ -155,7 +155,7 @@ function buildEFXTrailPackages() {
 }
 
 # BUILD SHELL SCRIPTS with (efx001) Passwd
-function buildLinuxPMPackages() {
+function buildLinuxRPMPackages() {
 	# Clear temporal file 4 specifying modules to build
 	touch $NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out; >$NEW_LINUX_MODULES_TMP.$RELEASE_NUMBER.out
 	# show Menu 4 building modules

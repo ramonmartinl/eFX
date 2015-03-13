@@ -8,7 +8,7 @@ set password "efx001"
 ## Expect Parameters
 set timeout -1
 
-spawn rpm -addsign $rpmsToSign
+spawn rpm --addsign $rpmsToSign
 ##expect "yes/no" {send "yes\r"}
 expect "Enter pass phrase:" 
 send "$password\r"

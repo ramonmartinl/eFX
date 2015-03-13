@@ -4,8 +4,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>102</x>
-      <y>336</y>
+      <x>138</x>
+      <y>24</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -17,8 +17,8 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>84</x>
-      <y>312</y>
+      <x>120</x>
+      <y>0</y>
       <w>408</w>
       <h>150</h>
     </coordinates>
@@ -29,9 +29,9 @@ bg=default</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>216</x>
-      <y>336</y>
-      <w>228</w>
+      <x>252</x>
+      <y>24</y>
+      <w>234</w>
       <h>108</h>
     </coordinates>
     <panel_attributes>/locale
@@ -41,8 +41,8 @@ bg=default</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>240</x>
-      <y>360</y>
+      <x>276</x>
+      <y>48</y>
       <w>186</w>
       <h>66</h>
     </coordinates>
@@ -53,8 +53,8 @@ bg=default</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>300</x>
-      <y>384</y>
+      <x>336</x>
+      <y>72</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -66,10 +66,10 @@ bg=cyan</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>84</x>
-      <y>474</y>
+      <x>120</x>
+      <y>162</y>
       <w>666</w>
-      <h>366</h>
+      <h>444</h>
     </coordinates>
     <panel_attributes>/opt/baxter
 bg=default</panel_attributes>
@@ -78,8 +78,8 @@ bg=default</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>126</x>
-      <y>492</y>
+      <x>162</x>
+      <y>180</y>
       <w>600</w>
       <h>318</h>
     </coordinates>
@@ -90,8 +90,8 @@ bg=default</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>414</x>
-      <y>516</y>
+      <x>450</x>
+      <y>204</y>
       <w>168</w>
       <h>48</h>
     </coordinates>
@@ -103,8 +103,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>144</x>
-      <y>570</y>
+      <x>180</x>
+      <y>258</y>
       <w>228</w>
       <h>48</h>
     </coordinates>
@@ -116,8 +116,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>144</x>
-      <y>624</y>
+      <x>180</x>
+      <y>312</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -129,8 +129,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>144</x>
-      <y>678</y>
+      <x>180</x>
+      <y>366</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -142,8 +142,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>144</x>
-      <y>516</y>
+      <x>180</x>
+      <y>204</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -155,8 +155,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>414</x>
-      <y>570</y>
+      <x>450</x>
+      <y>258</y>
       <w>264</w>
       <h>48</h>
     </coordinates>
@@ -168,8 +168,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>414</x>
-      <y>624</y>
+      <x>450</x>
+      <y>312</y>
       <w>288</w>
       <h>48</h>
     </coordinates>
@@ -181,8 +181,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>414</x>
-      <y>678</y>
+      <x>450</x>
+      <y>366</y>
       <w>288</w>
       <h>48</h>
     </coordinates>
@@ -194,8 +194,8 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>144</x>
-      <y>732</y>
+      <x>180</x>
+      <y>420</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -207,14 +207,254 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
-      <x>414</x>
-      <y>732</y>
+      <x>450</x>
+      <y>420</y>
       <w>180</w>
       <h>48</h>
     </coordinates>
     <panel_attributes> 
 config-om.jar -&gt; baxter-config-om-x.y.z.jar
 bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>162</x>
+      <y>522</y>
+      <w>156</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+log -&gt; /logs/strmbase/BaxterLogs/sit1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>330</x>
+      <y>522</y>
+      <w>156</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+log -&gt; /logs/strmbase/BaxterLogs/dev4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>492</x>
+      <y>522</y>
+      <w>156</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+log -&gt; /logs/strmbase/BaxterLogs/dev3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>348</x>
+      <y>558</y>
+      <w>162</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+log -&gt; /logs/strmbase/BaxterLogs/caplin</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>162</x>
+      <y>558</y>
+      <w>174</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+log -&gt; /local/home/strmbase/BaxterLogs/sit1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>120</x>
+      <y>624</y>
+      <w>666</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>/home/efxbuild/upload_area/Baxter.x.y.z
+bg=default</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>138</x>
+      <y>654</y>
+      <w>150</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-moob-dashboard-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>300</x>
+      <y>654</y>
+      <w>186</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxterpe-server-license-x.y.z.noarch.rpm
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>498</x>
+      <y>654</y>
+      <w>198</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxterpe-server-license-HA-x.y.z.noarch.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>138</x>
+      <y>714</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-blotterserver-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>330</x>
+      <y>714</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-broadcast-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>522</x>
+      <y>714</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-dbserver-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>138</x>
+      <y>774</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-om-x.y.z.rpm
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>330</x>
+      <y>774</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-server-util-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>522</x>
+      <y>774</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-server-util-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>138</x>
+      <y>834</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-price-engine-servlet-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>330</x>
+      <y>834</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes> 
+baxter-rate-engine-x.y.z.rpm
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>144</x>
+      <y>960</y>
+      <w>96</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;component&gt;&gt;
+constants.licence
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>120</x>
+      <y>930</y>
+      <w>666</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>/home/efxbuild/upload_area/Baxter.x.y.z
+bg=default</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

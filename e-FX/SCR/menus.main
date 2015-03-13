@@ -16,8 +16,11 @@ FMT_NORMAL=`echo "\033[m"`; export FMT_NORMAL
 FMT_MENU=`echo "\033[36m"` #Blue; export FMT_MENU
 FMT_NUMBER=`echo "\033[33m"` #yellow; export FMT_NUMBER
 FMT_FGRED=`echo "\033[41m"`; export FMT_FGRED
+FMT_GREEN_TEXT=`echo "\033[32m"`; export FMT_GREEN_TEXT
 FMT_RED_TEXT=`echo "\033[31m"`; export FMT_RED_TEXT
 FMT_ENTER_LINE=`echo "\033[33m"`; export FMT_ENTER_LINE
+FMT_GREEN_BOLD_TEXT=`echo "\e[1;32m"`; export FMT_GREEN_BOLD_TEXT
+FMT_RED_BOLD_TEXT=`echo "\e[1;31m"`; export FMT_RED_BOLD_TEXT
 
 #Show option picked
 #Usage: option_picked $1
@@ -93,9 +96,9 @@ function listenMainMenu(){
 	        4) clear
 	        # INSTALL CAPLIN
 	            option_picked_identified "you chose to Install new Caplin release"
-	        	upload2Satellite Caplin 2>$EFX_INSTALLER_ERROR_FILE
-	        	sleep 2
-	            showMainMenu
+	        	installCaplin.installCaplin 2>$EFX_INSTALLER_ERROR_FILE
+	        	utils.listenConfirmation showMainMenu listenMainMenu
+	        	showMainMenu
 	            ;;
 	        
 	        5) clear

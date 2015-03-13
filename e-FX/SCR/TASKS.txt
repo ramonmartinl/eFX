@@ -39,6 +39,8 @@ find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\
 #Añadir reiniciar los puntos
 #Añadir el nuevo Modulo SB73-Common
 #Mirar precios en el BUS
+#Hacer sign RPMs
+#Start/Stop/ Caplin
 Añadir matar rapido todos los procesos de un entorno
 Añadir la funcionalidad de desbloquear un puerto de Tibco cuando no arranca un proceso
 $ netstat -putan | grep puerto
@@ -49,4 +51,11 @@ tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50993      TIME
 tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50950      TIME_WAIT   -
 
 $ kill -9 1772
-Start/Stop/Install Caplin
+Install Caplin
+Añadir ./dfw hosts acivate deactivate 
+Añadir Caplin Composite structure diagram (basarse en X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\Caplin.1.2.1\Release Notes)
+Añadir Config Managers a los Entornos Deployment diagrams y Cerebro Composie Structure diagram (X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\3.5.7\Release Notes)
+Añadir la funcionalidad de mostrar el funcionamiento de los puntos
+Manage Baxter remotely
+#Mostrar error por consola al subir al satellite
+añadir un fichero con las ultimas versiones instaladas donde poder leer la ultima version

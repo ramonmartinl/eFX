@@ -109,6 +109,7 @@ function listenBaxterTasksMenu(){
 	        # STOP BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Stop Baxter Price Engine Broadcast"
 	            utils.executeAsBaxter baxterTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
+	            #baxterTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
 	            showBaxterTasksMenu
 	            ;;

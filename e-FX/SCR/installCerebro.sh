@@ -44,7 +44,7 @@ function buildCerebro.builCerebro(){
 	wait 
 	#cleanNewReleaseFolder 
 	buildEFXRPMPackages 
-	buildLinuxPMPackages 
+	buildLinuxRPMPackages 
 	#uploadSW2Satellite.upload2Satellite Cerebro $RELEASE_NUMBER
 }	
 

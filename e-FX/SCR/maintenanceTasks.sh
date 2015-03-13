@@ -96,10 +96,15 @@ function maintenanceTasks.changeSimulationPointsFile(){
 function maintenanceTasks.findBigLogs(){
 	touch $BIG_LOG_FILES
 	find /logs -name '*.log' -type f -size +2000M -printf '%p\n'| sort -nr >$BIG_LOG_FILES
+	find /logs -name '*.out' -type f -size +2000M -printf '%p\n'| sort -nr >>$BIG_LOG_FILES
+	find /local/home/strmbase -name '*.log' -type f -size +2000M -printf '%p\n'| sort -nr >>$BIG_LOG_FILES
+	find /local/home/strmbase -name '*.out' -type f -size +2000M -printf '%p\n'| sort -nr >>$BIG_LOG_FILES
 	if [[ -s $BIG_LOG_FILES ]]; then
 		utils.logResult "$(cat $BIG_LOG_FILES) found"
+		RETVAL=0
 	else 
-		utils.logResult "No Big log Files found"	
+		utils.logResult "No Big log Files found"
+		RETVAL=1	
 	fi	
 }
 
@@ -113,11 +118,15 @@ function maintenanceTasks.removeBigLogs(){
 	  		rm "$filename"
 			if [ $? -eq 0 ]; then
 				utils.logResult "$filename removed successfully"
+				RETVAL=0
 			else 	
 				utils.logResult "$filename could not be removed"
+				RETVAL=1
 			fi
 		done < $BIG_LOG_FILES
-	else utils.logResult "No Big log files found" 	
+	else 
+		utils.logResult "No Big log files found" 
+		RETVAL=0
 	fi
 }
 
@@ -141,8 +150,12 @@ function maintenanceTasks.manageEFXProcess(){
 	        t)
 	        # START PROCESS
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
-	        		maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
+	        	maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        	if [ $RETVAL = 0 ]; then	
+	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
+	        	else
+	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to start"
+	        	fi
 	        	sleep 2
 	        	;;
 	        	
@@ -150,7 +163,11 @@ function maintenanceTasks.manageEFXProcess(){
 	        # STOP PROCESS
 	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess stop $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
+	        	if [ $RETVAL = 0 ]; then
+	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
+	        	else
+	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to stop"
+	        	fi	
 	        	sleep 2
 	        	;;
 	        	
@@ -163,8 +180,12 @@ function maintenanceTasks.manageEFXProcess(){
 	        		echo "$TARGET_PROCESS"
 	        	else
 	        		maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        		if [ $RETVAL = 0 ]; then
+	        			utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
+	        		else
+	        			utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to show"
+	        		fi	
 	        	fi	
-	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
 	        	#sleep 2
 	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
 	        	;; 	
@@ -173,7 +194,11 @@ function maintenanceTasks.manageEFXProcess(){
 	        # KILL PROCESS
 	        	option_picked_identified "you chose to Kill $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess kill $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	utils.logResult "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE killed"
+	        	if [ $RETVAL = 0 ]; then
+	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE killed"
+	        	else
+	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to kill"
+	        	fi
 	        	#sleep 2
 	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
 	        	;; 		
@@ -256,13 +281,20 @@ function maintenanceTasks.operateEFXProcess(){
 		 	declare -r REMOTE_EFX_PROCESS_COMMAND="
 		 		pushd \"$TARGET_PATH_SCRIPT\";
 				. \"$TARGET_ENV_SCRIPT\"; 
-				./\"$TARGET_SH_SCRIPT\" \"$1\"; 
+				./\"$TARGET_SH_SCRIPT\" \"$1\";
+				echo '$?';
 				popd;"
 			
 			#echo "$REMOTE_EFX_PROCESS_COMMAND"	
 		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
+		 	if [ $? = 0 ]; then
+		 		RETVAL=0
+		 	else
+		 		RETVAL=1
+		 	fi
 	 else 
 		utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE not found"
+		RETVAL=1
 	 fi
 }
 

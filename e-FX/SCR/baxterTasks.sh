@@ -15,7 +15,9 @@
 # Usage: baxterTasks.stopBaxter
 function baxterTasks.stopBaxter(){
 	# Stop processes now
+	declare -x REMOTE_BAXTER_COMMAND="kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`"
 	 kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`
+	 #baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	 #wait
 	utils.logResult "BAXTER STOPPED SUCCESSFULLY ###"
 }
@@ -24,7 +26,9 @@ function baxterTasks.stopBaxter(){
 # Usage: baxterTasks.startBaxterConfigurationServer
 function baxterTasks.startBaxterConfigurationServer(){
 	# Start Configuration Server
+	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/start-configuration-server --daemon &"
 	$BAXTER_HOME/bin/start-configuration-server --daemon &
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "Configuration Server Baxter Process started successfully\n"
 	return 0
 	#if [ "$TARGET_MACHINE" == "$(hostname)" ]; then
@@ -37,7 +41,9 @@ function baxterTasks.startBaxterConfigurationServer(){
 function baxterTasks.startBaxterDBServer(){
 	# Start DB Server
 	#/bin/bash -c '$BAXTER_HOME/bin/dbserver start'
+	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/dbserver start"
 	$BAXTER_HOME/bin/dbserver start
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "DB Server Baxter Process started successfully\n"
 	return 0
 }
@@ -47,9 +53,29 @@ function baxterTasks.startBaxterDBServer(){
 function baxterTasks.startBaxterBlotterServer(){
 	# Start Blotter Server
 	#/bin/bash -c '$BAXTER_HOME/bin/blotterserver start'
+	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/blotterserver start"
 	$BAXTER_HOME/bin/blotterserver start
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "Blotter Server Baxter Process started successfully\n"
 	return 0
+}
+
+# Stops Baxter Price Engine Broadcast
+# Usage: baxterTasks.stopBaxterBroadcast
+function baxterTasks.stopBaxterBroadcast(){
+	# Stop Broadcast Server
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/broadcast stop
+		exitcode=\$?;
+		exit \$exitcode;"
+		
+	#$BAXTER_HOME/bin/broadcast stop
+	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
+	if [ $RETVAL = 0 ]; then
+		utils.logResultOK "Broadcast Server Baxter Process stopped successfully\n"
+	else
+		utils.logResultKO "Broadcast Server Baxter Process failed to stop\n"
+	fi	
 }
 
 # Starts Baxter Price Engine Broadcast
@@ -57,9 +83,18 @@ function baxterTasks.startBaxterBlotterServer(){
 function baxterTasks.startBaxterBroadcast(){
 	# Start Broadcast Server
 	#/bin/bash -c '$BAXTER_HOME/bin/broadcast start'
-	$BAXTER_HOME/bin/broadcast start
-	utils.logResult "Broadcast Server Baxter Process started succesfully\n"
-	return 0
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/broadcast start
+		exitcode=\$?;
+		exit \$exitcode;"
+		
+	#$BAXTER_HOME/bin/broadcast start
+	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
+	if [ $RETVAL = 0 ]; then
+		utils.logResultOK "Broadcast Server Baxter Process started succesfully\n"
+	else
+		utils.logResultKO "Broadcast Server Baxter Process failed to start\n"
+	fi
 }
 
 # Starts Baxter Price Engine Dashboard Web Application
@@ -67,7 +102,9 @@ function baxterTasks.startBaxterBroadcast(){
 function baxterTasks.startBaxterDashboard(){
 	# Start Dashboard Server
 	#/bin/bash -c '$BAXTER_HOME/bin/dashboard start'
+	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/dashboard start"
 	$BAXTER_HOME/bin/dashboard start
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "Dashboard Server Baxter Process started succesfully\n"
 	return 0
 }
@@ -76,17 +113,10 @@ function baxterTasks.startBaxterDashboard(){
 # Usage: baxterTasks.updateBaxterDBServer
 function baxterTasks.updateBaxterDBServer(){
 	# Update DB Server
+	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/dbserver setup update"
 	$BAXTER_HOME/bin/dbserver setup update
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "DB Server Baxter Updated successfully\n"
-	return 0
-}
-
-# Stops Baxter Price Engine Broadcast
-# Usage: baxterTasks.stopBaxterBroadcast
-function baxterTasks.stopBaxterBroadcast(){
-	# Stop Broadcast Server
-	$BAXTER_HOME/bin/broadcast stop
-	utils.logResult "Broadcast Server Baxter Process stopped successfully\n"
 	return 0
 }
 
@@ -155,4 +185,20 @@ function baxterTasks.restartBaxter(){
 	 fi
 	 # Start processes now
 	 baxterTasks.startBaxter
+}
+
+# Operates Baxter
+# Usage: baxterTasks.operateBaxter $1
+# $1: operation command
+function baxterTasks.operateBaxter(){
+	# operate the process
+	utils.getTargetBaxterConf
+	echo "Baxter on $TARGET_ENV runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
+	echo "$1"	
+	ssh "$USER_BAXTER@$TARGET_MACHINE" "$1"
+	if [ $? = 0 ]; then
+		RETVAL=0
+	else
+		RETVAL=1
+	fi
 }

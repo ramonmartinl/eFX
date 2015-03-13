@@ -21,7 +21,7 @@ RELEASE_NUMBER=""
 # $2: Release Number (optional)
 function uploadSW2Satellite.upload2Satellite() { 
 
-	if [ "$1" = "" ] && [ "$2" = "" ]; then
+	if [ -z $1 ] && [  -z $2 ]; then
 		# Read Application name & Release Number from user input
 		echo -n "Please introduce Application name, Options: Cerebro, Caplin, Baxter, etc.. > "
 		read application
@@ -56,7 +56,7 @@ function uploadSW2Satellite.upload2Satellite() {
 	# Check 4 existence of Release Folder in the FS
 	if [ ! -d "$RELEASE_FOLDER" ]; then
 	  echo "$(date): Sorry You must create Directory $RELEASE_FOLDER first" | tee --append $EFX_INSTALLER_ERROR_FILE
-	  exit 1
+	  return 1
 	fi
 	
 	# Choose correct Channels depending on Application
@@ -67,8 +67,10 @@ function uploadSW2Satellite.upload2Satellite() {
 	fi
 	
 	# Upload to every Channel
-	utils.logResult "Uploading $SW_RELEASE_FOLDER to Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD..."
+	utils.logResult "Uploading $SW_RELEASE_FOLDER to Satellite EFX Channels..."
 	count=0	
+	countFailed=0
+	declare -x uploadResult=true
 	while read CHANNEL
 	do
 		let count++
@@ -77,13 +79,23 @@ function uploadSW2Satellite.upload2Satellite() {
 		#The process can also fail if it detects the same artifact with a different md5sum 
 		#rhnpush --channel=$CHANNEL -d $RELEASE_FOLDER --newest --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD >>$EFX_INSTALLER_LOG_FILE
 		rhnpush --channel=$CHANNEL -d $RELEASE_FOLDER --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD >>$EFX_INSTALLER_LOG_FILE
+		if [ $? = 0 ]; then
+			utils.logResultOK "Upload $SW_RELEASE_FOLDER to Satellite EFX Channel $CHANNEL SUCCESS"
+		else 
+			utils.logResultKO "Upload $SW_RELEASE_FOLDER to Satellite EFX Channel $CHANNEL FAILED"
+			uploadResult=false
+			let countFailed++
+		fi
 		rhnpush -l --channel=$CHANNEL -d $RELEASE_FOLDER --server=https://lnx-satellitep1.ants.ad.anplc.co.uk/APP -u $SATELLITE_USER  -p $SATELLITE_PASSWD | grep $RELEASE_NUMBER >>$EFX_INSTALLER_LOG_FILE
 	done < $selectedSatelliteChannels
 	
 	#remove temporary files
 	#rm $SATELLITE_EFX_CHANNELS_TMP $SATELLITE_CAPLIN_CHANNELS_TMP
-	
-	utils.logResult "Successfully uploaded $1 $RELEASE_NUMBER to $count Satellite EFX Channels as User: $SATELLITE_USER and Password: $SATELLITE_PASSWD"
+	if [ $uploadResult = true ]; then
+		utils.logFinalResultOK "SUCCESSFULLY UPLOADED $APPLICATION.$RELEASE_NUMBER TO $count SATELLITE EFX CHANNELS"
+	else
+		utils.logFinalResultKO "$APPLICATION.$RELEASE_NUMBER FAILED TO UPLOAD TO $countFailed SATELLITE EFX CHANNELS"
+	fi	
 }
 
 #declare -f
