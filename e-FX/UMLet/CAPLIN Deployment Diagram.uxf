@@ -527,97 +527,95 @@ bg=orange</panel_attributes>
       </element>
     </group>
   </group>
-  <group>
-    <element>
-      <type>com.umlet.element.Note</type>
-      <coordinates>
-        <x>252</x>
-        <y>92</y>
-        <w>208</w>
-        <h>16</h>
-      </coordinates>
-      <panel_attributes>Baxter
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>252</x>
+      <y>92</y>
+      <w>208</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Baxter
 http://lnx-sdbankd7.ants.ad.anplc.co.uk:8080/dashboard/SantanderDashboard.html
 bg=magenta</panel_attributes>
-      <additional_attributes/>
-    </element>
-    <element>
-      <type>com.umlet.element.Note</type>
-      <coordinates>
-        <x>252</x>
-        <y>68</y>
-        <w>44</w>
-        <h>12</h>
-      </coordinates>
-      <panel_attributes>SDBANK 7
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>252</x>
+      <y>68</y>
+      <w>44</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>SDBANK 7
 bg=pink</panel_attributes>
-      <additional_attributes/>
-    </element>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Node</type>
+    <coordinates>
+      <x>120</x>
+      <y>68</y>
+      <w>124</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>center:&lt;&lt;device&gt;&gt;
+center:lnx-sbankd7.ants.ad.anplc.co.uk
+bg=default</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <group>
     <element>
       <type>com.umlet.element.custom.Node</type>
       <coordinates>
-        <x>120</x>
-        <y>68</y>
-        <w>124</w>
-        <h>72</h>
+        <x>128</x>
+        <y>92</y>
+        <w>104</w>
+        <h>40</h>
       </coordinates>
-      <panel_attributes>center:&lt;&lt;device&gt;&gt;
-center:lnx-sbankd7.ants.ad.anplc.co.uk
+      <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
+center:Jetty 6 Web server
 bg=default</panel_attributes>
       <additional_attributes/>
     </element>
-    <group>
-      <element>
-        <type>com.umlet.element.custom.Node</type>
-        <coordinates>
-          <x>128</x>
-          <y>92</y>
-          <w>104</w>
-          <h>40</h>
-        </coordinates>
-        <panel_attributes>center:&lt;&lt;execution environment&gt;&gt;
-center:Jetty 6 Web server
-bg=default</panel_attributes>
-        <additional_attributes/>
-      </element>
-      <element>
-        <type>com.umlet.element.Class</type>
-        <coordinates>
-          <x>136</x>
-          <y>112</y>
-          <w>84</w>
-          <h>16</h>
-        </coordinates>
-        <panel_attributes>&lt;&lt;artefact&gt;&gt;
+    <element>
+      <type>com.umlet.element.Class</type>
+      <coordinates>
+        <x>136</x>
+        <y>112</y>
+        <w>84</w>
+        <h>16</h>
+      </coordinates>
+      <panel_attributes>&lt;&lt;artefact&gt;&gt;
 baxter-config-server-x.y.z.war
 bg=orange</panel_attributes>
-        <additional_attributes/>
-      </element>
-    </group>
-    <element>
-      <type>com.umlet.element.Relation</type>
-      <coordinates>
-        <x>232</x>
-        <y>68</y>
-        <w>44</w>
-        <h>32</h>
-      </coordinates>
-      <panel_attributes>lt=-
-</panel_attributes>
-      <additional_attributes>12;24;36;12</additional_attributes>
-    </element>
-    <element>
-      <type>com.umlet.element.Relation</type>
-      <coordinates>
-        <x>232</x>
-        <y>88</y>
-        <w>28</w>
-        <h>24</h>
-      </coordinates>
-      <panel_attributes>lt=-</panel_attributes>
-      <additional_attributes>12;16;20;12</additional_attributes>
+      <additional_attributes/>
     </element>
   </group>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>232</x>
+      <y>68</y>
+      <w>44</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>12;24;36;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>232</x>
+      <y>88</y>
+      <w>28</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>12;16;20;12</additional_attributes>
+  </element>
   <group>
     <element>
       <type>com.umlet.element.Note</type>

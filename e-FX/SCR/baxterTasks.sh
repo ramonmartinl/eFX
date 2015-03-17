@@ -15,7 +15,15 @@
 # Usage: baxterTasks.stopBaxter
 function baxterTasks.stopBaxter(){
 	# Stop processes now
-	declare -x REMOTE_BAXTER_COMMAND="kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`"
+	declare -x REMOTE_BAXTER_COMMAND="
+		kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
+		exit \$exitcode;"
 	 kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`
 	 #baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	 #wait
@@ -26,7 +34,15 @@ function baxterTasks.stopBaxter(){
 # Usage: baxterTasks.startBaxterConfigurationServer
 function baxterTasks.startBaxterConfigurationServer(){
 	# Start Configuration Server
-	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/start-configuration-server --daemon &"
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/start-configuration-server --daemon &;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
+		exit \$exitcode;"
 	$BAXTER_HOME/bin/start-configuration-server --daemon &
 	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "Configuration Server Baxter Process started successfully\n"
@@ -41,7 +57,15 @@ function baxterTasks.startBaxterConfigurationServer(){
 function baxterTasks.startBaxterDBServer(){
 	# Start DB Server
 	#/bin/bash -c '$BAXTER_HOME/bin/dbserver start'
-	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/dbserver start"
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/dbserver start;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
+		exit \$exitcode;"
 	$BAXTER_HOME/bin/dbserver start
 	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "DB Server Baxter Process started successfully\n"
@@ -53,7 +77,15 @@ function baxterTasks.startBaxterDBServer(){
 function baxterTasks.startBaxterBlotterServer(){
 	# Start Blotter Server
 	#/bin/bash -c '$BAXTER_HOME/bin/blotterserver start'
-	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/blotterserver start"
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/blotterserver start;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
+		exit \$exitcode;"
 	$BAXTER_HOME/bin/blotterserver start
 	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "Blotter Server Baxter Process started successfully\n"
@@ -65,8 +97,13 @@ function baxterTasks.startBaxterBlotterServer(){
 function baxterTasks.stopBaxterBroadcast(){
 	# Stop Broadcast Server
 	declare -x REMOTE_BAXTER_COMMAND="
-		$BAXTER_HOME/bin/broadcast stop
+		$BAXTER_HOME/bin/broadcast stop;
 		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/broadcast stop
@@ -84,8 +121,13 @@ function baxterTasks.startBaxterBroadcast(){
 	# Start Broadcast Server
 	#/bin/bash -c '$BAXTER_HOME/bin/broadcast start'
 	declare -x REMOTE_BAXTER_COMMAND="
-		$BAXTER_HOME/bin/broadcast start
+		$BAXTER_HOME/bin/broadcast start;
 		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/broadcast start
@@ -102,7 +144,16 @@ function baxterTasks.startBaxterBroadcast(){
 function baxterTasks.startBaxterDashboard(){
 	# Start Dashboard Server
 	#/bin/bash -c '$BAXTER_HOME/bin/dashboard start'
-	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/dashboard start"
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/dashboard start;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
+		exit \$exitcode;"
+		
 	$BAXTER_HOME/bin/dashboard start
 	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "Dashboard Server Baxter Process started succesfully\n"
@@ -113,7 +164,16 @@ function baxterTasks.startBaxterDashboard(){
 # Usage: baxterTasks.updateBaxterDBServer
 function baxterTasks.updateBaxterDBServer(){
 	# Update DB Server
-	declare -x REMOTE_BAXTER_COMMAND="$BAXTER_HOME/bin/dbserver setup update"
+	declare -x REMOTE_BAXTER_COMMAND="
+		$BAXTER_HOME/bin/dbserver setup update;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Command SUCCESS';
+		else
+			echo 'Command FAILURE';
+		fi;
+		exit \$exitcode;"
+		
 	$BAXTER_HOME/bin/dbserver setup update
 	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND"
 	utils.logResult "DB Server Baxter Updated successfully\n"

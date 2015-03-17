@@ -277,10 +277,10 @@ function utils.installRPMPackages() {
 	/opt/boksm/bin/suexec -u root /usr/local/bin/efx-yum update "$packageNames" | tee --append $EFX_INSTALLER_LOG_FILE
 	if [ $? = 0 ]; then
 		utils.logResultOK "NEW RELEASE PACKAGES: $packageNames INSTALLED SUCCESSFULLY"
-		return 0
+		RETVAL=0
 	else 
 		utils.logResultKO "NEW RELEASE PACKAGES: $packageNames FAILED TO INSTALL"
-		return 1
+		RETVAL=1
 	fi	
 	popd
 }

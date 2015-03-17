@@ -136,13 +136,17 @@ function maintenanceTasks.manageEFXProcess(){
 	# get Target configuration
 	utils.getTargetMachine
 	#echo "$TARGET_PROCESS, $TARGET_MACHINE, $TARGET_ENV";
-	if [ "$TARGET_PROCESS" == "eFX-Adaxter" ] || [ "$TARGET_PROCESS" == "eFX-CustomerPricing" ] || [ "$TARGET_PROCESS" == "eFX-DashboardBridge" ] ||
+	if [ "$TARGET_PROCESS" == "eFX-Adaxter" ] || [ "$TARGET_PROCESS" == "eFX-RFQAdaxter" ] || [ "$TARGET_PROCESS" == "eFX-DashboardBridge" ] ||
 	 [ "$TARGET_PROCESS" == "eFX-ForwardPricing" ] || [ "$TARGET_PROCESS" == "eFX-Pricetenon" ] || [ "$TARGET_PROCESS" == "eFX-TradeReports" ] || 
-	 [ "$TARGET_PROCESS" == "eFX-Trading" ]; then 
+	 [ "$TARGET_PROCESS" == "eFX-Trading" ] || [ "$TARGET_PROCESS" == "eFX-CustomerPricing" ]; then 
 		echo "Use: Primary[p], Secondary[s] >"
 		read opt_efx_process_instance
 	fi
-	echo "Start[t], Stop[p], Show[w], Kill[k]  >"
+	if [ "$TARGET_PROCESS" == 'eFX-Trading' ]; then	
+		echo "Start[t], Stop[p], Show[w], Kill[k], Promote[l]  >"	
+	else
+		echo "Start[t], Stop[p], Show[w], Kill[k]  >"
+	fi
 	read opt_efx_process_action
 	
 	case $opt_efx_process_action in
@@ -201,7 +205,20 @@ function maintenanceTasks.manageEFXProcess(){
 	        	fi
 	        	#sleep 2
 	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
-	        	;; 		
+	        	;; 	
+	        	
+	        l)
+	        # TRADING LEADERSHIP
+	        	option_picked_identified "you chose to Change $TARGET_PROCESS Trading Leadership"
+	        	maintenanceTasks.operateEFXProcess "promote 1" $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        	if [ $RETVAL = 0 ]; then
+	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE Promoted to Leader"
+	        	else
+	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to Promote to Leader"
+	        	fi
+	        	#sleep 2
+	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
+	        	;; 	
 	esac        	
 }
 
@@ -273,17 +290,26 @@ function maintenanceTasks.operateEFXProcess(){
 	 fi
 	 if [ -n "$TARGET_SH_SCRIPT_SECONDARY" ] && [ "$2" == "s" ]; then
 	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_SECONDARY
-	 fi 
+	 fi
+	 if [ "$1" == "promote 1" ]; then
+	 	TARGET_SH_SCRIPT="$TARGET_SH_TRADING_PROMOTE_SCRIPT"
+	 fi
 	 if [ -n "$TARGET_SH_SCRIPT" ] && [ "$TARGET_SH_SCRIPT" != 'Baxter' ] && [ "$TARGET_SH_SCRIPT" != 'Caplin' ]; then
 		 	# Check the TIBCO port is free
 		 	declare -r REMOTE_EFX_PROCESS_FREE="netstat -putan | grep \"$TARGET_PORT\" |grep LISTEN |awk '{print $7}' |awk -F "/" '{print $1}'|xargs kill;"
 		 	# operate the process
 		 	declare -r REMOTE_EFX_PROCESS_COMMAND="
-		 		pushd \"$TARGET_PATH_SCRIPT\";
+		 		. .bash_profile;
+		 		cd \"$TARGET_PATH_SCRIPT\";
 				. \"$TARGET_ENV_SCRIPT\"; 
 				./\"$TARGET_SH_SCRIPT\" \"$1\";
-				echo '$?';
-				popd;"
+				exitcode=\$?;
+				if [ \$exitcode = 0 ]; then
+					echo 'Command SUCCESS';
+				else
+					echo 'Command FAILURE';
+				fi;
+				exit \$exitcode;"
 			
 			#echo "$REMOTE_EFX_PROCESS_COMMAND"	
 		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
@@ -324,110 +350,116 @@ function maintenanceTasks.getTargetScripts(){
 	       		TARGET_SH_SCRIPT=adaxter; 
 	       		TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
 	        	;;	
-	       	        	
-	        4) 
+	       	     	        	
+	       	4) 
+	       		TARGET_SH_SCRIPT=RFQadaxter; 
+	       		TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
+	        	;;
+	        	   	
+	        5) 
 	        	TARGET_SH_SCRIPT=agg
 	        	;;
 	        	        	
-	        5) 
+	        6) 
 	        	TARGET_SH_SCRIPT=autoCMService
 	        	;;
 	        	        	
-	        6) 
+	        7) 
 	        	TARGET_SH_SCRIPT=cleansing
 	        	;;		
 	        	        	        	
-	        7) 
+	        8) 
 	        	TARGET_SH_SCRIPT=customerPricing; 
 	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
 	        	;;
 	        	        	        	
-	        8) 
+	        9) 
 	        	TARGET_SH_SCRIPT=DashboardBridge
 	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
 	        	;;
 	        		        	        	        	
-	        9) 
+	        10) 
 	        	TARGET_SH_SCRIPT=fwdPricing
 	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
 	        	;;	
 	        	        	        	
-	        10) 
+	        11) 
 	        	TARGET_SH_SCRIPT=pricetenon
 	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
 	        	;;	
 	        		        	        	
-	        11) 
+	        12) 
 	        	TARGET_SH_SCRIPT=corepricing
 	        	;;	
 	        		        	        	
-	        12) 
+	        13) 
 	        	TARGET_SH_SCRIPT=tenorService
 	        	;;	
 	        		        		        	        	
-	        13) 
+	        14) 
 	        	TARGET_SH_SCRIPT=newTickStore
 	        	;;
 	        		        		        	        	
-	        14) 
+	        15) 
 	        	TARGET_SH_SCRIPT=tradeReports
 	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
 	        	;;
 	        		        		        	        	
-	        15) 
+	        16) 
 	        	TARGET_SH_SCRIPT=trading
 	        	TARGET_SH_SCRIPT_PRIMARY=primary-$TARGET_SH_SCRIPT; TARGET_SH_SCRIPT_SECONDARY=secondary-$TARGET_SH_SCRIPT
-	        	;;
-	        		        		        	        	
-	        16) 
-	        	TARGET_SH_SCRIPT=VOLHandler
+	        	TARGET_SH_TRADING_PROMOTE_SCRIPT=tradingLeadership.sh
 	        	;;
 	        		        		        	        	
 	        17) 
-	        	TARGET_SH_SCRIPT=CitiCombined
+	        	TARGET_SH_SCRIPT=VOLHandler
 	        	;;
 	        		        		        	        	
 	        18) 
-	        	TARGET_SH_SCRIPT=SFWDHandler.sh
+	        	TARGET_SH_SCRIPT=CitiCombined
 	        	;;
 	        		        		        	        	
 	        19) 
-	        	TARGET_SH_SCRIPT=DBCombined
+	        	TARGET_SH_SCRIPT=SFWDHandler.sh
 	        	;;
 	        		        		        	        	
 	        20) 
-	        	TARGET_SH_SCRIPT=DBFIX-Classic
+	        	TARGET_SH_SCRIPT=DBCombined
 	        	;;
 	        		        		        	        	
 	        21) 
-	        	TARGET_SH_SCRIPT=DBFIX-Rapid
+	        	TARGET_SH_SCRIPT=DBFIX-Classic
 	        	;;
 	        		        		        	        	
 	        22) 
-	        	TARGET_SH_SCRIPT=FIXCombined
+	        	TARGET_SH_SCRIPT=DBFIX-Rapid
 	        	;;
 	        		        		        	        	
 	        23) 
+	        	TARGET_SH_SCRIPT=FIXCombined
+	        	;;
+	        		        		        	        	
+	        24) 
 	        	TARGET_SH_SCRIPT=GSCombined
 	        	;;
 	        		        		        		        	        	
-	        24) 
+	        25) 
 	        	TARGET_SH_SCRIPT=MFHandler.sh
 	        	;;	
 	        	        		        		        	        	
-	        25) 
+	        26) 
 	        	TARGET_SH_SCRIPT=TIHandler.sh
 	        	;;
 	        		        		        		        	        	
-	        26) 
+	        27) 
 	        	TARGET_SH_SCRIPT=UBSCombined
 	        	;;
 	        	        	        		        		        		        	        	
-	        27) 
+	        28) 
 	        	TARGET_SH_SCRIPT=Baxter
 	        	;;			
 	        	        		        		        		        	        	
-	        28) 
+	        29) 
 	        	TARGET_SH_SCRIPT=Caplin
 	        	;;		
 	        		        		        		        	        	

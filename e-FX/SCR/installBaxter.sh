@@ -1,146 +1,200 @@
 ################################################################################
 #!/bin/env bash
 #
-# Script for installing Caplin Releases
+# Script for installing Baxter Releases
 #
-# Usage: installCaplin.sh
+# Usage: installBaxter.sh
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
-# Since: 10/03/2015 
-# Last Modified: 13/03/2015 (ramn.martn)
+# Since: 17/03/2015 
+# Last Modified: 17/03/2015 (ramn.martn)
 #
 ###############################################################################
 
 # Components
-# Caplin SBP Framework (sgbm-caplin-deploymentframework-x.y.z-wwww.x86_64.rpm)
-# Caplin SBP Liberator (sgbm-caplin-liberator-x.y.z-wwww.x86_64.rpm)
-# Caplin SBP Adapters (sgbm-caplin-adapters-x.y.z-wwww.x86_64.rpm)
+# Baxter SBP Framework (sgbm-caplin-deploymentframework-x.y.z-wwww.x86_64.rpm)
+# Baxter SBP Liberator (sgbm-caplin-liberator-x.y.z-wwww.x86_64.rpm)
+# Baxter SBP Adapters (sgbm-caplin-adapters-x.y.z-wwww.x86_64.rpm)
 #
 # Santander WAR (santandertrader-x.y.z-wwww.war)
 
 TRADEMODELS=false
 
-# Installs a Caplin new Release
-# Usage: installCaplin.installCaplin
-function installCaplin.installCaplin(){
+# Installs a Baxter new Release
+# Usage: installBaxter.installBaxter
+function installBaxter.installBaxter(){
 	TARGET_MACHINE="${ENV_MACHINES_SBANKD[6]}"
 	#caller 0
-	#su - efxbuild -c 'ask4CaplinReleaseDetails' 
+	#su - efxbuild -c 'ask4BaxterReleaseDetails' 
 	#exec 6<&0; exec < input.test
-	ask4CaplinReleaseDetails
+	ask4BaxterReleaseDetails
 	#exec 0<&6 6<&-
 	#RETVAL=1
 	if [ $RETVAL = 0 ]; then
-		caplinTasks.stopCaplin $TARGET_MACHINE
+		baxterTasks.stopBaxter $TARGET_MACHINE
+	fi
+	if [ $RETVAL = 0 ]; then
+		backupConfiguration $TARGET_MACHINE
+	fi
+	if [ $RETVAL = 0 ]; then
+		removeLogLink $TARGET_MACHINE
 	fi
 	if [ $RETVAL = 0 ]; then	
-		installCaplinRPMPackages
+		installBaxterRPMPackages
 	fi	 
 	if [ $RETVAL = 0 ]; then
-		caplinTasks.versionsCaplin $TARGET_MACHINE
+		replaceConstansLicenceFile $TARGET_MACHINE
 	fi	
-	if [ $RETVAL = 0 ]; then
-		caplinTasks.startCaplin $TARGET_MACHINE
-	fi	
-	if [ $RETVAL = 0 ]; then
-		caplinTasks.statusCaplin $TARGET_MACHINE
-	fi
-	if [ $RETVAL = 0 ]; then	
-		decompressWar
-	fi
-	if [ $RETVAL = 0 ]; then
-		stopTomcat $TARGET_MACHINE
-	fi	
-	if [ $RETVAL = 0 ]; then
-		deployWar $TARGET_MACHINE
-	fi	
-	if [ $RETVAL = 0 ]; then
-		startTomcat $TARGET_MACHINE
-	fi	
-	if [ $RETVAL = 0 ]; then
-		checkSantandertraderFile $TARGET_MACHINE
-	fi	
-	if [ $RETVAL = 0 ] && [ $TRADEMODELS = true ]; then
-		echo "Update trademodels.xml file"
-		updateTradeModelsFile
-	fi
 	#RETVAL = 0
-	if [ $RETVAL = 0 ] && [ $TRADEMODELS = true ]; then
-		echo "restartBaxterBroadcast..."
-		#restartBaxterBroadcast
-	fi		
 	if [ $RETVAL = 0 ]; then
-		utils.logFinalResultOK "SUCCESSFULLY INSTALLED Caplin.$RELEASE_NUMBER RELEASE IN $TARGET_MACHINE"
+		utils.logFinalResultOK "SUCCESSFULLY INSTALLED Baxter.$RELEASE_NUMBER RELEASE IN $TARGET_MACHINE"
 	else
-		utils.logFinalResultKO "Caplin.$RELEASE_NUMBER RELEASE FAILED TO INSTALL IN $TARGET_MACHINE"
+		utils.logFinalResultKO "Baxter.$RELEASE_NUMBER RELEASE FAILED TO INSTALL IN $TARGET_MACHINE"
 	fi
 }
 
-# Read new Caplin Release Details from Console
-function ask4CaplinReleaseDetails() {
+# Read new Baxter Release Details from Console
+function ask4BaxterReleaseDetails() {
 	# Introduce Release Number
 	echo -n "Please introduce new Release number, Ej.: 1.2.1 > "
 	read releaseNumber
-	echo -n "Do you want to Update Baxter´s trademodels.xml file? Yes[y], No[n] > "
-	read -n1 opt_trademodels
 	RELEASE_NUMBER=$releaseNumber
-	RELEASE_FOLDER=$UPLOAD_AREA_FOLDER/Caplin.$RELEASE_NUMBER
-	option_picked "\nYou chose to install new release: Caplin.$RELEASE_NUMBER"
-	while [ opt_trademodels != '' ]
-	    do
-	        case $opt_trademodels in
-	        y) 
-	        # No Fixed Version
-	        	option_picked "\nyou chose to update Baxter´s trademodels.xml file"
-	        	sleep 1
-	        	TRADEMODELS=true
-	        	break
-	        	;;
-	        
-	        n) 
-	        # Fixed Version
-	            option_picked "\nyou chose not to update Baxter´s trademodels.xml file"
-	            sleep 1
-	            TRADEMODELS=false
-	            break
-	            ;;
-	
-	        *) 
-	        	#echo -n ""
-	        	option_picked "\nSorry, you must enter a valid option: Yes[y], No[n] > ";
-	        	read -n1 opt_trademodels
-	        	;;
-	    	esac
-	done
-	if [ -n $releaseNumber ] && [ -n $opt_trademodels ]; then 
-		utils.logResultOK "New Caplin Release Properties introduced successfully"
+	RELEASE_FOLDER=$UPLOAD_AREA_FOLDER/Baxter.$RELEASE_NUMBER
+	option_picked "\nYou chose to install new release: Baxter.$RELEASE_NUMBER"
+	if [ -n $releaseNumber ]; then 
+		utils.logResultOK "New Baxter Release Properties introduced successfully"
 		RETVAL=0
 	else RETVAL=1	
 	fi	
 }
 
+# Backup Configuration files and folders
+# Usage: backupConfiguration $1
+# $1: $TARGET_MACHINE
+function backupConfiguration() {
+	declare -x WORK_FOLDER=/opt/baxter/webpages/dashboard
+	declare -x BACK_FOLDER=/opt/baxter/bak
+	declare -x REMOTE_BAXTER_COMMAND="
+		. .bash_profile;
+		cd $WORK_FOLDER;
+		cp config.cfg $BACK_FOLDER/config.cfg;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Backup of config.cfg file SUCCESS';
+		else
+			echo 'Backup of config.cfg file FAILURE';
+			exit \$exitcode;"
+		fi;
+		cp -rf locale $BACK_FOLDER;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Backup of locale folder SUCCESS';
+		else
+			echo 'Backup of locale folder FAILURE';
+			exit \$exitcode;"
+		fi;
+		exit \$exitcode;"
+	
+	echo "$REMOTE_BAXTER_COMMAND"	
+	ssh "$USER_BAXTER@$TARGET_MACHINE" "$REMOTE_BAXTER_COMMAND"
+	if [ $? = 0 ]; then
+		utils.logResultOK "CONFIGURATION FILES SAVED IN $TARGET_MACHINE"
+		RETVAL=0
+	else 
+		utils.logResultKO "CONFIGURATION FILES FAILED TO BE SAVED IN $TARGET_MACHINE"
+		RETVAL=1	
+	fi
+}
+
+# Remove Log Symbolic Link
+# Usage: removeLogLink $1
+# $1: $TARGET_MACHINE
+function removeLogLink() {
+	declare -x WORK_FOLDER=/opt/baxter
+	declare -x REMOTE_BAXTER_COMMAND="
+		. .bash_profile;
+		cd $WORK_FOLDER;
+		unlink log; 
+		exitcode1=\$?;
+		if [ \$exitcode1 = 0 ]; then
+			echo 'log Unlinked SUCCESS';
+		else
+			echo 'log Unlinked FAILURE';
+			exit \$exitcode1;
+		fi;
+		rmdir log;
+		exitcode2=\$?;
+		if [ \$exitcode2 = 0 ]; then
+			echo 'log removed SUCCESS';
+		else
+			echo 'log removed FAILURE';
+		fi;
+		exit \$exitcode1;"
+	
+	echo "$REMOTE_BAXTER_COMMAND"	
+	ssh "$USER_BAXTER@$TARGET_MACHINE" "$REMOTE_BAXTER_COMMAND"
+	if [ $? = 0 ]; then
+		utils.logResultOK "CONFIGURATION FILES SAVED IN $TARGET_MACHINE"
+		RETVAL=0
+	else 
+		utils.logResultKO "CONFIGURATION FILES FAILED TO BE SAVED IN $TARGET_MACHINE"
+		RETVAL=1	
+	fi
+}
+
 # Install RPM Packages
-# Usage: installCaplinRPMPackages
-function installCaplinRPMPackages() {
-	#rpmsToInstall=$(ls $RELEASE_FOLDER | grep rpm | awk '{ ORS=" "; print; }')
-	#declare -x deploymentframeworkRPMToInstall=$(ls $RELEASE_FOLDER | grep sgbm-caplin-deploymentframework | awk '{ ORS=" "; print; }')
-	#declare -x liberatorRPMToInstall=$(ls $RELEASE_FOLDER | grep sgbm-caplin-liberator | awk '{ ORS=" "; print; }')
-	#declare -x adaptersRPMToInstall=$(ls $RELEASE_FOLDER | grep sgbm-caplin-adapters | awk '{ ORS=" "; print; }')
-	#declare -x rpmsToInstall="$deploymentframeworkRPMToInstall $liberatorRPMToInstall $adaptersRPMToInstall"
+# Usage: installBaxterRPMPackages
+function installBaxterRPMPackages() {
+	#declare -x rpmsToInstall=$(ls $RELEASE_FOLDER | grep rpm | awk '{ ORS=" "; print; }')
 	# Install from Satellite using release number (X.Y.*, X.*)
 	declare -x firtNumber="$RELEASE_NUMBER" | cut -d'.' -f 1
 	declare -x secondNumber="$RELEASE_NUMBER" | cut -d'.' -f 2
 	declare -x thirdNumber="$RELEASE_NUMBER" | cut -d'.' -f 3
-	declare -x rpmsToInstall="sgbm-caplin-deploymentframework-$RELEASE_NUMBER.rpm sgbm-caplin-liberator-$RELEASE_NUMBER.rpm sgbm-caplin-adapters-$RELEASE_NUMBER.rpm"
+	declare -x rpmsToInstall="baxter-*$firtNumber.$secondNumber*"
 	if [ -n "$rpmsToInstall" ]; then
-		utils.logResult "Caplin RPMS To install: $rpmsToInstall"
+		utils.logResult "Baxter RPMS To install: $rpmsToInstall"
 		utils.installRPMPackages "$rpmsToInstall"
 	else 
-		utils.logResult "No Caplin RPMS found To install"	
+		utils.logResult "No Baxter RPMS found To install"	
 		RETVAL=1
 	fi
 }
 
+# REplace constants.licence File
+# Usage: replaceConstansLicenceFile
+replaceConstansLicenceFile() {
+	declare -x WORK_FOLDER=/opt/baxter/config-server/repository/com/baxter/pe
+	declare -x REMOTE_BAXTER_COMMAND="
+		. .bash_profile;
+		cd $WORK_FOLDER;
+		mv constants.license constants.bak 
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Backup of constants.license file SUCCESS';
+		else
+			echo 'Backup of constants.license file FAILURE';
+			exit \$exitcode;
+		fi;
+		cp $RELEASE_FOLDER/constants.license_nonHA constants.license;
+		exitcode=\$?;
+		if [ \$exitcode = 0 ]; then
+			echo 'Update of constants.license file SUCCESS';
+		else
+			echo 'Update of constants.license file FAILURE';
+			exit \$exitcode;"
+		fi;
+		exit \$exitcode;"
+	
+	echo "$REMOTE_BAXTER_COMMAND"	
+	ssh "$USER_BAXTER@$TARGET_MACHINE" "$REMOTE_BAXTER_COMMAND"
+	if [ $? = 0 ]; then
+		utils.logResultOK "constants.license FILE REPLACED IN $TARGET_MACHINE"
+		RETVAL=0
+	else 
+		utils.logResultKO "constants.license FILE FAILED TO BE REPLACED IN $TARGET_MACHINE"
+		RETVAL=1	
+	fi
+}
 
 # Checks the existence of /local/vendor/tomcat7/tomcat/conf/Catalina/localhost/santandertrader.xml
 # Usage: checkSantandertraderFile $1
@@ -173,7 +227,7 @@ function checkSantandertraderFile(){
 	fi	
 }
 
-# Decompresses santandertrader.x.y.z.tar.gz in /home/efxbuild/upload_area/Caplin.x.y.z
+# Decompresses santandertrader.x.y.z.tar.gz in /home/efxbuild/upload_area/Baxter.x.y.z
 # Usage: decompressWar
 function decompressWar(){
 	pushd $RELEASE_FOLDER
@@ -299,10 +353,10 @@ function stopTomcat(){
 
 # Updates trademodels.xml
 # Usage: updateTradeModelsFile
-# Hints: file is located in /opt/baxter/config-server/repository/com/baxter/pe/Caplin/config-trades folder
+# Hints: file is located in /opt/baxter/config-server/repository/com/baxter/pe/Baxter/config-trades folder
 function updateTradeModelsFile(){
 	declare -x REMOTE_CAPLIN_COMMAND="
-		pushd /opt/baxter/config-server/repository/com/baxter/pe/Caplin/config-trades;
+		pushd /opt/baxter/config-server/repository/com/baxter/pe/Baxter/config-trades;
 		cp trademodels.xml trademodels.xml.bak;
 		if [ -f $RELEASE_FOLDER/trademodels.xml ]; then
 			cp $RELEASE_FOLDER/trademodels.xml . ;

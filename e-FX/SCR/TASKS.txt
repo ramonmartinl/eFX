@@ -56,6 +56,9 @@ Añadir ./dfw hosts acivate deactivate
 Añadir Caplin Composite structure diagram (basarse en X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\Caplin.1.2.1\Release Notes)
 Añadir Config Managers a los Entornos Deployment diagrams y Cerebro Composie Structure diagram (X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\3.5.7\Release Notes)
 Añadir la funcionalidad de mostrar el funcionamiento de los puntos
-Manage Baxter remotely
 #Mostrar error por consola al subir al satellite
 añadir un fichero con las ultimas versiones instaladas donde poder leer la ultima version
+Añadir tradingLeadership
+Añadir RFQAdaxter al arrancar procesos
+Manage Baxter remotely
+Install BAxter
