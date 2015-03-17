@@ -210,7 +210,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        l)
 	        # TRADING LEADERSHIP
 	        	option_picked_identified "you chose to Change $TARGET_PROCESS Trading Leadership"
-	        	maintenanceTasks.operateEFXProcess "promote 1" $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
+	        	maintenanceTasks.operateEFXProcess "promoteTradingLeadership" $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
 	        	if [ $RETVAL = 0 ]; then
 	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE Promoted to Leader"
 	        	else
@@ -291,18 +291,23 @@ function maintenanceTasks.operateEFXProcess(){
 	 if [ -n "$TARGET_SH_SCRIPT_SECONDARY" ] && [ "$2" == "s" ]; then
 	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_SECONDARY
 	 fi
-	 if [ "$1" == "promote 1" ]; then
-	 	TARGET_SH_SCRIPT="$TARGET_SH_TRADING_PROMOTE_SCRIPT"
-	 fi
 	 if [ -n "$TARGET_SH_SCRIPT" ] && [ "$TARGET_SH_SCRIPT" != 'Baxter' ] && [ "$TARGET_SH_SCRIPT" != 'Caplin' ]; then
 		 	# Check the TIBCO port is free
 		 	declare -r REMOTE_EFX_PROCESS_FREE="netstat -putan | grep \"$TARGET_PORT\" |grep LISTEN |awk '{print $7}' |awk -F "/" '{print $1}'|xargs kill;"
 		 	# operate the process
-		 	declare -r REMOTE_EFX_PROCESS_COMMAND="
+		 	declare -x REMOTE_EFX_PROCESS_COMMAND="
 		 		. .bash_profile;
-		 		cd \"$TARGET_PATH_SCRIPT\";
-				. \"$TARGET_ENV_SCRIPT\"; 
-				./\"$TARGET_SH_SCRIPT\" \"$1\";
+			 	cd \"$TARGET_PATH_SCRIPT\";
+			 	. \"$TARGET_ENV_SCRIPT\";"
+		 if [ "$1" == "promoteTradingLeadership" ]; then
+		 	REMOTE_EFX_PROCESS_COMMAND="$REMOTE_EFX_PROCESS_COMMAND 
+		 		./\"$TARGET_SH_TRADING_PROMOTE_SCRIPT\" promote 1;"
+		 else	
+		 	REMOTE_EFX_PROCESS_COMMAND="$REMOTE_EFX_PROCESS_COMMAND 
+		 		./\"$TARGET_SH_SCRIPT\" \"$1\";"
+		 fi
+			REMOTE_EFX_PROCESS_COMMAND="
+				$REMOTE_EFX_PROCESS_COMMAND
 				exitcode=\$?;
 				if [ \$exitcode = 0 ]; then
 					echo 'Command SUCCESS';
@@ -310,8 +315,8 @@ function maintenanceTasks.operateEFXProcess(){
 					echo 'Command FAILURE';
 				fi;
 				exit \$exitcode;"
-			
-			#echo "$REMOTE_EFX_PROCESS_COMMAND"	
+				
+			echo "$REMOTE_EFX_PROCESS_COMMAND"	
 		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
 		 	if [ $? = 0 ]; then
 		 		RETVAL=0

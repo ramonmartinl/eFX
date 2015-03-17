@@ -58,7 +58,7 @@ Añadir Config Managers a los Entornos Deployment diagrams y Cerebro Composie Str
 Añadir la funcionalidad de mostrar el funcionamiento de los puntos
 #Mostrar error por consola al subir al satellite
 añadir un fichero con las ultimas versiones instaladas donde poder leer la ultima version
-Añadir tradingLeadership
-Añadir RFQAdaxter al arrancar procesos
+#Añadir tradingLeadership
+#Añadir RFQAdaxter al arrancar procesos
 Manage Baxter remotely
 Install BAxter
