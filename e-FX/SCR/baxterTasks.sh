@@ -20,7 +20,7 @@ function baxterTasks.stopBaxter(){
 		. .bash_profile;
 		killall -u $USER_BAXTER;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -28,8 +28,15 @@ function baxterTasks.stopBaxter(){
 		exit \$exitcode;"
 		
 	 #kill -9 `ps -fu baxter|grep java|grep -v grep|awk '{print $2}'`
-	 baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
-	 if [ $? -eq 0 ]; then
+	 echo -n "Attempting to Stop Baxter..."
+	 if [ -z $1 ]; then
+		utils.getTargetBaxterConf
+	 fi 
+	 # operate the process
+	 #echo "$1"	
+	 ssh "$USER_BAXTER@$TARGET_MACHINE" "$REMOTE_BAXTER_COMMAND"
+	 #echo $?
+	 if [ $? -eq 255 ]; then
 		utils.logResultOK "BAXTER STOPPED SUCCESSFULLY\n"
 		if [ -z $1 ]; then
 	 		utils.listenConfirmation menus.baxter.showBaxterTasksMenu menus.baxter.listenBaxterTasksMenu
@@ -53,7 +60,7 @@ function baxterTasks.startBaxterConfigurationServer(){
 		. .bash_profile;
 		$BAXTER_HOME/bin/start-configuration-server --daemon;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -61,8 +68,16 @@ function baxterTasks.startBaxterConfigurationServer(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/start-configuration-server --daemon &
-	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
-	if [ $? -eq 0 ]; then
+	echo -n "Attempting to Start Baxter Configuration Server..."
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
+	if [ -z $1 ]; then
+		utils.getTargetBaxterConf
+	fi 
+	# operate the process
+	#echo "$1"	
+	ssh "$USER_BAXTER@$TARGET_MACHINE" "$REMOTE_BAXTER_COMMAND"
+	#echo $?
+	if [ $? -eq 255 ]; then
 		utils.logResultOK "BAXTER CONFIGUATION SERVER STARTED SUCCESSFULLY\n"
 		if [ -z $1 ]; then
 	 		utils.listenConfirmation menus.baxter.showBaxterTasksMenu menus.baxter.listenBaxterTasksMenu
@@ -87,7 +102,7 @@ function baxterTasks.startBaxterDBServer(){
 		. .bash_profile;
 		$BAXTER_HOME/bin/dbserver start;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -95,6 +110,7 @@ function baxterTasks.startBaxterDBServer(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/dbserver start
+	echo -n "Attempting to Start Baxter Price Engine DBServer..."
 	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
 	if [ $? -eq 0 ]; then
 		utils.logResultOK "DB SERVER BAXTER CONFIGUATION SERVER STARTED SUCCESSFULLY\n"
@@ -121,7 +137,7 @@ function baxterTasks.startBaxterBlotterServer(){
 		. .bash_profile;
 		$BAXTER_HOME/bin/blotterserver start;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -129,6 +145,7 @@ function baxterTasks.startBaxterBlotterServer(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/blotterserver start
+	echo -n "Attempting to Start Baxter Blotter Server..."
 	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
 	if [ $? -eq 0 ]; then
 		utils.logResultOK "BLOTTER SERVER BAXTER CONFIGUATION SERVER STARTED SUCCESSFULLY\n"
@@ -154,7 +171,7 @@ function baxterTasks.stopBaxterBroadcast(){
 		. .bash_profile;
 		$BAXTER_HOME/bin/broadcast stop;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -162,6 +179,7 @@ function baxterTasks.stopBaxterBroadcast(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/broadcast stop
+	echo -n "Attempting to Stop Baxter Price Engine Broadcast..."
 	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
 	if [ $? -eq 0  ]; then
 		utils.logResultOK "BROADCAST SERVER BAXTER CONFIGUATION SERVER STOPPED SUCCESSFULLY\n"
@@ -188,7 +206,7 @@ function baxterTasks.startBaxterBroadcast(){
 		. .bash_profile;
 		$BAXTER_HOME/bin/broadcast start;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -196,6 +214,7 @@ function baxterTasks.startBaxterBroadcast(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/broadcast start
+	echo -n "Attempting to Start Baxter Price Engine Broadcast..."
 	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
 	if [ $? -eq 0  ]; then
 		utils.logResultOK "BROADCAST SERVER BAXTER CONFIGUATION SERVER STARTED SUCCESSFULLY\n"
@@ -222,7 +241,7 @@ function baxterTasks.startBaxterDashboard(){
 		. .bash_profile;
 		$BAXTER_HOME/bin/dashboard start;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -230,6 +249,7 @@ function baxterTasks.startBaxterDashboard(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/dashboard start
+	echo -n "Attempting to Start Baxter Price Engine Dashboard Web Application..."
 	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
 	if [ $? -eq 0  ]; then
 		utils.logResultOK "DASHBOARD SERVER BAXTER CONFIGUATION SERVER STARTED SUCCESSFULLY\n"
@@ -249,13 +269,14 @@ function baxterTasks.startBaxterDashboard(){
 # Updates Baxter Price Engine DBServer Configuration
 # Usage: baxterTasks.updateBaxterDBServer $1
 # $1: $TARGET_MACHINE
+# Hints: Needs Baxter Configuration Server to be Running
 function baxterTasks.updateBaxterDBServer(){
 	# Update DB Server
 	declare -x REMOTE_BAXTER_COMMAND="
 		. .bash_profile;
 		$BAXTER_HOME/bin/dbserver setup update;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';
@@ -263,6 +284,7 @@ function baxterTasks.updateBaxterDBServer(){
 		exit \$exitcode;"
 		
 	#$BAXTER_HOME/bin/dbserver setup update
+	echo -n "Attempting to Update Baxter Price Engine DBServer Configuration..."
 	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
 	if [ $? -eq 0  ]; then
 		utils.logResultOK "DB SERVER BAXTER UPDATED SUCCESSFULLY\n"
@@ -286,29 +308,31 @@ function baxterTasks.removeLogs(){
 	# Update DB Server
 	declare -x REMOTE_BAXTER_COMMAND="
 		. .bash_profile;
-		rm $BAXTER_HOME/log/*;
+		rm -f $BAXTER_HOME/log/*;
 		exitcode=\$?;
-		if [ \$exitcode = 0 ]; then
+		if [ \$exitcode -eq 0 ]; then
 			echo 'Command SUCCESS';
 		else
 			echo 'Command FAILURE';	
 		fi;
 		exit \$exitcode;"
-		
-	baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
-	if [ $? -eq 0  ]; then
+
+	echo -n "Attempting to Remove Baxter Logs..."	
+	#baxterTasks.operateBaxter "$REMOTE_BAXTER_COMMAND" "$1"
+ 	if [ -z $1 ]; then
+		utils.getTargetBaxterConf
+	fi 
+	# Stop Baxter first
+	baxterTasks.stopBaxter "$TARGET_MACHINE"
+	# operate the process
+	#echo "$1"	
+	ssh "$USER_BAXTER@$TARGET_MACHINE" "$REMOTE_BAXTER_COMMAND"
+ 	echo $? # BEWARE THIS ERROR
 		utils.logResultOK "BAXTER LOGS REMOVED SUCCESSFULLY\n"
 		if [ -z $1 ]; then
 	 		utils.listenConfirmation menus.baxter.showBaxterTasksMenu menus.baxter.listenBaxterTasksMenu
 	 	fi
 		return 0
- 	else
-		utils.logResultKO "BAXTER LOGS FAILED TO REMOVE\n"
-		if [ -z $1 ]; then
-	 		utils.listenConfirmation menus.baxter.showBaxterTasksMenu menus.baxter.listenBaxterTasksMenu
-	 	fi
-		return 1
-	fi
 }
 
 # Starts Baxter
@@ -359,10 +383,9 @@ function baxterTasks.startBaxter(){
 function baxterTasks.restartBaxter(){
 	utils.getTargetBaxterConf
 	 # Stop processes now
-	 baxterTasks.stopBaxter "$TARGET_MACHINE"
+	 #baxterTasks.stopBaxter "$TARGET_MACHINE"
 	 # Clean old logs
 	 if [ $? -eq 0 ]; then
-	 	#[ "$(ls -A $BAXTER_HOME/log)" ]
 	 	#sleep $BAXTER_START_WAIT_TIME
 	 	baxterTasks.removeLogs "$TARGET_MACHINE"
 	 fi	
@@ -382,15 +405,15 @@ function baxterTasks.operateBaxter(){
 		utils.getTargetBaxterConf
 	fi 
 	# operate the process
-	echo "Baxter on $TARGET_ENV runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
+	#echo -n "Baxter on $TARGET_ENV runs on: $TARGET_MACHINE Machine on Port: $TARGET_PORT"
 	#echo "$1"	
 	ssh "$USER_BAXTER@$TARGET_MACHINE" "$1"
 	#echo $?
-	if [ $? = 0 ]; then
+	if [ $? -eq 0 ]; then
 		return 0
-	elif [ $? = 255 ]; then
-		return 0 	
+	elif [ $? -eq 255 ]; then
+		return 0
 	else
-		return 1
+		return 1	
 	fi
 }

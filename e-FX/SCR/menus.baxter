@@ -26,7 +26,7 @@ menus.baxter.showBaxterTasksMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 7)${FMT_MENU} Restart All Baxter ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Update Baxter Price Engine DBServer ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 9)${FMT_MENU} Stop Baxter Price Engine Broadcast ${FMT_NORMAL}"
-    echo -e "${FMT_MENU}**${FMT_NUMBER} 10)${FMT_MENU} Start All Engine Broadcast ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 10)${FMT_MENU} Start All Baxter ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 11)${FMT_MENU} Remove Baxter Logs ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"

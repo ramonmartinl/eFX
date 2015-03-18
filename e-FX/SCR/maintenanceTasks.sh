@@ -161,7 +161,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        # START PROCESS
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $? = 0 ]; then	
+	        	if [ $? -eq 0 ]; then	
 	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE STARTED"
 	        	else
 	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO SATART"
@@ -173,7 +173,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        # STOP PROCESS
 	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess stop $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $? = 0 ]; then
+	        	if [ $? -eq 0 ]; then
 	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE STOPPED"
 	        	else
 	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO STOP"
@@ -190,7 +190,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        		echo "$TARGET_PROCESS"
 	        	else
 	        		maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        		if [ $? = 0 ]; then
+	        		if [ $? -eq 0 ]; then
 	        			utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE SHOWED"
 	        		else
 	        			utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO SHOW"
@@ -204,7 +204,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        # KILL PROCESS
 	        	option_picked_identified "you chose to Kill $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess kill $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $? = 0 ]; then
+	        	if [ $? -eq 0 ]; then
 	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE KILLED"
 	        	else
 	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO KILL"
@@ -217,7 +217,7 @@ function maintenanceTasks.manageEFXProcess(){
 	        # TRADING LEADERSHIP
 	        	option_picked_identified "you chose to Change $TARGET_PROCESS Trading Leadership"
 	        	maintenanceTasks.operateEFXProcess "promoteTradingLeadership" $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $? = 0 ]; then
+	        	if [ $? -eq 0 ]; then
 	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE PROMOTED TO LEADER"
 	        	else
 	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO PROMOTE TO LEADER"
@@ -324,7 +324,7 @@ function maintenanceTasks.operateEFXProcess(){
 				
 			echo "$REMOTE_EFX_PROCESS_COMMAND"	
 		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" "$REMOTE_EFX_PROCESS_COMMAND"
-		 	if [ $? = 0 ]; then
+		 	if [ $? -eq 0 ]; then
 		 		return 0
 		 	else
 		 		return 1
