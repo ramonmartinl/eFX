@@ -32,15 +32,12 @@ http://www.octopuscs.com/blogs/Linux/How-to-avoid-entering-passwords-when-SSH-to
 Añadir la funcionalidad de borrar logs al script
 find /logs/strmbase/CerebroLogs -name *.log -type f -size +2048M -printf '%s %p\n'| sort -nr | head -10
 
-#Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos
-#Pasar todo UMLDesigner a UMLet
-#Añadir Color al menu de procesos y entornos de Arrancar procesos de EFX.
-#Añadir la funcionalidad de iniciar los puntos con ur:20
-#Añadir reiniciar los puntos
-#Añadir el nuevo Modulo SB73-Common
-#Mirar precios en el BUS
-#Hacer sign RPMs
-#Start/Stop/ Caplin
+Añadir la funcionalidad de iniciar los puntos con ur:20
+Añadir reiniciar los puntos
+Hacer sign RPMs
+Start/Stop/ Caplin
+Añadir tradingLeadership
+Añadir RFQAdaxter al arrancar procesos
 Añadir matar rapido todos los procesos de un entorno
 Añadir la funcionalidad de desbloquear un puerto de Tibco cuando no arranca un proceso
 $ netstat -putan | grep puerto
@@ -51,14 +48,18 @@ tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50993      TIME
 tcp        0      0 ::ffff:127.0.0.1:8098       ::ffff:127.0.0.1:50950      TIME_WAIT   -
 
 $ kill -9 1772
-Install Caplin
-Añadir ./dfw hosts acivate deactivate 
-Añadir Caplin Composite structure diagram (basarse en X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\Caplin.1.2.1\Release Notes)
-Añadir Config Managers a los Entornos Deployment diagrams y Cerebro Composie Structure diagram (X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\3.5.7\Release Notes)
-Añadir la funcionalidad de mostrar el funcionamiento de los puntos
-#Mostrar error por consola al subir al satellite
-añadir un fichero con las ultimas versiones instaladas donde poder leer la ultima version
-#Añadir tradingLeadership
-#Añadir RFQAdaxter al arrancar procesos
 Manage Baxter remotely
-Install BAxter
+#Añadir la funcionalidad de revisar el fichero AWK que modifica el fichero de puntos
+#Pasar todo UMLDesigner a UMLet
+#Añadir Color al menu de procesos y entornos de Arrancar procesos de EFX.
+#Añadir el nuevo Modulo SB73-Common
+#Mirar precios en el BUS
+#Añadir ./dfw hosts activate deactivate 
+#Añadir Caplin Composite structure diagram (basarse en X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\Caplin.1.2.1\Release Notes)
+#Añadir Config Managers a los Entornos Deployment diagrams y Cerebro Composie Structure diagram (X:\Management\Produban GBM\Technical Systems\Projects 2010\eFX - streambase\eFX releases\3.5.7\Release Notes)
+#Añadir la funcionalidad de mostrar el funcionamiento de los puntos
+#Mostrar error por consola al subir al satellite
+#Añadir un fichero con las ultimas versiones instaladas donde poder leer la ultima version
+#Install Caplin
+#Install Baxter
+#Install Cerebro

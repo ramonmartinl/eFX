@@ -12,7 +12,7 @@
 ###############################################################################
 
 # Menu for Baxter Maintenance Tasks
-showBaxterTasksMenu(){
+menus.baxter.showBaxterTasksMenu(){
     clear
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_MENU}* Baxter --> Maintenance Tasks ${FMT_NORMAL}"
@@ -26,13 +26,15 @@ showBaxterTasksMenu(){
     echo -e "${FMT_MENU}**${FMT_NUMBER} 7)${FMT_MENU} Restart All Baxter ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 8)${FMT_MENU} Update Baxter Price Engine DBServer ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 9)${FMT_MENU} Stop Baxter Price Engine Broadcast ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 10)${FMT_MENU} Start All Engine Broadcast ${FMT_NORMAL}"
+    echo -e "${FMT_MENU}**${FMT_NUMBER} 11)${FMT_MENU} Remove Baxter Logs ${FMT_NORMAL}"
     echo -e "${FMT_MENU}*********************************************${FMT_NORMAL}"
     echo -e "${FMT_ENTER_LINE}Please enter a menu option and enter or ${FMT_RED_TEXT}enter to exit. ${FMT_NORMAL}"
     read opt_baxter_tasks
 }
 
 # Read option from Baxter Maintenance Menu
-function listenBaxterTasksMenu(){
+function menus.baxter.listenBaxterTasksMenu(){
 	while [ opt_baxter_tasks != '' ]
 	    do
 	    if [[ $opt_baxter_tasks = "" ]]; then 
@@ -44,76 +46,91 @@ function listenBaxterTasksMenu(){
 	        1) clear
 	        # STOP BAXTER
 	            option_picked_identified "you chose to Stop All Baxter"
-	            utils.executeAsBaxter baxterTasks.stopBaxter 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.stopBaxter 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            	            	        
 	        2) clear
 	        # START BAXTER Configuration Server
 	            option_picked_identified "you chose to Start Baxter Configuration Server"
-	            utils.executeAsBaxter baxterTasks.startBaxterConfigurationServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.startBaxterConfigurationServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            	            	        
 	        3) clear
 	        # START BAXTER Price Engine DBServer
 	            option_picked_identified "you chose to Start Baxter Price Engine DBServer"
-	            utils.executeAsBaxter baxterTasks.startBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.startBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            	            	        
 	        4) clear
 	        # START BAXTER Blotter Server
 	            option_picked_identified "you chose to Start Baxter Blotter Server"
-	            utils.executeAsBaxter baxterTasks.startBaxterBlotterServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.startBaxterBlotterServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            	            	        
 	        5) clear
 	        # START BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Start Baxter Price Engine Broadcast"
-	            utils.executeAsBaxter baxterTasks.startBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.startBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            	            	        
 	        6) clear
 	        # START BAXTER Price Engine Dashboard Web Application
 	            option_picked_identified "you chose to Start Baxter Price Engine Dashboard Web Application"
-	            utils.executeAsBaxter baxterTasks.startBaxterDashboard 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.startBaxterDashboard 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            
 	        7) clear
 	        # RESTART BAXTER
 	            option_picked_identified "you chose to Restart All Baxter"
-	            utils.executeAsBaxter baxterTasks.restartBaxter 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.restartBaxter 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            
 	        8) clear
 	        # STOP BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Update Baxter Price Engine DBServer"
-	            utils.executeAsBaxter baxterTasks.updateBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.updateBaxterDBServer 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
 	            	           	            	        
 	        9) clear
 	        # STOP BAXTER Price Engine Broadcast
 	            option_picked_identified "you chose to Stop Baxter Price Engine Broadcast"
-	            utils.executeAsBaxter baxterTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
-	            #baxterTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
+	            baxterTasks.stopBaxterBroadcast 2>>$EFX_INSTALLER_ERROR_FILE
 	            sleep 2
-	            showBaxterTasksMenu
+	            menus.baxter.showBaxterTasksMenu
 	            ;;
-	            
+	           	            	           	            	        
+	        10) clear
+	        # START BAXTER
+	            option_picked_identified "you chose to Start All Baxter"
+	            baxterTasks.startBaxter 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            menus.baxter.showBaxterTasksMenu
+	            ;;
+	         	           	            	           	            	        
+	        11) clear
+	        # REMOVE BAXTER LOGS
+	            option_picked_identified "you chose to Remove Baxter Logs"
+	            baxterTasks.removeLogs 2>>$EFX_INSTALLER_ERROR_FILE
+	            sleep 2
+	            menus.baxter.showBaxterTasksMenu
+	            ;;
+	                
 	        x) clear
 	        	exit 0
 	        	;;

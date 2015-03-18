@@ -65,14 +65,15 @@ function maintenanceTasks.startSimulationPoints(){
 		echo "Enter Update Rate: >"
 		read updateRate	
 		declare -x REMOTE_COMMAND="
+			. .bash_profile;
 			killall -9 sink_driven_src;
 			pushd "/dev/shm/d3data/replay/demo";
 			export LD_LIBRARY_PATH=.;
 			nohup ./sink_driven_src -S SFWD -c -I 1 -E sslauto -Q /dev/shm/d3data/capture/demo/newDataNDF -K -N 8105 -U $updateRate >/dev/null 2>&1 ;
 			popd;"
 			
-		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" $REMOTE_COMMAND
-		utils.logResult "LP Points Simulation Process: $pPid1, $pPid2 Started successfully"
+		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" "$REMOTE_COMMAND"
+		utils.logResultOK "LP Points Simulation PROCESS: $pPid1, $pPid2 STARTED SUCCESSFULLY"
 }
 
 # Change LP Points Simulation File
@@ -81,13 +82,14 @@ function maintenanceTasks.startSimulationPoints(){
 function maintenanceTasks.changeSimulationPointsFile(){
 		utils.logResult "REMEMBER: changeNewDataNDF.awk file must be Changed first"
 		declare -x REMOTE_COMMAND="
+			. .bash_profile;
 			pushd "/dev/shm/d3data/capture/demo";
 			cp newDataNDF newDataNDF.$(date +"%Y-%m-%d-%H-%M-%S").bak;
 			awk -f changeNewDataNDF.awk newDataNDF;
 			cp newDataNDF.new newDataNDF;
 			popd;"
 		
-		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" $REMOTE_COMMAND
+		ssh "$USER_STRMBASE@${ENV_MACHINES_EFXD[38]}" "$REMOTE_COMMAND"
 		utils.logResult "LP Points Simulation File : Changed successfully"
 }
 
@@ -100,11 +102,13 @@ function maintenanceTasks.findBigLogs(){
 	find /local/home/strmbase -name '*.log' -type f -size +2000M -printf '%p\n'| sort -nr >>$BIG_LOG_FILES
 	find /local/home/strmbase -name '*.out' -type f -size +2000M -printf '%p\n'| sort -nr >>$BIG_LOG_FILES
 	if [[ -s $BIG_LOG_FILES ]]; then
-		utils.logResult "$(cat $BIG_LOG_FILES) found"
-		RETVAL=0
+		utils.logResultOK "$(cat $BIG_LOG_FILES) FOUND"
+		utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
+		return 0
 	else 
-		utils.logResult "No Big log Files found"
-		RETVAL=1	
+		utils.logResultOK "NO BIG LOG FILES FOUND"
+		utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
+		return 0	
 	fi	
 }
 
@@ -117,16 +121,18 @@ function maintenanceTasks.removeBigLogs(){
 		while read -r filename; do
 	  		rm "$filename"
 			if [ $? -eq 0 ]; then
-				utils.logResult "$filename removed successfully"
-				RETVAL=0
+				utils.logResultOK "$filename REMOVED SUCCESSFULLY"
+				return 0
 			else 	
-				utils.logResult "$filename could not be removed"
-				RETVAL=1
+				utils.logResultKO "$filename COULD NOT BE REMOVED"
+				return 1
 			fi
 		done < $BIG_LOG_FILES
+		utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
 	else 
-		utils.logResult "No Big log files found" 
-		RETVAL=0
+		utils.logResultOK "NO BIG LOG FILES FOUND" 
+		utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
+		return 0
 	fi
 }
 
@@ -155,10 +161,10 @@ function maintenanceTasks.manageEFXProcess(){
 	        # START PROCESS
 	        	option_picked_identified "you chose to Start $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess start $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $RETVAL = 0 ]; then	
-	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE started"
+	        	if [ $? = 0 ]; then	
+	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE STARTED"
 	        	else
-	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to start"
+	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO SATART"
 	        	fi
 	        	sleep 2
 	        	;;
@@ -167,10 +173,10 @@ function maintenanceTasks.manageEFXProcess(){
 	        # STOP PROCESS
 	        	option_picked_identified "you chose to Stop $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess stop $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $RETVAL = 0 ]; then
-	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE stopped"
+	        	if [ $? = 0 ]; then
+	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE STOPPED"
 	        	else
-	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to stop"
+	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO STOP"
 	        	fi	
 	        	sleep 2
 	        	;;
@@ -184,10 +190,10 @@ function maintenanceTasks.manageEFXProcess(){
 	        		echo "$TARGET_PROCESS"
 	        	else
 	        		maintenanceTasks.operateEFXProcess show $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        		if [ $RETVAL = 0 ]; then
-	        			utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE showed"
+	        		if [ $? = 0 ]; then
+	        			utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE SHOWED"
 	        		else
-	        			utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to show"
+	        			utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO SHOW"
 	        		fi	
 	        	fi	
 	        	#sleep 2
@@ -198,10 +204,10 @@ function maintenanceTasks.manageEFXProcess(){
 	        # KILL PROCESS
 	        	option_picked_identified "you chose to Kill $TARGET_PROCESS Process"
 	        	maintenanceTasks.operateEFXProcess kill $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $RETVAL = 0 ]; then
-	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE killed"
+	        	if [ $? = 0 ]; then
+	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE KILLED"
 	        	else
-	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to kill"
+	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO KILL"
 	        	fi
 	        	#sleep 2
 	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
@@ -211,10 +217,10 @@ function maintenanceTasks.manageEFXProcess(){
 	        # TRADING LEADERSHIP
 	        	option_picked_identified "you chose to Change $TARGET_PROCESS Trading Leadership"
 	        	maintenanceTasks.operateEFXProcess "promoteTradingLeadership" $opt_efx_process_instance 2>>$EFX_INSTALLER_ERROR_FILE
-	        	if [ $RETVAL = 0 ]; then
-	        		utils.logResultOK "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE Promoted to Leader"
+	        	if [ $? = 0 ]; then
+	        		utils.logResultOK "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE PROMOTED TO LEADER"
 	        	else
-	        		utils.logResultKO "Process: $TARGET_PROCESS in Machine: $TARGET_MACHINE failed to Promote to Leader"
+	        		utils.logResultKO "PROCESS: $TARGET_PROCESS IN MACHINE: $TARGET_MACHINE FAILED TO PROMOTE TO LEADER"
 	        	fi
 	        	#sleep 2
 	        	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
@@ -270,12 +276,13 @@ function maintenanceTasks.search4Prices(){
 	
 	# operate the process
 	declare -r REMOTE_EFX_LP_COMMAND="
+		. .bash_profile;
 		pushd \"$TARGET_PATH_SCRIPT\";
 		./\"$TARGET_SH_SCRIPT\" | grep RAW; 
 		popd;"
 	
 	echo "$REMOTE_EFX_LP_COMMAND"			
-	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
+	ssh "$USER_STRMBASE@$TARGET_MACHINE" "$REMOTE_EFX_PROCESS_COMMAND"
 }
 
 # Stops/Starts/Shows Process
@@ -287,8 +294,7 @@ function maintenanceTasks.operateEFXProcess(){
 	 maintenanceTasks.getTargetScripts; #echo "Path: $TARGET_PATH_SCRIPT, Environment: $TARGET_ENV_SCRIPT, primary: $TARGET_SH_SCRIPT_PRIMARY, secondary:  $TARGET_SH_SCRIPT_SECONDARY, Command: $TARGET_SH_SCRIPT"
 	 if [ -n "$TARGET_SH_SCRIPT_PRIMARY" ] && [ "$2" == "p" ]; then
 	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_PRIMARY
-	 fi
-	 if [ -n "$TARGET_SH_SCRIPT_SECONDARY" ] && [ "$2" == "s" ]; then
+	 elif [ -n "$TARGET_SH_SCRIPT_SECONDARY" ] && [ "$2" == "s" ]; then
 	 	 TARGET_SH_SCRIPT=$TARGET_SH_SCRIPT_SECONDARY
 	 fi
 	 if [ -n "$TARGET_SH_SCRIPT" ] && [ "$TARGET_SH_SCRIPT" != 'Baxter' ] && [ "$TARGET_SH_SCRIPT" != 'Caplin' ]; then
@@ -309,7 +315,7 @@ function maintenanceTasks.operateEFXProcess(){
 			REMOTE_EFX_PROCESS_COMMAND="
 				$REMOTE_EFX_PROCESS_COMMAND
 				exitcode=\$?;
-				if [ \$exitcode = 0 ]; then
+				if [ \$exitcode -eq 0 ]; then
 					echo 'Command SUCCESS';
 				else
 					echo 'Command FAILURE';
@@ -317,15 +323,15 @@ function maintenanceTasks.operateEFXProcess(){
 				exit \$exitcode;"
 				
 			echo "$REMOTE_EFX_PROCESS_COMMAND"	
-		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" $REMOTE_EFX_PROCESS_COMMAND
+		 	ssh "$USER_STRMBASE@$TARGET_MACHINE" "$REMOTE_EFX_PROCESS_COMMAND"
 		 	if [ $? = 0 ]; then
-		 		RETVAL=0
+		 		return 0
 		 	else
-		 		RETVAL=1
+		 		return 1
 		 	fi
 	 else 
-		utils.logResult "Process:$TARGET_PROCESS in Machine:$TARGET_MACHINE not found"
-		RETVAL=1
+		utils.logResultko "PROCESS:$TARGET_PROCESS IN MACHINE:$TARGET_MACHINE not found"
+		return 1
 	 fi
 }
 
@@ -501,11 +507,9 @@ function maintenanceTasks.getTargetScripts(){
 				if [ -z $isLP ] || [ "$TARGET_PROCESS" == 'eFX-LP-D3' ] || [ "$TARGET_PROCESS" == 'eFX-LP-MTI' ]; then
 					TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all/Linux/scripts
 	        		TARGET_ENV_SCRIPT=env_sit.sh
-				else
-		        	if [ -n $isLP ] && [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
+				elif [ -n $isLP ] && [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
 		        		TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-lp/Linux/scripts
 		        		TARGET_ENV_SCRIPT=env_sit_lp.sh
-		        	fi
 		        fi	
 				;;	
 				
@@ -514,11 +518,9 @@ function maintenanceTasks.getTargetScripts(){
 				if [ -z $isLP ] || [ "$TARGET_PROCESS" == 'eFX-LP-D3' ] || [ "$TARGET_PROCESS" == 'eFX-LP-MTI' ]; then
 					TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-all2/Linux/scripts
 	        		TARGET_ENV_SCRIPT=env_sit2_sb7.sh
-	        	else	
-		        	if [ -n $isLP ] && [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
+	        	elif [ -n $isLP ] && [ "$TARGET_PROCESS" != 'eFX-LP-D3' ] && [ "$TARGET_PROCESS" != 'eFX-LP-MTI' ]; then
 		        		TARGET_PATH_SCRIPT=/local/home/strmbase/EFX-lp2/Linux/scripts
 		        		TARGET_ENV_SCRIPT=env_sit_lp.sh
-		        	fi
 		        fi	
 				;;
 				
@@ -543,4 +545,5 @@ function maintenanceTasks.signRPMs(){
 	echo -n "$rpmsToSign"
 	$EFX_INSTALLER_HOME/rpmSign.exp $rpmsToSign | tee --append $EFX_INSTALLER_LOG_FILE
 	popd
+	utils.listenConfirmation menus.maintenance.showMaintenanceTasksMenu menus.maintenance.listenMaintenanceTasksMenu
 }

@@ -7,7 +7,7 @@
 #
 # Author: Ramon Martin Lopez [ramn.martn@servexternos.isban.es]
 # Since: 22/01/2015 
-# Last Modified: 05/03/2015 (ramn.martn)
+# Last Modified: 17/03/2015 (ramn.martn)
 #
 ###############################################################################
 
@@ -47,7 +47,7 @@ function option_picked_identified(){
 showMainMenu(){
     clear
     echo -e "${FMT_MENU}#############################################${FMT_NORMAL}"
-    echo -e "${FMT_MENU}# Welcome to the EFX Installation Program${FMT_NORMAL}"
+    echo -e "${FMT_MENU}# Welcome to the EFX Management/Installation Program${FMT_NORMAL}"
     echo -e "${FMT_MENU}#############################################${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 1)${FMT_MENU} Build Cerebro Release ${FMT_NORMAL}"
     echo -e "${FMT_MENU}**${FMT_NUMBER} 2)${FMT_MENU} Install Cerebro Release ${FMT_NORMAL}"
@@ -104,8 +104,8 @@ function listenMainMenu(){
 	        5) clear
 	        # BAXTER
 	        	option_picked_identified "you chose to Manage Baxter"
-	        	showBaxterTasksMenu
-	            listenBaxterTasksMenu
+	        	menus.baxter.showBaxterTasksMenu
+	            menus.baxter.listenBaxterTasksMenu
 	        	sleep 2
 	        	showMainMenu
 	        	;;

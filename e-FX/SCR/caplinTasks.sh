@@ -78,6 +78,7 @@ function caplinTasks.versionsCaplin(){
 function caplinTasks.operateCaplin(){
 	# operate the process
 	declare -r REMOTE_CAPLIN_COMMAND="
+		. .bash_profile;
 		pushd /opt/caplin;
 		./dfw \"$1\"; 
 		popd;"
