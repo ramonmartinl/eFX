@@ -63,3 +63,19 @@ Manage Baxter remotely
 #Install Caplin
 #Install Baxter
 #Install Cerebro
+
+Deployment of Santander´s ISBAN applications, RN  Documents for CERT & PROD
+e-FX (Electronic Foreign exchange), Baxter, Caplin
+StreamBase (TIBCO & Java Based, IDE Steambase Studio)
+TIBCO Rendezvous
+JMS, Junit, Fitnese, TeamCity, SVN, Git, Maven, UML, JIRA
+Xymon, Nagios, RHEL6 (Red Hat Enterprise Linux 6), shell Scripts. Satellite RPM Build & Distribuition
+Liquidity Providers:
+Goldman Sachs
+Deutsche Bank 
+UBS 
+Citi 
+Market Factory
+GS
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+SQL Developer
